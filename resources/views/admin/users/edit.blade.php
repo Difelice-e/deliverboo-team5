@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-qui va la homepage
+qui va la edit dell'utente
 @endsection
