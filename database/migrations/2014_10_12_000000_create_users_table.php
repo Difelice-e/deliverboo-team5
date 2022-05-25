@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('slug',120)->unique();
             $table->string('vat_number',11);
             $table->string('street_address',100);
-            $table->tinyInteger('phone_number');
+            $table->string('phone_number',13);
             $table->string('cover',255)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
