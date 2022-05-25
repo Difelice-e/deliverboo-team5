@@ -11,7 +11,7 @@ return [
     "business_name" => "l'osteria di monteverde roma",
     "street_address" => "Via Pietro Cartoni, 163/165",
     "phone_number" => "0653273887",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   // milanese
   [
@@ -20,7 +20,7 @@ return [
     "business_name" => "osteria dell'oca giuliva",
     "street_address" => "Viale Bligny, 29",
     "phone_number" => "0258312871",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   // bolognese
   [
@@ -29,7 +29,7 @@ return [
     "business_name" => "Antica Osteria Le Mura",
     "street_address" => "Vicolo del Falcone, 13/a",
     "phone_number" => "0510015254",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   //napoletana
   [
@@ -39,16 +39,16 @@ return [
     "vat_number" => "",
     "street_address" => "Via Sergente Maggiore, 8",
     "phone_number" => "0812512435",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   // barese
   [
-    "email" => "wigel64467@doerma.com",
+    "email" => "wigel64468@doerma.com",
     "password" => "1234",
     "business_name" => "osteria le arpie",
     "street_address" => "Arco del Carmine, 2",
     "phone_number" => "0805217988",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   //bar
   [
@@ -57,7 +57,7 @@ return [
     "business_name" => "caffè del kassaro",
     "street_address" => "Via Vittorio Emanuele, 390",
     "phone_number" => "0915070023",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "jofahem925@dakcans.com",
@@ -65,15 +65,15 @@ return [
     "business_name" => "caffè capranica",
     "street_address" => "Piazza Capranica, 75/77",
     "phone_number" => "0669921720",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "kafova8498@duetube.com",
     "password" => "1234",
-    "business_name" => "caffè capranica",
-    "street_address" => "Piazza Capranica, 75/77",
+    "business_name" => "caffè d'urbano",
+    "street_address" => "Piazza D'Urbano, 75/77",
     "phone_number" => "064885617",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "mojeno2228@doerma.com",
@@ -81,15 +81,15 @@ return [
     "business_name" => "caffetteria massimo",
     "street_address" => "Via Giovanni Amendola, 6",
     "phone_number" => "064870860",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
-    "email" => "paxine5145@doerma.com",
+    "email" => "paxine5245@doerma.com",
     "password" => "1234",
     "business_name" => "Cuccuma Caffè",
     "street_address" => "Via San Giovanni Maggiore Pignatelli, 1a",
     "phone_number" => "08119708587",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   // Burger King
   [
@@ -98,15 +98,15 @@ return [
     "business_name" => "Burger King",
     "street_address" => "Piazzale Luigi Cadorna, 16",
     "phone_number" => "028053860",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "BurgerKingEdoardoJenner@cupbest.com",
     "password" => "1234",
-    "business_name" => "Burger King",
+    "business_name" => "Burger King Centrale",
     "street_address" => "Viale Edoardo Jenner, 51",
     "phone_number" => "0280011050",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   // McDonald
   [
@@ -115,7 +115,7 @@ return [
     "business_name" => "McDonald's Milano Duomo",
     "street_address" => "Passaggio Duomo, 2",
     "phone_number" => "0286997265",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "McDonaldMilanoViaTorino@cupbest.com",
@@ -123,7 +123,7 @@ return [
     "business_name" => "McDonald's Milano Via Torino",
     "street_address" => "Via Torino, 68",
     "phone_number" => "3408484034",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   //fast food
   [
@@ -132,7 +132,7 @@ return [
     "business_name" => "fast24",
     "street_address" => "Via Sorio, 64/A",
     "phone_number" => "3451737833",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "reviloc149@dakcans.com",
@@ -140,7 +140,7 @@ return [
     "business_name" => "polletti san bartolomeo",
     "street_address" => "Viale della Moschea, 206",
     "phone_number" => "068075659",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "yipabaf690@doerma.com",
@@ -148,7 +148,7 @@ return [
     "business_name" => "SPECIAL hamburger & italian Fast Food",
     "street_address" => "Via Lecco, 4",
     "phone_number" => "0229537233",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "demew11458@doerma.com",
@@ -156,7 +156,7 @@ return [
     "business_name" => "speedy grill",
     "street_address" => "Via Principe di Piemonte, 57/C",
     "phone_number" => "3349408764",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "nerod25859@doerma.com",
@@ -164,7 +164,7 @@ return [
     "business_name" => "Elen Fast Food",
     "street_address" => "corso dei mille, 94/96",
     "phone_number" => "3892467205",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   //pizza
   [
@@ -175,7 +175,7 @@ return [
     "vat_number" => "",
     "street_address" => "Via delle Belle Arti, 14",
     "phone_number" => "051225581",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "jifid10528@cupbest.com",
@@ -185,7 +185,7 @@ return [
     "vat_number" => "",
     "street_address" => "Via della Madonna dei Monti, 110",
     "phone_number" => "0669413112",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "venas77655@doerma.com",
@@ -193,7 +193,7 @@ return [
     "business_name" => "pizzeria speranzella",
     "street_address" => "Via Speranzella, 84",
     "phone_number" => "08118196384",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "honey38413@dakcans.com",
@@ -201,7 +201,7 @@ return [
     "business_name" => "pizzeria dei pirati",
     "street_address" => "Via Rionero, 38",
     "phone_number" => "0883522901",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "giheb25464@doerma.com",
@@ -209,7 +209,7 @@ return [
     "business_name" => "pizzeria sansovino",
     "street_address" => "Calle Zaguri, 2628",
     "phone_number" => "0415286141",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   // cinese
   [
@@ -218,7 +218,7 @@ return [
     "business_name" => "koi sushi",
     "street_address" => "Via Regina Margherita, 310",
     "phone_number" => "3496291775",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "sotif39863@duetube.com",
@@ -226,7 +226,7 @@ return [
     "business_name" => "jubin due",
     "street_address" => "Via Padova, 7",
     "phone_number" => "0226141020",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "wasawet730@dakcans.com",
@@ -234,7 +234,7 @@ return [
     "business_name" => "bin hai",
     "street_address" => "Via la Spezia, 86",
     "phone_number" => "067012519",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "tebox94225@doerma.com",
@@ -242,7 +242,7 @@ return [
     "business_name" => "hana",
     "street_address" => "Viale della Croce Rossa, 27",
     "phone_number" => "0916788305",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
   [
     "email" => "kenixa8009@dakcans.com",
@@ -250,6 +250,6 @@ return [
     "business_name" => "yoma",
     "street_address" => "Via Fossalta, 3",
     "phone_number" => "051226592",
-    "cover" => "",
+    "cover" => "https://picsum.photos/200/300",
   ],
 ];

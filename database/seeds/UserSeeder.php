@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
+use Illuminate\Support\Facades\Config;
+use Faker\Generator as Faker;
+use Faker\Provider\it_IT\Company;
 
 class UserSeeder extends Seeder
 {
@@ -9,8 +13,26 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
+        $users = Config::get('users');
+        
+
+        foreach ($users as $utente) {
+            $user = new User();
+            $user->email = $utente['email'];
+            $user->password = Hash::make($utente['password']);
+            $user->business_name = $utente['business_name'];
+            $user->street_address = $utente['street_address'];
+            $user->phone_number = $utente['phone_number'];
+            $user->cover = $utente['cover'];
+            // da risolvere p.iv con faker->vat o in array 
+            $user->vat_number = $faker->randomNumber(9,true);
+            $user->slug = Str::slug($utente['business_name']);
+
+            $user->save();
+        }
+
+
     }
 }
