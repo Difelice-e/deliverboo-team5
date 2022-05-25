@@ -36,7 +36,7 @@
 
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
+                    <!-- Right Side Of Navbar || Pulsanti attenzione -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
@@ -75,6 +75,10 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer>
+            qui andrà il footer
+        </footer>
     </div>
 </body>
 </html>
