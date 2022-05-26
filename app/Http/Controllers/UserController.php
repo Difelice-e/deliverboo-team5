@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        //
     }
 
     /**
@@ -46,18 +46,18 @@ class UserController extends Controller
         //     'category_id' => 'nullable|exists:categories,id'
         // ]);
 
-        $data = $request->all();
+        // $data = $request->all();
 
         // creazione dello slug 
-        $slug = User::getUniqueSlug($data['business_name']);
+        // $slug = User::getUniqueSlug($data['business_name']);
 
-        $user = new User();
-        $user->fill($data);
-        $user->slug = $slug;
+        // $user = new User();
+        // $user->fill($data);
+        // $user->slug = $slug;
 
-        $post->save();
+        // $user->save();
 
-        return redirect()->route('admin.users.show');
+        // return redirect()->route('admin.users.show');
     }
 
     /**
@@ -79,7 +79,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.users.edit');
+        //
     }
 
     /**

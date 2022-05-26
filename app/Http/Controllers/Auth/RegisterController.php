@@ -50,9 +50,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'business_name' => ['required', 'string','max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'vat_number' => ['required', 'string', 'digits:11', 'numeric'],
+            'street_address' => ['required', 'string', 'max:255'],
+            'phone_number' => ['required', 'numeric', 'digits_between:6,10'],
+            // da finire validazione cover 
+            'cover' => ['string', 'max:255']
         ]);
     }
 
@@ -64,10 +69,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // creazione dello slug 
+        $data['slug'] = User::getUniqueSlug($data['business_name']);
+
         return User::create([
             'business_name' => $data['business_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'vat_number' => $data['vat_number'],
+            'street_address' => $data['street_address'],
+            'phone_number' => $data['phone_number'],
+            'cover' => $data['cover'],
+            'slug' => $data['slug'],
         ]);
     }
 }
