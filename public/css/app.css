@@ -10966,6 +10966,24 @@ a.text-dark:focus {
   background-color: #ffc244;
 }
 
+.font-size {
+  font-size: 18px;
+}
+
+.btn-nav-searchGv {
+  color: black;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  left: 15px;
+  z-index: 1;
+}
+
+.btn-nav-searchGv:focus-visible {
+  outline: none;
+  box-shadow: 0px 0px 10px black;
+}
+
 .btn-nav-register {
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
@@ -10975,5 +10993,11 @@ a.text-dark:focus {
 .btn-nav-register:hover {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.svg-decoration {
+  top: 99%;
+  left: 0;
+  width: 100%;
 }
 
