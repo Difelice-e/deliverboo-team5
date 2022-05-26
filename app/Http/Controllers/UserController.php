@@ -17,7 +17,8 @@ class UserController extends Controller
         $users = User::get();
 
         // da creare la vista
-        // return view('users.index');
+        // // return view('users.index');
+        // return view('admin.home.index',compact('users'));
     }
 
     /**
@@ -66,13 +67,14 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
-    {
-        $users = User::findOrFail($slug);
-        return view('admin.users.show', compact('slug'));
+    public function show($id)
+    {   
+        $users = User::findOrFail($id);
+
+        return view('admin.users.show',compact('users'));
     }
 
     /**
