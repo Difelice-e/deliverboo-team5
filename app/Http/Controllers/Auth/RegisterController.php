@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Tipology;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -30,8 +31,16 @@ class RegisterController extends Controller
      * @var string
      */
     public function redirectTo()     
-    {         return route('users.show' , auth()->id());    
-     }
+    {         
+        return route('users.show' , auth()->id());    
+    }
+
+    public function showRegistrationForm()
+    {
+        $tipologies = Tipology::all();
+
+        return view('auth.register', compact('tipologies'));
+    }
 
     
 
@@ -76,7 +85,10 @@ class RegisterController extends Controller
         // creazione dello slug 
         $data['slug'] = User::getUniqueSlug($data['business_name']);
 
-        return User::create([
+        // recupero tipologie 
+        $tipologies = Tipology::all();
+
+        $user_data = [
             'business_name' => $data['business_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -85,6 +97,15 @@ class RegisterController extends Controller
             'phone_number' => $data['phone_number'],
             'cover' => $data['cover'],
             'slug' => $data['slug'],
-        ]);
+        ];
+
+        $user = User::create($user_data);  
+        $user->tipologies()->sync($data['tipologies']); 
+
+        return $user;
+
+        // $user = new User();
+        // $user->fill($data);
+        // $user->save();
     }
 }

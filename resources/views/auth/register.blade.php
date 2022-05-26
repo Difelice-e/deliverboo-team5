@@ -125,6 +125,19 @@
                             </div>
                         </div>
 
+                        {{-- tipologies  --}}
+                        
+                            <div class="form-group form-check row">
+                                <label for="tipology" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
+                                @foreach ($tipologies as $tipology)
+                                <div class="col-md-3">
+                                    <input type="checkbox" class="form-check-input" value="{{$tipology->id}}" name="tipologies[]" id="tipology-{{$tipology->id}}">
+                                    <label class="form-check-label" for="tipologies-{{$tipology->id}}">{{$tipology->name}}</label>
+                                </div>
+                                @endforeach
+                            </div>
+                        
+
                         {{-- submit button  --}}
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

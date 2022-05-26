@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\Tipology;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
@@ -17,7 +18,9 @@ class UserSeeder extends Seeder
     public function run(Faker $faker)
     {
         $users = Config::get('users');
-
+        
+        $tipologies = Tipology::all();
+        $tipologiesId = $tipologies->pluck('id')->all();
 
         foreach ($users as $utente) {
             $user = new User();
@@ -31,7 +34,11 @@ class UserSeeder extends Seeder
             $user->vat_number = $faker->randomNumber(9,true);
             $user->slug = Str::slug($utente['business_name']);
 
+            $randomInt = $faker->numberBetween(1,3);
+            $randomTipologies = $faker->randomElements($tipologiesId,$randomInt);
+
             $user->save();
+            $user->tipologies()->attach($randomTipologies);
         }
     }
 }
