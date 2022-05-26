@@ -11004,3 +11004,8 @@ footer a {
   font-weight: 800;
 }
 
+footer ul li a:hover {
+  color: currentColor;
+  text-decoration: none;
+}
+
