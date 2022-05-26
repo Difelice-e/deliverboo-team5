@@ -10977,3 +10977,30 @@ a.text-dark:focus {
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
+.bg-darkGrayGv {
+  background-color: #1d1d1d;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.list-footer {
+  line-height: 40px;
+}
+
+.list-footer li:first-child,
+.title-list {
+  font-size: 21px;
+  font-weight: 800;
+}
+
