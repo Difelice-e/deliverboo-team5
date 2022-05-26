@@ -11001,3 +11001,35 @@ a.text-dark:focus {
   width: 100%;
 }
 
+.bg-darkGrayGv {
+  background-color: #1d1d1d;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.list-footer {
+  line-height: 40px;
+}
+
+.list-footer li:first-child,
+.title-list {
+  font-size: 21px;
+  font-weight: 800;
+}
+
+footer ul li a:hover {
+  color: currentColor;
+  text-decoration: none;
+}
+

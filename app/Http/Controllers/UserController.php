@@ -17,7 +17,8 @@ class UserController extends Controller
         $users = User::get();
 
         // da creare la vista
-        // return view('users.index');
+        // // return view('users.index');
+        // return view('admin.home.index',compact('users'));
     }
 
     /**
@@ -27,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        //
     }
 
     /**
@@ -46,29 +47,34 @@ class UserController extends Controller
         //     'category_id' => 'nullable|exists:categories,id'
         // ]);
 
-        $data = $request->all();
+        // $data = $request->all();
+
 
         // creazione dello slug
-        $slug = User::getUniqueSlug($data['business_name']);
+        // $slug = User::getUniqueSlug($data['business_name']);
 
-        $user = new User();
-        $user->fill($data);
-        $user->slug = $slug;
+        // $user = new User();
+        // $user->fill($data);
+        // $user->slug = $slug;
 
-        $user->save();
 
-        return redirect()->route('admin.users.show');
+        // $user->save();
+
+
+        // return redirect()->route('admin.users.show');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        $users = User::findOrFail($id);
+
+        return view('admin.users.show',compact('users'));
     }
 
     /**
@@ -79,7 +85,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.users.edit');
+        //
     }
 
     /**

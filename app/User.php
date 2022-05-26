@@ -22,7 +22,7 @@ class User extends Authenticatable
         while ($user_present) {
             $slug = $slug_base . '-' . $counter;
             $counter++;
-            $user_present = Post::where('slug',$slug)->first();
+            $user_present = User::where('slug',$slug)->first();
         }
 
         return $slug;
@@ -43,7 +43,12 @@ class User extends Authenticatable
         'street_address',
         'phone_number',
         'cover',
+        'slug'
     ];
+
+    public function tipologies() {
+        return $this->belongsToMany('App\Tipology');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
