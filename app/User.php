@@ -43,6 +43,7 @@ class User extends Authenticatable
         'street_address',
         'phone_number',
         'cover',
+        'slug'
     ];
 
     /**
