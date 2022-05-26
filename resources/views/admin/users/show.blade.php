@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-qui va la homepage
+
+@dd($users)
+
 @endsection

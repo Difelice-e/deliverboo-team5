@@ -1,0 +1,25 @@
+.bg-darkGrayGv {
+    background-color: $darkGrayGv;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer li {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.list-footer {
+    line-height: 40px;
+}
+
+.list-footer li:first-child, .title-list {
+    font-size: 21px;
+    font-weight: 800;
+}
