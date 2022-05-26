@@ -23,3 +23,8 @@ footer a {
     font-size: 21px;
     font-weight: 800;
 }
+
+footer ul li a:hover {
+    color: currentColor;
+    text-decoration: none;
+}
