@@ -16,8 +16,8 @@ class UserController extends Controller
     {
         $users = User::get();
 
-        // da creare la vista 
-        // return view('users.index'); 
+        // da creare la vista
+        // return view('users.index');
     }
 
     /**
@@ -38,7 +38,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // da fare le validazioni ---- 
+        // da fare le validazioni ----
         // $request->validate([
         //     'title' => 'required|max:150',
         //     'content' => 'required',
@@ -48,14 +48,14 @@ class UserController extends Controller
 
         $data = $request->all();
 
-        // creazione dello slug 
+        // creazione dello slug
         $slug = User::getUniqueSlug($data['business_name']);
 
         $user = new User();
         $user->fill($data);
         $user->slug = $slug;
 
-        $post->save();
+        $user->save();
 
         return redirect()->route('admin.users.show');
     }
