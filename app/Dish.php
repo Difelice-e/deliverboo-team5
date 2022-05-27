@@ -12,6 +12,11 @@ class Dish extends Model
         return $this->belongsTo('App\User');
     }
 
+    // relazione con ordini
+    public function orders() {
+        return $this->belongsToMany('App\Order');
+    }
+
     // generazione slug 
     public static function getUniqueSlug($name) {
         $slug =Str::slug($name);
