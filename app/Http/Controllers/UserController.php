@@ -12,13 +12,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)
     {
         $users = User::get();
-
-        // da creare la vista
-        // // return view('users.index');
-        // return view('admin.home.index',compact('users'));
+        return view('admin.users.index', compact('users'));
     }
 
     /**

@@ -31,8 +31,9 @@ class RegisterController extends Controller
      * @var string
      */
     public function redirectTo()     
-    {         
-        return route('users.show' , auth()->id());    
+    {    
+        $users = User::where('id', auth()->id())->first();   
+        return route('users.index' , compact('users') );    
     }
 
     public function showRegistrationForm()
