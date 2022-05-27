@@ -56,6 +56,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Dish');
     }
 
+
     /**
      * The attributes that should be hidden for arrays.
      *
