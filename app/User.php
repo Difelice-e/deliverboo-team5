@@ -46,8 +46,14 @@ class User extends Authenticatable
         'slug'
     ];
 
+    // relazione con tipologie
     public function tipologies() {
         return $this->belongsToMany('App\Tipology');
+    }
+
+    // relazione con piatti
+    public function dishes(){
+        return $this->hasMany('App\Dish');
     }
 
     /**
