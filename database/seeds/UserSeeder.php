@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
     public function run(Faker $faker)
     {
         $users = Config::get('users');
-        
+
         $tipologies = Tipology::all();
         $tipologiesId = $tipologies->pluck('id')->all();
 
