@@ -14,7 +14,7 @@ class Dish extends Model
 
     // relazione con ordini
     public function orders() {
-        return $this->belongsToMany('App\Order');
+        return $this->belongsToMany('App\Order')->withPivot('quantity');
     }
 
     // generazione slug 
