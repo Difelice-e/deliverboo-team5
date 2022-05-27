@@ -13,8 +13,9 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+    
+        return view('admin.dishes.index', compact('dishes'));
     }
 
     /**
@@ -24,7 +25,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

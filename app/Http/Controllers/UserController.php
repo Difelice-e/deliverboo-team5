@@ -14,8 +14,8 @@ class UserController extends Controller
      */
     public function index(User $user)
     {
-        $user = User::where('id', auth()->id())->first();  
-        return view('admin.users.index', compact('user'));
+        $user = User::where('id', auth()->id())->first()->with('dishes');  
+        return view('admin.users.index', compact('user','dishes'));
     }
 
     /**
