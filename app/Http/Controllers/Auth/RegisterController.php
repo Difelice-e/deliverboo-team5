@@ -31,9 +31,8 @@ class RegisterController extends Controller
      * @var string
      */
     public function redirectTo()     
-    {    
-        $users = User::where('id', auth()->id())->first();   
-        return route('users.index' , compact('users') );    
+    {      
+        return route('users.index');    
     }
 
     public function showRegistrationForm()
@@ -104,9 +103,5 @@ class RegisterController extends Controller
         $user->tipologies()->sync($data['tipologies']); 
 
         return $user;
-
-        // $user = new User();
-        // $user->fill($data);
-        // $user->save();
     }
 }

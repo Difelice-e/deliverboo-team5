@@ -2,6 +2,6 @@
 
 @section('content')
 
-@dd($users)
+<h1>{{$user->business_name}}</h1>
 
 @endsection
