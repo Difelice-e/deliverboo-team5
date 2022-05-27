@@ -96,8 +96,79 @@
             @yield('content')
         </main>
 
-        <footer>
-            qui andrà il footer
+        <footer class="bg-darkGrayGv text-white">
+            <div class="container py-5">
+                <div class="row pb-5">
+                    <div class="col-12">
+                        <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    </div>
+                </div>
+                <div class="row pb-5">
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <ul class="list-footer">
+                            <li>Uniamo le forze</li>
+                            <li><a href="#">Lavora con noi</a></li>
+                            <li><a href="#">Glovo con i partner</a></li>
+                            <li><a href="#">Corrieri</a></li>
+                            <li><a href="#">Glovo Business</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <ul class="list-footer">
+                            <li>Link di interesse</li>
+                            <li><a href="#">Chi siamo</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contattaci</a></li>
+                            <li><a href="#">Sicurezza</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <ul class="list-footer">
+                            <li>Seguici</li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <ul class="text-uppercase">
+                            <li><a href="#">Termini e condizioni</a></li>
+                            <li><a href="#">Politica sulla privacy</a></li>
+                            <li><a href="#">Politica sui cookie</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row pb-5">
+                    <div class="col-12">
+                        <h4 class="title-list">I brand piu richiesti</h4>
+                        <ul class="d-flex g-3 brand-list pt-3">
+                            <li class="pr-4"><a href="#">McDonald's</a></li>
+                            <li class="pr-4"><a href="#">Burger King</a></li>
+                            <li class="pr-4"><a href="#">KFC</a></li>
+                            <li><a href="#">Carrefour</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row pb-5">
+                    <div class="col-12">
+                        <h4 class="title-list">Categorie più richieste</h4>
+                        <ul class="d-flex brand-list pt-3">
+                            <li class="pr-4"><a href="#">Hamburger</a></li>
+                            <li class="pr-4"><a href="#">Pizza</a></li>
+                            <li><a href="#">Sushi</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <select name="" id="" class="custom-select bg-darkGrayGv text-white py-2 px-2">
+                            <option value="">Italiano</option>
+                            <option value="">Inglese</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 </body>
