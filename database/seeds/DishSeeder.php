@@ -16,21 +16,22 @@ class DishSeeder extends Seeder
     {
         
         $dishes = Config::get('dishes');
-            foreach ($dishes as $piatto) {
+        
+        foreach ($dishes as $piatto) {
 
-                $dish = new Dish();
+            $dish = new Dish();
                     
-                $dish->name = $piatto['name'];
-                $dish->slug = Str::slug($piatto['name']);
-                $dish->cover = $piatto['cover'];
-                $dish->ingredients = $piatto['ingredients'];
-                $dish->description = $piatto['description'];
-                $dish->price = $piatto['price'];
-                $dish->visible = $piatto['visible'];
-                $dish->user_id = $piatto['user_id'];
+            $dish->name = $piatto['name'];
+            $dish->slug = Str::slug($piatto['name']);
+            $dish->cover = $piatto['cover'];
+            $dish->ingredients = $piatto['ingredients'];
+            $dish->description = $piatto['description'];
+            $dish->price = $piatto['price'];
+            $dish->visible = $piatto['visible'];
+            $dish->user_id = $piatto['user_id'];
                 
-                $dish -> save();
-            }
+            $dish -> save();
+        }
     }
 }
 
