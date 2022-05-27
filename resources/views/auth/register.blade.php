@@ -126,7 +126,7 @@
                         </div>
 
                         {{-- tipologies  --}}
-                        
+
                             <div class="form-group form-check row">
                                 <label for="tipology" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
                                 @foreach ($tipologies as $tipology)
@@ -136,7 +136,7 @@
                                 </div>
                                 @endforeach
                             </div>
-                        
+
 
                         {{-- submit button  --}}
                         <div class="form-group row mb-0">
