@@ -5,6 +5,7 @@ use Faker\Generator as Faker;
 use App\Order;
 use App\User;
 use App\Dish;
+use Illuminate\Support\Facades\DB;
 
 class OrderSeeder extends Seeder
 {
@@ -29,7 +30,7 @@ class OrderSeeder extends Seeder
             $order->customer_phone = $faker->e164PhoneNumber();
             
             // recupero id piatti
-            $dishes = Dish::with('user_id',$order->user_id);
+            $dishes = Dish::where('user_id',$order->user_id);
             $dishesId = $dishes->pluck('id')->all();
 
             // generazione random piatti
@@ -44,7 +45,14 @@ class OrderSeeder extends Seeder
 
             // inserimento piatti in tabella
             $order->dishes()->attach($randomDishes);
-            $order->dishes()->quantity = 2;
+
+            
+            // // $order->pivot->quantity = 2;
+            // DB::table('dish_order')->insert([
+            //     'dish_id' => [$randomDishes],
+            //     'quantity' => 2 
+            // ]);
+       
             
         }
     }
