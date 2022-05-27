@@ -29,8 +29,10 @@ class LoginController extends Controller
      */
  
     public function redirectTo()     
-    {         return route('users.show' , auth()->id());    
-     }
+    {
+        $users = User::where('id', auth()->id())->first();   
+        return view('admin.users.index', compact('users')); 
+    }
 
     
     
