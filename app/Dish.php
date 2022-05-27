@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Dish extends Model
 {
@@ -12,18 +13,18 @@ class Dish extends Model
     }
 
     // generazione slug 
-    public static function getUniqueSlug($business_name) {
-        $slug = Str::slug($business_name);
+    public static function getUniqueSlug($name) {
+        $slug =Str::slug($name);
         $slug_base = $slug;
         
         $counter = 1;
 
-        $user_present = User::where('slug',$slug)->first();
+        $dish_present = dish::where('slug',$slug)->first();
         
-        while ($user_present) {
+        while ($dish_present) {
             $slug = $slug_base . '-' . $counter;
             $counter++;
-            $user_present = User::where('slug',$slug)->first();
+            $dish_present = dish::where('slug',$slug)->first();
         }
 
         return $slug;
