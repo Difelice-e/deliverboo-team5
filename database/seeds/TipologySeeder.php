@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Tipology;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 
@@ -15,7 +15,7 @@ class TipologySeeder extends Seeder
     public function run()
     {
         $tipologies = Config::get('tipologies');
-        
+
         foreach ($tipologies as $tipologia) {
             $tipology = new Tipology();
             $tipology->name = $tipologia['name'];

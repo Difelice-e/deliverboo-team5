@@ -28,3 +28,7 @@ Route::middleware('auth')
         Route::resource('dishes', 'DishController');
 });
 
+// rotte di vue
+Route::fallback(function () {
+    return view('layouts.app');
+});
