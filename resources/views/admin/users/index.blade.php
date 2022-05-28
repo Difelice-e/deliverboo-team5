@@ -13,8 +13,8 @@
     <p>Numero Telefono: {{$user->phone_number}}</p>
     <p>Data Iscrizione: {{$user->created_at}}</p>
     <div class="d-flex">
-        <button class="btn btn-primary mr-3">Menù</button>
-        <button class="btn btn-primary">Ordini</button>
+        <a href={{route('admin.dishes.index')}} class="btn btn-primary mr-3">Menù</a>
+        <a class="btn btn-primary">Ordini</a>
     </div>
 </div>
 

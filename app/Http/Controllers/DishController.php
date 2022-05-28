@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Dish;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DishController extends Controller
 {
@@ -14,7 +16,8 @@ class DishController extends Controller
      */
     public function index()
     {   
-        $dishes = Dish::orderBy('created_at','asc')->limite(20)->get();
+        
+        $dishes = Dish::where('user_id', Auth::id())->orderBy('created_at','asc')->get();
 
         return view('admin.dishes.index', compact('dishes'));
     }
@@ -26,7 +29,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        
+        return view('admin.dishes.create');
     }
 
     /**
@@ -37,7 +40,28 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:100',
+            'cover' => 'url|image',
+            'description' => 'string|nullable',
+            'ingredients' => 'string|required',
+            'price' => 'numeric',
+            'visibility' => 'boolean',
+            'user_id' => 'numeric',
+        ]);
+
+        $data = $request->all();
+
+        $slug = Dish::getUniqueSlug($data['title']);
+
+        $dish = new Dish();
+        $dish->fill($data);
+        $dish->slug = $slug;
+        $dish->user_id = Auth::id();
+
+        $dish->save();
+
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
@@ -59,7 +83,8 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        //
+        $user = Auth::user();
+        return view('admin.dishes.edit', compact('dish'));
     }
 
     /**
@@ -71,7 +96,25 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:100',
+            'cover' => 'nullable',
+            'description' => 'string',
+            'ingredients' => 'string',
+            'price' => 'numeric',
+            'visibility' => 'boolean',
+        ]);
+        
+        // dd($product);
+        $data = $request->all();
+
+        if( $dish->name != $data['name'] ){
+            $slug = Dish::getUniqueSlug($data['name']);
+            $data['slug'] = $slug;
+        };
+        
+        $dish->update($data);
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
@@ -82,6 +125,8 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+
+        return redirect()->route('admin.dishes.index');
     }
 }

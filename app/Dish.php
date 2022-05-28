@@ -6,7 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Dish extends Model
-{
+{   
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 
+        'slug',
+        'description',
+        'ingredients',
+        'cover',
+        'price',
+        'visible',
+    ];
+
     // relazione con utenti
     public function users(){
         return $this->belongsTo('App\User');
