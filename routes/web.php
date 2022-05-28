@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('users', 'UserController');
-
 Auth::routes();
+
+Route::middleware('auth')
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function() {
+        Route::resource('users', 'UserController');
+        Route::resource('dishes', 'DishController');
+});
 

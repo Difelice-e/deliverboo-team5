@@ -30,7 +30,7 @@ class LoginController extends Controller
  
     public function redirectTo()     
     {
-        return route('users.index'); 
+        return route('admin.users.index'); 
     }
 
     

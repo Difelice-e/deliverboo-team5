@@ -32,12 +32,12 @@ class RegisterController extends Controller
      */
     public function redirectTo()     
     {      
-        return route('users.index');    
+        return route('admin.users.index');    
     }
 
     public function showRegistrationForm()
     {
-        $tipologies = Tipology::all();
+        $tipologies = Tipology::orderBy('name','asc')->get();
 
         return view('auth.register', compact('tipologies'));
     }
@@ -70,7 +70,8 @@ class RegisterController extends Controller
             'street_address' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'numeric', 'digits_between:6,10'],
             // da finire validazione cover 
-            'cover' => ['string', 'max:255']
+            'cover' => ['nullable'],
+            'typology_id' => ['exist:types,id'],
         ]);
     }
 

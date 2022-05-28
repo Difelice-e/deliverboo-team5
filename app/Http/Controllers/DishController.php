@@ -14,7 +14,8 @@ class DishController extends Controller
      */
     public function index()
     {   
-    
+        $dishes = Dish::orderBy('created_at','asc')->limite(20)->get();
+
         return view('admin.dishes.index', compact('dishes'));
     }
 
