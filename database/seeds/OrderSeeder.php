@@ -28,7 +28,12 @@ class OrderSeeder extends Seeder
             $order->customer_email = $faker->email();
             $order->street_address = $faker->streetAddress();
             $order->customer_phone = $faker->e164PhoneNumber();
-            
+            $order->total_price = $faker->randomNumber(2,false);
+            $order->delivery_time = null;
+            $order->delivered = $faker->boolean();
+
+            $order->save();
+
             // recupero id piatti
             $dishes = Dish::where('user_id',$order->user_id);
             $dishesId = $dishes->pluck('id')->all();
@@ -36,23 +41,29 @@ class OrderSeeder extends Seeder
             // generazione random piatti
             $randomInt = $faker->numberBetween(1,2);
             $randomDishes = $faker->randomElements($dishesId,$randomInt);
-
-            $order->total_price = $faker->randomNumber(3,false);
-            $order->delivery_time = null;
-            $order->delivered = $faker->boolean();
-
-            $order->save();
-
-            // inserimento piatti in tabella
-            $order->dishes()->attach($randomDishes);
+            
+            // ciclo creazione righe tabella pivot
+            foreach ($randomDishes as $randomDish) {
+                DB::table('dish_order')->insert([
+                    'dish_id' => $randomDish,
+                    'order_id' => $order->id,
+                    'quantity' => $faker->numberBetween(1,3) 
+                ]);
+            }
+            
+            // $ordered = Order::where('id',$order->id)->get();
+            // $orderedDishesId[] = $ordered->pivot->dish_id;
+            
+            // foreach ($orderedDishesId as $orderedDishId) {
+            //     $orderedDish = Dish::where('id',$orderedDishId);
+            //     $dishPrice = $orderedDish->price * $orderedDish->pivot->quantity;
+                
+            //     $totalDishPrice += $dishPrice;
+            //     $order->totalPrice = $totalDishPrice;
+            // }
 
             
-            // // $order->pivot->quantity = 2;
-            // DB::table('dish_order')->insert([
-            //     'dish_id' => [$randomDishes],
-            //     'quantity' => 2 
-            // ]);
-       
+            // $order->update($order->totalPrice);
             
         }
     }
