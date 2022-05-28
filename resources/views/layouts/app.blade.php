@@ -90,6 +90,7 @@
 
         <main class="py-4">
             @yield('content')
+            <div id="root"> </div>
         </main>
 
         <footer class="bg-darkGrayGv text-white">
@@ -167,6 +168,9 @@
             </div>
         </footer>
     </div>
+
+    <!-- Scripts Vue-->
+    <script src="{{ asset('js/front.js') }}"></script>
 </body>
 
 </html>
