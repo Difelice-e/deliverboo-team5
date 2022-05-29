@@ -32,7 +32,7 @@
                         <span class="rounded-pill bg-warning p-2">Undelivered</span>
              
                           
-                          </div>
+                     
                     </td>
                     @else
                     <td>

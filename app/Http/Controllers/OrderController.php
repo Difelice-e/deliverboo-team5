@@ -14,9 +14,15 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $orders = Order::where('user_id', Auth::id())->orderBy('created_at','asc')->get();
+        $orders = Order::with('dishes')
+        ->where('user_id', Auth::id())
+        ->orderBy('created_at','asc')
+        ->get();
+
+        
       
 
 
@@ -54,9 +60,16 @@ class OrderController extends Controller
     {
         
         $dishes = Dish::all();
+        $total = 0;
+        foreach ($order->dishes as $dish){
+                
+            
+            $sum = $dish->price * $dish->pivot->quantity;
+            $total += $sum;
+            }
 
 
-        return view('admin.orders.SHOW', compact('order','dishes'));
+        return view('admin.orders.SHOW', compact('order','dishes','total'));
     }
 
     /**

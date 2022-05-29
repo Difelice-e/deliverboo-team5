@@ -51,15 +51,39 @@
                     <td>€{{ $dish->price }}</td>
                   
                 </tr>
+                @endforeach
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{{ $total }} €</td>
+                </tr>
+                
+                
+                
+                
+                
+                
+                    
+                
+
+
+
+                
            
         </tbody>
-        @endforeach
+       
+        
 
     </table>
       
 
     <td>
-        <a class="btn btn-small btn-secondary" href="{{route('admin.orders.index',$order)}}">Index</a>
+        <a class="btn btn-small btn-secondary" href="{{route('admin.orders.index',$order)}}"> &#9664;</a>
     </td>
  
     
