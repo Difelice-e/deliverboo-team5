@@ -29,6 +29,7 @@
                     @if ($order->delivered == 0)
                     <td>
                         <span class="rounded-pill bg-warning p-2">Undelivered</span>
+
                     </td>
                     @else
                     <td>
