@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}">
                         @csrf
 
                         {{-- business name  --}}
@@ -115,7 +115,7 @@
                             <label for="cover" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Profilo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cover" type="text" class="form-control @error('cover') is-invalid @enderror" name="cover" value="{{ old('cover') }}" required autocomplete="cover" autofocus>
+                                <input id="cover" type="file" class="@error('cover') is-invalid @enderror" name="cover" value="{{ old('cover') }}" autocomplete="cover" autofocus>
 
                                 @error('cover')
                                     <span class="invalid-feedback" role="alert">
@@ -127,15 +127,15 @@
 
                         {{-- tipologies  --}}
 
-                            <div class="form-group form-check row">
-                                <label for="tipology" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
-                                @foreach ($tipologies as $tipology)
-                                <div class="col-md-3">
-                                    <input type="checkbox" class="form-check-input" value="{{$tipology->id}}"{{ (is_array(old('tipologies')) && in_array($tipology->id, old('tipologies'))) ? ' checked' : '' }} name="tipologies[]" id="tipology-{{$tipology->id}}">
-                                    <label class="form-check-label" for="tipologies-{{$tipology->id}}">{{$tipology->name}}</label>
-                                </div>
-                                @endforeach
+                        <div class="form-group form-check row">
+                            <label for="tipology" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
+                            @foreach ($tipologies as $tipology)
+                            <div class="col-md-3">
+                                <input type="checkbox" class="form-check-input" value="{{$tipology->id}}"{{ (is_array(old('tipologies')) && in_array($tipology->id, old('tipologies'))) ? ' checked' : '' }} name="tipologies[]" id="tipology-{{$tipology->id}}">
+                                <label class="form-check-label" for="tipologies-{{$tipology->id}}">{{$tipology->name}}</label>
                             </div>
+                            @endforeach
+                        </div>
 
 
                         {{-- submit button  --}}

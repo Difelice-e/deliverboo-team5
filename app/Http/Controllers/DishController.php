@@ -6,6 +6,7 @@ use App\Dish;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -46,11 +47,17 @@ class DishController extends Controller
             'description' => 'string|nullable',
             'ingredients' => 'string|required',
             'price' => 'numeric',
+            'cover' => 'file|image|nullable',
             'visibility' => 'boolean',
             'user_id' => 'numeric',
         ]);
 
         $data = $request->all();
+
+        if(array_key_exists('cover', $data)) {
+            $cover_path = Storage::put('uploads', $data['cover']);
+            $data['cover'] = $cover_path;
+        };
 
         $slug = Dish::getUniqueSlug($data['name']);
 

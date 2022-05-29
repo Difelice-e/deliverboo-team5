@@ -68,9 +68,8 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'vat_number' => ['required', 'string', 'digits:11', 'numeric'],
             'street_address' => ['required', 'string', 'max:255'],
-            'phone_number' => ['required', 'numeric', 'digits_between:6,10'],
-            // da finire validazione cover 
-            'cover' => ['nullable'],
+            'phone_number' => ['required', 'numeric', 'digits_between:6,10'], 
+            'cover' => ['file', 'image', 'nullable'],
             'typology_id' => ['exist:types,id'],
         ]);
     }
@@ -96,9 +95,9 @@ class RegisterController extends Controller
             'vat_number' => $data['vat_number'],
             'street_address' => $data['street_address'],
             'phone_number' => $data['phone_number'],
-            'cover' => $data['cover'],
             'slug' => $data['slug'],
         ];
+
 
         $user = User::create($user_data);  
         $user->tipologies()->sync($data['tipologies']); 
