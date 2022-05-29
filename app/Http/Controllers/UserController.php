@@ -37,29 +37,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // da fare le validazioni ----
-        // $request->validate([
-        //     'title' => 'required|max:150',
-        //     'content' => 'required',
-        //     'published_at' => 'nullable|date|before_or_equal:today',
-        //     'category_id' => 'nullable|exists:categories,id'
-        // ]);
-
-        // $data = $request->all();
-
-
-        // creazione dello slug
-        // $slug = User::getUniqueSlug($data['business_name']);
-
-        // $user = new User();
-        // $user->fill($data);
-        // $user->slug = $slug;
-
-
-        // $user->save();
-
-
-        // return redirect()->route('admin.users.show');
+        //
     }
 
     /**

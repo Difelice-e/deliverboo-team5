@@ -24,8 +24,6 @@ class OrderController extends Controller
 
         
       
-
-
         return view('admin.orders.index', compact('orders'));
     }
 
@@ -58,7 +56,6 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        
         $dishes = Dish::all();
         $total = 0;
         foreach ($order->dishes as $dish){
@@ -70,6 +67,9 @@ class OrderController extends Controller
 
 
         return view('admin.orders.SHOW', compact('order','dishes','total'));
+
+ 
+
     }
 
     /**
