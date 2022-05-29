@@ -8,7 +8,7 @@
     {{-- nome --}}
     <div class="mb-3">
       <label for="name" class="form-label">Nome</label>
-      <input type="text" class="form-control @error('name') is-invalid @enderror" value=" {{old('name')}} " name="name" id="name">
+      <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}" name="name" id="name">
       @error('name')
           <div class="invalid-feedback"> {{$message}} </div>
       @enderror
@@ -17,7 +17,7 @@
     {{-- descrizione --}}
     <div class="mb-3">
       <label for="description" class="form-label">Descrizione</label>
-      <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="3"> {{old('description')}} </textarea>
+      <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description" rows="3">{{old('description')}}</textarea>
       @error('description')
           <div class="invalid-feedback"> {{$message}} </div>
       @enderror
@@ -26,7 +26,7 @@
     {{-- ingredienti --}}
     <div class="mb-3">
         <label for="ingredients" class="form-label">Ingredienti</label>
-        <textarea class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" id="ingredients" rows="3"> {{old('ingredients')}} </textarea>
+        <textarea class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" id="ingredients" rows="3">{{old('ingredients')}}</textarea>
         @error('ingredients')
             <div class="invalid-feedback"> {{$message}} </div>
         @enderror
@@ -35,15 +35,15 @@
     {{-- prezzo --}}
     <div class="mb-3">
       <label for="price" class="form-label">Prezzo</label>
-      <input type="text" class="form-control @error('price') is-invalid @enderror" value=" {{old('price')}} " name="price" id="price">
+      <input type="text" class="form-control @error('price') is-invalid @enderror" value="{{old('price')}}" name="price" id="price">
       @error('price')
           <div class="invalid-feedback"> {{$message}} </div>
       @enderror
     </div>
 
     {{-- cover --}}
-    <label class="d-block" for="cover">Cover piatto</label>
-    <input class="d-block my-3" type="file" name="cover">
+    {{-- <label class="d-block" for="cover">Cover piatto</label>
+    <input class="d-block my-3" type="file" name="cover"> --}}
 
     {{-- visibile --}}
     <div class="form-group">
