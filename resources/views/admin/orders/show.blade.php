@@ -17,14 +17,10 @@
         </thead>
         <tbody>
             
-                <tr>
-                    
+                <tr>  
                     <td>{{$order->created_at}}</td>
                     <td>{{$order->street_address}}</td>
                     <td>{{$order->customer_name}}</td>
-                    
-           
-                  
                 </tr>
            
         </tbody>
@@ -36,22 +32,17 @@
         <thead>
             <tr>
                 <th scope="col">Quantity</th>
-        
                 <th scope="col">Nome</th>
                 <th scope="col">Prezzo</th>
             </tr>
         </thead>
         @foreach($order->dishes as $dish)
         <tbody>
-            
                 <tr>
                     <td>{{ $dish->pivot->quantity }}</td>
-                    
                     <td>{{ $dish->name }}</td>
                     <td>€{{ $dish->price }}</td>
-                  
                 </tr>
-           
         </tbody>
         @endforeach
 

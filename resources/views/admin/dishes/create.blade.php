@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-  <form action="{{route('admin.dishes.store')}}" method="POST">
+  <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     
     {{-- nome --}}
@@ -42,9 +42,14 @@
     </div>
 
     {{-- cover --}}
-    {{-- <label class="d-block" for="cover">Cover piatto</label>
-    <input class="d-block my-3" type="file" name="cover"> --}}
-
+    <div class="mb-3">
+      <label class="d-block" for="cover">Cover piatto</label>
+      <input class="@error('price') is-invalid @enderror" type="file" name="cover" id="cover" value="{{old('cover')}}">
+      @error('cover')
+          <div class="invalid-feedback"> {{$message}} </div>
+      @enderror
+    </div>
+    
     {{-- visibile --}}
     <div class="form-group">
         <label for="visibility">Visibilità</label>
@@ -52,10 +57,11 @@
             <option {{ old('1') == '1'? 'selected' : '' }} value="1">Visibile</option>
             <option {{ old('0') == '0'? 'selected' : '' }} value="0">Non visibile</option>
         </select>
+        @error('visibility')
+          <div class="invalid-feedback">{{$message}}</div>
+        @enderror
     </div>
-    @error('visibility')
-        <div class="invalid-feedback">{{$message}}</div>
-    @enderror
+    
     
     <button type="submit" class="btn btn-primary">Crea</button>
   </form>
