@@ -14,7 +14,7 @@
     <p>Data Iscrizione: {{$user->created_at}}</p>
     <div class="d-flex">
         <a href={{route('admin.dishes.index')}} class="btn btn-primary mr-3">Menù</a>
-        <a class="btn btn-primary">Ordini</a>
+        <a href={{route('admin.orders.index')}} class="btn btn-primary">Ordini</a>
     </div>
 </div>
 

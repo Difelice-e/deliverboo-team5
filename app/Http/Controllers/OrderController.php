@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Dish;
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -14,7 +16,11 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::where('user_id', Auth::id())->orderBy('created_at','asc')->get();
+      
+
+
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**
@@ -46,7 +52,11 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        
+        $dishes = Dish::all();
+
+
+        return view('admin.orders.SHOW', compact('order','dishes'));
     }
 
     /**

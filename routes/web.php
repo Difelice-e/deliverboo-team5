@@ -26,6 +26,7 @@ Route::middleware('auth')
     ->group(function() {
         Route::resource('users', 'UserController');
         Route::resource('dishes', 'DishController');
+        Route::resource('orders', 'OrderController');
 });
 
 // rotte di vue

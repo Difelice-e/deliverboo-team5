@@ -52,7 +52,7 @@ class DishController extends Controller
 
         $data = $request->all();
 
-        $slug = Dish::getUniqueSlug($data['title']);
+        $slug = Dish::getUniqueSlug($data['name']);
 
         $dish = new Dish();
         $dish->fill($data);
