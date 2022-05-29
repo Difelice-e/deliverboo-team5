@@ -26,7 +26,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-goldGv shadow-sm position-relative">
+        <nav class="mb-5 navbar navbar-expand-md navbar-light bg-goldGv shadow-sm position-relative">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -77,7 +77,7 @@
                     </ul>
                 </div>
             </div>
-            <!-- <svg class="position-absolute svg-decoration" id="wave" style="transform:rotate(180deg); transition: 0.3s" viewBox="0 0 1440 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <svg class="position-absolute svg-decoration" id="wave" style="transform:rotate(180deg); transition: 0.3s" viewBox="0 0 1440 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
                         <stop stop-color="rgba(255, 194, 68, 1)" offset="0%"></stop>
@@ -85,15 +85,14 @@
                     </linearGradient>
                 </defs>
                 <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,10L10,13.3C20,17,40,23,60,36.7C80,50,100,70,120,65C140,60,160,30,180,15C200,0,220,0,240,13.3C260,27,280,53,300,68.3C320,83,340,87,360,78.3C380,70,400,50,420,35C440,20,460,10,480,10C500,10,520,20,540,33.3C560,47,580,63,600,58.3C620,53,640,27,660,26.7C680,27,700,53,720,61.7C740,70,760,60,780,53.3C800,47,820,43,840,48.3C860,53,880,67,900,75C920,83,940,87,960,83.3C980,80,1000,70,1020,55C1040,40,1060,20,1080,25C1100,30,1120,60,1140,75C1160,90,1180,90,1200,80C1220,70,1240,50,1260,45C1280,40,1300,50,1320,46.7C1340,43,1360,27,1380,23.3C1400,20,1420,30,1430,35L1440,40L1440,100L1430,100C1420,100,1400,100,1380,100C1360,100,1340,100,1320,100C1300,100,1280,100,1260,100C1240,100,1220,100,1200,100C1180,100,1160,100,1140,100C1120,100,1100,100,1080,100C1060,100,1040,100,1020,100C1000,100,980,100,960,100C940,100,920,100,900,100C880,100,860,100,840,100C820,100,800,100,780,100C760,100,740,100,720,100C700,100,680,100,660,100C640,100,620,100,600,100C580,100,560,100,540,100C520,100,500,100,480,100C460,100,440,100,420,100C400,100,380,100,360,100C340,100,320,100,300,100C280,100,260,100,240,100C220,100,200,100,180,100C160,100,140,100,120,100C100,100,80,100,60,100C40,100,20,100,10,100L0,100Z"></path>
-            </svg> -->
+            </svg>
         </nav>
 
-        <main class="py-4">
+        <main class="my-5 py-5">
             @yield('content')
-            <div id="root"> </div>
         </main>
 
-        <footer class="bg-darkGrayGv text-white">
+        <footer class=" bg-darkGrayGv text-white">
             <div class="container py-5">
                 <div class="row pb-5">
                     <div class="col-12">

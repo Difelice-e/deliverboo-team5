@@ -1,5 +1,8 @@
 <template>
-    <div>ciao pippo</div>
+    <div class="my-5">
+        <!-- rotte di vue -->
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>

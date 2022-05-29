@@ -18,8 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/home', 'Api\HomePageController@index');
-
 Route::namespace('Api')->group(function () {
 
     // creare una rotta per prendere il singolo posto

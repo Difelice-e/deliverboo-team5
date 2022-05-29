@@ -31,5 +31,5 @@ Route::middleware('auth')
 
 // rotte di vue
 Route::fallback(function () {
-    return view('layouts.app');
+    return view('home');
 });
