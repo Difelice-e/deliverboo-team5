@@ -58,7 +58,10 @@
     </table>
       
 
-    
+    <td>
+        <a class="btn btn-small btn-secondary" href="{{route('admin.orders.index',$order)}}">Index</a>
+    </td>
+ 
     
 </div>
 

@@ -29,7 +29,7 @@
                     @if ($order->delivered == 0)
                     <td>
 
-                        <span class="btn btn-small btn-warning active pointer-events:none">Undelivered</span>
+                        <span class="rounded-pill bg-warning p-2">Undelivered</span>
              
                           
                           </div>
@@ -37,7 +37,7 @@
                     @else
                     <td>
 
-                        <span class="btn btn-small btn-success active">Delivered</span>
+                        <span class=" rounded-pill bg-success p-2">Delivered</span>
                     </td>
                     @endif
                     <td>
