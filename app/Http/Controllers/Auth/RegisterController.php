@@ -9,6 +9,7 @@ use App\Tipology;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -88,16 +89,22 @@ class RegisterController extends Controller
         // recupero tipologie 
         $tipologies = Tipology::all();
 
+        // recupero path immagine
+        if(array_key_exists('cover', $data)) {
+            $cover_path = Storage::put('uploads', $data['cover']);
+            $data['cover'] = $cover_path;
+        };
+
         $user_data = [
             'business_name' => $data['business_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'cover' => $data['cover'],
             'vat_number' => $data['vat_number'],
             'street_address' => $data['street_address'],
             'phone_number' => $data['phone_number'],
             'slug' => $data['slug'],
         ];
-
 
         $user = User::create($user_data);  
         $user->tipologies()->sync($data['tipologies']); 
