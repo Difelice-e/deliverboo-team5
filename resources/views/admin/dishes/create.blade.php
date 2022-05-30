@@ -44,7 +44,7 @@
     {{-- cover --}}
     <div class="mb-3">
       <label class="d-block" for="cover">Cover piatto</label>
-      <input class="@error('cover') is-invalid @enderror" type="file" name="cover" id="cover" value="{{old('cover')}}">
+      <input class="@error('cover') is-invalid @enderror" accept=".jpg, .jpeg, .gif, .png, .svg" type="file" name="cover" id="cover" value="{{old('cover')}}">
       @error('cover')
           <div class="invalid-feedback"> {{$message}} </div>
       @enderror

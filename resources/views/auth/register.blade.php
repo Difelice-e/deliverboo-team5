@@ -115,7 +115,7 @@
                             <label for="cover" class="col-md-4 col-form-label text-md-right">{{ __('Immagine Profilo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cover" type="file" class="@error('cover') is-invalid @enderror" name="cover" value="{{ old('cover') }}" autocomplete="cover" autofocus>
+                                <input id="cover" type="file" accept=".jpg, .jpeg, .gif, .png, .svg" class="@error('cover') is-invalid @enderror" name="cover" value="{{ old('cover') }}" autocomplete="cover" autofocus>
 
                                 @error('cover')
                                     <span class="invalid-feedback" role="alert">
