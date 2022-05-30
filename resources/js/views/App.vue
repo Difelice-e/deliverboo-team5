@@ -1,6 +1,6 @@
 <template>
     <div class="my-5">
-        <!-- rotte di vue -->
+        <!-- questa e l'home page -->
         <router-view></router-view>
     </div>
 </template>
