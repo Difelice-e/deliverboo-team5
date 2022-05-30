@@ -4,6 +4,8 @@
 @section('content')
 
 <div class="container">
+    <a class="btn btn-primary" href="{{route('admin.dashboard.index')}}">Torna alla dashboard</a>
+    
     <table class="table">
         <thead>
             <tr>

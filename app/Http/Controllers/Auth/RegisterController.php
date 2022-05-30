@@ -33,7 +33,7 @@ class RegisterController extends Controller
      */
     public function redirectTo()     
     {      
-        return route('admin.users.index');    
+        return route('admin.dashboard.index');    
     }
 
     public function showRegistrationForm()

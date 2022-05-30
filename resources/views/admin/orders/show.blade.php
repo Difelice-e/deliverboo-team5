@@ -17,13 +17,9 @@
             <tbody>
 
                 <tr>
-
                     <td>{{ $order->created_at }}</td>
                     <td>{{ $order->street_address }}</td>
                     <td>{{ $order->customer_name }}</td>
-
-
-
                 </tr>
 
             </tbody>
@@ -45,7 +41,6 @@
 
                     <tr>
                         <td>{{ $dish->pivot->quantity }}</td>
-
                         <td>{{ $dish->name }}</td>
                         <td>€{{ $dish->price }}</td>
 

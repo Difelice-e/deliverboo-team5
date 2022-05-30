@@ -51,20 +51,6 @@ class OrderSeeder extends Seeder
                 ]);
             }
             
-            // $ordered = Order::where('id',$order->id)->get();
-            // $orderedDishesId[] = $ordered->pivot->dish_id;
-            
-            // foreach ($orderedDishesId as $orderedDishId) {
-            //     $orderedDish = Dish::where('id',$orderedDishId);
-            //     $dishPrice = $orderedDish->price * $orderedDish->pivot->quantity;
-                
-            //     $totalDishPrice += $dishPrice;
-            //     $order->totalPrice = $totalDishPrice;
-            // }
-
-            
-            // $order->update($order->totalPrice);
-            
         }
     }
 }

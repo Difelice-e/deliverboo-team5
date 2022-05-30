@@ -23,7 +23,7 @@ class DishSeeder extends Seeder
                     
             $dish->name = $piatto['name'];
             $dish->slug = Str::slug($piatto['name']);
-            $dish->cover = $piatto['cover'];
+            $dish->cover = null;
             $dish->ingredients = $piatto['ingredients'];
             $dish->description = $piatto['description'];
             $dish->price = $piatto['price'];
