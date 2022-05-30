@@ -17,7 +17,7 @@
                 <th scope="col">Cover</th>
                 <th scope="col">Ingredienti</th>
                 <th scope="col">Descrizione</th>
-                <th scope="col">Visibile</th>
+                <th scope="col">Visibilità</th>
                 <th scope="col">Prezzo</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -37,7 +37,15 @@
                     </td>
                     <td>{{ $dish->ingredients }}</td>
                     <td>{{ $dish->description }}</td>
-                    <td>{{ $dish->visible }}</td>
+                    @if ($dish->visible == 0)
+                        <td>
+                            <span class="rounded-pill bg-warning p-2 text-nowrap">Non Visibile</span>
+                        </td>
+                    @else
+                        <td>
+                            <span class=" rounded-pill bg-success p-2 text-nowrap">Visibile</span>
+                        </td>
+                    @endif
                     <td>€{{ $dish->price }}</td>
 
                     <td>
@@ -47,7 +55,7 @@
                         <form action="{{route('admin.dishes.destroy',$dish)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-small w-100 btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                            <button type="submit" class="btn btn-small w-100 btn-danger" onclick="return confirm('Sei sicuro di voler rimuovere questo piatto dal menù definitivamente?')">Cancella</button>
                         </form>
                     </td>
                 </tr>

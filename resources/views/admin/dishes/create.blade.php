@@ -52,12 +52,12 @@
     
     {{-- visibile --}}
     <div class="form-group">
-        <label for="visibility">Visibilità</label>
-        <select class="form-control" name="visibility" id="visibility">
+        <label for="visible">Visibilità</label>
+        <select class="form-control" name="visible" id="visible" value="{{old('visible')}}">
             <option {{ old('1') == '1'? 'selected' : '' }} value="1">Visibile</option>
             <option {{ old('0') == '0'? 'selected' : '' }} value="0">Non visibile</option>
         </select>
-        @error('visibility')
+        @error('visible')
           <div class="invalid-feedback">{{$message}}</div>
         @enderror
     </div>
