@@ -1,10 +1,30 @@
 <template>
     <div>
-      <ul>
-        <li v-for="tipology in tipologies" :key="tipology.id">
-          {{tipology.name}}
-        </li>
-      </ul>
+        <ul class="d-flex flex-wrap justify-content-center gap-card">
+            <router-link
+                tag="li"
+                :to="{
+                    name: 'tipologies.show',
+                    params: { slug: tipology.slug },
+                }"
+                v-for="tipology in tipologies"
+                :key="tipology.id"
+                class="cursor-pointer"
+            >
+                <div class="card">
+                    <img
+                        src="https://picsum.photos/300/150"
+                        class="card-img-top"
+                        alt=""
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title text-center">
+                            {{ tipology.name }}
+                        </h5>
+                    </div>
+                </div>
+            </router-link>
+        </ul>
     </div>
 </template>
 
@@ -35,4 +55,13 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.gap-card {
+    gap: 50px;
+    list-style-type: none;
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+}
+</style>
