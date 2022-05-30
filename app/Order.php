@@ -11,9 +11,12 @@ class Order extends Model
         ->withPivot('quantity');
     }
 
-    public function sumTotal(){
+    // public function sumTotal(){
 
-       
+    // }
 
-    }
+    protected $fillable = [
+        'delivered',
+        'delivery_time'
+    ];
 }

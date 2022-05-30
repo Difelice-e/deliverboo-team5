@@ -15,7 +15,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Addres</th>
                 <th scope="col">Phone</th>
-                <th scope="col">Delivery at</th>
+                <th scope="col">Delivered at</th>
                 <th scope="col">Delivered</th>
             </tr>
         </thead>
@@ -29,18 +29,27 @@
                     <td>{{ $order->customer_phone }}</td>
                     <td>{{ $order->delivery_time }}</td>
                     @if ($order->delivered == 0)
-                    <td>
-                        <span class="rounded-pill bg-warning p-2">Undelivered</span>
-
-                    </td>
+                        <td>
+                            <span class="rounded-pill bg-warning p-2">Undelivered</span>
+                        </td>
                     @else
-                    <td>
-                        <span class=" rounded-pill bg-success p-2">Delivered</span>
-                    </td>
+                        <td>
+                            <span class=" rounded-pill bg-success p-2">Delivered</span>
+                        </td>
                     @endif
                     <td>
                         <a class="btn btn-small btn-secondary" href="{{route('admin.orders.show',$order)}}">Apri</a>
                     </td>
+                    
+                    @if (!$order->delivered)
+                        <td>
+                            <form action="{{route('admin.orders.update',$order)}}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="btn btn-small w-100 btn-primary" onclick="return confirm('Confermi la consegna dell\'ordine?')">Consegnato</button>
+                            </form>
+                        </td>
+                    @endif
                  
 
 

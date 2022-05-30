@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-
+        {{-- TABELLA CUSTOMER --}}
+        <h4>Dettagli ordine:</h4>
         <table class="table">
-
-            {{-- TABELLA CUSTOMER --}}
 
             <thead>
                 <tr>
@@ -27,6 +26,7 @@
 
 
         {{-- tabella piatti --}}
+        <h4>Piatti ordinati:</h4>
         <table class="table">
             <thead>
                 <tr>
