@@ -105,7 +105,7 @@ class DishController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:100',
-            'cover' => 'nullable',
+            'cover' => 'nullable|file|image',
             'description' => 'string',
             'ingredients' => 'string',
             'price' => 'numeric',

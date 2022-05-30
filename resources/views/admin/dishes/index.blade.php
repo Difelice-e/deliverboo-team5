@@ -27,7 +27,7 @@
                 <tr>
                     <td>{{ $dish->id }}</td>
                     <td>{{ $dish->name }}</td>
-                    <td>{{ $dish->cover }}</td>
+                    <td><img style="width:100px" src="{{asset('storage/' . $dish->cover)}}" alt=""></td>
                     <td>{{ $dish->ingredients }}</td>
                     <td>{{ $dish->description }}</td>
                     <td>{{ $dish->visible }}</td>

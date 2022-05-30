@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="d-flex">
-        <img src="{{$user->cover}}" alt="">
+        <img style="width:200px" src="{{asset('storage/' . $user->cover)}}" alt="">
         <h1>{{$user->business_name}}</h1>
     </div>
     <p>Email: {{$user->email}}</p>
