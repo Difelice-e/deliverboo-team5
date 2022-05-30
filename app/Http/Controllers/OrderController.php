@@ -20,7 +20,8 @@ class OrderController extends Controller
     {
         $orders = Order::with('dishes')
             ->where('user_id', Auth::id())
-            ->orderBy('created_at','asc')
+            ->orderBy('delivered','asc')
+            ->orderBy('delivery_time','desc')
             ->get();
 
         

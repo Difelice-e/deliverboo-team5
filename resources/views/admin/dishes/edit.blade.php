@@ -45,7 +45,7 @@
     {{-- cover --}}
     <div class="mb-3">
       <label class="d-block" for="cover">Cover piatto</label>
-      <input class="d-block my-3 @error('cover') is-invalid @enderror" accept=".jpg, .jpeg, .gif, .png, .svg" type="file" name="cover" id="cover" value="{{old('cover')?: $dish->cover}}">
+      <input class="d-block my-3 @error('cover') is-invalid @enderror" accept=".jpg, .jpeg, .gif, .png, .svg" type="file" name="cover" id="cover"">
       @error('cover')
           <div class="invalid-feedback"> {{$message}} </div>
       @enderror
@@ -53,20 +53,19 @@
     
 
     {{-- visibile --}}
-    <div class="mb-3">
-        <label for="visible">Visibilità</label>
+    <div class="form-group">
+      <label for="visible">Visibilità</label>
         <select class="form-control" name="visible" id="visible">
-          <option {{ $dish->visible == '1' ? 'selected' : '' }} value="1">Visibile</option>
-          <option {{ $dish->visible == '0' ? 'selected' : '' }} value="0">Non visibile</option>
+          <option {{ old('1', $dish->visible) == '1' ? 'selected' : '' }} value="1">Visibile</option>
+          <option {{ old('0', $dish->visible) == '0' ? 'selected' : '' }} value="0">Non visibile</option>
         </select>
-
     </div>
-    @error('visibility')
+    @error('visible')
         <div class="invalid-feedback">{{$message}}</div>
     @enderror
     
     <button class="btn btn-primary d-inline" type="submit">Conferma Modifica</button>
-    <a class="btn btn-small border rounded d-inline" type='submit' href="{{ route('admin.dashboard.index') }}">Torna alla lista prodotti</a>
+    <a class="btn btn-small border rounded d-inline" type='submit' href="{{ route('admin.dishes.index') }}">Torna alla lista prodotti</a>
 
   </form>
 </div>
