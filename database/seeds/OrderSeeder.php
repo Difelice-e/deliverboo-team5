@@ -6,6 +6,7 @@ use App\Order;
 use App\User;
 use App\Dish;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class OrderSeeder extends Seeder
 {
@@ -29,9 +30,14 @@ class OrderSeeder extends Seeder
             $order->street_address = $faker->streetAddress();
             $order->customer_phone = $faker->e164PhoneNumber();
             $order->total_price = $faker->randomNumber(2,false);
-            $order->delivery_time = null;
             $order->delivered = $faker->boolean();
-
+            if ($order->delivered) {
+                $order->delivery_time = Carbon::now()->format('Y-m-d H:i:s');
+            } else {
+                $order->delivery_time = null;
+            }
+            
+            
             $order->save();
 
             // recupero id piatti

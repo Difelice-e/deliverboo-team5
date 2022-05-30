@@ -6,6 +6,7 @@ use App\Dish;
 use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class OrderController extends Controller
 {
@@ -93,6 +94,12 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         //
+        $data = $request->all();
+        $data['delivered'] = true;
+        $data['delivery_time'] = Carbon::now();
+
+        $order->update($data);
+        return redirect()->route('admin.orders.index');
     }
 
     /**
