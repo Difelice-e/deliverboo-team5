@@ -9,19 +9,21 @@
     <table class="table">
         <thead>
             <tr>
-           
-                <th scope="col">Customer</th>
-                <th scope="col">Ordered at</th>
+                <th scope="col">#</th>
+                <th scope="col">Nome cliente</th>
+                <th scope="col">Ordinato alle</th>
                 <th scope="col">Email</th>
-                <th scope="col">Addres</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Delivered at</th>
-                <th scope="col">Delivered</th>
+                <th scope="col">Indirizzo</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Consegnato alle</th>
+                <th scope="col">Consegnato</th>
             </tr>
         </thead>
         <tbody>
             @foreach($orders as $order)
+                
                 <tr>
+                    <td>{{ $order->id }}</td>
                     <td>{{ $order->customer_name }}</td>
                     <td>{{ $order->created_at }}</td>
                     <td>{{ $order->customer_email }}</td>
@@ -50,8 +52,6 @@
                             </form>
                         </td>
                     @endif
-                 
-
 
                 </tr>
             @endforeach

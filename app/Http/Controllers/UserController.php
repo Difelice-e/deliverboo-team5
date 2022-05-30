@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Tipology;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -15,8 +16,10 @@ class UserController extends Controller
      */
     public function index(User $user)
     {
-        $user = Auth::user();  
-        return view('admin.users.index', compact('user'));
+        $user = Auth::user();
+        $tipologies = Tipology::where('pivot->user_id', $user->id);
+        
+        return view('admin.users.index', compact('user','tipologies'));
     }
 
     /**

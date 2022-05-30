@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <div class="d-flex">
+    <div class="d-flex mb-3">
         @if ($user->cover)
             <img style="width:200px" src="{{asset('storage/' . $user->cover)}}" alt="">
         @else 
@@ -11,6 +11,11 @@
         @endif
         <h1>{{$user->business_name}}</h1>
     </div>
+    <p>
+        @foreach ($user->tipologies as $tipology)
+            <span class="bg-info border border-primay rounded-pill p-1">{{$tipology->name}}</span>
+        @endforeach
+    </p>
     <p>Email: {{$user->email}}</p>
     <p>Partita IVA: IT{{$user->vat_number}}</p>
     <p>Indirizzo: {{$user->street_address}}</p>

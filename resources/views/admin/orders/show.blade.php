@@ -38,12 +38,10 @@
             </thead>
             @foreach ($order->dishes as $dish)
                 <tbody>
-
                     <tr>
                         <td>{{ $dish->pivot->quantity }}</td>
                         <td>{{ $dish->name }}</td>
                         <td>€{{ $dish->price }}</td>
-
                     </tr>
             @endforeach
             <tr>
