@@ -4,7 +4,11 @@
 
 <div class="container">
     <div class="d-flex">
-        <img style="width:200px" src="{{asset('storage/' . $user->cover)}}" alt="">
+        @if ($user->cover)
+            <img style="width:200px" src="{{asset('storage/' . $user->cover)}}" alt="">
+        @else 
+            <img style="width:200px" src="https://i0.wp.com/blog.glovoapp.com/wp-content/uploads/2020/10/Repartidor-Glovo.png?ssl=1" alt="">
+        @endif
         <h1>{{$user->business_name}}</h1>
     </div>
     <p>Email: {{$user->email}}</p>

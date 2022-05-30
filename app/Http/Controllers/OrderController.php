@@ -63,7 +63,7 @@ class OrderController extends Controller
             
             $sum = $dish->price * $dish->pivot->quantity;
             $total += $sum;
-            }
+        }
 
 
         return view('admin.orders.SHOW', compact('order','dishes','total'));

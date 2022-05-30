@@ -24,7 +24,7 @@ Route::middleware('auth')
     ->prefix('admin')
     ->name('admin.')
     ->group(function() {
-        Route::resource('users', 'UserController');
+        Route::resource('dashboard', 'UserController');
         Route::resource('dishes', 'DishController');
         Route::resource('orders', 'OrderController');
 });

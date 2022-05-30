@@ -6,6 +6,7 @@
 <div class="container">
     {{-- pulsante create  --}}
     <a class="btn btn-primary" href="{{route('admin.dishes.create')}}">Aggiungi piatto</a>
+    <a class="btn btn-primary" href="{{route('admin.dashboard.index')}}">Torna alla dashboard</a>
 
     {{-- tabella piatti  --}}
     <table class="table">
@@ -27,7 +28,13 @@
                 <tr>
                     <td>{{ $dish->id }}</td>
                     <td>{{ $dish->name }}</td>
-                    <td><img style="width:100px" src="{{asset('storage/' . $dish->cover)}}" alt=""></td>
+                    <td>
+                        @if ($dish->cover)
+                            <img style="width:100px" src="{{asset('storage/' . $dish->cover)}}" alt="">
+                        @else 
+                            <img style="width:100px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiyxFMYu0x-npJwaXaDUB6gi8DePtyLRxx-w&usqp=CAU" alt="">
+                        @endif
+                    </td>
                     <td>{{ $dish->ingredients }}</td>
                     <td>{{ $dish->description }}</td>
                     <td>{{ $dish->visible }}</td>
