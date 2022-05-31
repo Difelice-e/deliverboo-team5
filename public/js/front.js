@@ -2030,16 +2030,14 @@ __webpack_require__.r(__webpack_exports__);
       loading: false
     };
   },
-  mounted: function mounted() {
-    console.log(this.$route);
-  },
   methods: {
     fetchPost: function fetchPost() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/posts/".concat(this.$route.params.slug)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/home/".concat(this.$route.params.slug)).then(function (res) {
         var tipology = res.data.tipology;
-        _this.tipology = tipology; // questa funzione serve per il caricamento completo della pagina
+        _this.tipology = tipology;
+        console.log(_this.tipology); // questa funzione serve per il caricamento completo della pagina
 
         _this.loading = true;
       })["catch"](function (err) {
@@ -19105,7 +19103,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
