@@ -15,7 +15,7 @@
                             {{-- business name --}}
                             <div class="form-group row">
                                 <label for="business_name"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Nome Attività') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Nome Attività*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="business_name" type="text"
@@ -33,7 +33,7 @@
 
                             {{-- email --}}
                             <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -50,7 +50,7 @@
                             {{-- password --}}
                             <div class="form-group row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password*') }}</span></label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password" minlength="8"
@@ -68,7 +68,7 @@
                             {{-- password confirm --}}
                             <div class="form-group row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" onchange="onChange()" type="password"
@@ -80,7 +80,7 @@
                             {{-- vat number --}}
                             <div class="form-group row">
                                 <label for="vat_number"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="vat_number" type="number" min="10000000000" max="99999999999"
@@ -100,7 +100,7 @@
                             {{-- street address --}}
                             <div class="form-group row">
                                 <label for="street_address"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="street_address" type="text"
@@ -119,7 +119,7 @@
                             {{-- phone number --}}
                             <div class="form-group row">
                                 <label for="phone_number"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Telefono*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="phone_number" type="number" min="100000" max="9999999999"
@@ -139,7 +139,7 @@
                             {{-- cover --}}
                             <div class="form-group row">
                                 <label for="cover"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine Profilo') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine Profilo*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="cover" type="file" accept=".jpg, .jpeg, .gif, .png, .svg"
@@ -156,17 +156,19 @@
 
                             {{-- tipologies --}}
 
-                            <div class="form-group form-check row">
+                            <div class="form-group form-check row text-center">
                                 <label for="tipology"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
-                                @foreach ($tipologies as $tipology)
-                                    <div class="col-md-3">
+                                    class="col-form-label text-md-right">{{ __('Tipologie*') }}</label>
+                                <div class="row">
+                                    @foreach ($tipologies as $tipology)
+                                    <div class="col-3 text-center">
                                         <input onclick="checkout()" required type="checkbox" class="form-check-input"
                                             value="{{ $tipology->id }}"
                                             {{ is_array(old('tipologies')) && in_array($tipology->id, old('tipologies')) ? ' checked' : '' }}
+                                            oninvalid="this.setCustomValidity('Inserisci almeno una tipologia')"
+                                            oninput="this.setCustomValidity('')"
                                             name="tipologies[]" id="tipology-{{ $tipology->id }}">
-                                        <label class="form-check-label"
-                                            for="tipologies-{{ $tipology->id }}">{{ $tipology->name }}</label>
+                                        <label class="form-check-label" for="tipologies-{{ $tipology->id }}">{{ $tipology->name }}</label>
                                     </div>
                                 @endforeach
                                 @error('tipologies')
@@ -174,17 +176,23 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                </div>
+                                
 
                             </div>
 
 
                             {{-- submit button --}}
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
+                            <div class="form-group row mb-5 text-center">
+                                <div class="col-12">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
+                            </div>
+
+                            <div class="text-center text-secondary">
+                                <p>I campi con * sono obbligatori</p>
                             </div>
                         </form>
                     </div>
