@@ -1943,6 +1943,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2074,7 +2089,6 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".gap-card {\n  gap: 50px;\n  list-style-type: none;\n}\n.gap-card .cursor-pointer {\n  cursor: pointer;\n}", ""]);
-
 
 // exports
 
@@ -3232,9 +3246,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
-    _vm._v(" "),
+  return _c("div", [
     _c(
       "ul",
       { staticClass: "d-flex flex-wrap justify-content-center gap-card" },
@@ -3270,27 +3282,13 @@ var render = function () {
               ]),
             ]),
           ]
-
         )
       }),
       1
     ),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row pb-4" }, [
-      _c("div", { staticClass: "col-12 text-center" }, [
-        _c("h2", { staticClass: "title-tipology font-weight-bold" }, [
-          _vm._v("Categorie"),
-        ]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -19107,7 +19105,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

@@ -71,7 +71,7 @@ class RegisterController extends Controller
             'street_address' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'numeric', 'digits_between:6,10'], 
             'cover' => ['file', 'mimes:jpg,jpeg,gif,png,svg', 'required'],
-            'typology_id' => ['exist:types,id'],
+            'tipologies' => ['exists:tipologies,id','required'],
         ]);
     }
 
