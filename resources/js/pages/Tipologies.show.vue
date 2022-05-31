@@ -36,17 +36,15 @@ export default {
             loading: false,
         };
     },
-    mounted() {
-        console.log(this.$route);
-    },
     methods: {
         fetchPost() {
             axios
-                .get(`/api/posts/${this.$route.params.slug}`)
+                .get(`/api/home/${this.$route.params.slug}`)
                 .then((res) => {
                     const { tipology } = res.data;
 
                     this.tipology = tipology;
+                    console.log(this.tipology);
                     // questa funzione serve per il caricamento completo della pagina
                     this.loading = true;
                 })

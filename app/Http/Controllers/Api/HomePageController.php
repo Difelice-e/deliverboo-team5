@@ -51,7 +51,7 @@ class HomePageController extends Controller
      */
     public function show($slug)
     {
-        $tipology = Tipology::where('slug', $slug)->frist();
+        $tipology = Tipology::with('users')->where('slug', $slug)->first();
 
         if ($tipology) {
             // Nel caso trovera il post c'è la mostrerà
