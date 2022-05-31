@@ -58,6 +58,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $user = Auth::user();
+        
         $dishes = Dish::all();
         $total = 0;
         foreach ($order->dishes as $dish){
@@ -68,7 +70,7 @@ class OrderController extends Controller
         }
 
 
-        return view('admin.orders.SHOW', compact('order','dishes','total'));
+        return view('admin.orders.SHOW', compact('order','dishes','total','user'));
 
 
 
