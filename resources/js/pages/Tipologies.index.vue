@@ -1,14 +1,29 @@
 <template>
-    <div class="container">
-        <div class="row pb-4">
-            <div class="col-12 text-center">
-                <h2 class="title-tipology font-weight-bold">Categorie</h2>
-            </div>
-        </div>
-        <ul class="row d-flex justify-content-center align-items-center tipology-list d-flex flex-wrap">
-            <li v-for="tipology in tipologies" :key="tipology.id" class="badge badge-pill badge-color tipologies col-4 col-md-3 col-lg-2">
-                {{tipology.name}}
-            </li>
+    <div>
+        <ul class="d-flex flex-wrap justify-content-center gap-card">
+            <router-link
+                tag="li"
+                :to="{
+                    name: 'tipologies.show',
+                    params: { slug: tipology.slug },
+                }"
+                v-for="tipology in tipologies"
+                :key="tipology.id"
+                class="cursor-pointer"
+            >
+                <div class="card">
+                    <img
+                        src="https://picsum.photos/300/150"
+                        class="card-img-top"
+                        alt=""
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title text-center">
+                            {{ tipology.name }}
+                        </h5>
+                    </div>
+                </div>
+            </router-link>
         </ul>
     </div>
 </template>
@@ -41,33 +56,12 @@ export default {
 </script>
 
 <style lang="scss">
+.gap-card {
+    gap: 50px;
+    list-style-type: none;
 
-.tipology-list {
-    list-style: none;
-    gap: 20px;
-    padding: 0;
+    .cursor-pointer {
+        cursor: pointer;
+    }
 }
-
-.title-tipology {
-    font-size: 40px;
-}
-
-.badge-color {
-    background-color: #fff3da;
-}
-
-.badge-pill {
-    padding: 15px 60px;
-}
-
-.tipologies {
-    font-weight: 600;
-    font-size: 15px;
-}
-
-.tipologies:hover {
-    background-color: #ffc244;
-    cursor: pointer;
-}
-
 </style>

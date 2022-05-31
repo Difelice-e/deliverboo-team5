@@ -15,7 +15,7 @@ class HomePageController extends Controller
      */
     public function index()
     {
-        $tipologies = Tipology::all();
+        $tipologies = Tipology::with('users')->orderBy('name', 'asc')->get()->all();
 
         return response()->json([
             'tipologies' => $tipologies,
@@ -49,9 +49,23 @@ class HomePageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $tipology = Tipology::where('slug', $slug)->frist();
+
+        if ($tipology) {
+            // Nel caso trovera il post c'è la mostrerà
+            return response()->json([
+                'tipology' => $tipology,
+                'success' => true
+            ]);
+        } else {
+            // Nel caso non lo troverà il post ci mostrerà la pagina 404 di errore
+            return response()->json([
+                'message' => 'post non trovato',
+                'success' => false
+            ], 404);
+        }
     }
 
     /**

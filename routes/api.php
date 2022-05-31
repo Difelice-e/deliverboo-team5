@@ -22,6 +22,6 @@ Route::namespace('Api')->group(function () {
 
     // creare una rotta per prendere il singolo posto
     Route::resource('home', 'HomePageController')->only([
-        'index'
+        'index', 'show'
     ]);
 });

@@ -4,21 +4,31 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 import Tipologies from "../pages/Tipologies.index.vue";
+import Tipology from "../pages/Tipologies.show.vue";
+import NotFound from "../pages/404.vue";
 
 const routes = [
     {
-        path: "",
-        name: "Tipologies.index",
+        path: "/",
+        name: "tipologies.index",
         component: Tipologies,
+    },
+    {
+        path: "/:slug",
+        name: "tipologies.show",
+        component: Tipology,
+    },
+    {
+        path: "/*",
+        name: "not-found",
+        component: NotFound,
     },
 ];
 
 // istanza dell nostro route
 const router = new VueRouter({
-    //con mode: "history" serve per visualizzare i nostri percorsi nel URL
     mode: "history",
 
-    // Stiamo passando l'array "const routes = [];"
     routes: routes,
 });
 export default router;

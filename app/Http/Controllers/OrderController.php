@@ -24,8 +24,8 @@ class OrderController extends Controller
             ->orderBy('delivery_time','desc')
             ->get();
 
-        
-      
+
+
         return view('admin.orders.index', compact('orders'));
     }
 
@@ -61,8 +61,8 @@ class OrderController extends Controller
         $dishes = Dish::all();
         $total = 0;
         foreach ($order->dishes as $dish){
-                
-            
+
+
             $sum = $dish->price * $dish->pivot->quantity;
             $total += $sum;
         }
@@ -70,7 +70,7 @@ class OrderController extends Controller
 
         return view('admin.orders.SHOW', compact('order','dishes','total'));
 
- 
+
 
     }
 
