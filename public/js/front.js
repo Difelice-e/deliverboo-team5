@@ -2022,6 +2022,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2036,8 +2050,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/home/".concat(this.$route.params.slug)).then(function (res) {
         var tipology = res.data.tipology;
-        _this.tipology = tipology;
-        console.log(_this.tipology); // questa funzione serve per il caricamento completo della pagina
+        _this.tipology = tipology; // questa funzione serve per il caricamento completo della pagina
 
         _this.loading = true;
       })["catch"](function (err) {
@@ -3311,12 +3324,38 @@ var render = function () {
   return _c("div", [
     _vm.loading
       ? _c(
-          "div",
+          "ul",
           {
             staticClass:
-              "py-40 d-flex flex-column justify-content-center align-items-center",
+              "d-flex justify-content-center align-items-center flex-wrap gap-card",
           },
-          [_c("p", [_vm._v(_vm._s(_vm.$route.params.slug))])]
+          _vm._l(_vm.tipology.users, function (ristoratore) {
+            return _c("li", { key: ristoratore.id }, [
+              _c("div", { staticClass: "card" }, [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: { src: ristoratore.cover, alt: "..." },
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("h5", { staticClass: "card-title" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(ristoratore.business_name) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                    [_vm._v("Go somewhere")]
+                  ),
+                ]),
+              ]),
+            ])
+          }),
+          0
         )
       : _c(
           "div",
@@ -18753,7 +18792,8 @@ var routes = [{
 }, {
   path: "/:slug",
   name: "tipologies.show",
-  component: _pages_Tipologies_show_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  component: _pages_Tipologies_show_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+  props: true
 }, {
   path: "/*",
   name: "not-found",

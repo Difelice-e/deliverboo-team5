@@ -17,6 +17,7 @@ const routes = [
         path: "/:slug",
         name: "tipologies.show",
         component: Tipology,
+        props: true,
     },
     {
         path: "/*",
