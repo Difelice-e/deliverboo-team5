@@ -46,7 +46,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" minlength="8" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -70,7 +70,8 @@
                             <label for="vat_number" class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
 
                             <div class="col-md-6">
-                                <input id="vat_number" type="text" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" value="{{ old('vat_number') }}" required autocomplete="vat_number" autofocus>
+                                <input id="vat_number" type="number" min="10000000000" max="99999999999" oninvalid="this.setCustomValidity('Inserisci una partita iva valida di 11 cifre')"
+                                oninput="this.setCustomValidity('')" class="form-control @error('vat_number') is-invalid @enderror" name="vat_number" value="{{ old('vat_number') }}" required autocomplete="vat_number" autofocus>
 
                                 @error('vat_number')
                                     <span class="invalid-feedback" role="alert">
@@ -100,7 +101,8 @@
                             <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
+                                <input id="phone_number" type="number" min="100000" max="9999999999" oninvalid="this.setCustomValidity('Inserisci un numero di telefono valido tra 6 e 10 cifre')"
+                                oninput="this.setCustomValidity('')" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
 
                                 @error('phone_number')
                                     <span class="invalid-feedback" role="alert">
@@ -135,6 +137,12 @@
                                 <label class="form-check-label" for="tipologies-{{$tipology->id}}">{{$tipology->name}}</label>
                             </div>
                             @endforeach
+                            @error('tipologies')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                            
                         </div>
 
 
