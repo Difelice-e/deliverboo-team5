@@ -11,7 +11,6 @@
                         <th scope="col">Ordered at</th>
                         <th scope="col">Delivery Address</th>
                         <th scope="col">Customer</th>
-
                     </tr>
                 </thead>
                 <tbody>
