@@ -47,8 +47,8 @@ class DishController extends Controller
             'description' => 'string|nullable',
             'ingredients' => 'string|required',
             'price' => 'numeric',
-            'cover' => 'file|image|nullable',
-            'visibility' => 'boolean',
+            'cover' => 'file|mimes:jpg,jpeg,gif,png,svg|nullable',
+            'visible' => 'boolean',
             'user_id' => 'numeric',
         ]);
 
@@ -105,11 +105,11 @@ class DishController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:100',
-            'cover' => 'nullable|file|image',
+            'cover' => 'file|mimes:jpg,jpeg,gif,png,svg|nullable',
             'description' => 'string',
             'ingredients' => 'string',
             'price' => 'numeric',
-            'visibility' => 'boolean',
+            'visible' => 'boolean',
         ]);
         
         // dd($product);
@@ -118,6 +118,11 @@ class DishController extends Controller
         if( $dish->name != $data['name'] ){
             $slug = Dish::getUniqueSlug($data['name']);
             $data['slug'] = $slug;
+        };
+
+        if(array_key_exists('cover', $data)) {
+            $cover_path = Storage::put('uploads', $data['cover']);
+            $data['cover'] = $cover_path;
         };
         
         $dish->update($data);

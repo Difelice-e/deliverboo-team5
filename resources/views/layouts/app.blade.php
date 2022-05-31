@@ -28,21 +28,25 @@
     <div id="app">
         <nav class="mb-5 navbar navbar-expand-md navbar-light bg-goldGv shadow-sm position-relative">
             <div class="container">
+                {{-- logo  --}}
                 <a class="navbar-brand" href="#">
                     <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
                 </a>
 
-                <form class="form-inline col-4 position-relative">
-                    <button class="btn-nav-searchGv my-2 my-sm-0" type="submit">
-                        <lord-icon src="https://cdn.lordicon.com/pvbutfdk.json" trigger="loop-on-hover" style="width:25px;height:25px">
-                        </lord-icon>
-                    </button>
-                    <input class="form-control font-size col-12 text-center rounded-pill mr-sm-2 pl-5" type="search" placeholder="Search" aria-label="Search">
-                </form>
+                {{-- searchbar no admin  --}}
+                @guest
+                    <form class="form-inline col-4 position-relative">
+                        <button class="btn-nav-searchGv my-2 my-sm-0" type="submit">
+                            <lord-icon src="https://cdn.lordicon.com/pvbutfdk.json" trigger="loop-on-hover" style="width:25px;height:25px">
+                            </lord-icon>
+                        </button>
+                        <input class="form-control font-size col-12 text-center rounded-pill mr-sm-2 pl-5" type="search" placeholder="Search" aria-label="Search">
+                    </form>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                @endguest
 
 
                 <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">

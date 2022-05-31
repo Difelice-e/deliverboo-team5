@@ -19,9 +19,10 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::with('dishes')
-        ->where('user_id', Auth::id())
-        ->orderBy('created_at','asc')
-        ->get();
+            ->where('user_id', Auth::id())
+            ->orderBy('delivered','asc')
+            ->orderBy('delivery_time','desc')
+            ->get();
 
 
 
