@@ -1939,6 +1939,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1952,9 +1953,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("api/restaurant/".concat(this.$route.params.slug)).then(function (res) {
-        console.log(_this.res.data);
-        var dishes = res.data.dishes;
-        _this.dishes = dishes;
+        console.log("🚀 ~ file: Menu.show.vue ~ line 26 ~ .then ~ res", res.data);
+        var users = res.data.users;
+        _this.dishes = users;
         console.log(_this.dishes);
         _this.loading = true;
       })["catch"](function (err) {
@@ -2122,6 +2123,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/home/".concat(this.$route.params.slug)).then(function (res) {
+        console.log("🚀 then ~ res", res.data);
         var tipology = res.data.tipology;
         _this.tipology = tipology;
         console.log(_this.tipology); // questa funzione serve per il caricamento completo della pagina

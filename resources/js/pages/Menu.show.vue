@@ -1,6 +1,7 @@
 <template>
     <div>
         {{ $route.params.slug }}
+        <!-- {{ dishes.email }} -->
         <!-- <ul>
             <li v-for="el in dishes.dishes" :key="el.id"></li>
         </ul> -->
@@ -22,9 +23,12 @@ export default {
             axios
                 .get(`api/restaurant/${this.$route.params.slug}`)
                 .then((res) => {
-                    console.log(this.res.data);
-                    const { dishes } = res.data;
-                    this.dishes = dishes;
+                    console.log(
+                        "🚀 ~ file: Menu.show.vue ~ line 26 ~ .then ~ res",
+                        res.data
+                    );
+                    const { users } = res.data;
+                    this.dishes = users;
                     console.log(this.dishes);
 
                     this.loading = true;
