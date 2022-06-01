@@ -85,7 +85,6 @@ export default {
     },
     beforeMount() {
         this.fetchPost();
-        this.fetchRestaurant();
     },
 };
 </script>
