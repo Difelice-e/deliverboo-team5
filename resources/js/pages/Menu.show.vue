@@ -1,25 +1,31 @@
 <template>
     <div>
-        <!-- {{ restaurant.name }} -->
+        {{ $route.params.slug }}
+        <!-- <ul>
+            <li v-for="el in dishes.dishes" :key="el.id"></li>
+        </ul> -->
     </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
     data() {
         return {
-            restaurant: [],
+            dishes: [],
             loading: false,
         };
     },
     methods: {
         fetchRestaurant() {
             axios
-                .get(`api/menu/${this.$route.params.slug}`)
+                .get(`api/restaurant/${this.$route.params.slug}`)
                 .then((res) => {
-                    const { restaurant } = res.data;
-                    this.restaurant = restaurant;
-                    console.log(this.restaurant);
+                    console.log(this.res.data);
+                    const { dishes } = res.data;
+                    this.dishes = dishes;
+                    console.log(this.dishes);
 
                     this.loading = true;
                 })
