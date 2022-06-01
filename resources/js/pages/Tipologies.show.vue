@@ -15,6 +15,7 @@
                         <h5 class="card-title">
                             {{ ristoratore.business_name }}
                         </h5>
+                        <p class="card-text">{{ ristoratore.street_address }}</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
