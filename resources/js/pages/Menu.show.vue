@@ -1,7 +1,7 @@
 <template>
     <div>
         {{ $route.params.slug }}
-        <!-- {{ dishes.email }} -->
+        {{ dishes.email }}
         <!-- <ul>
             <li v-for="el in dishes.dishes" :key="el.id"></li>
         </ul> -->
