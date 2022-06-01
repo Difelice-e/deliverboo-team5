@@ -75,6 +75,10 @@ export default {
             axios
                 .get(`/api/home/${this.$route.params.slug}`)
                 .then((res) => {
+                    console.log(
+                        "🚀 then ~ res",
+                        res.data
+                    );
                     const { tipology } = res.data;
                     this.tipology = tipology;
                     console.log(this.tipology);

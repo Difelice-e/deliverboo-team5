@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Dish;
-use App\Http\Controllers\Controller;
 use App\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
@@ -53,6 +52,7 @@ class RestaurantController extends Controller
         if ($users) {
             return response()->json([
                 'users' => $users,
+                'success' => true
             ]);
         } else {
             return response()->json([
