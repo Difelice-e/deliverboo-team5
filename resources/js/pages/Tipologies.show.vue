@@ -1,22 +1,22 @@
 <template>
-    <div>
-        <ul
-            v-if="loading"
-            class="d-flex justify-content-center align-items-center flex-wrap gap-card"
-        >
-            <li v-for="ristoratore in tipology.users" :key="ristoratore.id">
+    <div class="container">
+        <h2 class="pb-4 text-center back-yellow title-rest">Ristoranti: <span class="tipology-rest">{{ tipology.name }}</span></h2>
+        <ul v-if="loading" class="d-flex flex-wrap justify-content-center gap-card">
+            <li v-for="ristoratore in tipology.users" :key="ristoratore.id" class="cursor-pointer">
                 <div class="card">
                     <img
-                        :src="ristoratore.cover"
+                        src="https://picsum.photos/300/150"
                         class="card-img-top"
-                        alt="..."
+                        alt=""
                     />
                     <div class="card-body">
-                        <h5 class="card-title">
+                        <h5 class="card-title text-center">
                             {{ ristoratore.business_name }}
                         </h5>
+
                         <p class="card-text">{{ ristoratore.street_address }}</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
+
                     </div>
                 </div>
             </li>
@@ -58,7 +58,7 @@ export default {
                 .then((res) => {
                     const { tipology } = res.data;
                     this.tipology = tipology;
-
+                    console.log(this.tipology)
                     // questa funzione serve per il caricamento completo della pagina
                     this.loading = true;
                 })
@@ -74,4 +74,15 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+.container ul {
+    padding: 0;
+}
+
+.title-rest {
+    font-weight: 700;
+    font-size: 35px;
+}
+
+</style>
