@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 import Tipologies from "../pages/Tipologies.index.vue";
 import Tipology from "../pages/Tipologies.show.vue";
+import menu from "../pages/Menu.show.vue";
 import NotFound from "../pages/404.vue";
 
 const routes = [
@@ -17,7 +18,11 @@ const routes = [
         path: "/:slug",
         name: "tipologies.show",
         component: Tipology,
-        props: true,
+    },
+    {
+        path: "/menu/:slug",
+        name: "menu.show",
+        component: menu,
     },
     {
         path: "/*",
