@@ -1,8 +1,22 @@
 <template>
     <div class="container">
-        <h2 class="pb-4 text-center back-yellow title-rest">Ristoranti: <span class="tipology-rest">{{ tipology.name }}</span></h2>
-        <ul v-if="loading" class="d-flex flex-wrap justify-content-center gap-card">
-            <li v-for="ristoratore in tipology.users" :key="ristoratore.id" class="cursor-pointer">
+        <h2 class="pb-4 text-center back-yellow title-rest">
+            Ristoranti: <span class="tipology-rest">{{ tipology.name }}</span>
+        </h2>
+        <ul
+            v-if="loading"
+            class="d-flex flex-wrap justify-content-center gap-card"
+        >
+            <router-link
+                tag="li"
+                :to="{
+                    name: 'menu.show',
+                    params: { slug: ristoratore.slug },
+                }"
+                v-for="ristoratore in tipology.users"
+                :key="ristoratore.id"
+                class="cursor-pointer"
+            >
                 <div class="card">
                     <img
                         src="https://picsum.photos/300/150"
@@ -14,12 +28,13 @@
                             {{ ristoratore.business_name }}
                         </h5>
 
-                        <p class="card-text">{{ ristoratore.street_address }}</p>
+                        <p class="card-text">
+                            {{ ristoratore.street_address }}
+                        </p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
-
                     </div>
                 </div>
-            </li>
+            </router-link>
         </ul>
         <!-- rotella di caricamento -->
         <div
@@ -58,7 +73,7 @@ export default {
                 .then((res) => {
                     const { tipology } = res.data;
                     this.tipology = tipology;
-                    console.log(this.tipology)
+                    console.log(this.tipology);
                     // questa funzione serve per il caricamento completo della pagina
                     this.loading = true;
                 })
@@ -70,12 +85,12 @@ export default {
     },
     beforeMount() {
         this.fetchPost();
+        this.fetchRestaurant();
     },
 };
 </script>
 
 <style lang="scss">
-
 .container ul {
     padding: 0;
 }
@@ -84,5 +99,4 @@ export default {
     font-weight: 700;
     font-size: 35px;
 }
-
 </style>

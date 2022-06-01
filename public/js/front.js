@@ -1935,27 +1935,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      tipology: [],
+      restaurant: [],
       loading: false
     };
   },
   methods: {
-    fetchPost: function fetchPost() {
+    fetchRestaurant: function fetchRestaurant() {
       var _this = this;
 
       axios.get("/api/restaurant/".concat(this.$route.params.slug)).then(function (res) {
-        var tipology = res.data.tipology;
-        _this.tipology = tipology; // questa funzione serve per il caricamento completo della pagina
-
+        var restaurant = res.data.restaurant;
+        _this.restaurant = restaurant;
+        console.log(_this.restaurant);
         _this.loading = true;
       })["catch"](function (err) {
         console.warn(err);
-
-        _this.$router.push("/404");
       });
     }
   },
-  beforeMount: function beforeMount() {
+  fetchRestaurant: function fetchRestaurant() {
     this.fetchPost();
   }
 });
@@ -2076,6 +2074,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2102,6 +2120,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   beforeMount: function beforeMount() {
     this.fetchPost();
+    this.fetchRestaurant();
   }
 });
 
@@ -3436,7 +3455,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("h2", { staticClass: "pb-4 text-center back-yellow title-rest" }, [
-      _vm._v("Ristoranti: "),
+      _vm._v("\n        Ristoranti: "),
       _c("span", { staticClass: "tipology-rest" }, [
         _vm._v(_vm._s(_vm.tipology.name)),
       ]),
@@ -3448,8 +3467,18 @@ var render = function () {
           { staticClass: "d-flex flex-wrap justify-content-center gap-card" },
           _vm._l(_vm.tipology.users, function (ristoratore) {
             return _c(
-              "li",
-              { key: ristoratore.id, staticClass: "cursor-pointer" },
+              "router-link",
+              {
+                key: ristoratore.id,
+                staticClass: "cursor-pointer",
+                attrs: {
+                  tag: "li",
+                  to: {
+                    name: "menu.show",
+                    params: { slug: ristoratore.slug },
+                  },
+                },
+              },
               [
                 _c("div", { staticClass: "card" }, [
                   _c("img", {
@@ -3457,21 +3486,34 @@ var render = function () {
                     attrs: { src: "https://picsum.photos/300/150", alt: "" },
                   }),
                   _vm._v(" "),
-
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(_vm._s(ristoratore.street_address)),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title text-center" }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(ristoratore.business_name) +
+                          "\n                    "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(ristoratore.street_address) +
+                          "\n                    "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                      [_vm._v("Go somewhere")]
+                    ),
                   ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "btn btn-primary", attrs: { href: "#" } },
-                    [_vm._v("Go somewhere")]
-                  ),
                 ]),
               ]
             )
           }),
-          0
+          1
         )
       : _c(
           "div",
@@ -19351,7 +19393,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
