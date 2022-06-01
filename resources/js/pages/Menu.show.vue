@@ -1,5 +1,7 @@
 <template>
-    <div>{{ $route.params.slug }}</div>
+    <div>
+        <!-- {{ restaurant.name }} -->
+    </div>
 </template>
 
 <script>
@@ -13,7 +15,7 @@ export default {
     methods: {
         fetchRestaurant() {
             axios
-                .get(`/api/restaurant/${this.$route.params.slug}`)
+                .get(`api/menu/${this.$route.params.slug}`)
                 .then((res) => {
                     const { restaurant } = res.data;
                     this.restaurant = restaurant;
@@ -26,8 +28,8 @@ export default {
                 });
         },
     },
-    fetchRestaurant() {
-        this.fetchPost();
+    beforeMount() {
+        this.fetchRestaurant();
     },
 };
 </script>

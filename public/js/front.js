@@ -1932,6 +1932,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1943,7 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchRestaurant: function fetchRestaurant() {
       var _this = this;
 
-      axios.get("/api/restaurant/".concat(this.$route.params.slug)).then(function (res) {
+      axios.get("api/menu/".concat(this.$route.params.slug)).then(function (res) {
         var restaurant = res.data.restaurant;
         _this.restaurant = restaurant;
         console.log(_this.restaurant);
@@ -1953,8 +1955,8 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  fetchRestaurant: function fetchRestaurant() {
-    this.fetchPost();
+  beforeMount: function beforeMount() {
+    this.fetchRestaurant();
   }
 });
 
@@ -2120,7 +2122,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   beforeMount: function beforeMount() {
     this.fetchPost();
-    this.fetchRestaurant();
   }
 });
 
@@ -3365,7 +3366,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v(_vm._s(_vm.$route.params.slug))])
+  return _c("div")
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19393,7 +19394,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
