@@ -16,11 +16,7 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
-        return response()->json([
-            'tipologies' => $users,
-        ]);
+        //
     }
 
     /**
@@ -52,11 +48,11 @@ class RestaurantController extends Controller
      */
     public function show($slug)
     {
-        $user = User::with('dishes')->where('slug', $slug)->first();
+        $users = User::with('dishes')->where('slug', $slug)->first();
 
-        if ($user) {
+        if ($users) {
             return response()->json([
-                'users' => $user,
+                'users' => $users,
             ]);
         } else {
             return response()->json([

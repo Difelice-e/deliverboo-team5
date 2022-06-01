@@ -66,6 +66,10 @@ export default {
             loading: false,
         };
     },
+    mounted() {
+        console.log(this.$route);
+        console.log(this.tipology);
+    },
     methods: {
         fetchPost() {
             axios
