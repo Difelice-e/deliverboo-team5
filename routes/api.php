@@ -25,6 +25,6 @@ Route::namespace('Api')->group(function () {
         'index', 'show'
     ]);
     Route::resource('restaurant', 'RestaurantController')->only([
-        'show'
+        'index', 'show'
     ]);
 });

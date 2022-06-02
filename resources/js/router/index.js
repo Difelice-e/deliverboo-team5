@@ -20,6 +20,11 @@ const routes = [
         component: Tipology,
     },
     {
+        path: "/menu",
+        name: "menu.index",
+        component: menu,
+    },
+    {
         path: "/menu/:slug",
         name: "menu.show",
         component: menu,

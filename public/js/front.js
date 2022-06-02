@@ -1944,7 +1944,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      dishes: [],
+      user: null,
       loading: false
     };
   },
@@ -1954,9 +1954,9 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("api/restaurant/".concat(this.$route.params.slug)).then(function (res) {
         console.log("🚀 ~ file: Menu.show.vue ~ line 26 ~ .then ~ res", res.data);
-        var users = res.data.users;
-        _this.dishes = users;
-        console.log(_this.dishes);
+        var user = res.data.user;
+        _this.user = user;
+        console.log(_this.user);
         _this.loading = true;
       })["catch"](function (err) {
         console.warn(err);
@@ -3387,7 +3387,7 @@ var render = function () {
       "\n    " +
         _vm._s(_vm.$route.params.slug) +
         "\n    " +
-        _vm._s(_vm.dishes.email) +
+        _vm._s(_vm.user) +
         "\n    "
     ),
   ])
@@ -18979,6 +18979,10 @@ var routes = [{
   name: "tipologies.show",
   component: _pages_Tipologies_show_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
+  path: "/menu",
+  name: "menu.index",
+  component: _pages_Menu_show_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+}, {
   path: "/menu/:slug",
   name: "menu.show",
   component: _pages_Menu_show_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -19418,7 +19422,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
