@@ -1,7 +1,7 @@
 <template>
     <div>
         {{ $route.params.slug }}
-        {{ dishes.email }}
+        {{ user }}
         <!-- <ul>
             <li v-for="el in dishes.dishes" :key="el.id"></li>
         </ul> -->
@@ -14,7 +14,7 @@ import axios from "axios";
 export default {
     data() {
         return {
-            dishes: [],
+            user: null,
             loading: false,
         };
     },
@@ -27,9 +27,9 @@ export default {
                         "🚀 ~ file: Menu.show.vue ~ line 26 ~ .then ~ res",
                         res.data
                     );
-                    const { users } = res.data;
-                    this.dishes = users;
-                    console.log(this.dishes);
+                    const { user } = res.data;
+                    this.user = user;
+                    console.log(this.user);
 
                     this.loading = true;
                 })

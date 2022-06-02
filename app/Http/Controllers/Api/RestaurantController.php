@@ -15,7 +15,12 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::with('dishes')->get()->all();
+
+        return response()->json([
+            'users' => $users,
+        ]);
+        
     }
 
     /**
@@ -47,16 +52,16 @@ class RestaurantController extends Controller
      */
     public function show($slug)
     {
-        $users = User::with('dishes')->where('slug', $slug)->first();
+        $user = User::where('slug', $slug)->first();
 
-        if ($users) {
+        if ($user) {
             return response()->json([
-                'users' => $users,
+                'user' => $user,
                 'success' => true
             ]);
         } else {
             return response()->json([
-                'users' => 'post non trovato',
+                'user' => 'post non trovato',
                 'success' => false
             ], 404);
         }
