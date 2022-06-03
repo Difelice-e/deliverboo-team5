@@ -1,5 +1,6 @@
 <template>
     <section id="restaurant-page">
+        <template v-if="loading">
         <div class="restaurant-header">
             <div class="container">
                 <div class="row">
@@ -72,6 +73,25 @@
                 </div>
             </div>
         </div>
+        </template>
+
+        <!-- rotella di caricamento -->
+        <template v-else>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p>Caricamento in corso...</p>
+        </div>
+        </template>
+        
     </section>
 </template>
 
