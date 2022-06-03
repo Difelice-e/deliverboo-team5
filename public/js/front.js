@@ -2315,6 +2315,126 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -3994,9 +4114,322 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("router-view")], 1)
+  return _c("div", { staticClass: "app" }, [
+    _c("header", [
+      _c(
+        "nav",
+        {
+          staticClass:
+            "navbar navbar-expand-md navbar-light bg-goldGv shadow-sm position-relative",
+        },
+        [
+          _c("div", { staticClass: "container" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("form", { staticClass: "form-inline col-4 position-relative" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn-nav-searchGv my-2 my-sm-0",
+                  attrs: { type: "submit" },
+                },
+                [
+                  _c("lord-icon", {
+                    staticStyle: { width: "25px", height: "25px" },
+                    attrs: {
+                      src: "https://cdn.lordicon.com/pvbutfdk.json",
+                      trigger: "loop-on-hover",
+                    },
+                  }),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("input", {
+                staticClass:
+                  "form-control font-size col-12 text-center rounded-pill mr-sm-2 pl-5",
+                attrs: {
+                  type: "search",
+                  placeholder: "Search",
+                  "aria-label": "Search",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+          ]),
+        ]
+      ),
+    ]),
+    _vm._v(" "),
+    _c("main", [_c("router-view")], 1),
+    _vm._v(" "),
+    _vm._m(3),
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+      _c("img", {
+        staticClass: "d-inline-block align-top",
+        attrs: {
+          src: "/docs/4.0/assets/brand/bootstrap-solid.svg",
+          width: "30",
+          height: "30",
+          alt: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+        },
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "collapse navbar-collapse flex-grow-0",
+        attrs: { id: "navbarSupportedContent" },
+      },
+      [
+        _c("ul", { staticClass: "navbar-nav align-items-end ml-auto" }, [
+          _c(
+            "li",
+            {
+              staticClass: "nav-item btn-nav-register my-2 mx-md-1 px-2 p-md-1",
+            },
+            [
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "nav-link text-center font-weight-bold text-balck",
+                  attrs: { href: "/login" },
+                },
+                [_vm._v("Login")]
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            {
+              staticClass: "nav-item btn-nav-register my-2 mx-md-1 px-2 p-md-1",
+            },
+            [
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "nav-link text-center font-weight-bold text-balck",
+                  attrs: { href: "/register" },
+                },
+                [_vm._v("Register")]
+              ),
+            ]
+          ),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: " bg-darkGrayGv text-white" }, [
+      _c("div", { staticClass: "container py-5" }, [
+        _c("div", { staticClass: "row pb-5" }, [
+          _c("div", { staticClass: "col-12" }, [
+            _c("img", {
+              staticClass: "d-inline-block align-top",
+              attrs: {
+                src: "/docs/4.0/assets/brand/bootstrap-solid.svg",
+                width: "30",
+                height: "30",
+                alt: "",
+              },
+            }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row pb-5" }, [
+          _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
+            _c("ul", { staticClass: "list-footer" }, [
+              _c("li", [_vm._v("Uniamo le forze")]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Lavora con noi")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Glovo con i partner"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Corrieri")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Glovo Business")]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
+            _c("ul", { staticClass: "list-footer" }, [
+              _c("li", [_vm._v("Link di interesse")]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Chi siamo")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("FAQ")])]),
+              _vm._v(" "),
+              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Blog")])]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Contattaci")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Sicurezza")]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
+            _c("ul", { staticClass: "list-footer" }, [
+              _c("li", [_vm._v("Seguici")]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Facebook")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Twitter")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Instagram")]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
+            _c("ul", { staticClass: "text-uppercase" }, [
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Termini e condizioni"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Politica sulla privacy"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v("Politica sui cookie"),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row pb-5" }, [
+          _c("div", { staticClass: "col-12" }, [
+            _c("h4", { staticClass: "title-list" }, [
+              _vm._v("I brand piu richiesti"),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "d-flex g-3 brand-list pt-3" }, [
+              _c("li", { staticClass: "pr-4" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("McDonald's")]),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "pr-4" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Burger King")]),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "pr-4" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("KFC")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Carrefour")]),
+              ]),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row pb-5" }, [
+          _c("div", { staticClass: "col-12" }, [
+            _c("h4", { staticClass: "title-list" }, [
+              _vm._v("Categorie più richieste"),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "d-flex brand-list pt-3" }, [
+              _c("li", { staticClass: "pr-4" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Hamburger")]),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "pr-4" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Pizza")]),
+              ]),
+              _vm._v(" "),
+              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Sushi")])]),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-3" }, [
+            _c(
+              "select",
+              {
+                staticClass: "custom-select bg-darkGrayGv text-white py-2 px-2",
+                attrs: { name: "", id: "" },
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [_vm._v("Italiano")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "" } }, [_vm._v("Inglese")]),
+              ]
+            ),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -19910,6 +20343,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
