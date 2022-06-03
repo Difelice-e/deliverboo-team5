@@ -2435,6 +2435,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -4216,6 +4227,45 @@ var staticRenderFns = [
         attrs: { id: "navbarSupportedContent" },
       },
       [
+        _c("div", { staticClass: "dropdown" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-secondary dropdown-toggle",
+              attrs: {
+                type: "button",
+                id: "dropdownMenuButton",
+                "data-toggle": "dropdown",
+                "aria-expanded": "false",
+              },
+            },
+            [
+              _vm._v(
+                "\r\n                            Cart (0)\r\n                        "
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dropdown-menu",
+              attrs: { "aria-labelledby": "dropdownMenuButton" },
+            },
+            [
+              _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+                _vm._v("Cart is empty"),
+              ]),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+                _vm._v("Checkout"),
+              ]),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
         _c("ul", { staticClass: "navbar-nav align-items-end ml-auto" }, [
           _c(
             "li",
