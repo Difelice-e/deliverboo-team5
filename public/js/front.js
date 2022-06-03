@@ -1953,12 +1953,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    propsTipology: {
-      type: Object,
-      require: true
-    }
-  },
   data: function data() {
     return {
       restaurants: [],
@@ -1996,6 +1990,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2111,8 +2112,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
 //
 //
 //
@@ -2316,7 +2315,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#restaurant-page .restaurant-wrapper {\n  border: 1px solid black;\n  border-radius: 25px;\n  padding: 20px;\n  gap: 20px;\n}\n#restaurant-page .restaurant-wrapper .restaurant-tipologies {\n  list-style: none;\n  gap: 10px;\n}\n#restaurant-page .menu-wrapper {\n  border: 1px solid black;\n  border-radius: 25px;\n  padding: 20px;\n}\n#restaurant-page .menu-wrapper .dish-wrapper {\n  height: 132px;\n  gap: 8px;\n  border-radius: 25px;\n}\n#restaurant-page .menu-wrapper .dish-wrapper .dish-info {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n#restaurant-page .menu-wrapper .dish-wrapper .dish-info .dish-title {\n  font-size: 18px;\n}\n#restaurant-page .cart-wrapper {\n  border: 1px solid black;\n  border-radius: 25px;\n  padding: 20px;\n}", ""]);
+exports.push([module.i, "#restaurant-page .restaurant-header {\n  background-color: white;\n}\n#restaurant-page .restaurant-header .restaurant-wrapper {\n  background-color: white;\n  padding: 16px 0;\n  gap: 20px;\n}\n#restaurant-page .restaurant-header .restaurant-wrapper .restaurant-tipologies {\n  list-style: none;\n  gap: 10px;\n}\n#restaurant-page .restaurant-body {\n  background-color: #e8ecec;\n  padding: 50px 0;\n}\n#restaurant-page .restaurant-body .menu-wrapper .dish-wrapper {\n  height: 132px;\n  gap: 8px;\n  background-color: white;\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.27);\n}\n#restaurant-page .restaurant-body .menu-wrapper .dish-wrapper .dish-info {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n#restaurant-page .restaurant-body .menu-wrapper .dish-wrapper .dish-info .dish-title {\n  font-size: 18px;\n}\n#restaurant-page .restaurant-body .cart-wrapper {\n  background-color: white;\n  padding: 20px;\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.27);\n}", ""]);
 
 // exports
 
@@ -3634,94 +3633,98 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { attrs: { id: "restaurant-page" } }, [
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row align-items-start" }, [
-        _c("div", { staticClass: "col-9 p-3" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12 mb-5" }, [
-              _c("div", { staticClass: "restaurant-wrapper d-flex" }, [
-                _c("img", {
-                  staticStyle: { width: "200px" },
-                  attrs: { src: "https://picsum.photos/300/150", alt: "" },
-                }),
+    _c("div", { staticClass: "restaurant-header" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12" }, [
+            _c("div", { staticClass: "restaurant-wrapper d-flex" }, [
+              _c("img", {
+                staticStyle: { width: "200px" },
+                attrs: { src: "https://picsum.photos/300/150", alt: "" },
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "restaurant-info" }, [
+                _c("h1", [_vm._v(_vm._s(_vm.user.business_name))]),
                 _vm._v(" "),
-                _c("div", { staticClass: "restaurant-info" }, [
-                  _c("h1", [_vm._v(_vm._s(_vm.user.business_name))]),
-                  _vm._v(" "),
-                  _c(
-                    "ul",
-                    { staticClass: "restaurant-tipologies d-flex" },
-                    _vm._l(_vm.user.tipologies, function (tipology) {
-                      return _c(
-                        "li",
-                        {
-                          staticClass:
-                            "bg-primary border border-secondary rounded-pill px-3 py-1",
-                        },
-                        [_vm._v(_vm._s(tipology.name))]
-                      )
-                    }),
-                    0
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "restaurant-contacts" }, [
-                    _vm._v(
-                      _vm._s(_vm.user.street_address) +
-                        " - " +
-                        _vm._s(_vm.user.phone_number)
-                    ),
-                  ]),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-12" }, [
-              _c("div", { staticClass: "menu-wrapper" }, [
                 _c(
-                  "div",
-                  { staticClass: "row" },
-                  _vm._l(_vm.user.dishes, function (dish) {
-                    return _c("div", { staticClass: "col-6" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "dish-wrapper d-flex justify-content-between bg-secondary p-3",
-                        },
-                        [
-                          _c("div", { staticClass: "dish-info" }, [
-                            _c("h4", { staticClass: "dish-title mb-0" }, [
-                              _vm._v(_vm._s(dish.name)),
-                            ]),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "dish-ingredients mb-1" }, [
-                              _vm._v(_vm._s(dish.ingredients)),
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "dish-price" }, [
-                              _vm._v(_vm._s(dish.price.toFixed(2)) + "€"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c("img", {
-                            staticStyle: { width: "100px", height: "100px" },
-                            attrs: {
-                              src: "https://picsum.photos/300/150",
-                              alt: "",
-                            },
-                          }),
-                        ]
-                      ),
-                    ])
+                  "ul",
+                  { staticClass: "restaurant-tipologies d-flex" },
+                  _vm._l(_vm.user.tipologies, function (tipology) {
+                    return _c(
+                      "li",
+                      {
+                        staticClass:
+                          "bg-primary border border-secondary rounded-pill px-3 py-1",
+                      },
+                      [_vm._v(_vm._s(tipology.name))]
+                    )
                   }),
                   0
                 ),
+                _vm._v(" "),
+                _c("p", { staticClass: "restaurant-contacts" }, [
+                  _vm._v(
+                    _vm._s(_vm.user.street_address) +
+                      " - " +
+                      _vm._s(_vm.user.phone_number)
+                  ),
+                ]),
               ]),
             ]),
           ]),
         ]),
-        _vm._v(" "),
-        _vm._m(0),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "restaurant-body" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row align-items-start" }, [
+          _c("div", { staticClass: "col-9 p-3" }, [
+            _c("div", { staticClass: "menu-wrapper" }, [
+              _c(
+                "div",
+                { staticClass: "row" },
+                _vm._l(_vm.user.dishes, function (dish) {
+                  return _c("div", { staticClass: "col-6" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "dish-wrapper d-flex justify-content-between p-3",
+                      },
+                      [
+                        _c("div", { staticClass: "dish-info" }, [
+                          _c("h4", { staticClass: "dish-title mb-0" }, [
+                            _vm._v(_vm._s(dish.name)),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "dish-ingredients mb-1" }, [
+                            _vm._v(_vm._s(dish.ingredients)),
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "dish-price" }, [
+                            _vm._v(_vm._s(dish.price.toFixed(2)) + "€"),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticStyle: { width: "100px", height: "100px" },
+                          attrs: {
+                            src: "https://picsum.photos/300/150",
+                            alt: "",
+                          },
+                        }),
+                      ]
+                    ),
+                  ])
+                }),
+                0
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+        ]),
       ]),
     ]),
   ])
@@ -3779,18 +3782,10 @@ var render = function () {
     _c(
       "div",
       [
-        _c(
-          "router-link",
-          {
-            staticClass: "btn btn-danger",
-            attrs: {
-              tag: "button",
-              to: { name: "restaurant.index" },
-              propsTipology: _vm.tipology,
-            },
-          },
-          [_vm._v("Tutti i tipi di ristorante")]
-        ),
+        _c("router-link", {
+          staticClass: "btn btn-danger",
+          attrs: { tag: "button", to: { name: "restaurant.index" } },
+        }),
       ],
       1
     ),
@@ -3977,7 +3972,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "my-3" }, [_c("router-view")], 1)
+  return _c("div", [_c("router-view")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19893,7 +19888,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

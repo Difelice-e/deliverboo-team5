@@ -23,12 +23,6 @@
 import axios from "axios";
 
 export default {
-    props: {
-        propsTipology: {
-            type: Object,
-            require: true,
-        },
-    },
     data() {
         return {
             restaurants: [],

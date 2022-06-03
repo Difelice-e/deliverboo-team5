@@ -4,10 +4,8 @@
             <router-link
                 tag="button"
                 :to="{ name: 'restaurant.index' }"
-                class="btn btn-danger"
-                :propsTipology = "tipology"
-                >Tutti i tipi di ristorante</router-link
-            >
+                class="btn btn-danger">
+            </router-link>
         </div>
         <div>
             <ul class="d-flex flex-wrap justify-content-center gap-card">
