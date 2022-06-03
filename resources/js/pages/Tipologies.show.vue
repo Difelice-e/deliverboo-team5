@@ -9,7 +9,6 @@
         >
             <router-link
                 tag="li"
-                
                 v-for="ristoratore in tipology.users"
                 :key="ristoratore.id"
                 class="cursor-pointer"
