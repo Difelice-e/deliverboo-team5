@@ -1937,7 +1937,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    removeFromCart: function removeFromCart(dish) {
+      this.$store.commit('removeFromCart', dish);
+    }
+  },
   computed: {
     totalPrice: function totalPrice() {
       var total = 0;
@@ -3786,6 +3794,7 @@ var render = function () {
         _vm.$store.state.cart.length > 0
           ? _c(
               "div",
+              { staticClass: "d-flex flex-column p-2" },
               [
                 _vm._l(_vm.$store.state.cart, function (dish) {
                   return _c(
@@ -3796,12 +3805,28 @@ var render = function () {
                       attrs: { href: "" },
                     },
                     [
+                      _c(
+                        "span",
+                        {
+                          staticClass: "removeBtn",
+                          attrs: { title: "Remove from cart" },
+                          on: {
+                            click: function ($event) {
+                              $event.preventDefault()
+                              return _vm.removeFromCart(dish)
+                            },
+                          },
+                        },
+                        [_vm._v("X")]
+                      ),
                       _vm._v(
-                        _vm._s(dish.name) +
+                        "\n                " +
+                          _vm._s(dish.name) +
                           " x" +
                           _vm._s(dish.quantity) +
                           " - €" +
-                          _vm._s(dish.totalPrice)
+                          _vm._s(dish.totalPrice) +
+                          "\n            "
                       ),
                     ]
                   )
@@ -21861,10 +21886,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var cart = window.localStorage.getItem('cart');
+var cartCount = window.localStorage.getItem('cartCount');
 var store = {
   state: {
-    cart: [],
-    cartCount: 0
+    cart: cart ? JSON.parse(cart) : [],
+    cartCount: cartCount ? parseInt(cartCount) : 0
   },
   mutations: {
     addToCart: function addToCart(state, dish) {
@@ -21882,6 +21909,22 @@ var store = {
       }
 
       state.cartCount++;
+      this.commit('saveCart');
+    },
+    removeFromCart: function removeFromCart(state, dish) {
+      var index = state.cart.indexOf(dish);
+
+      if (index > -1) {
+        var product = state.cart[index];
+        state.cartCount -= product.quantity;
+        state.cart.splice(index, 1);
+      }
+
+      this.commit('saveCart');
+    },
+    saveCart: function saveCart(state) {
+      window.localStorage.setItem('cart', JSON.stringify(state.cart));
+      window.localStorage.setItem('cartCount', state.cartCount);
     }
   }
 };
