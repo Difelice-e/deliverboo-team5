@@ -26,6 +26,8 @@
 
                 <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
 
+                    <CartDropdown />
+
                     <!-- Right Side Of Navbar || Pulsanti attenzione -->
                     <ul class="navbar-nav align-items-end ml-auto">
                         <!-- Authentication Links -->
@@ -126,8 +128,11 @@
 </template>
 
 <script>
+import CartDropdown from '../components/Cart.vue'
 export default {
-
+    components: {
+        CartDropdown
+    },
 };
 </script>
 
