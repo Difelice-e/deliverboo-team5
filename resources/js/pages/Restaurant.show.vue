@@ -1,12 +1,9 @@
 <template>
     <section id="restaurant-page">
-        <div class="container">
-            <div class="row align-items-start">
-                <!-- info ristorante + menù   -->
-                <div class="col-9 p-3">
-                    <div class="row">
-                        <!-- spazio informazioni ristorante  -->
-                        <div class="col-12 mb-5">
+        <div class="restaurant-header">
+            <div class="container">
+            <div class="row">
+                <div class="col-12">
                             <div class="restaurant-wrapper d-flex">
                                 <!-- cover ristorante  -->
                                 <img
@@ -33,18 +30,25 @@
                                 </div>
                             </div>
                         </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="restaurant-body">
+            <div class="container">
+            <div class="row align-items-start">
+                
+                        <!-- spazio informazioni ristorante  -->
+                        
 
                         <!-- menu del ristorante  -->
-                        <div class="col-12">
+                        <div class="col-9 p-3">
                             <div class="menu-wrapper">
                                 <div class="row">
-                                    <div
-                                        v-for="dish in user.dishes"
-                                        class="col-6"
-                                    >
-                                        <div
-                                            class="dish-wrapper d-flex justify-content-between bg-secondary p-3"
-                                        >
+
+                                    <div v-for="dish in user.dishes" class="col-6">
+                                        <div class="dish-wrapper d-flex justify-content-between p-3">
+
                                             <div class="dish-info">
                                                 <h4 class="dish-title mb-0">
                                                     {{ dish.name }}
@@ -74,34 +78,32 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- carrello  -->
-                <div class="col-3 p-3">
-                    <!-- wrapper carrello  -->
-                    <div class="cart-wrapper">
-                        <!-- header carrello  -->
-                        <div class="cart-header">
-                            <h4 class="cart-title text-center">
-                                Il tuo carrello
-                            </h4>
-                        </div>
+                        <!-- carrello  -->
+                        <div class="col-3 p-3">
+                            <!-- wrapper carrello  -->
+                            <div class="cart-wrapper">
 
-                        <!-- body del carrello  -->
-                        <div class="cart-body">
-                            <p class="cart-empty text-center">
-                                Il tuo carrello è vuoto
-                            </p>
-                        </div>
+                                <!-- header carrello  -->
+                                <div class="cart-header">
+                                    <h4 class="cart-title text-center">Il tuo carrello</h4>
+                                </div>
 
-                        <div class="cart-footer">
-                            <p class="cart-total text-center">Tot: 0€</p>
+                                <!-- body del carrello  -->
+                                <div class="cart-body">
+                                    <p class="cart-empty text-center">Il tuo carrello è vuoto</p>
+                                </div>
+
+
+                                <div class="cart-footer">
+                                    <p class="cart-total text-center">Tot: 0€</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
+        
     </section>
 </template>
 
@@ -143,48 +145,59 @@ export default {
 </script>
 
 <style lang="scss">
-#restaurant-page {
-    // css delle info ristorante
-    .restaurant-wrapper {
-        border: 1px solid black;
-        border-radius: 25px;
-        padding: 20px;
-        gap: 20px;
 
-        .restaurant-tipologies {
-            list-style: none;
-            gap: 10px;
-        }
-    }
+    #restaurant-page {
+        // css delle info ristorante 
+        .restaurant-header {
+            background-color: white;
 
-    // css del menu del ristorante
-    .menu-wrapper {
-        border: 1px solid black;
-        border-radius: 25px;
-        padding: 20px;
+            .restaurant-wrapper {
+                background-color: white;
+                padding: 16px 0;
+                gap: 20px;
 
-        .dish-wrapper {
-            height: 132px;
-            gap: 8px;
-            border-radius: 25px;
-
-            .dish-info {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-
-                .dish-title {
-                    font-size: 18px;
+                .restaurant-tipologies {
+                list-style: none;
+                gap: 10px;
                 }
             }
         }
-    }
+        
+        
+        .restaurant-body {
+            background-color: #e8ecec;
+            padding: 50px 0;
+            // css del menu del ristorante 
+            .menu-wrapper {
+                
 
-    // css del carrello
-    .cart-wrapper {
-        border: 1px solid black;
-        border-radius: 25px;
-        padding: 20px;
+                .dish-wrapper {
+                    height: 132px;
+                    gap: 8px;
+                    background-color: white;
+                    box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.27);
+
+                    .dish-info {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .dish-title {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+
+            // css del carrello 
+            .cart-wrapper {
+                background-color: white;
+                padding: 20px;
+                box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.27);
+            }
+        }
+        
+
     }
 }
 </style>
