@@ -8,17 +8,28 @@
                         <!-- spazio informazioni ristorante  -->
                         <div class="col-12 mb-5">
                             <div class="restaurant-wrapper d-flex">
-
                                 <!-- cover ristorante  -->
-                                <img src="https://picsum.photos/300/150" style="width:200px" alt="">
+                                <img
+                                    src="https://picsum.photos/300/150"
+                                    style="width: 200px"
+                                    alt=""
+                                />
 
                                 <!-- info del ristorante  -->
                                 <div class="restaurant-info">
-                                    <h1>{{user.business_name}}</h1>
+                                    <h1>{{ user.business_name }}</h1>
                                     <ul class="restaurant-tipologies d-flex">
-                                        <li v-for="tipology in user.tipologies" class="bg-primary border border-secondary rounded-pill px-3 py-1">{{tipology.name}}</li>
+                                        <li
+                                            v-for="tipology in user.tipologies"
+                                            class="bg-primary border border-secondary rounded-pill px-3 py-1"
+                                        >
+                                            {{ tipology.name }}
+                                        </li>
                                     </ul>
-                                    <p class="restaurant-contacts">{{user.street_address}} - {{user.phone_number}}</p>
+                                    <p class="restaurant-contacts">
+                                        {{ user.street_address }} -
+                                        {{ user.phone_number }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -27,15 +38,37 @@
                         <div class="col-12">
                             <div class="menu-wrapper">
                                 <div class="row">
-                                    <div v-for="dish in user.dishes" class="col-6">
-                                        <div class="dish-wrapper d-flex justify-content-between bg-secondary p-3">
+                                    <div
+                                        v-for="dish in user.dishes"
+                                        class="col-6"
+                                    >
+                                        <div
+                                            class="dish-wrapper d-flex justify-content-between bg-secondary p-3"
+                                        >
                                             <div class="dish-info">
-                                                <h4 class="dish-title mb-0">{{dish.name}}</h4>
-                                                <p class="dish-ingredients mb-1">{{dish.ingredients}}</p>
-                                                <span class="dish-price">{{dish.price.toFixed(2)}}€</span>
+                                                <h4 class="dish-title mb-0">
+                                                    {{ dish.name }}
+                                                </h4>
+                                                <p
+                                                    class="dish-ingredients mb-1"
+                                                >
+                                                    {{ dish.ingredients }}
+                                                </p>
+                                                <span class="dish-price"
+                                                    >{{
+                                                        dish.price.toFixed(2)
+                                                    }}€</span
+                                                >
                                             </div>
 
-                                            <img src="https://picsum.photos/300/150" style="width:100px; height:100px" alt="">
+                                            <img
+                                                src="https://picsum.photos/300/150"
+                                                style="
+                                                    width: 100px;
+                                                    height: 100px;
+                                                "
+                                                alt=""
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -48,15 +81,18 @@
                 <div class="col-3 p-3">
                     <!-- wrapper carrello  -->
                     <div class="cart-wrapper">
-
                         <!-- header carrello  -->
                         <div class="cart-header">
-                            <h4 class="cart-title text-center">Il tuo carrello</h4>
+                            <h4 class="cart-title text-center">
+                                Il tuo carrello
+                            </h4>
                         </div>
 
                         <!-- body del carrello  -->
                         <div class="cart-body">
-                            <p class="cart-empty text-center">Il tuo carrello è vuoto</p>
+                            <p class="cart-empty text-center">
+                                Il tuo carrello è vuoto
+                            </p>
                         </div>
 
                         <div class="cart-footer">
@@ -96,6 +132,7 @@ export default {
                 })
                 .catch((err) => {
                     console.warn(err);
+                    this.$router.push("/404");
                 });
         },
     },
@@ -106,48 +143,48 @@ export default {
 </script>
 
 <style lang="scss">
-    #restaurant-page {
-        // css delle info ristorante 
-        .restaurant-wrapper {
-            border: 1px solid black;
-            border-radius: 25px;
-            padding: 20px;
-            gap: 20px;
+#restaurant-page {
+    // css delle info ristorante
+    .restaurant-wrapper {
+        border: 1px solid black;
+        border-radius: 25px;
+        padding: 20px;
+        gap: 20px;
 
-            .restaurant-tipologies {
-                list-style: none;
-                gap: 10px;
-            }
+        .restaurant-tipologies {
+            list-style: none;
+            gap: 10px;
         }
+    }
 
-        // css del menu del ristorante 
-        .menu-wrapper {
-            border: 1px solid black;
+    // css del menu del ristorante
+    .menu-wrapper {
+        border: 1px solid black;
+        border-radius: 25px;
+        padding: 20px;
+
+        .dish-wrapper {
+            height: 132px;
+            gap: 8px;
             border-radius: 25px;
-            padding: 20px;
 
-            .dish-wrapper {
-                height: 132px;
-                gap: 8px;
-                border-radius: 25px;
+            .dish-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
 
-                .dish-info {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-
-                    .dish-title {
-                        font-size: 18px;
-                    }
+                .dish-title {
+                    font-size: 18px;
                 }
             }
         }
-
-        // css del carrello 
-        .cart-wrapper {
-            border: 1px solid black;
-            border-radius: 25px;
-            padding: 20px;
-        }
     }
+
+    // css del carrello
+    .cart-wrapper {
+        border: 1px solid black;
+        border-radius: 25px;
+        padding: 20px;
+    }
+}
 </style>

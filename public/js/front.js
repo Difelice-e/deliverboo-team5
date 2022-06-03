@@ -1951,17 +1951,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    propsTipology: {
-      type: Object,
-      require: true
-    }
-  },
   data: function data() {
     return {
       restaurants: [],
+      tipologies: [],
       loading: false
     };
   },
@@ -1972,14 +1968,26 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/restaurant").then(function (res) {
         var restaurants = res.data.restaurants;
         _this.restaurants = restaurants;
-        _this.loading = true;
       })["catch"](function (err) {
         console.warn(err);
+      });
+    },
+    fetchTipologies: function fetchTipologies() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/home").then(function (res) {
+        var tipologies = res.data.tipologies;
+        _this2.tipologies = tipologies;
+      })["catch"](function (err) {
+        console.warn(err);
+
+        _this2.$router.push("/404");
       });
     }
   },
   mounted: function mounted() {
     this.fetchRestaurants();
+    this.fetchTipologies();
   }
 });
 
@@ -1996,6 +2004,42 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2090,6 +2134,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.loading = true;
       })["catch"](function (err) {
         console.warn(err);
+
+        _this.$router.push("/404");
       });
     }
   },
@@ -2151,7 +2197,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2168,6 +2213,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.tipologies = tipologies;
       })["catch"](function (err) {
         console.warn(err);
+
+        _this.$router.push("/404");
       });
     }
   },
@@ -3576,18 +3623,18 @@ var render = function () {
     "div",
     { staticClass: "container" },
     [
-      _vm._l(_vm.propsTipology, function (element) {
-        return _c("div", { key: element.id }, [
+      _vm._l(_vm.tipologies, function (tipology) {
+        return _c("div", { key: tipology.id }, [
           _c("input", {
             staticClass: "form-check-input",
-            attrs: { type: "checkbox", id: element, name: element },
-            domProps: { value: element },
+            attrs: { type: "checkbox", id: tipology.slug, name: tipology.slug },
+            domProps: { value: tipology.slug },
           }),
           _vm._v(" "),
           _c(
             "label",
-            { staticClass: "form-check-label", attrs: { for: element } },
-            [_vm._v(_vm._s(element))]
+            { staticClass: "form-check-label", attrs: { for: tipology.slug } },
+            [_vm._v(_vm._s(tipology.name))]
           ),
         ])
       }),
@@ -3658,7 +3705,13 @@ var render = function () {
                           staticClass:
                             "bg-primary border border-secondary rounded-pill px-3 py-1",
                         },
-                        [_vm._v(_vm._s(tipology.name))]
+                        [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(tipology.name) +
+                              "\n                                    "
+                          ),
+                        ]
                       )
                     }),
                     0
@@ -3666,9 +3719,11 @@ var render = function () {
                   _vm._v(" "),
                   _c("p", { staticClass: "restaurant-contacts" }, [
                     _vm._v(
-                      _vm._s(_vm.user.street_address) +
-                        " - " +
-                        _vm._s(_vm.user.phone_number)
+                      "\n                                    " +
+                        _vm._s(_vm.user.street_address) +
+                        " -\n                                    " +
+                        _vm._s(_vm.user.phone_number) +
+                        "\n                                "
                     ),
                   ]),
                 ]),
@@ -3691,11 +3746,19 @@ var render = function () {
                         [
                           _c("div", { staticClass: "dish-info" }, [
                             _c("h4", { staticClass: "dish-title mb-0" }, [
-                              _vm._v(_vm._s(dish.name)),
+                              _vm._v(
+                                "\n                                                " +
+                                  _vm._s(dish.name) +
+                                  "\n                                            "
+                              ),
                             ]),
                             _vm._v(" "),
                             _c("p", { staticClass: "dish-ingredients mb-1" }, [
-                              _vm._v(_vm._s(dish.ingredients)),
+                              _vm._v(
+                                "\n                                                " +
+                                  _vm._s(dish.ingredients) +
+                                  "\n                                            "
+                              ),
                             ]),
                             _vm._v(" "),
                             _c("span", { staticClass: "dish-price" }, [
@@ -3735,13 +3798,17 @@ var staticRenderFns = [
       _c("div", { staticClass: "cart-wrapper" }, [
         _c("div", { staticClass: "cart-header" }, [
           _c("h4", { staticClass: "cart-title text-center" }, [
-            _vm._v("Il tuo carrello"),
+            _vm._v(
+              "\n                            Il tuo carrello\n                        "
+            ),
           ]),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "cart-body" }, [
           _c("p", { staticClass: "cart-empty text-center" }, [
-            _vm._v("Il tuo carrello è vuoto"),
+            _vm._v(
+              "\n                            Il tuo carrello è vuoto\n                        "
+            ),
           ]),
         ]),
         _vm._v(" "),
@@ -3783,11 +3850,7 @@ var render = function () {
           "router-link",
           {
             staticClass: "btn btn-danger",
-            attrs: {
-              tag: "button",
-              to: { name: "restaurant.index" },
-              propsTipology: _vm.tipology,
-            },
+            attrs: { tag: "button", to: { name: "restaurant.index" } },
           },
           [_vm._v("Tutti i tipi di ristorante")]
         ),

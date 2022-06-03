@@ -5,7 +5,6 @@
                 tag="button"
                 :to="{ name: 'restaurant.index' }"
                 class="btn btn-danger"
-                :propsTipology = "tipology"
                 >Tutti i tipi di ristorante</router-link
             >
         </div>
@@ -59,6 +58,7 @@ export default {
                 })
                 .catch((err) => {
                     console.warn(err);
+                    this.$router.push("/404");
                 });
         },
     },
