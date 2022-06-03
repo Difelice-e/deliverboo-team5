@@ -2294,6 +2294,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2302,16 +2305,11 @@ __webpack_require__.r(__webpack_exports__);
       loading: false
     };
   },
-  mounted: function mounted() {
-    console.log(this.$route);
-    console.log(this.tipology);
-  },
   methods: {
     fetchPost: function fetchPost() {
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/home/".concat(this.$route.params.slug)).then(function (res) {
-        console.log("🚀 then ~ res", res.data);
         var tipology = res.data.tipology;
         _this.tipology = tipology;
         console.log(_this.tipology); // questa funzione serve per il caricamento completo della pagina
@@ -2401,7 +2399,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container ul {\n  padding: 0;\n}\n.title-rest {\n  font-weight: 700;\n  font-size: 35px;\n}", ""]);
+exports.push([module.i, ".container ul {\n  padding: 0;\n}\n.title-rest {\n  font-weight: 700;\n  font-size: 35px;\n}\n.bg-gl {\n  background-color: #ffc244;\n}\n.name-business {\n  font-size: 14px;\n  font-weight: 700;\n}\n.address-name {\n  font-size: 12px;\n}\n.back-mark {\n  font-size: 18px;\n  background-color: #ffc244;\n  border-radius: 100px;\n  padding: 0 3px;\n}\n.back-gl {\n  font-size: 35px;\n  line-height: 1.2;\n  font-weight: 700;\n}", ""]);
 
 // exports
 
@@ -3925,9 +3923,11 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("h2", { staticClass: "pb-4 text-center back-yellow title-rest" }, [
-      _vm._v("\n        Ristoranti: "),
-      _c("span", { staticClass: "tipology-rest" }, [
-        _vm._v(_vm._s(_vm.tipology.name)),
+      _vm._v("\n        Ristoranti:  \n        "),
+      _c("span", { staticClass: "back-mark" }, [
+        _c("span", { staticClass: "tipology-rest for back-gl" }, [
+          _vm._v(_vm._s(_vm.tipology.name)),
+        ]),
       ]),
     ]),
     _vm._v(" "),
@@ -3957,15 +3957,19 @@ var render = function () {
                   }),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-body" }, [
-                    _c("h5", { staticClass: "card-title text-center" }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(ristoratore.business_name) +
-                          "\n                    "
-                      ),
-                    ]),
+                    _c(
+                      "h5",
+                      { staticClass: "card-title name-business text-left" },
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(ristoratore.business_name) +
+                            "\n                    "
+                        ),
+                      ]
+                    ),
                     _vm._v(" "),
-                    _c("p", { staticClass: "card-text" }, [
+                    _c("p", { staticClass: "card-text address-name" }, [
                       _vm._v(
                         "\n                        " +
                           _vm._s(ristoratore.street_address) +
@@ -3975,8 +3979,8 @@ var render = function () {
                     _vm._v(" "),
                     _c(
                       "a",
-                      { staticClass: "btn btn-primary", attrs: { href: "#" } },
-                      [_vm._v("Go somewhere")]
+                      { staticClass: "btn bg-gl", attrs: { href: "#" } },
+                      [_vm._v("Vedi Menù")]
                     ),
                   ]),
                 ]),
@@ -19956,7 +19960,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
