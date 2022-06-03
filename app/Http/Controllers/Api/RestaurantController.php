@@ -52,7 +52,7 @@ class RestaurantController extends Controller
      */
     public function show($slug)
     {
-        $user = User::with('dishes')->where('slug', $slug)->first();
+        $user = User::with('dishes','tipologies')->where('slug', $slug)->first();
 
         if ($user) {
             return response()->json([

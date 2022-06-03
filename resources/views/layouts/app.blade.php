@@ -28,7 +28,7 @@
 
 <body>
     <div id="app">
-        <nav class="mb-5 navbar navbar-expand-md navbar-light bg-goldGv shadow-sm position-relative">
+        <nav class="navbar navbar-expand-md navbar-light bg-goldGv shadow-sm position-relative">
             <div class="container">
                 {{-- logo  --}}
                 <a class="navbar-brand" href="#">
@@ -94,7 +94,7 @@
             </svg> --}}
         </nav>
 
-        <main class="my-5 py-5">
+        <main class="py-5">
             @yield('content')
         </main>
 
