@@ -51,24 +51,25 @@
 
                     <!-- carrello  -->
                     <div class="col-3 p-3">
+                        <CartDropdown />
                         <!-- wrapper carrello  -->
-                        <div class="cart-wrapper">
+                        <!-- <div class="cart-wrapper"> -->
 
                             <!-- header carrello  -->
-                            <div class="cart-header">
+                            <!-- <div class="cart-header">
                                 <h4 class="cart-title text-center">Il tuo carrello</h4>
-                            </div>
+                            </div> -->
 
                             <!-- body del carrello  -->
-                            <div class="cart-body">
+                            <!-- <div class="cart-body">
                                 <p class="cart-empty text-center">Il tuo carrello è vuoto</p>
-                            </div>
+                            </div> -->
 
 
-                            <div class="cart-footer">
+                            <!-- <div class="cart-footer">
                                 <p class="cart-total text-center">Tot: 0€</p>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
@@ -97,8 +98,12 @@
 
 <script>
 import axios from "axios";
+import CartDropdown from '../components/Cart.vue'
 
 export default {
+    components: {
+        CartDropdown
+    },
     data() {
         return {
             user: null,
