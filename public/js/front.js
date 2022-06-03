@@ -2080,9 +2080,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2129,6 +2126,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
 //
 //
 //
@@ -3665,7 +3664,6 @@ var render = function () {
               _c("div", { staticClass: "restaurant-info" }, [
                 _c("h1", [_vm._v(_vm._s(_vm.user.business_name))]),
                 _vm._v(" "),
-
                 _c(
                   "ul",
                   { staticClass: "restaurant-tipologies d-flex" },
@@ -3716,7 +3714,6 @@ var render = function () {
                         _c("div", { staticClass: "dish-info" }, [
                           _c("h4", { staticClass: "dish-title mb-0" }, [
                             _vm._v(_vm._s(dish.name)),
-
                           ]),
                           _vm._v(" "),
                           _c("p", { staticClass: "dish-ingredients mb-1" }, [
@@ -3759,17 +3756,13 @@ var staticRenderFns = [
       _c("div", { staticClass: "cart-wrapper" }, [
         _c("div", { staticClass: "cart-header" }, [
           _c("h4", { staticClass: "cart-title text-center" }, [
-            _vm._v(
-              "\n                            Il tuo carrello\n                        "
-            ),
+            _vm._v("Il tuo carrello"),
           ]),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "cart-body" }, [
           _c("p", { staticClass: "cart-empty text-center" }, [
-            _vm._v(
-              "\n                            Il tuo carrello è vuoto\n                        "
-            ),
+            _vm._v("Il tuo carrello è vuoto"),
           ]),
         ]),
         _vm._v(" "),
@@ -3807,12 +3800,10 @@ var render = function () {
     _c(
       "div",
       [
-
         _c("router-link", {
           staticClass: "btn btn-danger",
           attrs: { tag: "button", to: { name: "restaurant.index" } },
         }),
-
       ],
       1
     ),
