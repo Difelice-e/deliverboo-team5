@@ -1,13 +1,14 @@
 <template>
     <div class="container">
-        <div v-for="element in propsTipology" :key="element.id">
-            <input type="checkbox"  :id="element" :name="element" :value="element"
-            class="form-check-input">
-            <label
-                class="form-check-label"
-                :for="element"
-                >{{ element }}</label
-            >
+        <div v-for="tipology in tipologies" :key="tipology.id">
+            <input
+                type="checkbox"
+                :id="tipology.slug"
+                :name="tipology.slug"
+                :value="tipology.slug"
+                class="form-check-input"
+            />
+            <label class="form-check-label" :for="tipology.slug">{{ tipology.name }}</label>
         </div>
         <div>
             <ul>
@@ -26,6 +27,7 @@ export default {
     data() {
         return {
             restaurants: [],
+            tipologies: [],
             loading: false,
         };
     },
@@ -37,15 +39,28 @@ export default {
                     const { restaurants } = res.data;
                     this.restaurants = restaurants;
 
-                    this.loading = true;
                 })
                 .catch((err) => {
                     console.warn(err);
                 });
         },
+        fetchTipologies() {
+            axios
+                .get("/api/home")
+                .then((res) => {
+                    const { tipologies } = res.data;
+
+                    this.tipologies = tipologies;
+                })
+                .catch((err) => {
+                    console.warn(err);
+                    this.$router.push("/404");
+                });
+        },
     },
     mounted() {
         this.fetchRestaurants();
+        this.fetchTipologies();
     },
 };
 </script>

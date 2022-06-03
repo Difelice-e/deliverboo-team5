@@ -4,8 +4,10 @@
             <router-link
                 tag="button"
                 :to="{ name: 'restaurant.index' }"
+
                 class="btn btn-danger">
             </router-link>
+
         </div>
         <div>
             <ul class="d-flex flex-wrap justify-content-center gap-card">
@@ -57,6 +59,7 @@ export default {
                 })
                 .catch((err) => {
                     console.warn(err);
+                    this.$router.push("/404");
                 });
         },
     },

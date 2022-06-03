@@ -5,17 +5,28 @@
             <div class="row">
                 <div class="col-12">
                             <div class="restaurant-wrapper d-flex">
-
                                 <!-- cover ristorante  -->
-                                <img src="https://picsum.photos/300/150" style="width:200px" alt="">
+                                <img
+                                    src="https://picsum.photos/300/150"
+                                    style="width: 200px"
+                                    alt=""
+                                />
 
                                 <!-- info del ristorante  -->
                                 <div class="restaurant-info">
-                                    <h1>{{user.business_name}}</h1>
+                                    <h1>{{ user.business_name }}</h1>
                                     <ul class="restaurant-tipologies d-flex">
-                                        <li v-for="tipology in user.tipologies" class="bg-primary border border-secondary rounded-pill px-3 py-1">{{tipology.name}}</li>
+                                        <li
+                                            v-for="tipology in user.tipologies"
+                                            class="bg-primary border border-secondary rounded-pill px-3 py-1"
+                                        >
+                                            {{ tipology.name }}
+                                        </li>
                                     </ul>
-                                    <p class="restaurant-contacts">{{user.street_address}} - {{user.phone_number}}</p>
+                                    <p class="restaurant-contacts">
+                                        {{ user.street_address }} -
+                                        {{ user.phone_number }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -34,15 +45,34 @@
                         <div class="col-9 p-3">
                             <div class="menu-wrapper">
                                 <div class="row">
+
                                     <div v-for="dish in user.dishes" class="col-6">
                                         <div class="dish-wrapper d-flex justify-content-between p-3">
+
                                             <div class="dish-info">
-                                                <h4 class="dish-title mb-0">{{dish.name}}</h4>
-                                                <p class="dish-ingredients mb-1">{{dish.ingredients}}</p>
-                                                <span class="dish-price">{{dish.price.toFixed(2)}}€</span>
+                                                <h4 class="dish-title mb-0">
+                                                    {{ dish.name }}
+                                                </h4>
+                                                <p
+                                                    class="dish-ingredients mb-1"
+                                                >
+                                                    {{ dish.ingredients }}
+                                                </p>
+                                                <span class="dish-price"
+                                                    >{{
+                                                        dish.price.toFixed(2)
+                                                    }}€</span
+                                                >
                                             </div>
 
-                                            <img src="https://picsum.photos/300/150" style="width:100px; height:100px" alt="">
+                                            <img
+                                                src="https://picsum.photos/300/150"
+                                                style="
+                                                    width: 100px;
+                                                    height: 100px;
+                                                "
+                                                alt=""
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -63,6 +93,7 @@
                                 <div class="cart-body">
                                     <p class="cart-empty text-center">Il tuo carrello è vuoto</p>
                                 </div>
+
 
                                 <div class="cart-footer">
                                     <p class="cart-total text-center">Tot: 0€</p>
@@ -103,6 +134,7 @@ export default {
                 })
                 .catch((err) => {
                     console.warn(err);
+                    this.$router.push("/404");
                 });
         },
     },
@@ -113,6 +145,7 @@ export default {
 </script>
 
 <style lang="scss">
+
     #restaurant-page {
         // css delle info ristorante 
         .restaurant-header {
@@ -164,5 +197,7 @@ export default {
             }
         }
         
+
     }
+}
 </style>
