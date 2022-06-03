@@ -25,8 +25,12 @@
 
 
                 <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-
-                    <CartDropdown />
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">Cart ({{ $store.state.cartCount }})</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <CartDropdown />
+                        </div>
+                    </div>
 
                     <!-- Right Side Of Navbar || Pulsanti attenzione -->
                     <ul class="navbar-nav align-items-end ml-auto">

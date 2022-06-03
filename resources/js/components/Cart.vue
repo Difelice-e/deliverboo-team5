@@ -1,7 +1,5 @@
 <template>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">Cart ({{ $store.state.cartCount }})</button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div>
             <!-- carrello con items  -->
             <div v-if="$store.state.cart.length > 0" class="d-flex flex-column p-2">
                 <a v-for="dish in $store.state.cart" :key="dish.id" class="navbar-item" href="">
@@ -21,7 +19,6 @@
             </div>
             
         </div>
-    </div>
 </template>
 
 <script>

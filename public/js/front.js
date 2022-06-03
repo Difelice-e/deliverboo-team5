@@ -1937,9 +1937,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     removeFromCart: function removeFromCart(dish) {
@@ -2076,6 +2073,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
+//
 //
 //
 //
@@ -2174,7 +2173,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    CartDropdown: _components_Cart_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   data: function data() {
     return {
       user: null,
@@ -2405,6 +2408,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -3769,90 +3776,63 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dropdown" }, [
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-secondary dropdown-toggle",
-        attrs: {
-          type: "button",
-          id: "dropdownMenuButton",
-          "data-toggle": "dropdown",
-          "aria-expanded": "false",
-        },
-      },
-      [_vm._v("Cart (" + _vm._s(_vm.$store.state.cartCount) + ")")]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "dropdown-menu",
-        attrs: { "aria-labelledby": "dropdownMenuButton" },
-      },
-      [
-        _vm.$store.state.cart.length > 0
-          ? _c(
-              "div",
-              { staticClass: "d-flex flex-column p-2" },
-              [
-                _vm._l(_vm.$store.state.cart, function (dish) {
-                  return _c(
-                    "a",
+  return _c("div", [
+    _vm.$store.state.cart.length > 0
+      ? _c(
+          "div",
+          { staticClass: "d-flex flex-column p-2" },
+          [
+            _vm._l(_vm.$store.state.cart, function (dish) {
+              return _c(
+                "a",
+                {
+                  key: dish.id,
+                  staticClass: "navbar-item",
+                  attrs: { href: "" },
+                },
+                [
+                  _c(
+                    "span",
                     {
-                      key: dish.id,
-                      staticClass: "navbar-item",
-                      attrs: { href: "" },
-                    },
-                    [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "removeBtn",
-                          attrs: { title: "Remove from cart" },
-                          on: {
-                            click: function ($event) {
-                              $event.preventDefault()
-                              return _vm.removeFromCart(dish)
-                            },
-                          },
+                      staticClass: "removeBtn",
+                      attrs: { title: "Remove from cart" },
+                      on: {
+                        click: function ($event) {
+                          $event.preventDefault()
+                          return _vm.removeFromCart(dish)
                         },
-                        [_vm._v("X")]
-                      ),
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(dish.name) +
-                          " x" +
-                          _vm._s(dish.quantity) +
-                          " - €" +
-                          _vm._s(dish.totalPrice) +
-                          "\n            "
-                      ),
-                    ]
-                  )
-                }),
-                _vm._v(" "),
-                _c("a", { staticClass: "navbar-item", attrs: { href: "" } }, [
-                  _vm._v(
-                    "Total: €" + _vm._s(_vm.totalPrice) + "\n            "
+                      },
+                    },
+                    [_vm._v("X")]
                   ),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "dropdown-item", attrs: { href: "#" } },
-                  [_vm._v("Checkout")]
-                ),
-              ],
-              2
-            )
-          : _c("div", [
-              _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-                _vm._v("Cart is empty"),
-              ]),
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(dish.name) +
+                      " x" +
+                      _vm._s(dish.quantity) +
+                      " - €" +
+                      _vm._s(dish.totalPrice) +
+                      "\n        "
+                  ),
+                ]
+              )
+            }),
+            _vm._v(" "),
+            _c("a", { staticClass: "navbar-item", attrs: { href: "" } }, [
+              _vm._v("Total: €" + _vm._s(_vm.totalPrice) + "\n        "),
             ]),
-      ]
-    ),
+            _vm._v(" "),
+            _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+              _vm._v("Checkout"),
+            ]),
+          ],
+          2
+        )
+      : _c("div", [
+          _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+            _vm._v("Cart is empty"),
+          ]),
+        ]),
   ])
 }
 var staticRenderFns = []
@@ -4097,43 +4077,22 @@ var render = function () {
                     ]),
                   ]),
                   _vm._v(" "),
-                  _vm._m(0),
+                  _c(
+                    "div",
+                    { staticClass: "col-3 p-3" },
+                    [_c("CartDropdown")],
+                    1
+                  ),
                 ]),
               ]),
             ]),
           ]
-        : [_vm._m(1)],
+        : [_vm._m(0)],
     ],
     2
   )
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-3 p-3" }, [
-      _c("div", { staticClass: "cart-wrapper" }, [
-        _c("div", { staticClass: "cart-header" }, [
-          _c("h4", { staticClass: "cart-title text-center" }, [
-            _vm._v("Il tuo carrello"),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "cart-body" }, [
-          _c("p", { staticClass: "cart-empty text-center" }, [
-            _vm._v("Il tuo carrello è vuoto"),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "cart-footer" }, [
-          _c("p", { staticClass: "cart-total text-center" }, [
-            _vm._v("Tot: 0€"),
-          ]),
-        ]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -4439,8 +4398,39 @@ var render = function () {
                 staticClass: "collapse navbar-collapse flex-grow-0",
                 attrs: { id: "navbarSupportedContent" },
               },
-              [_c("CartDropdown"), _vm._v(" "), _vm._m(2)],
-              1
+              [
+                _c("div", { staticClass: "dropdown" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary dropdown-toggle",
+                      attrs: {
+                        type: "button",
+                        id: "dropdownMenuButton",
+                        "data-toggle": "dropdown",
+                        "aria-expanded": "false",
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "Cart (" + _vm._s(_vm.$store.state.cartCount) + ")"
+                      ),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "dropdown-menu",
+                      attrs: { "aria-labelledby": "dropdownMenuButton" },
+                    },
+                    [_c("CartDropdown")],
+                    1
+                  ),
+                ]),
+                _vm._v(" "),
+                _vm._m(2),
+              ]
             ),
           ]),
         ]
