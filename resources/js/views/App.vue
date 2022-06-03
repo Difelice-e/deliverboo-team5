@@ -26,16 +26,7 @@
 
                 <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
 
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                            Cart (0)
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Cart is empty</a>
-                            <hr>
-                            <a class="dropdown-item" href="#">Checkout</a>
-                        </div>
-                    </div>
+                    <CartDropdown />
 
                     <!-- Right Side Of Navbar || Pulsanti attenzione -->
                     <ul class="navbar-nav align-items-end ml-auto">
@@ -137,8 +128,11 @@
 </template>
 
 <script>
+import CartDropdown from '../components/Cart.vue'
 export default {
-
+    components: {
+        CartDropdown
+    },
 };
 </script>
 

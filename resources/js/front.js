@@ -13,12 +13,25 @@ window.Vue = require("vue");
 import App from "./views/App.vue";
 import VueRouter from "vue-router";
 
+import Vuex from 'vuex';
+
+window.Vuex = Vuex;
+
+Vue.use(Vuex);
+
 Vue.use(VueRouter);
 
 import router from "./Router";
 
+// Vue.component('cart-dropdown', require('./components/Cart.vue'));
+
+import store from './store.js';
+
 const app = new Vue({
     el: "#root",
     render: (h) => h(App),
+    store: new Vuex.Store(store),
     router,
 });
+
+

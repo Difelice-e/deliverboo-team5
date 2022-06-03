@@ -38,6 +38,7 @@
                                             <h4 class="dish-title mb-0">{{ dish.name }}</h4>
                                             <p class="dish-ingredients mb-1">{{ dish.ingredients }}</p>
                                             <span class="dish-price">{{dish.price.toFixed(2)}}€</span>
+                                            <button @click="addToCart(dish)" class="btn btn-outline-success">Add to Cart</button>
                                         </div>
 
                                         <img src="https://picsum.photos/300/150" style="width: 100px; height: 100px;" alt=""/>
@@ -104,6 +105,9 @@ export default {
                     this.$router.push("/404");
                 });
         },
+        addToCart(dish) {
+            this.$store.commit('addToCart', dish);
+        },
     },
     beforeMount() {
         this.fetchRestaurant();
@@ -124,8 +128,8 @@ export default {
                 gap: 20px;
 
                 .restaurant-tipologies {
-                list-style: none;
-                gap: 10px;
+                    list-style: none;
+                    gap: 10px;
                 }
             }
         }
@@ -139,7 +143,7 @@ export default {
                 
 
                 .dish-wrapper {
-                    height: 132px;
+                    min-height: 132px;
                     gap: 8px;
                     background-color: white;
                     box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.27);
