@@ -1908,6 +1908,12 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 //
 //
 //
@@ -1931,7 +1937,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    totalPrice: function totalPrice() {
+      var total = 0;
+
+      var _iterator = _createForOfIteratorHelper(this.$store.state.cart),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var dish = _step.value;
+          total += dish.totalPrice;
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      return total.toFixed(2);
+    }
+  }
+});
 
 /***/ }),
 
@@ -3772,7 +3800,7 @@ var render = function () {
                         _vm._s(dish.name) +
                           " x" +
                           _vm._s(dish.quantity) +
-                          " - $" +
+                          " - €" +
                           _vm._s(dish.totalPrice)
                       ),
                     ]
@@ -3781,7 +3809,7 @@ var render = function () {
                 _vm._v(" "),
                 _c("a", { staticClass: "navbar-item", attrs: { href: "" } }, [
                   _vm._v(
-                    "Total: $" + _vm._s(_vm.totalPrice) + "\n            "
+                    "Total: €" + _vm._s(_vm.totalPrice) + "\n            "
                   ),
                 ]),
                 _vm._v(" "),
@@ -21840,7 +21868,20 @@ var store = {
   },
   mutations: {
     addToCart: function addToCart(state, dish) {
-      console.log(dish.name);
+      var found = state.cart.find(function (product) {
+        return product.id == dish.id;
+      });
+
+      if (found) {
+        found.quantity++;
+        found.totalPrice = found.quantity * found.price;
+      } else {
+        state.cart.push(dish);
+        Vue.set(dish, 'quantity', 1);
+        Vue.set(dish, 'totalPrice', dish.price);
+      }
+
+      state.cartCount++;
     }
   }
 };
