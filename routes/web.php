@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function() {
+        Route::resource('dashboard', 'UserController');
+        Route::resource('dishes', 'DishController');
+        Route::resource('orders', 'OrderController');
+});
+
+// rotte di vue
+Route::fallback(function () {
+    return view('home');
+});

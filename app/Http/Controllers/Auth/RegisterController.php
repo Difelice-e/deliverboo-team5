@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Tipology;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -29,7 +31,19 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    public function redirectTo()     
+    {      
+        return route('admin.dashboard.index');    
+    }
+
+    public function showRegistrationForm()
+    {
+        $tipologies = Tipology::orderBy('name','asc')->get();
+
+        return view('auth.register', compact('tipologies'));
+    }
+
+    
 
     /**
      * Create a new controller instance.
@@ -50,9 +64,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'business_name' => ['required', 'string','max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'vat_number' => ['required', 'string', 'digits:11', 'numeric'],
+            'street_address' => ['required', 'string', 'max:255'],
+            'phone_number' => ['required', 'numeric', 'digits_between:6,10'], 
+            'cover' => ['file', 'mimes:jpg,jpeg,gif,png,svg', 'required'],
+            'tipologies' => ['exists:tipologies,id','required'],
         ]);
     }
 
@@ -64,10 +83,32 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        // creazione dello slug 
+        $data['slug'] = User::getUniqueSlug($data['business_name']);
+
+        // recupero tipologie 
+        $tipologies = Tipology::all();
+
+        // recupero path immagine
+        if(array_key_exists('cover', $data)) {
+            $cover_path = Storage::put('uploads', $data['cover']);
+            $data['cover'] = $cover_path;
+        };
+
+        $user_data = [
+            'business_name' => $data['business_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
+            'cover' => $data['cover'],
+            'vat_number' => $data['vat_number'],
+            'street_address' => $data['street_address'],
+            'phone_number' => $data['phone_number'],
+            'slug' => $data['slug'],
+        ];
+
+        $user = User::create($user_data);  
+        $user->tipologies()->sync($data['tipologies']); 
+
+        return $user;
     }
 }
