@@ -1,30 +1,41 @@
 <template>
-    <div>
-        <ul class="d-flex flex-wrap justify-content-center gap-card">
+    <div class="container">
+        <div>
             <router-link
-                tag="li"
-                :to="{
-                    name: 'tipologies.show',
-                    params: { slug: tipology.slug },
-                }"
-                v-for="tipology in tipologies"
-                :key="tipology.id"
-                class="cursor-pointer"
+                tag="button"
+                :to="{ name: 'restaurant.index' }"
+                class="btn btn-danger"
+                :propsTipology = "tipology"
+                >Tutti i tipi di ristorante</router-link
             >
-                <div class="card">
-                    <img
-                        src="https://picsum.photos/300/150"
-                        class="card-img-top"
-                        alt=""
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title text-center">
-                            {{ tipology.name }}
-                        </h5>
+        </div>
+        <div>
+            <ul class="d-flex flex-wrap justify-content-center gap-card">
+                <router-link
+                    tag="li"
+                    :to="{
+                        name: 'tipologies.show',
+                        params: { slug: tipology.slug },
+                    }"
+                    v-for="tipology in tipologies"
+                    :key="tipology.id"
+                    class="cursor-pointer"
+                >
+                    <div class="card">
+                        <img
+                            src="https://picsum.photos/300/150"
+                            class="card-img-top"
+                            alt=""
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                {{ tipology.name }}
+                            </h5>
+                        </div>
                     </div>
-                </div>
-            </router-link>
-        </ul>
+                </router-link>
+            </ul>
+        </div>
     </div>
 </template>
 

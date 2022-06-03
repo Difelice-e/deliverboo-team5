@@ -15,12 +15,12 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $users = User::with('dishes')->get()->all();
+        $users = User::with(['dishes', 'tipologies'])->get()->all();
 
         return response()->json([
             'users' => $users,
         ]);
-        
+
     }
 
     /**
