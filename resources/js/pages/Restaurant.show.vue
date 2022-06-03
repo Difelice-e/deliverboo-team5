@@ -2,108 +2,75 @@
     <section id="restaurant-page">
         <div class="restaurant-header">
             <div class="container">
-            <div class="row">
-                <div class="col-12">
-                            <div class="restaurant-wrapper d-flex">
-                                <!-- cover ristorante  -->
-                                <img
-                                    src="https://picsum.photos/300/150"
-                                    style="width: 200px"
-                                    alt=""
-                                />
+                <div class="row">
+                    <div class="col-12">
+                        <div class="restaurant-wrapper d-flex">
+                            <!-- cover ristorante  -->
+                            <img src="https://picsum.photos/300/150" style="width: 200px" alt=""/>
 
-                                <!-- info del ristorante  -->
-                                <div class="restaurant-info">
-                                    <h1>{{ user.business_name }}</h1>
-                                    <ul class="restaurant-tipologies d-flex">
-                                        <li
-                                            v-for="tipology in user.tipologies"
-                                            class="bg-primary border border-secondary rounded-pill px-3 py-1"
-                                        >
-                                            {{ tipology.name }}
-                                        </li>
-                                    </ul>
-                                    <p class="restaurant-contacts">
-                                        {{ user.street_address }} -
-                                        {{ user.phone_number }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-            </div>
-        </div>
-        </div>
-        
-        <div class="restaurant-body">
-            <div class="container">
-            <div class="row align-items-start">
-                
-                        <!-- spazio informazioni ristorante  -->
-                        
-
-                        <!-- menu del ristorante  -->
-                        <div class="col-9 p-3">
-                            <div class="menu-wrapper">
-                                <div class="row">
-
-                                    <div v-for="dish in user.dishes" class="col-6">
-                                        <div class="dish-wrapper d-flex justify-content-between p-3">
-
-                                            <div class="dish-info">
-                                                <h4 class="dish-title mb-0">
-                                                    {{ dish.name }}
-                                                </h4>
-                                                <p
-                                                    class="dish-ingredients mb-1"
-                                                >
-                                                    {{ dish.ingredients }}
-                                                </p>
-                                                <span class="dish-price"
-                                                    >{{
-                                                        dish.price.toFixed(2)
-                                                    }}€</span
-                                                >
-                                            </div>
-
-                                            <img
-                                                src="https://picsum.photos/300/150"
-                                                style="
-                                                    width: 100px;
-                                                    height: 100px;
-                                                "
-                                                alt=""
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- carrello  -->
-                        <div class="col-3 p-3">
-                            <!-- wrapper carrello  -->
-                            <div class="cart-wrapper">
-
-                                <!-- header carrello  -->
-                                <div class="cart-header">
-                                    <h4 class="cart-title text-center">Il tuo carrello</h4>
-                                </div>
-
-                                <!-- body del carrello  -->
-                                <div class="cart-body">
-                                    <p class="cart-empty text-center">Il tuo carrello è vuoto</p>
-                                </div>
-
-
-                                <div class="cart-footer">
-                                    <p class="cart-total text-center">Tot: 0€</p>
-                                </div>
+                            <!-- info del ristorante  -->
+                            <div class="restaurant-info">
+                                <h1>{{ user.business_name }}</h1>
+                                <ul class="restaurant-tipologies d-flex">
+                                    <li v-for="tipology in user.tipologies" class="bg-primary border border-secondary rounded-pill px-3 py-1">{{ tipology.name }}</li>
+                                </ul>
+                                <p class="restaurant-contacts">{{ user.street_address }} - {{ user.phone_number }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
         
+        <div class="restaurant-body">
+            <div class="container">
+                <div class="row align-items-start">
+                                        
+                    <!-- menu del ristorante  -->
+                    <div class="col-9 p-3">
+                        <div class="menu-wrapper">
+                            <div class="row">
+
+                                <div v-for="dish in user.dishes" class="col-6">
+                                    <div class="dish-wrapper d-flex justify-content-between p-3">
+
+                                        <div class="dish-info">
+                                            <h4 class="dish-title mb-0">{{ dish.name }}</h4>
+                                            <p class="dish-ingredients mb-1">{{ dish.ingredients }}</p>
+                                            <span class="dish-price">{{dish.price.toFixed(2)}}€</span>
+                                        </div>
+
+                                        <img src="https://picsum.photos/300/150" style="width: 100px; height: 100px;" alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- carrello  -->
+                    <div class="col-3 p-3">
+                        <!-- wrapper carrello  -->
+                        <div class="cart-wrapper">
+
+                            <!-- header carrello  -->
+                            <div class="cart-header">
+                                <h4 class="cart-title text-center">Il tuo carrello</h4>
+                            </div>
+
+                            <!-- body del carrello  -->
+                            <div class="cart-body">
+                                <p class="cart-empty text-center">Il tuo carrello è vuoto</p>
+                            </div>
+
+
+                            <div class="cart-footer">
+                                <p class="cart-total text-center">Tot: 0€</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -196,8 +163,6 @@ export default {
                 box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.27);
             }
         }
-        
-
     }
-}
+
 </style>
