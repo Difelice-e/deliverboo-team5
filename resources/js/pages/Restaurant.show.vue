@@ -1,10 +1,9 @@
 <template>
     <div>
-        {{ $route.params.slug }}
-        {{ user }}
-        <!-- <ul>
-            <li v-for="el in dishes.dishes" :key="el.id"></li>
-        </ul> -->
+        {{ user.business_name }}
+        <ul>
+            <li v-for="dish in user.dishes" :key="dish.id">{{dish.name}}</li>
+        </ul>
     </div>
 </template>
 
@@ -21,7 +20,7 @@ export default {
     methods: {
         fetchRestaurant() {
             axios
-                .get(`api/restaurant/${this.$route.params.slug}`)
+                .get(`/api/restaurant/${this.$route.params.slug}`)
                 .then((res) => {
                     console.log(
                         "🚀 ~ file: Menu.show.vue ~ line 26 ~ .then ~ res",

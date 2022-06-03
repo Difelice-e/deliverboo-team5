@@ -9,13 +9,14 @@
         >
             <router-link
                 tag="li"
-                :to="{
-                    name: 'menu.show',
-                    params: { slug: ristoratore.slug },
-                }"
+                
                 v-for="ristoratore in tipology.users"
                 :key="ristoratore.id"
                 class="cursor-pointer"
+                :to="{
+                    name: 'restaurant.show',
+                    params: { slug: ristoratore.slug },
+                }"
             >
                 <div class="card">
                     <img

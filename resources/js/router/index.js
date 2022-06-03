@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 import Tipologies from "../pages/Tipologies.index.vue";
 import Tipology from "../pages/Tipologies.show.vue";
-import menu from "../pages/Menu.show.vue";
+import Restaurant from "../pages/Restaurant.show.vue";
 import NotFound from "../pages/404.vue";
 
 const routes = [
@@ -19,15 +19,15 @@ const routes = [
         name: "tipologies.show",
         component: Tipology,
     },
+    // {
+    //     path: "/restaurant",
+    //     name: "restaurant.index",
+    //     component: Restaurants,
+    // },
     {
-        path: "/menu",
-        name: "menu.index",
-        component: menu,
-    },
-    {
-        path: "/menu/:slug",
-        name: "menu.show",
-        component: menu,
+        path: "/restaurant/:slug",
+        name: "restaurant.show",
+        component: Restaurant,
     },
     {
         path: "/*",
