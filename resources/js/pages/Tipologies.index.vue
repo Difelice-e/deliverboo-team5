@@ -1,13 +1,15 @@
 <template>
     <div class="container">
-        <div>
+        <div class="d-flex flex-wrap justify-content-center my-4">
             <router-link
                 tag="button"
                 :to="{ name: 'restaurant.index' }"
                 class="btn btn-danger"
-                >Tutti i tipi di ristorante</router-link
             >
+                vedi tutti i tipi di ristoranti
+            </router-link>
         </div>
+
         <div>
             <ul class="d-flex flex-wrap justify-content-center gap-card">
                 <router-link

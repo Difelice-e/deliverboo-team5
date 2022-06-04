@@ -1,22 +1,78 @@
 <template>
     <div class="container">
-        <div v-for="tipology in tipologies" :key="tipology.id">
-            <input
-                type="checkbox"
-                :id="tipology.slug"
-                :name="tipology.slug"
-                :value="tipology.slug"
-                class="form-check-input"
-            />
-            <label class="form-check-label" :for="tipology.slug">{{ tipology.name }}</label>
+        <div class="row d-flex flex-wrap justify-content-center">
+            <!-- checkbox tipologia -->
+            <div class="pluto col-1 d-flex align-content-start flex-wrap">
+                <div
+                    class=""
+                    v-for="checkboxTipology in tipology"
+                    :key="checkboxTipology.id"
+                >
+                    <input
+                        type="checkbox"
+                        :id="checkboxTipology.slug"
+                        :value="checkboxTipology.slug"
+                        v-model="filterTipology"
+                        class="form-check-input"
+                    />
+                    <label
+                        class="form-check-label"
+                        :for="checkboxTipology.slug"
+                        >{{ checkboxTipology.name }}</label
+                    >
+                </div>
+            </div>
+
+            <!-- card ristoranti -->
+            <div class="pippo col-11">
+                <ul class="d-flex flex-wrap justify-content-center gap-card">
+                    <router-link
+                        tag="li"
+                        :to="{
+                            name: 'tipologies.show',
+                            params: { slug: user.slug },
+                        }"
+                        v-for="user in users"
+                        :key="user.id"
+                        class="cursor-pointer col-12 col-sm-6 col-md-3"
+                        :class="[
+                                filterTipology == 0
+                                    ? 'd-block'
+                                    : filterTipology === checkboxTipology.slug
+                                    ? 'd-block'
+                                    : 'd-none'
+                            ]"
+                    >
+                        <div class="card">
+                            <img
+                                src="https://picsum.photos/300/150"
+                                class="card-img-top"
+                                alt=""
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    {{ user.business_name }}
+                                </h5>
+                                <p>
+                                    {{ filterTipology }}
+                                </p>
+                                <!-- Tag tipologie -->
+                                <ul>
+                                    <li
+                                        v-for="tag in user.tipologies"
+                                        :key="tag.id"
+                                        class="badge badge-pill badge-warning mr-2 p-2"
+                                    >
+                                        {{ tag.name }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </router-link>
+                </ul>
+            </div>
         </div>
-        <div>
-            <ul>
-                <li v-for="el in restaurants" :key="el.id">
-                    {{ el.business_name }}
-                </li>
-            </ul>
-        </div>
+        <!-- checkbox tipologie-->
     </div>
 </template>
 
@@ -26,8 +82,9 @@ import axios from "axios";
 export default {
     data() {
         return {
-            restaurants: [],
-            tipologies: [],
+            filterTipology: [],
+            users: [],
+            tipology: [],
             loading: false,
         };
     },
@@ -36,12 +93,13 @@ export default {
             axios
                 .get("/api/restaurant")
                 .then((res) => {
-                    const { restaurants } = res.data;
-                    this.restaurants = restaurants;
+                    const { users } = res.data;
 
+                    this.users = users;
                 })
                 .catch((err) => {
                     console.warn(err);
+                    this.$router.push("/restaurants/404");
                 });
         },
         fetchTipologies() {
@@ -50,11 +108,11 @@ export default {
                 .then((res) => {
                     const { tipologies } = res.data;
 
-                    this.tipologies = tipologies;
+                    this.tipology = tipologies;
                 })
                 .catch((err) => {
                     console.warn(err);
-                    this.$router.push("/404");
+                    this.$router.push("/tipologies/404");
                 });
         },
     },
@@ -65,4 +123,12 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.gap-card {
+    list-style-type: none;
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+}
+</style>
