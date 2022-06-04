@@ -94,7 +94,7 @@
             </svg> --}}
         </nav>
 
-        <main class="py-5">
+        <main>
             @yield('content')
         </main>
 

@@ -8,6 +8,7 @@
             >
                 vedi tutti i tipi di ristoranti
             </router-link>
+
         </div>
 
         <div>
