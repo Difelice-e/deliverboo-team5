@@ -2570,6 +2570,80 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3809,14 +3883,14 @@ var render = function () {
     _vm.$store.state.cart.length > 0
       ? _c(
           "div",
-          { staticClass: "d-flex flex-column p-2" },
+          { staticClass: "d-flex flex-column p-2 " },
           [
             _vm._l(_vm.$store.state.cart, function (dish) {
               return _c(
                 "a",
                 {
                   key: dish.id,
-                  staticClass: "navbar-item",
+                  staticClass: "navbar-item ",
                   attrs: { href: "" },
                 },
                 [
@@ -4486,7 +4560,7 @@ var render = function () {
         "nav",
         {
           staticClass:
-            "navbar navbar-expand-md navbar-light bg-goldGv shadow-sm position-relative",
+            "\n        navbar navbar-expand-md navbar-light\n        bg-goldGv\n        shadow-sm\n        position-relative\n      ",
         },
         [
           _c("div", { staticClass: "container" }, [
@@ -4513,7 +4587,7 @@ var render = function () {
               _vm._v(" "),
               _c("input", {
                 staticClass:
-                  "form-control font-size col-12 text-center rounded-pill mr-sm-2 pl-5",
+                  "\n              form-control\n              font-size\n              col-12\n              text-center\n              rounded-pill\n              mr-sm-2\n              pl-5\n            ",
                 attrs: {
                   type: "search",
                   placeholder: "Search",
@@ -4531,37 +4605,57 @@ var render = function () {
                 attrs: { id: "navbarSupportedContent" },
               },
               [
-                _c("div", { staticClass: "dropdown" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-secondary dropdown-toggle",
-                      attrs: {
-                        type: "button",
-                        id: "dropdownMenuButton",
-                        "data-toggle": "dropdown",
-                        "aria-expanded": "false",
+                _c(
+                  "ul",
+                  {
+                    staticClass:
+                      "navbar-nav  align-items-end align-items-md-center ml-auto",
+                  },
+                  [
+                    _c(
+                      "li",
+                      {
+                        staticClass: "dropdown btn-nav-register nav-item",
+                        attrs: {
+                          type: "button",
+                          id: "dropdownMenuButton",
+                          "data-toggle": "dropdown",
+                          "aria-expanded": "false",
+                        },
                       },
-                    },
-                    [
-                      _vm._v(
-                        "Cart (" + _vm._s(_vm.$store.state.cartCount) + ")"
-                      ),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "dropdown-menu",
-                      attrs: { "aria-labelledby": "dropdownMenuButton" },
-                    },
-                    [_c("CartDropdown")],
-                    1
-                  ),
-                ]),
-                _vm._v(" "),
-                _vm._m(2),
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "\n                  my-2\n                  nav-link\n                  mx-md-1\n                  px-2\n                  p-md-1\n                  text-center\n                  font-weight-bold\n                  text-balck\n                ",
+                          },
+                          [
+                            _vm._v(
+                              "\n                Cart (" +
+                                _vm._s(_vm.$store.state.cartCount) +
+                                ")\n              "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "dropdown-menu",
+                            attrs: { "aria-labelledby": "dropdownMenuButton" },
+                          },
+                          [_c("CartDropdown")],
+                          1
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _vm._m(3),
+                  ]
+                ),
               ]
             ),
           ]),
@@ -4571,7 +4665,7 @@ var render = function () {
     _vm._v(" "),
     _c("main", [_c("router-view")], 1),
     _vm._v(" "),
-    _vm._m(3),
+    _vm._m(4),
   ])
 }
 var staticRenderFns = [
@@ -4614,43 +4708,45 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "navbar-nav align-items-end ml-auto" }, [
-      _c(
-        "li",
-        { staticClass: "nav-item btn-nav-register my-2 mx-md-1 px-2 p-md-1" },
-        [
-          _c(
-            "a",
-            {
-              staticClass: "nav-link text-center font-weight-bold text-balck",
-              attrs: { href: "/login" },
-            },
-            [_vm._v("Login")]
-          ),
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "li",
-        { staticClass: "nav-item btn-nav-register my-2 mx-md-1 px-2 p-md-1" },
-        [
-          _c(
-            "a",
-            {
-              staticClass: "nav-link text-center font-weight-bold text-balck",
-              attrs: { href: "/register" },
-            },
-            [_vm._v("Register")]
-          ),
-        ]
-      ),
-    ])
+    return _c(
+      "li",
+      { staticClass: "nav-item btn-nav-register my-2 mx-md-1 px-2 p-md-1" },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "nav-link text-center font-weight-bold text-balck",
+            attrs: { href: "/login" },
+          },
+          [_vm._v("Login")]
+        ),
+      ]
+    )
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: " bg-darkGrayGv text-white" }, [
+    return _c(
+      "li",
+      { staticClass: "nav-item btn-nav-register my-2 mx-md-1 px-2 p-md-1" },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "nav-link text-center font-weight-bold text-balck",
+            attrs: { href: "/register" },
+          },
+          [_vm._v("Register")]
+        ),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "bg-darkGrayGv text-white" }, [
       _c("div", { staticClass: "container py-5" }, [
         _c("div", { staticClass: "row pb-5" }, [
           _c("div", { staticClass: "col-12" }, [
@@ -22130,7 +22226,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/manuelfreund/Desktop/laravel/deliverboo-team5/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
