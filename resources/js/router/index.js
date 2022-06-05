@@ -16,7 +16,7 @@ const routes = [
         component: Tipologies,
     },
     {
-        path: "/:slug",
+        path: "tipologies/:slug",
         name: "tipologies.show",
         component: Tipology,
     },
