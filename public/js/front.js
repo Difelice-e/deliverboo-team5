@@ -2045,46 +2045,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      risultato: false,
-      tipologyFilter: [],
-      users: [],
-      tipologies: []
-    };
-  },
-  methods: {
-    fetchRestaurant: function fetchRestaurant() {
-      var _this = this;
-
-      axios.get("/api/restaurant").then(function (res) {
-        var users = res.data.users;
-        _this.users = users.filter(function (item) {
-          return item.tipology.includes(_this.tipologyFilter);
-        });
-      })["catch"](function (err) {
-        console.warn(err);
-
-        _this.$router.push("/404");
-      });
-    },
-    fetchTipologies: function fetchTipologies() {
-      var _this2 = this;
-
-      axios.get("/api/home").then(function (res) {
-        var tipologies = res.data.tipologies;
-        _this2.tipologies = tipologies;
-      })["catch"](function (err) {
-        console.warn(err);
-
-        _this2.$router.push("/404");
-      });
-    }
-  },
-  created: function created() {
-    this.fetchTipologies();
-  }
+/* harmony default export */ __webpack_exports__["default"] = ({// data (){
+  //     return {
+  //         risultato: false,
+  //         tipologyFilter: [],
+  //         users: [],
+  //         tipologies:[]
+  //     }
+  // },
+  // methods:{
+  //     fetchRestaurant() {
+  //         axios
+  //             .get("/api/restaurant")
+  //             .then((res) => {
+  //                 const { users } = res.data;
+  //                 this.users = users.filter(item => item.tipology.includes(this.tipologyFilter));
+  //             })
+  //             .catch((err) => {
+  //                 console.warn(err);
+  //                 this.$router.push("/404");
+  //             });
+  //     },
+  //     fetchTipologies() {
+  //         axios
+  //             .get("/api/home")
+  //             .then((res) => {
+  //                 const { tipologies } = res.data;
+  //                 this.tipologies = tipologies;
+  //             })
+  //             .catch((err) => {
+  //                 console.warn(err);
+  //                 this.$router.push("/404");
+  //             });
+  //     },
+  // },
+  // created(){
+  //     this.fetchTipologies();
+  // }
 });
 
 /***/ }),
@@ -4002,144 +3999,9 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "restaurants-bg " }, [
-    _c("div", { staticClass: "container" }, [
-      _c("h1", { staticClass: "mb-3" }, [_vm._v("Ricerca ristoratori")]),
-      _vm._v(" "),
-      _c("h5", [_vm._v("Seleziona una o più categorie disponibili:")]),
-      _vm._v(" "),
-      _c(
-        "form",
-        { staticClass: "form-inline w-100 d-flex justify-content-around" },
-        [
-          _c("div", { staticClass: "form-group row" }, [
-            _c("label", {
-              staticClass: "col-form-label",
-              attrs: { for: "category" },
-            }),
-            _vm._v(" "),
-            _c(
-              "form",
-              {
-                staticClass: "container my-bg-categories",
-                on: {
-                  submit: function ($event) {
-                    $event.preventDefault()
-                    return _vm.fetchRestaurant.apply(null, arguments)
-                  },
-                },
-              },
-              [
-                _c(
-                  "ul",
-                  _vm._l(_vm.tipologies, function (tipology) {
-                    return _c("li", { key: tipology.id }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.tipologyFilter,
-                            expression: "tipologyFilter",
-                          },
-                        ],
-                        staticClass: "mx-1",
-                        attrs: {
-                          type: "checkbox",
-                          id: tipology.name,
-                          name: tipology.name,
-                        },
-                        domProps: {
-                          value: tipology.name,
-                          checked: Array.isArray(_vm.tipologyFilter)
-                            ? _vm._i(_vm.tipologyFilter, tipology.name) > -1
-                            : _vm.tipologyFilter,
-                        },
-                        on: {
-                          change: function ($event) {
-                            var $$a = _vm.tipologyFilter,
-                              $$el = $event.target,
-                              $$c = $$el.checked ? true : false
-                            if (Array.isArray($$a)) {
-                              var $$v = tipology.name,
-                                $$i = _vm._i($$a, $$v)
-                              if ($$el.checked) {
-                                $$i < 0 &&
-                                  (_vm.tipologyFilter = $$a.concat([$$v]))
-                              } else {
-                                $$i > -1 &&
-                                  (_vm.tipologyFilter = $$a
-                                    .slice(0, $$i)
-                                    .concat($$a.slice($$i + 1)))
-                              }
-                            } else {
-                              _vm.tipologyFilter = $$c
-                            }
-                          },
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: tipology.name } }, [
-                        _vm._v(
-                          "\n                                    " +
-                            _vm._s(tipology.name) +
-                            "\n                                "
-                        ),
-                      ]),
-                    ])
-                  }),
-                  0
-                ),
-              ]
-            ),
-          ]),
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", [
-        _c(
-          "button",
-          {
-            staticClass: "btn my-2 my-sm-0 btn-danger ms_btn-restaurants",
-            attrs: { type: "submit" },
-            on: {
-              click: function ($event) {
-                return _vm.fetchRestaurant()
-              },
-            },
-          },
-          [_vm._v("Cerca")]
-        ),
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        [
-          _vm.users.length == 0
-            ? _c("div", [_vm._m(0)])
-            : _vm._l(_vm.users, function (user) {
-                return _c("div", { key: user.id }, [
-                  _vm._v(
-                    "\n                " +
-                      _vm._s(user.business_name) +
-                      "\n            "
-                  ),
-                ])
-              }),
-        ],
-        2
-      ),
-    ]),
-  ])
+  return _c("h1", [_vm._v("pagina ristoranti")])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h2", [_vm._v("Nessun ristorante trovato")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -21569,7 +21431,7 @@ var routes = [{
   name: "tipologies.index",
   component: _pages_Tipologies_index_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
-  path: "/:slug",
+  path: "tipologies/:slug",
   name: "tipologies.show",
   component: _pages_Tipologies_show_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
@@ -22235,7 +22097,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/manuelfreund/Desktop/laravel/deliverboo-team5/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
