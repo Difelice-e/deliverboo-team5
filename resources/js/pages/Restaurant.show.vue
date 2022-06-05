@@ -13,7 +13,7 @@
                             <div class="restaurant-info">
                                 <h1>{{ user.business_name }}</h1>
                                 <ul class="restaurant-tipologies d-flex">
-                                    <li v-for="tipology in user.tipologies" class="bg-primary border border-secondary rounded-pill px-3 py-1">{{ tipology.name }}</li>
+                                    <li v-for="tipology in user.tipologies" :key="tipology.id" class="bg-primary border border-secondary rounded-pill px-3 py-1">{{ tipology.name }}</li>
                                 </ul>
                                 <p class="restaurant-contacts">{{ user.street_address }} - {{ user.phone_number }}</p>
                             </div>
@@ -32,14 +32,14 @@
                         <div class="menu-wrapper">
                             <div class="row">
 
-                                <div v-for="dish in user.dishes" class="col-6">
+                                <div v-for="dish in user.dishes" :key="dish.id" class="col-6">
                                     <div class="dish-wrapper d-flex justify-content-between p-3">
 
                                         <div class="dish-info">
                                             <h4 class="dish-title mb-0">{{ dish.name }}</h4>
                                             <p class="dish-ingredients mb-1">{{ dish.ingredients }}</p>
                                             <span class="dish-price">{{dish.price.toFixed(2)}}€</span>
-                                            <button @click="addToCart(dish)" class="btn btn-outline-success">Add to Cart</button>
+                                            <button @click="addToCart(dish,user)" class="btn btn-outline-success">Add to Cart</button>
                                         </div>
 
                                         <img src="https://picsum.photos/300/150" style="width: 100px; height: 100px;" alt=""/>

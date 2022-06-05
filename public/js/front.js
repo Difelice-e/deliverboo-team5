@@ -4190,6 +4190,7 @@ var render = function () {
                             return _c(
                               "li",
                               {
+                                key: tipology.id,
                                 staticClass:
                                   "bg-primary border border-secondary rounded-pill px-3 py-1",
                               },
@@ -4222,56 +4223,64 @@ var render = function () {
                         "div",
                         { staticClass: "row" },
                         _vm._l(_vm.user.dishes, function (dish) {
-                          return _c("div", { staticClass: "col-6" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "dish-wrapper d-flex justify-content-between p-3",
-                              },
-                              [
-                                _c("div", { staticClass: "dish-info" }, [
-                                  _c("h4", { staticClass: "dish-title mb-0" }, [
-                                    _vm._v(_vm._s(dish.name)),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "p",
-                                    { staticClass: "dish-ingredients mb-1" },
-                                    [_vm._v(_vm._s(dish.ingredients))]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("span", { staticClass: "dish-price" }, [
-                                    _vm._v(_vm._s(dish.price.toFixed(2)) + "€"),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn btn-outline-success",
-                                      on: {
-                                        click: function ($event) {
-                                          return _vm.addToCart(dish)
+                          return _c(
+                            "div",
+                            { key: dish.id, staticClass: "col-6" },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "dish-wrapper d-flex justify-content-between p-3",
+                                },
+                                [
+                                  _c("div", { staticClass: "dish-info" }, [
+                                    _c(
+                                      "h4",
+                                      { staticClass: "dish-title mb-0" },
+                                      [_vm._v(_vm._s(dish.name))]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "p",
+                                      { staticClass: "dish-ingredients mb-1" },
+                                      [_vm._v(_vm._s(dish.ingredients))]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "dish-price" }, [
+                                      _vm._v(
+                                        _vm._s(dish.price.toFixed(2)) + "€"
+                                      ),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-outline-success",
+                                        on: {
+                                          click: function ($event) {
+                                            return _vm.addToCart(dish, _vm.user)
+                                          },
                                         },
                                       },
+                                      [_vm._v("Add to Cart")]
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("img", {
+                                    staticStyle: {
+                                      width: "100px",
+                                      height: "100px",
                                     },
-                                    [_vm._v("Add to Cart")]
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("img", {
-                                  staticStyle: {
-                                    width: "100px",
-                                    height: "100px",
-                                  },
-                                  attrs: {
-                                    src: "https://picsum.photos/300/150",
-                                    alt: "",
-                                  },
-                                }),
-                              ]
-                            ),
-                          ])
+                                    attrs: {
+                                      src: "https://picsum.photos/300/150",
+                                      alt: "",
+                                    },
+                                  }),
+                                ]
+                              ),
+                            ]
+                          )
                         }),
                         0
                       ),
