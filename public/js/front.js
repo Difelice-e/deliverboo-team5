@@ -2051,7 +2051,8 @@ __webpack_require__.r(__webpack_exports__);
       risultato: false,
       tipologyFilter: [],
       users: [],
-      tipologies: []
+      tipologies: [],
+      filteredRest: []
     };
   },
   methods: {
@@ -2068,21 +2069,39 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     filteredRestaurants: function filteredRestaurants() {
-      var filteredUser = this.users.filter(function (user) {
-        return user.tipologies[0].name.includes('Bar');
-      });
-      this.users = filteredUser;
+      var _this2 = this;
+
+      for (var i = 0; i < this.users.length; i++) {
+        var user = this.users[i];
+        console.log(user.business_name);
+        var tipology = [];
+
+        for (var y = 0; y < user.tipologies.length; y++) {
+          tipology.push(user.tipologies[y].name);
+        }
+
+        console.log(tipology);
+        console.log(this.tipologyFilter);
+
+        if (tipology.every(function (el) {
+          return _this2.tipologyFilter.includes(el);
+        })) {
+          this.filteredRest.push(user);
+        }
+      }
+
+      console.log(this.filteredRest);
     },
     fetchTipologies: function fetchTipologies() {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.get("/api/home").then(function (res) {
         var tipologies = res.data.tipologies;
-        _this2.tipologies = tipologies;
+        _this3.tipologies = tipologies;
       })["catch"](function (err) {
         console.warn(err);
 
-        _this2.$router.push("/404");
+        _this3.$router.push("/404");
       });
     },
     checkTipologies: function checkTipologies() {
@@ -4061,7 +4080,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "restaurants-bg " }, [
     _c("div", { staticClass: "container" }, [
-      _c("h1", { staticClass: "mb-3" }, [_vm._v("Ricerca ristoratori")]),
+      _c("h1", { staticClass: "mb-3" }, [_vm._v("Ricerca Ristorante")]),
       _vm._v(" "),
       _c("h5", [_vm._v("Seleziona una o più categorie disponibili:")]),
       _vm._v(" "),
@@ -4172,7 +4191,7 @@ var render = function () {
         [
           _vm.users.length == 0
             ? _c("div", [_vm._m(0)])
-            : _vm._l(_vm.users, function (user) {
+            : _vm._l(_vm.filteredRest, function (user) {
                 return _c(
                   "div",
                   { key: user.id },
@@ -4183,9 +4202,11 @@ var render = function () {
                         "\n                "
                     ),
                     _vm._l(user.tipologies, function (tipology) {
-                      return _c("div", { staticClass: "bg-success" }, [
-                        _vm._v(_vm._s(tipology.name)),
-                      ])
+                      return _c(
+                        "div",
+                        { key: tipology.id, staticClass: "bg-success" },
+                        [_vm._v(_vm._s(tipology.name))]
+                      )
                     }),
                   ],
                   2
@@ -22318,7 +22339,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/manuelfreund/Desktop/laravel/deliverboo-team5/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
