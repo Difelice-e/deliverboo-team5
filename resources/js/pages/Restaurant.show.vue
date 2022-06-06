@@ -36,39 +36,17 @@
                 </div>
             </div>
 
-        </div>
-        
-        <div class="restaurant-body">
-            <div class="container">
-                <div class="row align-items-start">
-                                        
-                    <!-- menu del ristorante  -->
-                    <div class="col-8 p-3">
-                        <div class="menu-wrapper">
-                            <div class="row">
-
-                                <div v-for="dish in user.dishes" :key="dish.id" class="col-6 mb-3">
-                                    <div class="dish-wrapper d-flex justify-content-between p-3">
-
-                                        <div class="dish-info">
-                                            <h4 class="dish-title mb-0">{{ dish.name }}</h4>
-                                            <p class="dish-ingredients mb-1">{{ dish.ingredients }}</p>
-                                            <span class="dish-price">{{dish.price.toFixed(2)}}€</span>
-                                            <button @click="addToCart(dish,user)" class="btn btn-outline-success">Add to Cart</button>
-                                        </div>
-
-
             <div class="restaurant-body">
                 <div class="container">
                     <div class="row align-items-start">
                         <!-- menu del ristorante  -->
-                        <div class="col-9 p-3">
+                        <div class="col-8 p-3">
                             <div class="menu-wrapper">
                                 <div class="row">
                                     <div
                                         v-for="dish in user.dishes"
                                         :key="dish.id"
-                                        class="col-6"
+                                        class="col-6 mb-3"
                                     >
                                         <div
                                             class="dish-wrapper d-flex justify-content-between p-3"
@@ -111,10 +89,10 @@
                             </div>
                         </div>
 
-                    <!-- carrello  -->
-                    <div class="col-4 p-3">
-                        <CartDropdown />
-
+                        <!-- carrello  -->
+                        <div class="col-4 p-3">
+                            <CartDropdown />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -133,15 +111,13 @@ import loadingWheel from "../components/loadingWheel.vue";
 export default {
     components: {
         CartDropdown,
+        loadingWheel,
     },
     data() {
         return {
             user: null,
             loading: false,
         };
-    },
-    components: {
-        loadingWheel,
     },
     methods: {
         fetchRestaurant() {

@@ -2206,10 +2206,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
 /* harmony import */ var _components_loadingWheel_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/loadingWheel.vue */ "./resources/js/components/loadingWheel.vue");
-var _components$data$comp;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+//
 //
 //
 //
@@ -2317,43 +2314,44 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_components$data$comp = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    CartDropdown: _components_Cart_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    CartDropdown: _components_Cart_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    loadingWheel: _components_loadingWheel_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
       user: null,
       loading: false
     };
-  }
-}, _defineProperty(_components$data$comp, "components", {
-  loadingWheel: _components_loadingWheel_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-}), _defineProperty(_components$data$comp, "methods", {
-  fetchRestaurant: function fetchRestaurant() {
-    var _this = this;
-
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/restaurant/".concat(this.$route.params.slug)).then(function (res) {
-      // console.log(
-      //     "🚀 ~ file: Menu.show.vue ~ line 26 ~ .then ~ res",
-      //     res.data
-      // );
-      var user = res.data.user;
-      _this.user = user;
-      console.log(_this.user);
-      _this.loading = true;
-    })["catch"](function (err) {
-      console.warn(err);
-
-      _this.$router.push("/404");
-    });
   },
-  addToCart: function addToCart(dish) {
-    this.$store.commit("addToCart", dish);
+  methods: {
+    fetchRestaurant: function fetchRestaurant() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/restaurant/".concat(this.$route.params.slug)).then(function (res) {
+        // console.log(
+        //     "🚀 ~ file: Menu.show.vue ~ line 26 ~ .then ~ res",
+        //     res.data
+        // );
+        var user = res.data.user;
+        _this.user = user;
+        console.log(_this.user);
+        _this.loading = true;
+      })["catch"](function (err) {
+        console.warn(err);
+
+        _this.$router.push("/404");
+      });
+    },
+    addToCart: function addToCart(dish) {
+      this.$store.commit("addToCart", dish);
+    }
+  },
+  beforeMount: function beforeMount() {
+    this.fetchRestaurant();
   }
-}), _defineProperty(_components$data$comp, "beforeMount", function beforeMount() {
-  this.fetchRestaurant();
-}), _components$data$comp);
+});
 
 /***/ }),
 
@@ -22714,7 +22712,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
