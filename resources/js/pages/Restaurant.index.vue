@@ -28,14 +28,14 @@
             
             <div> 
                 <!-- nessun ristorante trovato  -->
-                <div v-if="users.length == 0">
+                <div v-if="filteredUsers.length == 0">
                     <div>
                         <h2>Nessun ristorante trovato</h2>
                     </div> 
                 </div>
 
                 <!-- ristoranti trovati  -->
-                <div v-else v-for="user in users" :key="user.id">
+                <div v-else v-for="user in filteredUsers" :key="user.id">
                     {{user.business_name}}
                     <div class="bg-success" v-for="tipology in user.tipologies">{{tipology.name}}</div>
                 </div>       
@@ -53,7 +53,9 @@ export default {
             risultato: false,
             tipologyFilter: [],
             users: [],
-            tipologies:[]
+            tipologies:[],
+            filteredUsers:[],
+            userTipologies: [],
         }
     },
     methods:{
@@ -71,10 +73,12 @@ export default {
                 });
                 
         },
-        filteredRestaurants() {
-            let filteredUser = this.users.filter(user => user.tipologies[0].name.includes('Bar'))
-            this.users = filteredUser
-        },
+        checkTipologiesContain (user) {
+            let userTipologies = user.tipologies.map(t => { return t.name; })
+            return this.tipologyFilter.every(element => {
+                return userTipologies.includes(element);
+            })    
+        },  
         fetchTipologies() {
             axios
                 .get("/api/home")
@@ -95,6 +99,16 @@ export default {
     created(){
         this.fetchTipologies();
         this.fetchRestaurant();
+    },
+    computed: {
+        filteredRestaurants() {
+            if (!this.tipologyFilter.length) {
+                return this.filteredUsers = this.users
+            } else {
+                this.filteredUsers = this.users.filter(this.checkTipologiesContain)
+                return this.filteredUsers
+            } 
+        }
     }
    
   }

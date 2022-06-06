@@ -2051,7 +2051,9 @@ __webpack_require__.r(__webpack_exports__);
       risultato: false,
       tipologyFilter: [],
       users: [],
-      tipologies: []
+      tipologies: [],
+      filteredUsers: [],
+      userTipologies: []
     };
   },
   methods: {
@@ -2067,11 +2069,13 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push("/404");
       });
     },
-    filteredRestaurants: function filteredRestaurants() {
-      var filteredUser = this.users.filter(function (user) {
-        return user.tipologies[0].name.includes('Bar');
+    checkTipologiesContain: function checkTipologiesContain(user) {
+      var userTipologies = user.tipologies.map(function (t) {
+        return t.name;
       });
-      this.users = filteredUser;
+      return this.tipologyFilter.every(function (element) {
+        return userTipologies.includes(element);
+      });
     },
     fetchTipologies: function fetchTipologies() {
       var _this2 = this;
@@ -2092,6 +2096,16 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.fetchTipologies();
     this.fetchRestaurant();
+  },
+  computed: {
+    filteredRestaurants: function filteredRestaurants() {
+      if (!this.tipologyFilter.length) {
+        return this.filteredUsers = this.users;
+      } else {
+        this.filteredUsers = this.users.filter(this.checkTipologiesContain);
+        return this.filteredUsers;
+      }
+    }
   }
 });
 
@@ -4170,9 +4184,9 @@ var render = function () {
       _c(
         "div",
         [
-          _vm.users.length == 0
+          _vm.filteredUsers.length == 0
             ? _c("div", [_vm._m(0)])
-            : _vm._l(_vm.users, function (user) {
+            : _vm._l(_vm.filteredUsers, function (user) {
                 return _c(
                   "div",
                   { key: user.id },
