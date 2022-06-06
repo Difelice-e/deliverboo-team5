@@ -2423,13 +2423,80 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       tipologies: [],
-      loading: false
+      loading: false,
+      jumbo: [{
+        text: "Farmacia",
+        cover: "https://res.cloudinary.com/glovoapp/w_60,h_60,c_fit,f_auto,q_auto:best/StoreCategories/hmeje6y6iwevjeiff1e2"
+      }, {
+        text: "Spedizioni",
+        cover: "https://res.cloudinary.com/glovoapp/w_60,h_60,c_fit,f_auto,q_auto:best/StoreCategories/yn87iqomg2p9h5bwpssz"
+      }, {
+        text: "shopping",
+        cover: "https://res.cloudinary.com/glovoapp/w_60,h_60,c_fit,f_auto,q_auto:best/StoreCategories/hmeje6y6iwevjeiff1e2"
+      }, {
+        text: "Cibo",
+        cover: "https://res.cloudinary.com/glovoapp/w_60,h_60,c_fit,f_auto,q_auto:best/StoreCategories/prj0mlcuvmymzfh8pqjz"
+      }],
+      jumboPartnership: [{
+        title: "Diventa un rider",
+        description: "Diventa il capo di te stesso! Goditi flessibilità, libertà e guadagni competitivi effettuando consegne con Glovo.",
+        cover: "https://res.cloudinary.com/glovoapp/image/fetch//w_254,h_220,c_fit,f_auto,q_auto:best/dpr_auto/https://glovoapp.com/images/corporate/rider-image.png"
+      }, {
+        title: "Diventa partner",
+        description: "Cresci con Glovo! La nostra tecnologia e la nostra base di utenti possono aiutarti a incrementare le vendite e aprire nuove opportunità!",
+        cover: "https://res.cloudinary.com/glovoapp/image/fetch//w_254,h_220,c_fit,f_auto,q_auto:best/dpr_auto/https://glovoapp.com/images/corporate/partners-image.png"
+      }, {
+        title: "Lavora con noi",
+        description: "Pronto per una nuova ed entusiasmante sfida? Se sei ambizioso, umile e ami lavorare con gli altri, mettiti in contatto con noi!",
+        cover: "https://res.cloudinary.com/glovoapp/image/fetch//w_254,h_220,c_fit,f_auto,q_auto:best/dpr_auto/https://glovoapp.com/images/corporate/carrers-image.png"
+      }]
     };
   },
   components: {
@@ -2766,6 +2833,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2844,7 +2912,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".gap-card {\n  gap: 50px;\n  list-style-type: none;\n}\n.gap-card .card-gv:nth-child(even) {\n  border-radius: 54% 46% 77% 23%/30% 63% 37% 70%;\n}\n.gap-card .cursor-pointer {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".gap-card {\n  gap: 50px;\n  list-style-type: none;\n}\n.gap-card .card-gv {\n  border: none;\n  border-radius: 54% 46% 77% 23%/30% 63% 37% 70%;\n  transition: all 0.5s;\n}\n.gap-card .card-gv:hover {\n  border: none;\n  border-radius: 34% 66% 17% 83%/64% 65% 35% 36%;\n  transform: scale(1.1);\n}\n.gap-card .cursor-pointer {\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -4754,53 +4822,98 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
     [
       _vm.loading
         ? _c("div", [
             _c(
               "div",
-              { staticClass: "d-flex flex-wrap justify-content-center my-4" },
+              {
+                staticClass:
+                  "container-fluid d-flex justify-content-center bg-goldGv p-0",
+              },
               [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-danger",
-                    attrs: { tag: "button", to: { name: "restaurant.index" } },
-                  },
-                  [
-                    _vm._v(
-                      "\n                vedi tutti i tipi di ristoranti\n            "
+                _c("div", { staticClass: "container-jumbo py-5" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "ul",
+                      {
+                        staticClass:
+                          "d-flex p-0 flex-wrap justify-content-around gap-jb",
+                      },
+                      _vm._l(_vm.jumbo, function (el, index) {
+                        return _c(
+                          "li",
+                          {
+                            key: index,
+                            staticClass:
+                              "bg-white px-3 rounded-circle cursor-pointer",
+                          },
+                          [
+                            _c("figure", { staticClass: "m-0" }, [
+                              _c("img", { attrs: { src: el.cover, alt: "" } }),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "text-center" }, [
+                              _vm._v(_vm._s(el.text)),
+                            ]),
+                          ]
+                        )
+                      }),
+                      0
                     ),
-                  ]
-                ),
-              ],
-              1
+                  ]),
+                ]),
+              ]
             ),
             _vm._v(" "),
-            _c("div", [
+            _c("div", { staticClass: "container" }, [
               _c(
-                "ul",
-                {
-                  staticClass:
-                    "d-flex flex-wrap justify-content-center gap-card",
-                },
-                _vm._l(_vm.tipologies, function (tipology) {
-                  return _c(
+                "div",
+                { staticClass: "d-flex flex-wrap justify-content-center my-4" },
+                [
+                  _c(
                     "router-link",
                     {
-                      key: tipology.id,
-                      staticClass: "cursor-pointer",
+                      staticClass: "btn btn-danger",
                       attrs: {
-                        tag: "li",
-                        to: {
-                          name: "tipologies.show",
-                          params: { slug: tipology.slug },
-                        },
+                        tag: "button",
+                        to: { name: "restaurant.index" },
                       },
                     },
                     [
-                      _c("div", { staticClass: "card" }, [
+                      _vm._v(
+                        "\n                    vedi tutti i tipi di ristoranti\n                "
+                      ),
+                    ]
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", [
+                _c(
+                  "ul",
+                  {
+                    staticClass:
+                      "d-flex flex-wrap justify-content-center gap-card",
+                  },
+                  _vm._l(_vm.tipologies, function (tipology) {
+                    return _c(
+                      "router-link",
+                      {
+                        key: tipology.id,
+                        staticClass: "cursor-pointer",
+                        attrs: {
+                          tag: "li",
+                          to: {
+                            name: "tipologies.show",
+                            params: { slug: tipology.slug },
+                          },
+                        },
+                      },
+                      [
                         _c("img", {
                           staticClass: "card-img-top card-gv",
                           attrs: {
@@ -4812,18 +4925,123 @@ var render = function () {
                         _c("div", { staticClass: "card-body" }, [
                           _c("h5", { staticClass: "card-title text-center" }, [
                             _vm._v(
-                              "\n                                " +
+                              "\n                                    " +
                                 _vm._s(tipology.name) +
-                                "\n                            "
+                                "\n                                "
                             ),
                           ]),
                         ]),
-                      ]),
-                    ]
-                  )
+                      ]
+                    )
+                  }),
+                  1
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c(
+              "svg",
+              {
+                staticStyle: { transform: "rotate(0deg)", transition: "0.3s" },
+                attrs: {
+                  id: "wave",
+                  viewBox: "0 0 1440 100",
+                  version: "1.1",
+                  xmlns: "http://www.w3.org/2000/svg",
+                },
+              },
+              [
+                _c(
+                  "defs",
+                  [
+                    _c(
+                      "linearGradient",
+                      {
+                        attrs: {
+                          id: "sw-gradient-0",
+                          x1: "0",
+                          x2: "0",
+                          y1: "1",
+                          y2: "0",
+                        },
+                      },
+                      [
+                        _c("stop", {
+                          attrs: {
+                            "stop-color": "rgba(198, 232, 228, 1)",
+                            offset: "0%",
+                          },
+                        }),
+                        _c("stop", {
+                          attrs: {
+                            "stop-color": "rgba(198, 232, 228, 1)",
+                            offset: "100%",
+                          },
+                        }),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
+                ),
+                _c("path", {
+                  staticStyle: { transform: "translate(0, 0px)", opacity: "1" },
+                  attrs: {
+                    fill: "url(#sw-gradient-0)",
+                    d: "M0,30L26.7,35C53.3,40,107,50,160,51.7C213.3,53,267,47,320,36.7C373.3,27,427,13,480,6.7C533.3,0,587,0,640,11.7C693.3,23,747,47,800,56.7C853.3,67,907,63,960,65C1013.3,67,1067,73,1120,65C1173.3,57,1227,33,1280,25C1333.3,17,1387,23,1440,33.3C1493.3,43,1547,57,1600,61.7C1653.3,67,1707,63,1760,66.7C1813.3,70,1867,80,1920,70C1973.3,60,2027,30,2080,21.7C2133.3,13,2187,27,2240,35C2293.3,43,2347,47,2400,41.7C2453.3,37,2507,23,2560,30C2613.3,37,2667,63,2720,75C2773.3,87,2827,83,2880,81.7C2933.3,80,2987,80,3040,73.3C3093.3,67,3147,53,3200,55C3253.3,57,3307,73,3360,68.3C3413.3,63,3467,37,3520,28.3C3573.3,20,3627,30,3680,36.7C3733.3,43,3787,47,3813,48.3L3840,50L3840,100L3813.3,100C3786.7,100,3733,100,3680,100C3626.7,100,3573,100,3520,100C3466.7,100,3413,100,3360,100C3306.7,100,3253,100,3200,100C3146.7,100,3093,100,3040,100C2986.7,100,2933,100,2880,100C2826.7,100,2773,100,2720,100C2666.7,100,2613,100,2560,100C2506.7,100,2453,100,2400,100C2346.7,100,2293,100,2240,100C2186.7,100,2133,100,2080,100C2026.7,100,1973,100,1920,100C1866.7,100,1813,100,1760,100C1706.7,100,1653,100,1600,100C1546.7,100,1493,100,1440,100C1386.7,100,1333,100,1280,100C1226.7,100,1173,100,1120,100C1066.7,100,1013,100,960,100C906.7,100,853,100,800,100C746.7,100,693,100,640,100C586.7,100,533,100,480,100C426.7,100,373,100,320,100C266.7,100,213,100,160,100C106.7,100,53,100,27,100L0,100Z",
+                  },
                 }),
-                1
-              ),
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "container-fluid bg-greed py-5 px-0" }, [
+              _c("div", { staticClass: "container container-jb-pt" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c(
+                  "h1",
+                  {
+                    staticClass: "text-center text-balck font-weight-bold mb-5",
+                  },
+                  [_vm._v("Uniamo le forze")]
+                ),
+                _vm._v(" "),
+                _c("div", [
+                  _c(
+                    "ul",
+                    {
+                      staticClass:
+                        "row d-flex p-0 flex-wrap justify-content-around gap-jb",
+                    },
+                    _vm._l(_vm.jumboPartnership, function (ele, index) {
+                      return _c(
+                        "li",
+                        {
+                          key: index,
+                          staticClass:
+                            "col-4 d-flex align-items-center flex-column cursor-pointer",
+                        },
+                        [
+                          _c("figure", [
+                            _c("img", { attrs: { src: ele.cover, alt: "" } }),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "h3",
+                            { staticClass: "text-center font-weight-bold" },
+                            [_vm._v(_vm._s(ele.title))]
+                          ),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-center" }, [
+                            _vm._v(_vm._s(ele.description)),
+                          ]),
+                        ]
+                      )
+                    }),
+                    0
+                  ),
+                ]),
+              ]),
             ]),
           ])
         : _c("loadingWheel"),
@@ -4831,7 +5049,34 @@ var render = function () {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-center font-size-jb" }, [
+      _vm._v("Consegne in "),
+      _c("span", { staticClass: "font-weight-bold" }, [_vm._v("Milano")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "figure",
+      { staticClass: "d-flex logo-jb-pt justify-content-center" },
+      [
+        _c("img", {
+          attrs: {
+            src: "https://res.cloudinary.com/glovoapp/image/fetch//w_121,h_82,c_fit,q_auto/https://glovoapp.com/images/corporate/together.svg",
+            alt: "",
+          },
+        }),
+      ]
+    )
+  },
+]
 render._withStripped = true
 
 
@@ -4957,7 +5202,7 @@ var render = function () {
         "nav",
         {
           staticClass:
-            "\n        navbar navbar-expand-md navbar-light\n        bg-goldGv\n        shadow-sm\n        position-relative\n      ",
+            "\n        navbar navbar-expand-md navbar-light\n        bg-goldGv\n        shadow-sm\n        position-relative\n        box-shadow-none\n      ",
         },
         [
           _c("div", { staticClass: "container" }, [
@@ -22757,7 +23002,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
