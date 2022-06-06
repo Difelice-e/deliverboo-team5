@@ -1941,6 +1941,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   methods: {
     removeFromCart: function removeFromCart(dish) {
       this.$store.commit('removeFromCart', dish);
+    },
+    increaseQuantity: function increaseQuantity(dish) {
+      this.$store.commit('addToCart', dish);
+    },
+    decreaseQuantity: function decreaseQuantity(dish) {
+      this.$store.commit('decreaseQuantity', dish);
     }
   },
   computed: {
@@ -3958,7 +3964,7 @@ var render = function () {
           [
             _vm._l(_vm.$store.state.cart, function (dish) {
               return _c(
-                "a",
+                "p",
                 {
                   key: dish.id,
                   staticClass: "navbar-item ",
@@ -3968,7 +3974,7 @@ var render = function () {
                   _c(
                     "span",
                     {
-                      staticClass: "removeBtn",
+                      staticClass: "removeBtn btn btn-danger rounded-pill p-1",
                       attrs: { title: "Remove from cart" },
                       on: {
                         click: function ($event) {
@@ -3979,14 +3985,36 @@ var render = function () {
                     },
                     [_vm._v("X")]
                   ),
+                  _vm._v("\n            " + _vm._s(dish.name) + " | "),
+                  _c(
+                    "span",
+                    {
+                      staticClass: "btn btn-success p-1 rounded",
+                      on: {
+                        click: function ($event) {
+                          $event.preventDefault()
+                          return _vm.decreaseQuantity(dish)
+                        },
+                      },
+                    },
+                    [_vm._v("-")]
+                  ),
+                  _vm._v(" x" + _vm._s(dish.quantity) + " "),
+                  _c(
+                    "span",
+                    {
+                      staticClass: "btn btn-success p-1 rounded",
+                      on: {
+                        click: function ($event) {
+                          $event.preventDefault()
+                          return _vm.increaseQuantity(dish)
+                        },
+                      },
+                    },
+                    [_vm._v("+")]
+                  ),
                   _vm._v(
-                    "\n            " +
-                      _vm._s(dish.name) +
-                      " x" +
-                      _vm._s(dish.quantity) +
-                      " - €" +
-                      _vm._s(dish.totalPrice) +
-                      "\n        "
+                    " | €" + _vm._s(dish.totalPrice.toFixed(2)) + "  \n        "
                   ),
                 ]
               )
@@ -22222,11 +22250,22 @@ var store = {
       var found = state.cart.find(function (product) {
         return product.id == dish.id;
       });
+      var sameRestaurant = state.cart.find(function (product) {
+        return product.user_id == dish.user_id;
+      });
 
       if (found) {
+        // prodotto già presente in carrello
         found.quantity++;
         found.totalPrice = found.quantity * found.price;
       } else {
+        // prodotto di ristorante diverso 
+        if (!sameRestaurant) {
+          state.cart = [];
+          state.cartCount = 0;
+        } // prodotto nuovo
+
+
         state.cart.push(dish);
         Vue.set(dish, 'quantity', 1);
         Vue.set(dish, 'totalPrice', dish.price);
@@ -22242,6 +22281,24 @@ var store = {
         var product = state.cart[index];
         state.cartCount -= product.quantity;
         state.cart.splice(index, 1);
+      }
+
+      this.commit('saveCart');
+    },
+    decreaseQuantity: function decreaseQuantity(state, dish) {
+      var index = state.cart.indexOf(dish);
+
+      if (index > -1) {
+        var product = state.cart[index];
+
+        if (product.quantity == 1) {
+          state.cartCount -= product.quantity;
+          state.cart.splice(index, 1);
+        } else {
+          product.quantity--;
+          product.totalPrice = product.quantity * product.price;
+          state.cartCount -= 1;
+        }
       }
 
       this.commit('saveCart');
