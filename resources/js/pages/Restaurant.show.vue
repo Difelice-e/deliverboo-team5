@@ -36,6 +36,28 @@
                 </div>
             </div>
 
+        </div>
+        
+        <div class="restaurant-body">
+            <div class="container">
+                <div class="row align-items-start">
+                                        
+                    <!-- menu del ristorante  -->
+                    <div class="col-8 p-3">
+                        <div class="menu-wrapper">
+                            <div class="row">
+
+                                <div v-for="dish in user.dishes" :key="dish.id" class="col-6 mb-3">
+                                    <div class="dish-wrapper d-flex justify-content-between p-3">
+
+                                        <div class="dish-info">
+                                            <h4 class="dish-title mb-0">{{ dish.name }}</h4>
+                                            <p class="dish-ingredients mb-1">{{ dish.ingredients }}</p>
+                                            <span class="dish-price">{{dish.price.toFixed(2)}}€</span>
+                                            <button @click="addToCart(dish,user)" class="btn btn-outline-success">Add to Cart</button>
+                                        </div>
+
+
             <div class="restaurant-body">
                 <div class="container">
                     <div class="row align-items-start">
@@ -89,27 +111,10 @@
                             </div>
                         </div>
 
-                        <!-- carrello  -->
-                        <div class="col-3 p-3">
-                            <CartDropdown />
-                            <!-- wrapper carrello  -->
-                            <!-- <div class="cart-wrapper"> -->
+                    <!-- carrello  -->
+                    <div class="col-4 p-3">
+                        <CartDropdown />
 
-                            <!-- header carrello  -->
-                            <!-- <div class="cart-header">
-                                <h4 class="cart-title text-center">Il tuo carrello</h4>
-                            </div> -->
-
-                            <!-- body del carrello  -->
-                            <!-- <div class="cart-body">
-                                <p class="cart-empty text-center">Il tuo carrello è vuoto</p>
-                            </div> -->
-
-                            <!-- <div class="cart-footer">
-                                <p class="cart-total text-center">Tot: 0€</p>
-                            </div> -->
-                            <!-- </div> -->
-                        </div>
                     </div>
                 </div>
             </div>

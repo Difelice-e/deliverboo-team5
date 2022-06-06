@@ -1,16 +1,29 @@
 <template>
-        <div>
+        <div class="cart">
             <!-- carrello con items  -->
-            <div v-if="$store.state.cart.length > 0" class="d-flex flex-column p-2 ">
-                <p v-for="dish in $store.state.cart" :key="dish.id" class="navbar-item " href="">
-                    <span class="removeBtn btn btn-danger rounded-pill p-1" title="Remove from cart" @click.prevent="removeFromCart(dish)">X</span>
-                    {{ dish.name }} | <span class="btn btn-success p-1 rounded" @click.prevent="decreaseQuantity(dish)">-</span> x{{ dish.quantity }} <span class="btn btn-success p-1 rounded" @click.prevent="increaseQuantity(dish)">+</span> | €{{ dish.totalPrice.toFixed(2) }}  
-                </p>
+            <div v-if="$store.state.cart.length > 0" class="d-flex flex-column p-2 cart-wrapper">
+                <div class="row mb-3">
+                    <div class="col-1"></div>
+                    <div class="col-5 font-weight-bold">Piatto</div>
+                    <div class="col-3 font-weight-bold">Quantità</div>
+                    <div class="col-3 font-weight-bold">Prezzo</div>
+                </div>
 
-                <a class="navbar-item" href="">Total: €{{ totalPrice }}
-                </a>
+                <div class="row mb-3" v-for="dish in $store.state.cart" :key="dish.id">
+                    <div class="col-1"><span class="removeBtn btn btn-danger rounded-pill p-1" title="Remove from cart" @click.prevent="removeFromCart(dish)">X</span></div>
+                    <div class="col-5">{{dish.name}}</div>
+                    <div class="col-3 text-nowrap"><span class="btn btn-success p-1 rounded" @click.prevent="decreaseQuantity(dish)">-</span> x{{ dish.quantity }} <span class="btn btn-success p-1 rounded" @click.prevent="increaseQuantity(dish)">+</span></div>
+                    <div class="col-3">€{{ dish.totalPrice.toFixed(2) }}</div>
+                </div>
 
-                <a class="dropdown-item" href="#">Checkout</a>
+                <div class="row justify-content-end">
+                    <div class="col offset-6 font-weight-bold">Totale:</div>
+                    <div class="col-3 font-weight-bold">€{{ totalPrice }}</div>
+                </div>
+
+                <div class="col-12">
+                    <a class="dropdown-item btn btn-success" href="#">Checkout</a>
+                </div>
             </div>
             
             <!-- carrello vuoto  -->
@@ -49,5 +62,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.cart {
+    min-width: 350px;
+}
+.cart-wrapper {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.27);
 
+    table { 
+        table-layout: auto;
+        tbody {
+            td {
+                max-width: 80px;
+
+                &:first-child {
+                    max-width: 20px;
+                }
+            }
+        }
+    }
+}
 </style>

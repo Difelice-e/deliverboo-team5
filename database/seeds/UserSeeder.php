@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             $user->vat_number = $faker->randomNumber(9,true);
             $user->slug = Str::slug($utente['business_name']);
 
-            $randomInt = $faker->numberBetween(1,3);
+            $randomInt = $faker->numberBetween(1,4);
             $randomTipologies = $faker->randomElements($tipologiesId,$randomInt);
 
             $user->save();
