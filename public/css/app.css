@@ -11139,6 +11139,10 @@ input[type=number] {
   width: 100%;
 }
 
+.bdf {
+  background-color: black;
+}
+
 .bg-darkGrayGv {
   background-color: #1d1d1d;
 }

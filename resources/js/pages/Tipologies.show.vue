@@ -1,9 +1,11 @@
 <template>
     <div class="container">
         <h2 class="pb-4 text-center back-yellow title-rest">
-            Ristoranti:  
+            Ristoranti:
             <span class="back-mark">
-                <span class="tipology-rest for back-gl">{{ tipology.name }}</span>
+                <span class="tipology-rest for back-gl">{{
+                    tipology.name
+                }}</span>
             </span>
         </h2>
         <ul
@@ -21,11 +23,7 @@
                 }"
             >
                 <div class="card">
-                    <img
-                        src="https://picsum.photos/300/150"
-                        class="card-img-top"
-                        alt=""
-                    />
+                    <img :src="ristoratore.cover" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title name-business text-left">
                             {{ ristoratore.business_name }}
@@ -40,27 +38,13 @@
             </router-link>
         </ul>
         <!-- rotella di caricamento -->
-        <div
-            class="d-flex flex-column justify-content-center align-items-center"
-            v-else
-        >
-            <div class="lds-roller">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <p>Caricamento in corso...</p>
-        </div>
+        <loadingWheel v-else />
     </div>
 </template>
 
 <script>
 import axios from "axios";
+import loadingWheel from "../components/loadingWheel.vue";
 
 export default {
     data() {
@@ -68,6 +52,9 @@ export default {
             tipology: [],
             loading: false,
         };
+    },
+    components: {
+        loadingWheel,
     },
     methods: {
         fetchPost() {
@@ -93,7 +80,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .container ul {
     padding: 0;
 }
@@ -128,5 +114,4 @@ export default {
     line-height: 1.2;
     font-weight: 700;
 }
-
 </style>
