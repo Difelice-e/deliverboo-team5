@@ -2052,7 +2052,10 @@ __webpack_require__.r(__webpack_exports__);
       tipologyFilter: [],
       users: [],
       tipologies: [],
-      filteredRest: []
+
+      filteredUsers: [],
+      userTipologies: []
+
     };
   },
   methods: {
@@ -2068,33 +2071,15 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push("/404");
       });
     },
-    filteredRestaurants: function filteredRestaurants() {
-      var _this2 = this;
 
-      if (this.filteredRest.length > 0) {
-        this.filteredRest = [];
-      }
+    checkTipologiesContain: function checkTipologiesContain(user) {
+      var userTipologies = user.tipologies.map(function (t) {
+        return t.name;
+      });
+      return this.tipologyFilter.every(function (element) {
+        return userTipologies.includes(element);
+      });
 
-      for (var i = 0; i < this.users.length; i++) {
-        var user = this.users[i];
-        console.log(user.business_name);
-        var tipology = [];
-
-        for (var y = 0; y < user.tipologies.length; y++) {
-          tipology.push(user.tipologies[y].name);
-        }
-
-        console.log(tipology);
-        console.log(this.tipologyFilter);
-
-        if (tipology.every(function (el) {
-          return _this2.tipologyFilter.includes(el);
-        })) {
-          this.filteredRest.push(user);
-        }
-      }
-
-      console.log(this.filteredRest);
     },
     fetchTipologies: function fetchTipologies() {
       var _this3 = this;
@@ -2115,6 +2100,16 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.fetchTipologies();
     this.fetchRestaurant();
+  },
+  computed: {
+    filteredRestaurants: function filteredRestaurants() {
+      if (!this.tipologyFilter.length) {
+        return this.filteredUsers = this.users;
+      } else {
+        this.filteredUsers = this.users.filter(this.checkTipologiesContain);
+        return this.filteredUsers;
+      }
+    }
   }
 });
 
@@ -4193,9 +4188,11 @@ var render = function () {
       _c(
         "div",
         [
-          _vm.users.length == 0
+          _vm.filteredUsers.length == 0
             ? _c("div", [_vm._m(0)])
-            : _vm._l(_vm.filteredRest, function (user) {
+
+            : _vm._l(_vm.filteredUsers, function (user) {
+
                 return _c(
                   "div",
                   { key: user.id },

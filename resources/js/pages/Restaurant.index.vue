@@ -28,14 +28,16 @@
             
             <div> 
                 <!-- nessun ristorante trovato  -->
-                <div v-if="users.length == 0">
+                <div v-if="filteredUsers.length == 0">
                     <div>
                         <h2>Nessun ristorante trovato</h2>
                     </div> 
                 </div>
 
                 <!-- ristoranti trovati  -->
-                <div v-else v-for="user in filteredRest" :key="user.id">
+
+                <div v-else v-for="user in filteredUsers" :key="user.id">
+
                     {{user.business_name}}
                     <div class="bg-success" v-for="tipology in user.tipologies" :key="tipology.id">{{tipology.name}}</div>
                 </div>       
@@ -54,7 +56,10 @@ export default {
             tipologyFilter: [],
             users: [],
             tipologies:[],
-            filteredRest:[],
+
+            filteredUsers:[],
+            userTipologies: [],
+
         }
     },
     methods:{
@@ -72,30 +77,13 @@ export default {
                 });
                 
         },
-        filteredRestaurants() {
-           if(this.filteredRest.length > 0){
-               this.filteredRest = [];
-               
 
-           }
-           for (let i = 0; i < this.users.length; i++) {
-               let user = this.users[i]
-               console.log(user.business_name)
-               let tipology = [];
-
-               for (let y = 0; y < user.tipologies.length; y++) {
-                   tipology.push(user.tipologies[y].name); 
-               }
-                console.log(tipology)
-                console.log(this.tipologyFilter)
-                if (tipology.every(el => this.tipologyFilter.includes(el))){
-                       this.filteredRest.push(user)
-                   }
-              
-           }
-           console.log(this.filteredRest)
-
-        },
+        checkTipologiesContain (user) {
+            let userTipologies = user.tipologies.map(t => { return t.name; })
+            return this.tipologyFilter.every(element => {
+                return userTipologies.includes(element);
+            })    
+        },  
 
         fetchTipologies() {
             axios
@@ -117,6 +105,16 @@ export default {
     created(){
         this.fetchTipologies();
         this.fetchRestaurant();
+    },
+    computed: {
+        filteredRestaurants() {
+            if (!this.tipologyFilter.length) {
+                return this.filteredUsers = this.users
+            } else {
+                this.filteredUsers = this.users.filter(this.checkTipologiesContain)
+                return this.filteredUsers
+            } 
+        }
     }
    
   }
