@@ -1,7 +1,7 @@
 <template>
     <div class="restaurants-bg ">
         <div class="container">
-            <h1 class="mb-3">Ricerca ristoratori</h1>
+            <h1 class="mb-3">Ricerca Ristorante</h1>
             <h5>Seleziona una o più categorie disponibili:</h5>
             
                 <form class="form-inline w-100 d-flex justify-content-around">
@@ -35,9 +35,9 @@
                 </div>
 
                 <!-- ristoranti trovati  -->
-                <div v-else v-for="user in users" :key="user.id">
+                <div v-else v-for="user in filteredRest" :key="user.id">
                     {{user.business_name}}
-                    <div class="bg-success" v-for="tipology in user.tipologies">{{tipology.name}}</div>
+                    <div class="bg-success" v-for="tipology in user.tipologies" :key="tipology.id">{{tipology.name}}</div>
                 </div>       
             </div>
             
@@ -53,7 +53,8 @@ export default {
             risultato: false,
             tipologyFilter: [],
             users: [],
-            tipologies:[]
+            tipologies:[],
+            filteredRest:[],
         }
     },
     methods:{
@@ -72,9 +73,30 @@ export default {
                 
         },
         filteredRestaurants() {
-            let filteredUser = this.users.filter(user => user.tipologies[0].name.includes('Bar'))
-            this.users = filteredUser
+           if(this.filteredRest.length > 0){
+               this.filteredRest = [];
+               
+
+           }
+           for (let i = 0; i < this.users.length; i++) {
+               let user = this.users[i]
+               console.log(user.business_name)
+               let tipology = [];
+
+               for (let y = 0; y < user.tipologies.length; y++) {
+                   tipology.push(user.tipologies[y].name); 
+               }
+                console.log(tipology)
+                console.log(this.tipologyFilter)
+                if (tipology.every(el => this.tipologyFilter.includes(el))){
+                       this.filteredRest.push(user)
+                   }
+              
+           }
+           console.log(this.filteredRest)
+
         },
+
         fetchTipologies() {
             axios
                 .get("/api/home")
