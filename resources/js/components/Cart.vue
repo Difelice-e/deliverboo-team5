@@ -22,13 +22,13 @@
                 </div>
 
                 <div class="col-12">
-                    <a class="dropdown-item btn btn-success" href="#">Checkout</a>
+                    <a class="btn btn-primary" href="#">Vai al Checkout</a>
                 </div>
             </div>
             
             <!-- carrello vuoto  -->
-            <div v-else>
-                <a class="dropdown-item" href="#">Cart is empty</a>
+            <div v-else class="cart-wrapper">
+                <p class="text-center" href="#">Carrello Vuoto!</p>
             </div>
             
         </div>

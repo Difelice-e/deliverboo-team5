@@ -2121,11 +2121,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      risultato: false,
       tipologyFilter: [],
       users: [],
       tipologies: [],
@@ -2144,6 +2153,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/restaurant").then(function (res) {
         var users = res.data.users;
         _this.users = users;
+        console.log(_this.users);
         _this.loading = true;
       })["catch"](function (err) {
         console.warn(err);
@@ -4170,9 +4180,9 @@ var render = function () {
           ],
           2
         )
-      : _c("div", [
-          _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-            _vm._v("Cart is empty"),
+      : _c("div", { staticClass: "cart-wrapper" }, [
+          _c("p", { staticClass: "text-center", attrs: { href: "#" } }, [
+            _vm._v("Carrello Vuoto!"),
           ]),
         ]),
   ])
@@ -4199,11 +4209,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-12" }, [
-      _c(
-        "a",
-        { staticClass: "dropdown-item btn btn-success", attrs: { href: "#" } },
-        [_vm._v("Checkout")]
-      ),
+      _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
+        _vm._v("Vai al Checkout"),
+      ]),
     ])
   },
 ]
@@ -4437,53 +4445,90 @@ var render = function () {
               ),
               _vm._v(" "),
               _c("div", [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn my-2 my-sm-0 btn-danger ms_btn-restaurants",
-                    attrs: { type: "submit" },
-                    on: { click: _vm.filteredRestaurants },
-                  },
-                  [_vm._v("\n                    Cerca\n                ")]
-                ),
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                [
-                  _vm.filteredUsers.length == 0
-                    ? _c("div", [_vm._m(0)])
-                    : _vm._l(_vm.filteredUsers, function (user) {
+                _vm.filteredRestaurants.length == 0
+                  ? _c("div", [_vm._m(0)])
+                  : _c(
+                      "ul",
+                      {
+                        staticClass:
+                          "d-flex flex-wrap justify-content-center gap-card",
+                      },
+                      _vm._l(_vm.filteredUsers, function (user) {
                         return _c(
-                          "div",
-                          { key: user.id },
+                          "router-link",
+                          {
+                            key: user.id,
+                            staticClass: "cursor-pointer",
+                            attrs: {
+                              tag: "li",
+                              to: {
+                                name: "restaurant.show",
+                                params: { slug: user.slug },
+                              },
+                            },
+                          },
                           [
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(user.business_name) +
-                                "\n                    "
-                            ),
-                            _vm._l(user.tipologies, function (tipology) {
-                              return _c(
-                                "div",
-                                { key: tipology.id, staticClass: "bg-success" },
-                                [
-                                  _vm._v(
-                                    "\n                        " +
-                                      _vm._s(tipology.name) +
-                                      "\n                    "
-                                  ),
-                                ]
-                              )
-                            }),
-                          ],
-                          2
+                            _c("div", { staticClass: "card" }, [
+                              user.cover
+                                ? _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: { src: user.cover, alt: "" },
+                                  })
+                                : _c("img", {
+                                    staticStyle: {
+                                      width: "200px",
+                                      height: "100px",
+                                    },
+                                    attrs: {
+                                      src: "https://picsum.photos/300/150",
+                                      alt: "",
+                                    },
+                                  }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "card-body" }, [
+                                _c(
+                                  "h5",
+                                  {
+                                    staticClass:
+                                      "card-title name-business text-left",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(user.business_name) +
+                                        "\n                                "
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  { staticClass: "card-text address-name" },
+                                  [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(user.street_address) +
+                                        "\n                                "
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "btn bg-gl",
+                                    attrs: { href: "#" },
+                                  },
+                                  [_vm._v("Vedi Menù")]
+                                ),
+                              ]),
+                            ]),
+                          ]
                         )
                       }),
-                ],
-                2
-              ),
+                      1
+                    ),
+              ]),
             ]),
           ])
         : _c("loadingWheel"),

@@ -36,18 +36,8 @@
                 </form>
 
                 <div>
-                    <button
-                        @click="filteredRestaurants"
-                        class="btn my-2 my-sm-0 btn-danger ms_btn-restaurants"
-                        type="submit"
-                    >
-                        Cerca
-                    </button>
-                </div>
-
-                <div>
                     <!-- nessun ristorante trovato  -->
-                    <div v-if="filteredUsers.length == 0">
+                    <div v-if="filteredRestaurants.length == 0">
                         <div>
                             <h2>Nessun ristorante trovato</h2>
                         </div>
@@ -55,16 +45,36 @@
 
                     <!-- ristoranti trovati  -->
 
-                    <div v-else v-for="user in filteredUsers" :key="user.id">
-                        {{ user.business_name }}
-                        <div
-                            class="bg-success"
-                            v-for="tipology in user.tipologies"
-                            :key="tipology.id"
+                    <ul
+                        v-else
+                        class="d-flex flex-wrap justify-content-center gap-card"
+                    >
+                        <router-link
+                            tag="li"
+                            v-for="user in filteredUsers"
+                            :key="user.id"
+                            class="cursor-pointer"
+                            :to="{
+                                name: 'restaurant.show',
+                                params: { slug: user.slug },
+                            }"
                         >
-                            {{ tipology.name }}
-                        </div>
-                    </div>
+                            <div class="card">
+                                <img v-if="user.cover" :src="user.cover" class="card-img-top" alt="" />
+                                <img v-else src="https://picsum.photos/300/150" style=" width: 200px; height: 100px;" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title name-business text-left">
+                                        {{ user.business_name }}
+                                    </h5>
+
+                                    <p class="card-text address-name">
+                                        {{ user.street_address }}
+                                    </p>
+                                    <a href="#" class="btn bg-gl">Vedi Menù</a>
+                                </div>
+                            </div>
+                        </router-link>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -79,13 +89,11 @@ import loadingWheel from "../components/loadingWheel.vue";
 export default {
     data() {
         return {
-            risultato: false,
             tipologyFilter: [],
             users: [],
             tipologies: [],
             filteredUsers: [],
             userTipologies: [],
-
             loading: false,
         };
     },
@@ -99,6 +107,7 @@ export default {
                 .then((res) => {
                     const { users } = res.data;
                     this.users = users;
+                    console.log(this.users)
 
                     this.loading = true;
                 })
@@ -148,6 +157,7 @@ export default {
                 );
                 return this.filteredUsers;
             }
+            
         },
     },
 };
