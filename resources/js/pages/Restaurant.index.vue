@@ -1,89 +1,121 @@
 <template>
-    <div class="restaurants-bg ">
-        <div class="container">
-            <h1 class="mb-3">Ricerca Ristorante</h1>
-            <h5>Seleziona una o più categorie disponibili:</h5>
-            
+    <div>
+        <div v-if="loading" class="restaurants-bg">
+            <div class="container">
+                <h1 class="mb-3">Ricerca Ristorante</h1>
+                <h5>Seleziona una o più categorie disponibili:</h5>
+
                 <form class="form-inline w-100 d-flex justify-content-around">
                     <div class="form-group row">
                         <label class="col-form-label" for="category"></label>
-                        <form @submit.prevent="fetchRestaurant" class="container my-bg-categories">
+                        <form
+                            @submit.prevent="fetchRestaurant"
+                            class="container my-bg-categories"
+                        >
                             <ul class="filter">
-                            
-                                <li v-for="tipology in tipologies" :key="tipology.id">
-                                    <input class="mx-1" type="checkbox" v-model="tipologyFilter" @click="checkTipologies" :id="tipology.name" :name="tipology.name" :value="tipology.name">
+                                <li
+                                    v-for="tipology in tipologies"
+                                    :key="tipology.id"
+                                >
+                                    <input
+                                        class="mx-1"
+                                        type="checkbox"
+                                        v-model="tipologyFilter"
+                                        @click="checkTipologies"
+                                        :id="tipology.name"
+                                        :name="tipology.name"
+                                        :value="tipology.name"
+                                    />
                                     <label :for="tipology.name">
-                                        {{tipology.name}}
+                                        {{ tipology.name }}
                                     </label>
                                 </li>
-                                        
                             </ul>
                         </form>
                     </div>
                 </form>
 
-            <div>
-                <button @click="filteredRestaurants" class="btn my-2 my-sm-0 btn-danger ms_btn-restaurants" type="submit">Cerca</button>
-            </div>
-            
-            <div> 
-                <!-- nessun ristorante trovato  -->
-                <div v-if="filteredUsers.length == 0">
-                    <div>
-                        <h2>Nessun ristorante trovato</h2>
-                    </div> 
+                <div>
+                    <button
+                        @click="filteredRestaurants"
+                        class="btn my-2 my-sm-0 btn-danger ms_btn-restaurants"
+                        type="submit"
+                    >
+                        Cerca
+                    </button>
                 </div>
 
-                <!-- ristoranti trovati  -->
+                <div>
+                    <!-- nessun ristorante trovato  -->
+                    <div v-if="filteredUsers.length == 0">
+                        <div>
+                            <h2>Nessun ristorante trovato</h2>
+                        </div>
+                    </div>
 
-                <div v-else v-for="user in filteredUsers" :key="user.id">
+                    <!-- ristoranti trovati  -->
 
-                    {{user.business_name}}
-                    <div class="bg-success" v-for="tipology in user.tipologies" :key="tipology.id">{{tipology.name}}</div>
-                </div>       
+                    <div v-else v-for="user in filteredUsers" :key="user.id">
+                        {{ user.business_name }}
+                        <div
+                            class="bg-success"
+                            v-for="tipology in user.tipologies"
+                            :key="tipology.id"
+                        >
+                            {{ tipology.name }}
+                        </div>
+                    </div>
+                </div>
             </div>
-            
         </div>
-        
+        <!-- rotella di caricamento -->
+        <loadingWheel v-else />
     </div>
 </template>
 
 <script>
+import loadingWheel from "../components/loadingWheel.vue";
+
 export default {
-    data (){
+    data() {
         return {
             risultato: false,
             tipologyFilter: [],
             users: [],
-            tipologies:[],
-
-            filteredUsers:[],
+            tipologies: [],
+            filteredUsers: [],
             userTipologies: [],
 
-        }
+            loading: false,
+        };
     },
-    methods:{
-       
+    components: {
+        loadingWheel,
+    },
+    methods: {
         fetchRestaurant() {
             axios
                 .get("/api/restaurant")
                 .then((res) => {
                     const { users } = res.data;
                     this.users = users;
+
+                    this.loading = true;
                 })
                 .catch((err) => {
                     console.warn(err);
                     this.$router.push("/404");
                 });
-                
         },
 
-        checkTipologiesContain (user) {
-            let userTipologies = user.tipologies.map(t => { return t.name; })
-            return this.tipologyFilter.every(element => {
+        checkTipologiesContain(user) {
+            let userTipologies = user.tipologies.map((t) => {
+                return t.name;
+            });
+            return this.tipologyFilter.every((element) => {
                 return userTipologies.includes(element);
-            })    
-        },  
+            });
+        },
 
         fetchTipologies() {
             axios
@@ -99,25 +131,26 @@ export default {
                 });
         },
         checkTipologies() {
-            console.log(this.tipologyFilter)
-        }
+            console.log(this.tipologyFilter);
+        },
     },
-    created(){
+    created() {
         this.fetchTipologies();
         this.fetchRestaurant();
     },
     computed: {
         filteredRestaurants() {
             if (!this.tipologyFilter.length) {
-                return this.filteredUsers = this.users
+                return (this.filteredUsers = this.users);
             } else {
-                this.filteredUsers = this.users.filter(this.checkTipologiesContain)
-                return this.filteredUsers
-            } 
-        }
-    }
-   
-  }
+                this.filteredUsers = this.users.filter(
+                    this.checkTipologiesContain
+                );
+                return this.filteredUsers;
+            }
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -126,5 +159,4 @@ export default {
     gap: 10px;
     list-style: none;
 }
-
 </style>
