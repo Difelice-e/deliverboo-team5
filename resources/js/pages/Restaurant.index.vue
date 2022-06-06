@@ -1,7 +1,7 @@
 <template>
     <div class="restaurants-bg ">
         <div class="container">
-            <h1 class="mb-3">Ricerca ristoratori</h1>
+            <h1 class="mb-3">Ricerca Ristorante</h1>
             <h5>Seleziona una o più categorie disponibili:</h5>
             
                 <form class="form-inline w-100 d-flex justify-content-around">
@@ -35,9 +35,11 @@
                 </div>
 
                 <!-- ristoranti trovati  -->
+
                 <div v-else v-for="user in filteredUsers" :key="user.id">
+
                     {{user.business_name}}
-                    <div class="bg-success" v-for="tipology in user.tipologies">{{tipology.name}}</div>
+                    <div class="bg-success" v-for="tipology in user.tipologies" :key="tipology.id">{{tipology.name}}</div>
                 </div>       
             </div>
             
@@ -54,8 +56,10 @@ export default {
             tipologyFilter: [],
             users: [],
             tipologies:[],
+
             filteredUsers:[],
             userTipologies: [],
+
         }
     },
     methods:{
@@ -73,12 +77,14 @@ export default {
                 });
                 
         },
+
         checkTipologiesContain (user) {
             let userTipologies = user.tipologies.map(t => { return t.name; })
             return this.tipologyFilter.every(element => {
                 return userTipologies.includes(element);
             })    
         },  
+
         fetchTipologies() {
             axios
                 .get("/api/home")
