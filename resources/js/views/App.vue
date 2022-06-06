@@ -7,6 +7,7 @@
           bg-goldGv
           shadow-sm
           position-relative
+          box-shadow-none
         "
       >
         <div class="container">
