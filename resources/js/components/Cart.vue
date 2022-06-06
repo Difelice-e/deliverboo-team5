@@ -2,10 +2,10 @@
         <div>
             <!-- carrello con items  -->
             <div v-if="$store.state.cart.length > 0" class="d-flex flex-column p-2 ">
-                <a v-for="dish in $store.state.cart" :key="dish.id" class="navbar-item " href="">
-                    <span class="removeBtn" title="Remove from cart" @click.prevent="removeFromCart(dish)">X</span>
-                    {{ dish.name }} x{{ dish.quantity }} - €{{ dish.totalPrice }}
-                </a>
+                <p v-for="dish in $store.state.cart" :key="dish.id" class="navbar-item " href="">
+                    <span class="removeBtn btn btn-danger rounded-pill p-1" title="Remove from cart" @click.prevent="removeFromCart(dish)">X</span>
+                    {{ dish.name }} | <span class="btn btn-success p-1 rounded" @click.prevent="decreaseQuantity(dish)">-</span> x{{ dish.quantity }} <span class="btn btn-success p-1 rounded" @click.prevent="increaseQuantity(dish)">+</span> | €{{ dish.totalPrice.toFixed(2) }}  
+                </p>
 
                 <a class="navbar-item" href="">Total: €{{ totalPrice }}
                 </a>
@@ -26,7 +26,13 @@ export default {
     methods: {
         removeFromCart(dish) {
             this.$store.commit('removeFromCart', dish);
-        }
+        },
+        increaseQuantity(dish) {
+            this.$store.commit('addToCart', dish);
+        },
+        decreaseQuantity(dish) {
+            this.$store.commit('decreaseQuantity', dish);
+        },
     },
     computed: {
         totalPrice() {
