@@ -2071,6 +2071,10 @@ __webpack_require__.r(__webpack_exports__);
     filteredRestaurants: function filteredRestaurants() {
       var _this2 = this;
 
+      if (this.filteredRest.length > 0) {
+        this.filteredRest = [];
+      }
+
       for (var i = 0; i < this.users.length; i++) {
         var user = this.users[i];
         console.log(user.business_name);

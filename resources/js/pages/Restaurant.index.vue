@@ -73,7 +73,11 @@ export default {
                 
         },
         filteredRestaurants() {
-          
+           if(this.filteredRest.length > 0){
+               this.filteredRest = [];
+               
+
+           }
            for (let i = 0; i < this.users.length; i++) {
                let user = this.users[i]
                console.log(user.business_name)
