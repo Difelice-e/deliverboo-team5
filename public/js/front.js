@@ -22850,11 +22850,17 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 var routes = [{
   path: "/",
   name: "tipologies.index",
-  component: _pages_Tipologies_index_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  component: _pages_Tipologies_index_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+  meta: {
+    title: "Glovo consegna a Milano. Ordina online ora: cibo, spesa, prodotti della parafarmacia, fiori e molto altro"
+  }
 }, {
   path: "/tipologies/:slug",
   name: "tipologies.show",
-  component: _pages_Tipologies_show_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  component: _pages_Tipologies_show_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+  meta: {
+    title: ":slug a domicilio a Milano | :slug vicino a te | Glovo"
+  }
 }, {
   path: "/restaurant",
   name: "restaurant.index",
@@ -22862,16 +22868,26 @@ var routes = [{
 }, {
   path: "/restaurant/:slug",
   name: "restaurant.show",
-  component: _pages_Restaurant_show_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  component: _pages_Restaurant_show_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+  meta: {
+    title: "restaurant/:slug - Consegna a domicilio a Milano | Ordina online con Glovo"
+  }
 }, {
   path: "/*",
   name: "not-found",
-  component: _pages_404_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+  component: _pages_404_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+  meta: {
+    title: "Erorre 404"
+  }
 }]; // istanza dell nostro route
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: "history",
   routes: routes
+});
+router.beforeEach(function (to, from, next) {
+  document.title = to.meta.title;
+  next();
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 
