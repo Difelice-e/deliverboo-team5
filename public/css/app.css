@@ -11144,7 +11144,7 @@ input[type=number] {
 }
 
 .container-jumbo {
-  width: 25%;
+  width: 35%;
 }
 
 .container-jumbo .font-size-jb {
@@ -11157,6 +11157,8 @@ input[type=number] {
 }
 
 .container-jumbo .gap-jb > li {
+  width: 130px;
+  height: 130px;
   transition: all 0.5s;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }

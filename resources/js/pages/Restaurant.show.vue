@@ -2,96 +2,103 @@
     <section id="restaurant-page">
         <template v-if="loading">
             <div class="restaurant-header">
-                <div class="container">
+                <div>
                     <div class="row">
-                        <div class="col-12">
-                            <div class="restaurant-wrapper d-flex">
-                                <!-- cover ristorante  -->
-                                <img
-                                    src="https://picsum.photos/300/150"
-                                    style="width: 200px"
-                                    alt=""
-                                />
-
-                                <!-- info del ristorante  -->
-                                <div class="restaurant-info">
-                                    <h1>{{ user.business_name }}</h1>
-                                    <ul class="restaurant-tipologies d-flex">
-                                        <li
-                                            v-for="tipology in user.tipologies"
-                                            :key="tipology.id"
-                                            class="bg-primary border border-secondary rounded-pill px-3 py-1"
-                                        >
-                                            {{ tipology.name }}
-                                        </li>
-                                    </ul>
-                                    <p class="restaurant-contacts">
-                                        {{ user.street_address }} -
-                                        {{ user.phone_number }}
-                                    </p>
-                                </div>
-                            </div>
+                        <div
+                            class="col-12"
+                            style="
+                                background: url('https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/glovo-white.svg');
+                                height: 150px;
+                            "
+                        >
+                            <!-- cover ristorante  -->
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="restaurant-body">
-                <div class="container">
+                <div class="container position-menu">
                     <div class="row align-items-start">
-                        <!-- menu del ristorante  -->
-                        <div class="col-8 p-3">
-                            <div class="menu-wrapper">
-                                <div class="row">
-                                    <div
-                                        v-for="dish in user.dishes"
-                                        :key="dish.id"
-                                        class="col-6 mb-3"
+                        <div class="col-9">
+                            <!-- info del ristorante  -->
+                            <div class="restaurant-info container bg-danger">
+                                <h1>{{ user.business_name }}</h1>
+                                <ul class="restaurant-tipologies d-flex">
+                                    <li
+                                        v-for="tipology in user.tipologies"
+                                        :key="tipology.id"
+                                        class="bg-primary border border-secondary rounded-pill px-py-1"
                                     >
+                                        {{ tipology.name }}
+                                    </li>
+                                </ul>
+                                <p class="restaurant-contacts">
+                                    {{ user.street_address }} -
+                                    {{ user.phone_number }}
+                                </p>
+                            </div>
+                            <!-- menu del ristorante  -->
+                            <div class="col-8 p-3">
+                                <div class="menu-wrapper">
+                                    <div class="row">
                                         <div
-                                            class="dish-wrapper d-flex justify-content-between p-3"
+                                            v-for="dish in user.dishes"
+                                            :key="dish.id"
+                                            class="col-6 mb-3"
                                         >
-                                            <div class="dish-info">
-                                                <h4 class="dish-title mb-0">
-                                                    {{ dish.name }}
-                                                </h4>
-                                                <p
-                                                    class="dish-ingredients mb-1"
-                                                >
-                                                    {{ dish.ingredients }}
-                                                </p>
-                                                <span class="dish-price"
-                                                    >{{
-                                                        dish.price.toFixed(2)
-                                                    }}€</span
-                                                >
-                                                <button
-                                                    @click="
-                                                        addToCart(dish, user)
-                                                    "
-                                                    class="btn btn-outline-success"
-                                                >
-                                                    Add to Cart
-                                                </button>
-                                            </div>
+                                            <div
+                                                class="dish-wrapper d-flex justify-content-between p-3"
+                                            >
+                                                <div class="dish-info">
+                                                    <h4 class="dish-title mb-0">
+                                                        {{ dish.name }}
+                                                    </h4>
+                                                    <p
+                                                        class="dish-ingredients mb-1"
+                                                    >
+                                                        {{ dish.ingredients }}
+                                                    </p>
+                                                    <span class="dish-price"
+                                                        >{{
+                                                            dish.price.toFixed(
+                                                                2
+                                                            )
+                                                        }}€</span
+                                                    >
+                                                    <button
+                                                        @click="
+                                                            addToCart(
+                                                                dish,
+                                                                user
+                                                            )
+                                                        "
+                                                        class="btn btn-outline-success"
+                                                    >
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
 
-                                            <img
-                                                src="https://picsum.photos/300/150"
-                                                style="
-                                                    width: 100px;
-                                                    height: 100px;
-                                                "
-                                                alt=""
-                                            />
+                                                <img
+                                                    src="https://picsum.photos/300/150"
+                                                    style="
+                                                        width: 100px;
+                                                        height: 100px;
+                                                    "
+                                                    alt=""
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- carrello  -->
-                        <div class="col-4 p-3">
-                            <CartDropdown />
+                        <div class="col-3">
+                            <!-- carrello  -->
+                            <div class="col-4 p-3">
+                                <CartDropdown />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -170,8 +177,12 @@ export default {
     .restaurant-body {
         background-color: #e8ecec;
         padding: 50px 0;
+        position: relative;
         // css del menu del ristorante
-        .menu-wrapper {
+        .position-menu{
+            // position: absolute;
+            // top: 0;
+
             .dish-wrapper {
                 min-height: 132px;
                 gap: 8px;
@@ -189,6 +200,7 @@ export default {
                 }
             }
         }
+
 
         // css del carrello
         .cart-wrapper {
