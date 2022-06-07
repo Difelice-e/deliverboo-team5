@@ -22722,7 +22722,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_Tipologies_index_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/Tipologies.index.vue */ "./resources/js/pages/Tipologies.index.vue");
 /* harmony import */ var _pages_Tipologies_show_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/Tipologies.show.vue */ "./resources/js/pages/Tipologies.show.vue");
-/* harmony import */ var _pages_Restaurant_index_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/Restaurant.index.vue */ "./resources/js/pages/Restaurant.index.vue");
+/* harmony import */ var _pages_Restaurant_index_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/Restaurant.index.vue */ "./resources/js/pages/Restaurant.index.vue");
 /* harmony import */ var _pages_Restaurant_show_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/Restaurant.show.vue */ "./resources/js/pages/Restaurant.show.vue");
 /* harmony import */ var _pages_404_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/404.vue */ "./resources/js/pages/404.vue");
 
@@ -22736,28 +22736,44 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 var routes = [{
   path: "/",
   name: "tipologies.index",
-  component: _pages_Tipologies_index_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  component: _pages_Tipologies_index_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+  meta: {
+    title: "Glovo consegna a Milano. Ordina online ora: cibo, spesa, prodotti della parafarmacia, fiori e molto altro"
+  }
 }, {
   path: "/tipologies/:slug",
   name: "tipologies.show",
-  component: _pages_Tipologies_show_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  component: _pages_Tipologies_show_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+  meta: {
+    title: ":slug a domicilio a Milano | :slug vicino a te | Glovo"
+  }
 }, {
   path: "/restaurant",
   name: "restaurant.index",
-  component: _pages_Restaurant_index_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+  component: _pages_Restaurant_index_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, {
   path: "/restaurant/:slug",
   name: "restaurant.show",
-  component: _pages_Restaurant_show_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  component: _pages_Restaurant_show_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+  meta: {
+    title: "restaurant/:slug - Consegna a domicilio a Milano | Ordina online con Glovo"
+  }
 }, {
   path: "/*",
   name: "not-found",
-  component: _pages_404_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+  component: _pages_404_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+  meta: {
+    title: "Erorre 404"
+  }
 }]; // istanza dell nostro route
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: "history",
   routes: routes
+});
+router.beforeEach(function (to, from, next) {
+  document.title = to.meta.title;
+  next();
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 
