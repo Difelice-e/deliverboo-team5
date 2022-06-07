@@ -11167,6 +11167,14 @@ input[type=number] {
   transform: scale(1.2);
 }
 
+.pill-color {
+  background-color: rgba(255, 194, 68, 0.3);
+}
+
+.pill-color:hover {
+  background-color: rgb(255, 194, 68);
+}
+
 .bg-greed {
   background-color: rgba(0, 160, 128, 0.2);
 }
@@ -11180,6 +11188,10 @@ input[type=number] {
   bottom: 100%;
   left: 50%;
   transform: translate(-50%, -90%);
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .bg-darkGrayGv {
