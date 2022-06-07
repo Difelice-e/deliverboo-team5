@@ -31,16 +31,17 @@
                             {{ tipology.name }}
                         </p>
                     </div>
-                    <div class="bg-white d-flex justify-content-between mt-2 px-2">
-                        <div>
+                    <div class="bg-white card-foot d-flex justify-content-between mt-2 px-2">
+                        <div class="d-flex">
+                            <img class="favicon pr-2" src="https://img.icons8.com/external-those-icons-lineal-those-icons/344/external-like-touch-gestures-those-icons-lineal-those-icons.png" alt="">
                             <p>{{ vote[random()].rec}}%</p>
                         </div>
                         <div class="d-flex align-items-center">
                             <div class="d-flex mr-2">
-                                <img src="https://res.cloudinary.com/glovoapp/image/fetch//q…ovoapp.com/images/glyphs/store-delivery-light.svg" alt="">
-                                <p class="bg-gl">Gratis</p>
+                                <img class="favicon fav-2" src="https://img.icons8.com/ios/344/scooter.png" alt="">
+                                <p class="bg-gl font-gl text-uppercase">Gratis</p>
                             </div>
-                            <div class="d-flex">
+                            <div class="d-flex temp-cl">
                                 <p>. {{ vote[random()].temp1}} - </p>
                                 <p>{{ vote[random()].temp}} min.</p>
                             </div>
@@ -122,6 +123,19 @@ ul {
     border-radius: 10px;
 }
 
+.card-foot {
+    margin-bottom: -2%;
+}
+
+.favicon {
+    margin-top: 2%;
+    height: 16px;
+}
+
+.fav-2 {
+    margin-right: 5px;
+}
+
 .card-title {
     display: flex;
     justify-content: center;
@@ -132,9 +146,18 @@ ul {
     transform: translate(-50%, -50%);
 }
 
+.temp-cl {
+    font-weight: 600;
+}
+
+.font-gl {
+    font-size: 12px;
+    font-weight: 600;
+}
+
 .bg-gl {
     background-color: #ffc244;
-    padding: 3px 4px;
+    padding: 2px 7px;
     border-radius: 5px;
 }
 
@@ -145,7 +168,7 @@ ul {
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
+    bottom: 20%;
     right: 0;
 }
 
