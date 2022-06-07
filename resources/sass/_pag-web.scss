@@ -1,3 +1,4 @@
+// jumbotron category
 .container-jumbo {
     width: 25%;
 
@@ -22,6 +23,16 @@
     }
 }
 
+// pill category
+.pill-color {
+    background-color: rgba(255, 194, 68, 0.3);
+
+    &:hover {
+        background-color: rgba(255, 194, 68, 1.0);
+    }
+}
+
+// Jumbotron partnership
 .bg-greed {
     background-color: rgba(0, 160, 128, 0.2);
 
@@ -35,4 +46,8 @@
             transform: translate(-50%, -90%);
         }
     }
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
