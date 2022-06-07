@@ -2868,6 +2868,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3238,7 +3239,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container ul[data-v-c6bdb26a] {\n  padding: 0;\n}\nul[data-v-c6bdb26a] {\n  list-style: none;\n}\n.title-rest[data-v-c6bdb26a] {\n  font-weight: 700;\n  font-size: 35px;\n}\n.list-wrapper[data-v-c6bdb26a] {\n  gap: 25px 0;\n}\n.rounded-mid[data-v-c6bdb26a] {\n  border-radius: 10px;\n}\n.card-title[data-v-c6bdb26a] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.bg-gl[data-v-c6bdb26a] {\n  background-color: #ffc244;\n  padding: 3px 4px;\n  border-radius: 5px;\n}\n.overlay[data-v-c6bdb26a]::after {\n  content: \"\";\n  display: block;\n  background-color: rgba(0, 0, 0, 0.3);\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n}\n.tipologies-name[data-v-c6bdb26a] {\n  background-color: rgba(0, 0, 0, 0.6);\n  padding: 5px 10px;\n  font-weight: 400;\n}\n.bg-gl[data-v-c6bdb26a] {\n  background-color: #ffc244;\n}\n.name-business[data-v-c6bdb26a] {\n  font-size: 21px;\n  font-weight: 600;\n  color: white;\n}\n.address-name[data-v-c6bdb26a] {\n  font-size: 12px;\n}\n.back-mark[data-v-c6bdb26a] {\n  font-size: 18px;\n  background-color: #ffc244;\n  border-radius: 100px;\n  padding: 0 3px;\n}\n.back-gl[data-v-c6bdb26a] {\n  font-size: 35px;\n  line-height: 1.2;\n  font-weight: 700;\n}", ""]);
+exports.push([module.i, ".container ul[data-v-c6bdb26a] {\n  padding: 0;\n}\nul[data-v-c6bdb26a] {\n  list-style: none;\n}\n.title-rest[data-v-c6bdb26a] {\n  font-weight: 700;\n  font-size: 35px;\n}\n.list-wrapper[data-v-c6bdb26a] {\n  gap: 25px 0;\n}\n.rounded-mid[data-v-c6bdb26a] {\n  border-radius: 10px;\n}\n.card-foot[data-v-c6bdb26a] {\n  margin-bottom: -2%;\n}\n.favicon[data-v-c6bdb26a] {\n  margin-top: 2%;\n  height: 16px;\n}\n.fav-2[data-v-c6bdb26a] {\n  margin-right: 5px;\n}\n.card-title[data-v-c6bdb26a] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.temp-cl[data-v-c6bdb26a] {\n  font-weight: 600;\n}\n.font-gl[data-v-c6bdb26a] {\n  font-size: 12px;\n  font-weight: 600;\n}\n.bg-gl[data-v-c6bdb26a] {\n  background-color: #ffc244;\n  padding: 2px 7px;\n  border-radius: 5px;\n}\n.overlay[data-v-c6bdb26a]::after {\n  content: \"\";\n  display: block;\n  background-color: rgba(0, 0, 0, 0.3);\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 20%;\n  right: 0;\n}\n.tipologies-name[data-v-c6bdb26a] {\n  background-color: rgba(0, 0, 0, 0.6);\n  padding: 5px 10px;\n  font-weight: 400;\n}\n.bg-gl[data-v-c6bdb26a] {\n  background-color: #ffc244;\n}\n.name-business[data-v-c6bdb26a] {\n  font-size: 21px;\n  font-weight: 600;\n  color: white;\n}\n.address-name[data-v-c6bdb26a] {\n  font-size: 12px;\n}\n.back-mark[data-v-c6bdb26a] {\n  font-size: 18px;\n  background-color: #ffc244;\n  border-radius: 100px;\n  padding: 0 3px;\n}\n.back-gl[data-v-c6bdb26a] {\n  font-size: 35px;\n  line-height: 1.2;\n  font-weight: 700;\n}", ""]);
 
 // exports
 
@@ -5752,10 +5753,18 @@ var render = function () {
                         "div",
                         {
                           staticClass:
-                            "bg-white d-flex justify-content-between mt-2 px-2",
+                            "bg-white card-foot d-flex justify-content-between mt-2 px-2",
                         },
                         [
-                          _c("div", [
+                          _c("div", { staticClass: "d-flex" }, [
+                            _c("img", {
+                              staticClass: "favicon pr-2",
+                              attrs: {
+                                src: "https://img.icons8.com/external-those-icons-lineal-those-icons/344/external-like-touch-gestures-those-icons-lineal-those-icons.png",
+                                alt: "",
+                              },
+                            }),
+                            _vm._v(" "),
                             _c("p", [
                               _vm._v(_vm._s(_vm.vote[_vm.random()].rec) + "%"),
                             ]),
@@ -5767,18 +5776,23 @@ var render = function () {
                             [
                               _c("div", { staticClass: "d-flex mr-2" }, [
                                 _c("img", {
+                                  staticClass: "favicon fav-2",
                                   attrs: {
-                                    src: "https://res.cloudinary.com/glovoapp/image/fetch//q…ovoapp.com/images/glyphs/store-delivery-light.svg",
+                                    src: "https://img.icons8.com/ios/344/scooter.png",
                                     alt: "",
                                   },
                                 }),
                                 _vm._v(" "),
-                                _c("p", { staticClass: "bg-gl" }, [
-                                  _vm._v("Gratis"),
-                                ]),
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass: "bg-gl font-gl text-uppercase",
+                                  },
+                                  [_vm._v("Gratis")]
+                                ),
                               ]),
                               _vm._v(" "),
-                              _c("div", { staticClass: "d-flex" }, [
+                              _c("div", { staticClass: "d-flex temp-cl" }, [
                                 _c("p", [
                                   _vm._v(
                                     ". " +
