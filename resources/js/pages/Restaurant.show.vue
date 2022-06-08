@@ -52,6 +52,8 @@
                             <div class="col-12 p-3">
                                 <div class="menu-wrapper">
                                     <div class="row">
+
+                                        <!-- singolo piatto  -->
                                         <div
                                             v-for="dish in user.dishes"
                                             :key="dish.id"
@@ -104,6 +106,11 @@
                                                         </figure>
                                                     </div>
                                                 </div>
+                                            </div>
+
+                                            <!-- pop up aggiunta al carrello  -->
+                                            <div>
+
                                             </div>
                                         </div>
                                     </div>

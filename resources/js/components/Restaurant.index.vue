@@ -38,14 +38,6 @@
                 </form>
 
                 <div>
-                    <!-- nessun ristorante trovato  -->
-                    <!-- <div v-if="users.length == 0">
-                        <div class="d-flex justify-content-center">
-                            <h2>Nessun ristorante trovato</h2>
-                        </div>
-                    </div> -->
-
-                    <!-- ristoranti trovati  -->
 
                     <ul
                         
@@ -94,6 +86,15 @@
                             </div>
                         </router-link>
                     </ul>
+
+                    <div class="container py-4">
+                        <ul class="pagination flex justify-center gap-4 items-center">
+                            <li @click="fetchFiltered(tipologyFilter, n)" 
+                            :class="currentPage === n ? 'bg-primary' : 'bg-secondary'" 
+                            class="d-flex justify-content-center align-items-center p-1"
+                            v-for="n in lastPage" :key="n">{{n}}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,6 +108,8 @@ export default {
         return {
             tipologyFilter: [],
             users: [],
+            lastPage: 0,
+            currentPage: 1,
             tipologies: [],
             userTipologies: [],
             vote: [
@@ -119,12 +122,19 @@ export default {
         };
     },
     methods: {
-        fetchRestaurant() {
+        fetchRestaurant(page = 1) {
             axios
-                .get("/api/restaurant")
+                .get("/api/restaurant", {
+                    params: {
+                        page
+                    }
+                })
                 .then((res) => {
                     const { users } = res.data;
-                    this.users = users;
+                    const {data, last_page, current_page} = users
+                    this.users = data
+                    this.currentPage = current_page
+                    this.lastPage = last_page
                     console.log(this.users)
                 })
                 .catch((err) => {
@@ -133,16 +143,20 @@ export default {
                 });
         },
 
-        fetchFiltered(tipology) {
+        fetchFiltered(tipology, page = 1) {
             axios
                 .get("/api/restaurant", {
                     params: {
-                        tipology: tipology
+                        tipology: tipology,
+                        page
                     }
                 })
                 .then((res) => {
                     const { users } = res.data;
-                    this.users = users;
+                    const {data, last_page, current_page} = users
+                    this.users = data
+                    this.currentPage = current_page
+                    this.lastPage = last_page
                     console.log(this.users)
                 })
                 .catch((err) => {
@@ -166,11 +180,9 @@ export default {
         },
         check(event) {
             if (event.target.checked){
-                this.fetchFiltered(this.tipologyFilter)
+                this.fetchFiltered(this.tipologyFilter, 1)
             } else if (this.tipologyFilter == ''){
                 this.fetchRestaurant()
-            } else {
-                this.fetchFiltered(this.tipologyFilter)
             }
         },
         random: function () {
