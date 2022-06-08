@@ -48,7 +48,7 @@ class User extends Authenticatable
 
     // relazione con tipologie
     public function tipologies() {
-        return $this->belongsToMany('App\Tipology');
+        return $this->belongsToMany('App\Tipology')->withPivot('tipology_id', 'user_id');
     }
 
     // relazione con piatti

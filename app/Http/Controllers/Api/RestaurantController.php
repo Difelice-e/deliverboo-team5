@@ -13,8 +13,20 @@ class RestaurantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $params = $request->query('tipology');
+
+        if ($params) {
+            $users = User::with('tipologies')->whereHas('tipologies', function($q) use ($params) {
+                $q->whereIn('tipology_user.tipology_id', $params);
+            })->get();
+            
+            return response()->json([
+                'users' => $users,
+            ]);
+        } 
+
         $users = User::with('tipologies')->get()->all();
 
         return response()->json([
