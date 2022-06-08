@@ -67,7 +67,7 @@
             <!-- Right Side Of Navbar || Pulsanti attenzione -->
             <ul class="navbar-nav  align-items-end align-items-md-center ml-auto">
               <li
-                class="dropdown btn-nav-register nav-item"
+                class="dropdown btn-nav-register nav-item mr-1"
                 type="button"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
@@ -160,7 +160,11 @@
               <li><a href="#">Instagram</a></li>
             </ul>
           </div>
-          <div class="col-12 col-sm-6 col-md-3">
+          <div class="col-12 col-sm-6 col-md-3 d-flex flex-column justify-content-between">
+            <div class="store cursor-pointer">
+              <img src="https://res.cloudinary.com/glovoapp/image/fetch//w_105,h_35,c_fit,q_auto/https://glovoapp.com/images/app_store/download-button-new.svg" alt="">
+              <img class="py-3" src="https://res.cloudinary.com/glovoapp/image/fetch//w_112,h_35,c_fit,q_auto/https://glovoapp.com/images/google_play/download-button-new.svg" alt="">
+            </div>
             <ul class="text-uppercase">
               <li><a href="#">Termini e condizioni</a></li>
               <li><a href="#">Politica sulla privacy</a></li>
@@ -215,4 +219,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+.store img {
+  display: block;
+}
+
+</style>

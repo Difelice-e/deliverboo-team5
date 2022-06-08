@@ -42,7 +42,7 @@
                                 <p class="bg-gl font-gl text-uppercase">Gratis</p>
                             </div>
                             <div class="d-flex temp-cl">
-                                <p>. {{ vote[random()].temp1}} - </p>
+                                <p>&middot; {{ vote[random()].temp1}} -&nbsp;</p>
                                 <p>{{ vote[random()].temp}} min.</p>
                             </div>
                         </div>
@@ -69,6 +69,7 @@ export default {
                 { id: 2, temp: '25', temp1: '10', rec: '84'},
                 { id: 3, temp: '20', temp1: '15', rec: '91'},
                 { id: 4, temp: '25', temp1: '15', rec: '93'},
+                { id: 5, temp: '20', temp1: '15', rec: '100'},
             ],
         };
     },
@@ -92,7 +93,7 @@ export default {
                 });
         },
         random: function () {
-            return Math.floor(Math.random()*4);
+            return Math.floor(Math.random()*5);
         },
     },
     beforeMount() {
