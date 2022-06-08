@@ -1969,6 +1969,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4735,20 +4743,22 @@ var render = function () {
             staticClass: "d-flex flex-column p-2 cart-wrapper border-radius-gv",
           },
           [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12 text-center mb-5" }, [
+                _c("h4", [_vm._v("Il tuo Deliverboo")]),
+                _vm._v(" "),
+                _c("span", [
+                  _vm._v(
+                    "Spendi " +
+                      _vm._s(_vm.minOrder) +
+                      "€ per evitare le spese di consegna!"
+                  ),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
             _vm._l(_vm.$store.state.cart, function (dish) {
               return _c("div", { key: dish.id, staticClass: "row mb-3" }, [
-                _c("div", { staticClass: "col-12 text-center mb-5" }, [
-                  _c("h4", [_vm._v("Il tuo Deliverboo")]),
-                  _vm._v(" "),
-                  _c("span", [
-                    _vm._v(
-                      "Spendi " +
-                        _vm._s(_vm.minOrder) +
-                        "€ per evitare le spese di consegna!"
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
                 _c(
                   "div",
                   {
@@ -4821,24 +4831,26 @@ var render = function () {
               ])
             }),
             _vm._v(" "),
-            _c("div", { staticClass: "col-12 mb-3" }, [
-              _vm.deliveryFees != 0
-                ? _c("span", [
-                    _vm._v(
-                      "spese di consegna: " + _vm._s(_vm.deliveryFees) + "€"
-                    ),
-                  ])
-                : _c("span", [
-                    _vm._v("Stai risparmiando 2.50€ di spedizione!"),
-                  ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "progress-bar-wrapper" }, [
-                _c("div", {
-                  staticClass: "progress-bar",
-                  style: {
-                    width: (this.totalPrice * 100) / this.minOrder + "%",
-                  },
-                }),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12 mb-3" }, [
+                _vm.deliveryFees != 0
+                  ? _c("span", [
+                      _vm._v(
+                        "spese di consegna: " + _vm._s(_vm.deliveryFees) + "€"
+                      ),
+                    ])
+                  : _c("span", [
+                      _vm._v("Stai risparmiando 2.50€ di spedizione!"),
+                    ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "progress-bar-wrapper" }, [
+                  _c("div", {
+                    staticClass: "progress-bar",
+                    style: {
+                      width: (this.totalPrice * 100) / this.minOrder + "%",
+                    },
+                  }),
+                ]),
               ]),
             ]),
             _vm._v(" "),
@@ -24440,8 +24452,14 @@ var store = {
       } else {
         // prodotto di ristorante diverso 
         if (!sameRestaurant) {
-          state.cart = [];
-          state.cartCount = 0;
+          if (state.cartCount > 0) {
+            if (confirm('Attenzione, Stai aggiungendo al carrello un prodotto di un altro ristorante! Continuando perderai il tuo attuale carrello. Procedere?')) {
+              state.cart = [];
+              state.cartCount = 0;
+            } else {
+              return 0;
+            }
+          }
         } // prodotto nuovo
 
 
