@@ -26,5 +26,9 @@ Route::namespace('Api')->group(function () {
     ]);
     Route::resource('restaurant', 'RestaurantController')->only([
         'index', 'show'
+    ])
+    ->parameters([
+        'users' => 'user:slug',
+        'users' => 'user:user_id'
     ]);
 });

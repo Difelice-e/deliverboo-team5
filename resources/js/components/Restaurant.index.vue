@@ -23,12 +23,12 @@
                                         class="mx-1"
                                         type="checkbox"
                                         v-model="tipologyFilter"
-                                        @click="checkTipologies"
-                                        :id="tipology.name"
-                                        :name="tipology.name"
-                                        :value="tipology.name"
+                                        @change="check($event)"
+                                        :id="tipology.id"
+                                        :name="tipology.id"
+                                        :value="tipology.id"
                                     />
-                                    <label :for="tipology.name">
+                                    <label :for="tipology.id">
                                         {{ tipology.name }}
                                     </label>
                                 </li>
@@ -39,21 +39,21 @@
 
                 <div>
                     <!-- nessun ristorante trovato  -->
-                    <div v-if="filteredRestaurants.length == 0">
+                    <!-- <div v-if="users.length == 0">
                         <div class="d-flex justify-content-center">
                             <h2>Nessun ristorante trovato</h2>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- ristoranti trovati  -->
 
                     <ul
-                        v-else
+                        
                         class="d-flex flex-wrap justify-content-center list-wrapper pt-3"
                     >
                         <router-link
                             tag="li"
-                            v-for="user in filteredUsers"
+                            v-for="user in users"
                             :key="user.id"
                             class="cursor-pointer list-item col-12 col-md-6 col-lg-4"
                             :to="{
@@ -108,7 +108,6 @@ export default {
             tipologyFilter: [],
             users: [],
             tipologies: [],
-            filteredUsers: [],
             userTipologies: [],
             vote: [
                 { id: 1, temp: '30', temp1: '15', rec: '94'},
@@ -133,13 +132,22 @@ export default {
                 });
         },
 
-        checkTipologiesContain(user) {
-            let userTipologies = user.tipologies.map((t) => {
-                return t.name;
-            });
-            return this.tipologyFilter.every((element) => {
-                return userTipologies.includes(element);
-            });
+        fetchFiltered(tipology) {
+            axios
+                .get("/api/restaurant", {
+                    params: {
+                        tipology: tipology
+                    }
+                })
+                .then((res) => {
+                    const { users } = res.data;
+                    this.users = users;
+                    console.log(this.users)
+                })
+                .catch((err) => {
+                    console.warn(err);
+                    this.$router.push("/404");
+                });
         },
 
         fetchTipologies() {
@@ -155,8 +163,14 @@ export default {
                     this.$router.push("/404");
                 });
         },
-        checkTipologies() {
-            console.log(this.tipologyFilter);
+        check(event) {
+            if (event.target.checked){
+                this.fetchFiltered(this.tipologyFilter)
+            } else if (this.tipologyFilter == ''){
+                this.fetchRestaurant()
+            } else {
+                this.fetchFiltered(this.tipologyFilter)
+            }
         },
         random: function () {
             return Math.floor(Math.random()*4);
@@ -167,17 +181,7 @@ export default {
         this.fetchRestaurant();
     },
     computed: {
-        filteredRestaurants() {
-            if (!this.tipologyFilter.length) {
-                return (this.filteredUsers = this.users);
-            } else {
-                this.filteredUsers = this.users.filter(
-                    this.checkTipologiesContain
-                );
-                return this.filteredUsers;
-            }
-
-        },
+        
     },
 };
 </script>

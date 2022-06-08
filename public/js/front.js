@@ -2262,7 +2262,6 @@ __webpack_require__.r(__webpack_exports__);
       tipologyFilter: [],
       users: [],
       tipologies: [],
-      filteredUsers: [],
       userTipologies: [],
       vote: [{
         id: 1,
@@ -2301,28 +2300,43 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push("/404");
       });
     },
-    checkTipologiesContain: function checkTipologiesContain(user) {
-      var userTipologies = user.tipologies.map(function (t) {
-        return t.name;
-      });
-      return this.tipologyFilter.every(function (element) {
-        return userTipologies.includes(element);
-      });
-    },
-    fetchTipologies: function fetchTipologies() {
+    fetchFiltered: function fetchFiltered(tipology) {
       var _this2 = this;
 
-      axios.get("/api/home").then(function (res) {
-        var tipologies = res.data.tipologies;
-        _this2.tipologies = tipologies;
+      axios.get("/api/restaurant", {
+        params: {
+          tipology: tipology
+        }
+      }).then(function (res) {
+        var users = res.data.users;
+        _this2.users = users;
+        console.log(_this2.users);
       })["catch"](function (err) {
         console.warn(err);
 
         _this2.$router.push("/404");
       });
     },
-    checkTipologies: function checkTipologies() {
-      console.log(this.tipologyFilter);
+    fetchTipologies: function fetchTipologies() {
+      var _this3 = this;
+
+      axios.get("/api/home").then(function (res) {
+        var tipologies = res.data.tipologies;
+        _this3.tipologies = tipologies;
+      })["catch"](function (err) {
+        console.warn(err);
+
+        _this3.$router.push("/404");
+      });
+    },
+    check: function check(event) {
+      if (event.target.checked) {
+        this.fetchFiltered(this.tipologyFilter);
+      } else if (this.tipologyFilter == '') {
+        this.fetchRestaurant();
+      } else {
+        this.fetchFiltered(this.tipologyFilter);
+      }
     },
     random: function random() {
       return Math.floor(Math.random() * 4);
@@ -2332,16 +2346,7 @@ __webpack_require__.r(__webpack_exports__);
     this.fetchTipologies();
     this.fetchRestaurant();
   },
-  computed: {
-    filteredRestaurants: function filteredRestaurants() {
-      if (!this.tipologyFilter.length) {
-        return this.filteredUsers = this.users;
-      } else {
-        this.filteredUsers = this.users.filter(this.checkTipologiesContain);
-        return this.filteredUsers;
-      }
-    }
-  }
+  computed: {}
 });
 
 /***/ }),
@@ -4996,41 +5001,45 @@ var render = function () {
                           staticClass: "mx-1",
                           attrs: {
                             type: "checkbox",
-                            id: tipology.name,
-                            name: tipology.name,
+                            id: tipology.id,
+                            name: tipology.id,
                           },
                           domProps: {
-                            value: tipology.name,
+                            value: tipology.id,
                             checked: Array.isArray(_vm.tipologyFilter)
-                              ? _vm._i(_vm.tipologyFilter, tipology.name) > -1
+                              ? _vm._i(_vm.tipologyFilter, tipology.id) > -1
                               : _vm.tipologyFilter,
                           },
                           on: {
-                            click: _vm.checkTipologies,
-                            change: function ($event) {
-                              var $$a = _vm.tipologyFilter,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = tipology.name,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    (_vm.tipologyFilter = $$a.concat([$$v]))
+                            change: [
+                              function ($event) {
+                                var $$a = _vm.tipologyFilter,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = tipology.id,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      (_vm.tipologyFilter = $$a.concat([$$v]))
+                                  } else {
+                                    $$i > -1 &&
+                                      (_vm.tipologyFilter = $$a
+                                        .slice(0, $$i)
+                                        .concat($$a.slice($$i + 1)))
+                                  }
                                 } else {
-                                  $$i > -1 &&
-                                    (_vm.tipologyFilter = $$a
-                                      .slice(0, $$i)
-                                      .concat($$a.slice($$i + 1)))
+                                  _vm.tipologyFilter = $$c
                                 }
-                              } else {
-                                _vm.tipologyFilter = $$c
-                              }
-                            },
+                              },
+                              function ($event) {
+                                return _vm.check($event)
+                              },
+                            ],
                           },
                         }),
                         _vm._v(" "),
-                        _c("label", { attrs: { for: tipology.name } }, [
+                        _c("label", { attrs: { for: tipology.id } }, [
                           _vm._v(
                             "\n                                    " +
                               _vm._s(tipology.name) +
@@ -5048,90 +5057,57 @@ var render = function () {
         ),
         _vm._v(" "),
         _c("div", [
-          _vm.filteredRestaurants.length == 0
-            ? _c("div", [_vm._m(1)])
-            : _c(
-                "ul",
+          _c(
+            "ul",
+            {
+              staticClass:
+                "d-flex flex-wrap justify-content-center list-wrapper pt-3",
+            },
+            _vm._l(_vm.users, function (user) {
+              return _c(
+                "router-link",
                 {
+                  key: user.id,
                   staticClass:
-                    "d-flex flex-wrap justify-content-center list-wrapper pt-3",
-                },
-                _vm._l(_vm.filteredUsers, function (user) {
-                  return _c(
-                    "router-link",
-                    {
-                      key: user.id,
-                      staticClass:
-                        "cursor-pointer list-item col-12 col-md-6 col-lg-4",
-                      attrs: {
-                        tag: "li",
-                        to: {
-                          name: "restaurant.show",
-                          params: { slug: user.slug },
-                        },
-                      },
+                    "cursor-pointer list-item col-12 col-md-6 col-lg-4",
+                  attrs: {
+                    tag: "li",
+                    to: {
+                      name: "restaurant.show",
+                      params: { slug: user.slug },
                     },
+                  },
+                },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "card card-t rounded-mid overflow-hidden" },
                     [
+                      _c("div", { staticClass: "overlay" }, [
+                        _c("img", {
+                          staticClass: "card-img-top img-card",
+                          attrs: {
+                            src: "https://picsum.photos/300/150",
+                            alt: "",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
                       _c(
                         "div",
                         {
                           staticClass:
-                            "card card-t rounded-mid overflow-hidden",
+                            "card-title d-flex align-items-center justify-content-center flex-column text-white",
                         },
                         [
-                          _c("div", { staticClass: "overlay" }, [
-                            _c("img", {
-                              staticClass: "card-img-top img-card",
-                              attrs: {
-                                src: "https://picsum.photos/300/150",
-                                alt: "",
-                              },
-                            }),
-                          ]),
-                          _vm._v(" "),
                           _c(
-                            "div",
-                            {
-                              staticClass:
-                                "card-title d-flex align-items-center justify-content-center flex-column text-white",
-                            },
+                            "h5",
+                            { staticClass: "name-business text-center" },
                             [
-                              _c(
-                                "h5",
-                                { staticClass: "name-business text-center" },
-                                [
-                                  _vm._v(
-                                    "\n                                    " +
-                                      _vm._s(user.business_name) +
-                                      "\n                                "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center",
-                                },
-                                _vm._l(user.tipologies, function (el) {
-                                  return _c(
-                                    "p",
-                                    {
-                                      key: el.id,
-                                      staticClass:
-                                        "tipologies-name badge badge-dark",
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                        " +
-                                          _vm._s(el.name) +
-                                          "\n                                    "
-                                      ),
-                                    ]
-                                  )
-                                }),
-                                0
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(user.business_name) +
+                                  "\n                                "
                               ),
                             ]
                           ),
@@ -5140,75 +5116,100 @@ var render = function () {
                             "div",
                             {
                               staticClass:
-                                "bg-white card-foot d-flex justify-content-between mt-2 px-2",
+                                "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center",
                             },
+                            _vm._l(user.tipologies, function (el) {
+                              return _c(
+                                "p",
+                                {
+                                  key: el.id,
+                                  staticClass:
+                                    "tipologies-name badge badge-dark",
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(el.name) +
+                                      "\n                                    "
+                                  ),
+                                ]
+                              )
+                            }),
+                            0
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "bg-white card-foot d-flex justify-content-between mt-2 px-2",
+                        },
+                        [
+                          _c("div", { staticClass: "d-flex" }, [
+                            _c("img", {
+                              staticClass: "favicon pr-2",
+                              attrs: {
+                                src: "https://img.icons8.com/external-those-icons-lineal-those-icons/344/external-like-touch-gestures-those-icons-lineal-those-icons.png",
+                                alt: "",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(_vm._s(_vm.vote[_vm.random()].rec) + "%"),
+                            ]),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "d-flex align-items-center" },
                             [
-                              _c("div", { staticClass: "d-flex" }, [
+                              _c("div", { staticClass: "d-flex mr-2" }, [
                                 _c("img", {
-                                  staticClass: "favicon pr-2",
+                                  staticClass: "favicon fav-2",
                                   attrs: {
-                                    src: "https://img.icons8.com/external-those-icons-lineal-those-icons/344/external-like-touch-gestures-those-icons-lineal-those-icons.png",
+                                    src: "https://img.icons8.com/ios/344/scooter.png",
                                     alt: "",
                                   },
                                 }),
                                 _vm._v(" "),
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass: "bg-gl font-gl text-uppercase",
+                                  },
+                                  [_vm._v("Gratis")]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "d-flex temp-cl" }, [
                                 _c("p", [
                                   _vm._v(
-                                    _vm._s(_vm.vote[_vm.random()].rec) + "%"
+                                    ". " +
+                                      _vm._s(_vm.vote[_vm.random()].temp1) +
+                                      " - "
+                                  ),
+                                ]),
+                                _vm._v(" "),
+                                _c("p", [
+                                  _vm._v(
+                                    _vm._s(_vm.vote[_vm.random()].temp) +
+                                      " min."
                                   ),
                                 ]),
                               ]),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "d-flex align-items-center" },
-                                [
-                                  _c("div", { staticClass: "d-flex mr-2" }, [
-                                    _c("img", {
-                                      staticClass: "favicon fav-2",
-                                      attrs: {
-                                        src: "https://img.icons8.com/ios/344/scooter.png",
-                                        alt: "",
-                                      },
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "p",
-                                      {
-                                        staticClass:
-                                          "bg-gl font-gl text-uppercase",
-                                      },
-                                      [_vm._v("Gratis")]
-                                    ),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "d-flex temp-cl" }, [
-                                    _c("p", [
-                                      _vm._v(
-                                        ". " +
-                                          _vm._s(_vm.vote[_vm.random()].temp1) +
-                                          " - "
-                                      ),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", [
-                                      _vm._v(
-                                        _vm._s(_vm.vote[_vm.random()].temp) +
-                                          " min."
-                                      ),
-                                    ]),
-                                  ]),
-                                ]
-                              ),
                             ]
                           ),
                         ]
                       ),
                     ]
-                  )
-                }),
-                1
-              ),
+                  ),
+                ]
+              )
+            }),
+            1
+          ),
         ]),
       ]),
     ]),
@@ -5232,14 +5233,6 @@ var staticRenderFns = [
         ]),
       ]
     )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d-flex justify-content-center" }, [
-      _c("h2", [_vm._v("Nessun ristorante trovato")]),
-    ])
   },
 ]
 render._withStripped = true
@@ -24200,7 +24193,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
