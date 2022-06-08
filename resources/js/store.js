@@ -19,8 +19,14 @@ let store = {
             } else {
                 // prodotto di ristorante diverso 
                 if (!sameRestaurant) {
-                    state.cart = []
-                    state.cartCount = 0
+                    if(state.cartCount > 0) {
+                        if (confirm('Attenzione, Stai aggiungendo al carrello un prodotto di un altro ristorante! Continuando perderai il tuo attuale carrello. Procedere?')) {
+                            state.cart = []
+                            state.cartCount = 0 
+                        } else {
+                            return 0
+                        }
+                    }
                 }
                 
                 // prodotto nuovo
