@@ -1,9 +1,11 @@
 <template>
     <div>
-        <div class="restaurants-bg">
+        <div class="restaurants-bg py-4">
             <div class="container">
-                <h1 class="mb-3">Ricerca Ristorante</h1>
-                <h5>Seleziona una o più categorie disponibili:</h5>
+                <div class="d-flex flex-column justify-content-center text-center">
+                    <h1 class="mb-3 title-rest">Ricerca Ristorante</h1>
+                    <h5 class="subtitle-rest">Seleziona una o più categorie disponibili:</h5>
+                </div>
 
                 <form class="form-inline w-100 d-flex justify-content-around">
                     <div class="form-group row">
@@ -38,7 +40,7 @@
                 <div>
                     <!-- nessun ristorante trovato  -->
                     <div v-if="filteredRestaurants.length == 0">
-                        <div>
+                        <div class="d-flex justify-content-center">
                             <h2>Nessun ristorante trovato</h2>
                         </div>
                     </div>
@@ -191,6 +193,11 @@ export default {
 .tipologies-card {
     gap: 0 5px;
     padding: 0 10px 20px 10px;
+}
+
+.title-rest {
+    font-weight: 800;
+    font-size: 40px;
 }
 
 </style>

@@ -162,15 +162,8 @@ ul {
     border-radius: 5px;
 }
 
-.overlay::after {
-    content: '';
-    display: block;
-    background-color: rgba($color: #000000, $alpha: 0.3);
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 20%;
-    right: 0;
+.img-card-top {
+    opacity: 0.7;
 }
 
 .tipologies-name {
