@@ -4884,7 +4884,7 @@ var render = function () {
                 {
                   key: index,
                   staticClass:
-                    "col-4 d-flex align-items-center flex-column cursor-pointer",
+                    "col-12 col-md-6 col-lg-4 d-flex align-items-center flex-column cursor-pointer",
                 },
                 [
                   _c("figure", [

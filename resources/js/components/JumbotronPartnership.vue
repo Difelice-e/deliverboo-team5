@@ -41,7 +41,7 @@
                         class="row d-flex p-0 flex-wrap justify-content-around gap-jb"
                     >
                         <li
-                            class="col-4 d-flex align-items-center flex-column cursor-pointer"
+                            class="col-12 col-md-6 col-lg-4 d-flex align-items-center flex-column cursor-pointer"
                             v-for="(el, index) in jumboPartnership"
                             :key="index"
                         >
