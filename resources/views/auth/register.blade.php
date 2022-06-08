@@ -71,7 +71,7 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password*') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password-confirm" onchange="onChange()" type="password"
+                                    <input id="password-confirm"  type="password"
                                         class="form-control" name="password_confirmation" required
                                         autocomplete="new-password">
                                 </div>
@@ -162,7 +162,7 @@
                                 <div class="row">
                                     @foreach ($tipologies as $tipology)
                                     <div class="col-3 text-center">
-                                        <input onclick="checkout()" required type="checkbox" class="form-check-input"
+                                        <input onchange="checkout()" required type="checkbox" class="form-check-input"
                                             value="{{ $tipology->id }}"
                                             {{ is_array(old('tipologies')) && in_array($tipology->id, old('tipologies')) ? ' checked' : '' }}
                                             oninvalid="this.setCustomValidity('Inserisci almeno una tipologia')"
@@ -185,7 +185,7 @@
                             {{-- submit button --}}
                             <div class="form-group row mb-5 text-center">
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button onclick="onChange()" type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
@@ -204,10 +204,10 @@
         function onChange() {
             const password = document.getElementById('password');
             const confirm = document.getElementById('password-confirm');
-            if (confirm.value === password.value) {} else {
+            if (confirm.value !== password.value) {
+                // creare div errore 
                 alert('le password non corrispondo')
                 confirm.value = '';
-
             }
         }
 
@@ -215,21 +215,12 @@
             const checkBoxesChecked = document.querySelectorAll('input[type="checkbox"]:checked');
             const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
 
-
-            if (checkBoxesChecked.length > 0) {
-
-                for (let index = 0; index < checkBoxes.length; index++) {
-                    const e = checkBoxes[index];
+            for (let index = 0; index < checkBoxes.length; index++) {
+                const e = checkBoxes[index];
+                if (checkBoxesChecked.length > 0) {
                     e.removeAttribute('required')
-
-                }
-
-
-            } else {
-                for (let index = 0; index < checkBoxes.length; index++) {
-                    const e = checkBoxes[index];
+                } else {
                     e.setAttribute('required', '')
-
                 }
             }
         }

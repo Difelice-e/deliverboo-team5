@@ -2713,6 +2713,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -5043,7 +5044,9 @@ var render = function () {
                           _vm._v(
                             "\n                                    " +
                               _vm._s(tipology.name) +
-                              "\n                                "
+                              " (" +
+                              _vm._s(tipology.users.length) +
+                              ")\n                                "
                           ),
                         ]),
                       ])
@@ -5683,80 +5686,94 @@ var render = function () {
                         "div",
                         { staticClass: "row" },
                         _vm._l(_vm.user.dishes, function (dish) {
-                          return _c(
-                            "div",
-                            { key: dish.id, staticClass: "col-6 mb-3" },
-                            [
-                              _c(
+                          return dish.visible
+                            ? _c(
                                 "div",
-                                {
-                                  staticClass:
-                                    "dish-wrapper d-flex justify-content-between p-3",
-                                },
+                                { key: dish.id, staticClass: "col-6 mb-3" },
                                 [
-                                  _c("div", { staticClass: "dish-info" }, [
-                                    _c(
-                                      "h4",
-                                      { staticClass: "dish-title mb-0" },
-                                      [
-                                        _vm._v(
-                                          "\n                                                " +
-                                            _vm._s(dish.name) +
-                                            "\n                                            "
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "dish-wrapper d-flex justify-content-between p-3",
+                                    },
+                                    [
+                                      _c("div", { staticClass: "dish-info" }, [
+                                        _c(
+                                          "h4",
+                                          { staticClass: "dish-title mb-0" },
+                                          [
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(dish.name) +
+                                                "\n                                            "
+                                            ),
+                                          ]
                                         ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "p",
-                                      { staticClass: "dish-ingredients mb-1" },
-                                      [
-                                        _vm._v(
-                                          "\n                                                " +
-                                            _vm._s(dish.ingredients) +
-                                            "\n                                            "
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("span", { staticClass: "dish-price" }, [
-                                      _vm._v(
-                                        _vm._s(dish.price.toFixed(2)) + "€"
-                                      ),
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "button",
-                                      {
-                                        staticClass: "btn btn-outline-success",
-                                        on: {
-                                          click: function ($event) {
-                                            return _vm.addToCart(dish, _vm.user)
+                                        _vm._v(" "),
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "dish-ingredients mb-1",
                                           },
-                                        },
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                                                Add to Cart\n                                            "
+                                          [
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(dish.ingredients) +
+                                                "\n                                            "
+                                            ),
+                                          ]
                                         ),
-                                      ]
-                                    ),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("img", {
-                                    staticStyle: {
-                                      width: "100px",
-                                      height: "100px",
-                                    },
-                                    attrs: {
-                                      src: "https://picsum.photos/300/150",
-                                      alt: "",
-                                    },
-                                  }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          { staticClass: "dish-price" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(dish.price.toFixed(2)) +
+                                                "€"
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn btn-outline-success",
+                                            on: {
+                                              click: function ($event) {
+                                                return _vm.addToCart(
+                                                  dish,
+                                                  _vm.user
+                                                )
+                                              },
+                                            },
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                                Add to Cart\n                                            "
+                                            ),
+                                          ]
+                                        ),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("img", {
+                                        staticStyle: {
+                                          width: "100px",
+                                          height: "100px",
+                                        },
+                                        attrs: {
+                                          src: "https://picsum.photos/300/150",
+                                          alt: "",
+                                        },
+                                      }),
+                                    ]
+                                  ),
                                 ]
-                              ),
-                            ]
-                          )
+                              )
+                            : _vm._e()
                         }),
                         0
                       ),

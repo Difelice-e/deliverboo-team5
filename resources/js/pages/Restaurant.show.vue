@@ -45,6 +45,7 @@
                                 <div class="row">
                                     <div
                                         v-for="dish in user.dishes"
+                                        v-if="dish.visible"
                                         :key="dish.id"
                                         class="col-6 mb-3"
                                     >
