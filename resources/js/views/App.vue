@@ -220,9 +220,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.store img {
-  display: block;
+.app {
+  overflow: hidden;
 }
 
 </style>

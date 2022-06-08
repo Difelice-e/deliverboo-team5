@@ -6,9 +6,9 @@
                     Consegne in <span class="font-weight-bold">Milano</span>
                 </p>
                 <div>
-                    <ul class="d-flex flex-wrap justify-content-around p-0 gap-jb">
+                    <ul class="d-flex flex-wrap justify-content-center p-0 gap-jb">
                         <li
-                            class="bg-white px-4 py-1 rounded-circle d-flex align-items-center flex-column cursor-pointer"
+                            class="bg-white d-flex justify-content-center align-items-center flex-column rounded-circle cursor-pointer"
                             v-for="(el, index) in jumbo"
                             :key="index"
                         >
@@ -16,8 +16,7 @@
                                 <img :src="el.cover" alt="" />
                             </figure>
                             <p
-                                class="text-center font-weight-bold"
-                                style="font-size: 10px"
+                                class="text-center "
                             >
                                 {{ el.text }}
                             </p>
@@ -48,7 +47,7 @@ export default {
                 },
                 {
                     text: "shopping",
-                    cover: "https://res.cloudinary.com/glovoapp/w_60,h_60,c_fit,f_auto,q_auto:best/StoreCategories/hmeje6y6iwevjeiff1e2",
+                    cover: "https://res.cloudinary.com/glovoapp/w_60,h_60,c_fit,f_auto,q_auto:best/StoreCategories/cawmenv1apnb978qxf5e",
                 },
                 {
                     text: "Cibo",

@@ -1950,11 +1950,34 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
-    removeFromCart: function removeFromCart(dish) {
-      this.$store.commit('removeFromCart', dish);
-    },
+    // removeFromCart(dish) {
+    //     this.$store.commit('removeFromCart', dish);
+    // },
     increaseQuantity: function increaseQuantity(dish) {
       this.$store.commit('addToCart', dish);
     },
@@ -2026,7 +2049,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2041,7 +2063,7 @@ __webpack_require__.r(__webpack_exports__);
         cover: "https://res.cloudinary.com/glovoapp/w_60,h_60,c_fit,f_auto,q_auto:best/StoreCategories/yn87iqomg2p9h5bwpssz"
       }, {
         text: "shopping",
-        cover: "https://res.cloudinary.com/glovoapp/w_60,h_60,c_fit,f_auto,q_auto:best/StoreCategories/hmeje6y6iwevjeiff1e2"
+        cover: "https://res.cloudinary.com/glovoapp/w_60,h_60,c_fit,f_auto,q_auto:best/StoreCategories/cawmenv1apnb978qxf5e"
       }, {
         text: "Cibo",
         cover: "https://res.cloudinary.com/glovoapp/w_60,h_60,c_fit,f_auto,q_auto:best/StoreCategories/prj0mlcuvmymzfh8pqjz"
@@ -2719,6 +2741,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -3294,7 +3339,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#restaurant-page .restaurant-header {\n  background-color: white;\n}\n#restaurant-page .restaurant-header .restaurant-wrapper {\n  background-color: white;\n  padding: 16px 0;\n  gap: 20px;\n}\n#restaurant-page .restaurant-header .restaurant-wrapper .restaurant-tipologies {\n  list-style: none;\n  gap: 10px;\n}\n#restaurant-page .restaurant-body {\n  background-color: #e8ecec;\n  padding: 50px 0;\n}\n#restaurant-page .restaurant-body .menu-wrapper .dish-wrapper {\n  min-height: 132px;\n  gap: 8px;\n  background-color: white;\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.27);\n}\n#restaurant-page .restaurant-body .menu-wrapper .dish-wrapper .dish-info {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n#restaurant-page .restaurant-body .menu-wrapper .dish-wrapper .dish-info .dish-title {\n  font-size: 18px;\n}\n#restaurant-page .restaurant-body .cart-wrapper {\n  background-color: white;\n  padding: 20px;\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.27);\n}", ""]);
+exports.push([module.i, "#restaurant-page .restaurant-header {\n  background-color: white;\n}\n#restaurant-page .restaurant-header .restaurant-wrapper {\n  background-color: white;\n  padding: 16px 0;\n  gap: 20px;\n}\n#restaurant-page .restaurant-header .restaurant-wrapper .restaurant-tipologies {\n  list-style: none;\n  gap: 10px;\n}\n#restaurant-page .restaurant-body {\n  background-color: #e8ecec;\n  padding: 50px 0;\n}\n#restaurant-page .restaurant-body .restaurant-info {\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);\n}\n#restaurant-page .restaurant-body .restaurant-info .title-restaurant {\n  font-size: 50px;\n}\n#restaurant-page .restaurant-body .restaurant-info .info {\n  gap: 10px;\n  list-style-type: none;\n}\n#restaurant-page .restaurant-body .dish-wrapper {\n  min-height: 132px;\n  gap: 8px;\n  background-color: white;\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);\n}\n#restaurant-page .restaurant-body .dish-wrapper .dish-info {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n#restaurant-page .restaurant-body .dish-wrapper .dish-info .dish-title {\n  font-size: 18px;\n}\n#restaurant-page .restaurant-body .cart-wrapper {\n  background-color: white;\n  padding: 20px;\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);\n}", ""]);
 
 // exports
 
@@ -3352,6 +3397,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".store img[data-v-91ac6b5c] {\n  display: block;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/App.vue?vue&type=style&index=0&id=91ac6b5c&lang=scss&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/App.vue?vue&type=style&index=0&id=91ac6b5c&lang=scss&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".app[data-v-91ac6b5c] {\n  overflow: hidden;\n}", ""]);
 
 // exports
 
@@ -4048,6 +4112,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/App.vue?vue&type=style&index=0&id=91ac6b5c&lang=scss&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/views/App.vue?vue&type=style&index=0&id=91ac6b5c&lang=scss&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./App.vue?vue&type=style&index=0&id=91ac6b5c&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/App.vue?vue&type=style&index=0&id=91ac6b5c&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -4651,88 +4745,129 @@ var render = function () {
     _vm.$store.state.cart.length > 0
       ? _c(
           "div",
-          { staticClass: "d-flex flex-column p-2 cart-wrapper" },
+          {
+            staticClass: "d-flex flex-column p-2 cart-wrapper border-radius-gv",
+          },
           [
-            _vm._m(0),
-            _vm._v(" "),
             _vm._l(_vm.$store.state.cart, function (dish) {
               return _c("div", { key: dish.id, staticClass: "row mb-3" }, [
-                _c("div", { staticClass: "col-1" }, [
-                  _c(
-                    "span",
-                    {
-                      staticClass: "removeBtn btn btn-danger rounded-pill p-1",
-                      attrs: { title: "Remove from cart" },
-                      on: {
-                        click: function ($event) {
-                          $event.preventDefault()
-                          return _vm.removeFromCart(dish)
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-12 text-nowrap d-flex justify-content-between",
+                    staticStyle: { gap: "10px" },
+                  },
+                  [
+                    _c("span", { staticClass: "weight-bold" }, [
+                      _vm._v(_vm._s(dish.quantity) + "x"),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [_vm._v(_vm._s(dish.name))]),
+                    _vm._v(" "),
+                    _c("span", [_vm._v("€" + _vm._s(_vm.totalPrice))]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-12 d-flex justify-content-between" },
+                  [
+                    _c(
+                      "figure",
+                      {
+                        staticClass: "cursor-pointer",
+                        on: {
+                          click: function ($event) {
+                            $event.preventDefault()
+                            return _vm.decreaseQuantity(dish)
+                          },
                         },
                       },
-                    },
-                    [_vm._v("X")]
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-5" }, [
-                  _vm._v(_vm._s(dish.name)),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-3 text-nowrap" }, [
-                  _c(
-                    "span",
-                    {
-                      staticClass: "btn btn-success p-1 rounded",
-                      on: {
-                        click: function ($event) {
-                          $event.preventDefault()
-                          return _vm.decreaseQuantity(dish)
+                      [
+                        _c("img", {
+                          attrs: {
+                            width: "30px",
+                            height: "30px",
+                            src: "https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/minus.svg",
+                            alt: "",
+                          },
+                        }),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "figure",
+                      {
+                        staticClass: "cursor-pointer",
+                        on: {
+                          click: function ($event) {
+                            $event.preventDefault()
+                            return _vm.increaseQuantity(dish)
+                          },
                         },
                       },
-                    },
-                    [_vm._v("-")]
-                  ),
-                  _vm._v(" x" + _vm._s(dish.quantity) + " "),
-                  _c(
-                    "span",
-                    {
-                      staticClass: "btn btn-success p-1 rounded",
-                      on: {
-                        click: function ($event) {
-                          $event.preventDefault()
-                          return _vm.increaseQuantity(dish)
-                        },
-                      },
-                    },
-                    [_vm._v("+")]
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-3" }, [
-                  _vm._v("€" + _vm._s(dish.totalPrice.toFixed(2))),
-                ]),
+                      [
+                        _c("img", {
+                          attrs: {
+                            width: "30px",
+                            height: "30px",
+                            src: "https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/plus.svg",
+                            alt: "",
+                          },
+                        }),
+                      ]
+                    ),
+                  ]
+                ),
               ])
             }),
             _vm._v(" "),
-            _c("div", { staticClass: "row justify-content-end" }, [
-              _c("div", { staticClass: "col offset-6 font-weight-bold" }, [
-                _vm._v("Totale:"),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-3 font-weight-bold" }, [
-                _vm._v("€" + _vm._s(_vm.totalPrice)),
-              ]),
+            _c("div", { staticClass: "col-12" }, [
+              _c(
+                "a",
+                {
+                  staticClass:
+                    " col-12 rounded-pill btn bg-greedgc text-white weight-bold",
+                  staticStyle: { "font-size": "20px" },
+                  attrs: { href: "#" },
+                },
+                [
+                  _vm._v(
+                    "Ordinane " +
+                      _vm._s(_vm.$store.state.cartCount) +
+                      " a €" +
+                      _vm._s(_vm.totalPrice)
+                  ),
+                ]
+              ),
             ]),
-            _vm._v(" "),
-            _vm._m(1),
           ],
           2
         )
-      : _c("div", { staticClass: "cart-wrapper" }, [
-          _c("p", { staticClass: "text-center", attrs: { href: "#" } }, [
-            _vm._v("Carrello Vuoto!"),
-          ]),
-        ]),
+      : _c(
+          "div",
+          { staticClass: "cart-wrapper text-center border-radius-gv" },
+          [
+            _c("h1", [_vm._v("Il tuo glovo")]),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                staticClass: "text-center ",
+                staticStyle: { "font-size": "17px" },
+                attrs: { href: "#" },
+              },
+              [
+                _vm._v(
+                  "Non hai ancora aggiunto alcun prodotto. Quando lo farai, compariranno qui!"
+                ),
+              ]
+            ),
+          ]
+        ),
   ])
 }
 var staticRenderFns = [
@@ -4740,26 +4875,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mb-3" }, [
-      _c("div", { staticClass: "col-1" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-5 font-weight-bold" }, [_vm._v("Piatto")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-3 font-weight-bold" }, [
-        _vm._v("Quantità"),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-3 font-weight-bold" }, [_vm._v("Prezzo")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12" }, [
-      _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-        _vm._v("Vai al Checkout"),
-      ]),
+    return _c("figure", { staticClass: "my-5" }, [
+      _c("img", {
+        attrs: {
+          src: "https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/astronaut-grey-scale.svg",
+          alt: "",
+        },
+      }),
     ])
   },
 ]
@@ -4800,7 +4922,7 @@ var render = function () {
               "ul",
               {
                 staticClass:
-                  "d-flex flex-wrap justify-content-around p-0 gap-jb",
+                  "d-flex flex-wrap justify-content-center p-0 gap-jb",
               },
               _vm._l(_vm.jumbo, function (el, index) {
                 return _c(
@@ -4808,27 +4930,20 @@ var render = function () {
                   {
                     key: index,
                     staticClass:
-                      "bg-white px-4 py-1 rounded-circle d-flex align-items-center flex-column cursor-pointer",
+                      "bg-white d-flex justify-content-center align-items-center flex-column rounded-circle cursor-pointer",
                   },
                   [
                     _c("figure", { staticClass: "m-0" }, [
                       _c("img", { attrs: { src: el.cover, alt: "" } }),
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "p",
-                      {
-                        staticClass: "text-center font-weight-bold",
-                        staticStyle: { "font-size": "10px" },
-                      },
-                      [
-                        _vm._v(
-                          "\n                            " +
-                            _vm._s(el.text) +
-                            "\n                        "
-                        ),
-                      ]
-                    ),
+                    _c("p", { staticClass: "text-center " }, [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(el.text) +
+                          "\n                        "
+                      ),
+                    ]),
                   ]
                 )
               }),
@@ -5688,172 +5803,218 @@ var render = function () {
     [
       _vm.loading
         ? [
-            _c("div", { staticClass: "restaurant-header" }, [
-              _c("div", { staticClass: "container" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-12" }, [
-                    _c("div", { staticClass: "restaurant-wrapper d-flex" }, [
-                      _c("img", {
-                        staticStyle: { width: "200px" },
-                        attrs: {
-                          src: "https://picsum.photos/300/150",
-                          alt: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "restaurant-info" }, [
-                        _c("h1", [_vm._v(_vm._s(_vm.user.business_name))]),
-                        _vm._v(" "),
-                        _c(
-                          "ul",
-                          { staticClass: "restaurant-tipologies d-flex" },
-                          _vm._l(_vm.user.tipologies, function (tipology) {
-                            return _c(
-                              "li",
-                              {
-                                key: tipology.id,
-                                staticClass:
-                                  "bg-primary border border-secondary rounded-pill px-3 py-1",
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                        " +
-                                    _vm._s(tipology.name) +
-                                    "\n                                    "
-                                ),
-                              ]
-                            )
-                          }),
-                          0
-                        ),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "restaurant-contacts" }, [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(_vm.user.street_address) +
-                              " -\n                                    " +
-                              _vm._s(_vm.user.phone_number) +
-                              "\n                                "
-                          ),
-                        ]),
-                      ]),
-                    ]),
-                  ]),
-                ]),
-              ]),
-            ]),
+            _vm._m(0),
             _vm._v(" "),
             _c("div", { staticClass: "restaurant-body" }, [
-              _c("div", { staticClass: "container" }, [
-                _c("div", { staticClass: "row align-items-start" }, [
-                  _c("div", { staticClass: "col-8 p-3" }, [
-                    _c("div", { staticClass: "menu-wrapper" }, [
+              _c(
+                "div",
+                { staticClass: "container position-relative position-menu" },
+                [
+                  _c("div", { staticClass: "row align-items-start" }, [
+                    _c("div", { staticClass: "col-12 col-xl-8" }, [
                       _c(
                         "div",
-                        { staticClass: "row" },
-                        _vm._l(_vm.user.dishes, function (dish) {
-                          return dish.visible
-                            ? _c(
+
+                        {
+                          staticClass:
+                            "restaurant-info container bg-white border-radius-gv",
+                        },
+                        [
+                          _c("h1", { staticClass: "title-restaurant" }, [
+                            _vm._v(_vm._s(_vm.user.business_name)),
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(1),
+                          _vm._v(" "),
+                          _c(
+                            "ul",
+                            {
+                              staticClass:
+                                "restaurant-tipologies d-flex p-0 info mt-2",
+                            },
+                            _vm._l(_vm.user.tipologies, function (tipology) {
+                              return _c(
+                                "li",
+                                {
+                                  key: tipology.id,
+                                  staticClass:
+                                    "p-1 bg-info text-white border border-info border-secondary rounded-pill",
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    " +
+                                      _vm._s(tipology.name) +
+                                      "\n                                "
+                                  ),
+                                ]
+                              )
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "restaurant-contacts" }, [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.user.street_address) +
+                                " -\n                                " +
+                                _vm._s(_vm.user.phone_number) +
+                                "\n                            "
+                            ),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-12 p-3" }, [
+                        _c("div", { staticClass: "menu-wrapper" }, [
+                          _c(
+                            "div",
+                            { staticClass: "row" },
+                            _vm._l(_vm.user.dishes, function (dish) {
+                              return _c(
                                 "div",
-                                { key: dish.id, staticClass: "col-6 mb-3" },
+                                {
+                                  key: dish.id,
+                                  staticClass: "col-12 col-xl-6 mb-3",
+                                },
+
                                 [
                                   _c(
                                     "div",
                                     {
                                       staticClass:
-                                        "dish-wrapper d-flex justify-content-between p-3",
+
+                                        "border-radius-gv dish-wrapper d-flex justify-content-between p-3",
                                     },
                                     [
-                                      _c("div", { staticClass: "dish-info" }, [
-                                        _c(
-                                          "h4",
-                                          { staticClass: "dish-title mb-0" },
-                                          [
-                                            _vm._v(
-                                              "\n                                                " +
-                                                _vm._s(dish.name) +
-                                                "\n                                            "
-                                            ),
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "p",
-                                          {
-                                            staticClass:
-                                              "dish-ingredients mb-1",
-                                          },
-                                          [
-                                            _vm._v(
-                                              "\n                                                " +
-                                                _vm._s(dish.ingredients) +
-                                                "\n                                            "
-                                            ),
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "dish-price" },
-                                          [
-                                            _vm._v(
-                                              _vm._s(dish.price.toFixed(2)) +
-                                                "€"
-                                            ),
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "button",
-                                          {
-                                            staticClass:
-                                              "btn btn-outline-success",
-                                            on: {
-                                              click: function ($event) {
-                                                return _vm.addToCart(
-                                                  dish,
-                                                  _vm.user
-                                                )
-                                              },
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "dish-info col-12 d-felx",
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            { staticClass: "d-flex mb-2" },
+                                            [
+                                              _vm._m(2, true),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "px-3 flex-grow-1",
+                                                },
+                                                [
+                                                  _c(
+                                                    "h4",
+                                                    {
+                                                      staticClass:
+                                                        "dish-title mb-0",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                                            " +
+                                                          _vm._s(dish.name) +
+                                                          "\n                                                        "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "p",
+                                                    {
+                                                      staticClass:
+                                                        "dish-ingredients mb-1",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                                                            " +
+                                                          _vm._s(
+                                                            dish.ingredients
+                                                          ) +
+                                                          "\n                                                        "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "d-flex col-12 justify-content-between",
                                             },
-                                          },
-                                          [
-                                            _vm._v(
-                                              "\n                                                Add to Cart\n                                            "
-                                            ),
-                                          ]
-                                        ),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("img", {
-                                        staticStyle: {
-                                          width: "100px",
-                                          height: "100px",
-                                        },
-                                        attrs: {
-                                          src: "https://picsum.photos/300/150",
-                                          alt: "",
-                                        },
-                                      }),
+                                            [
+                                              _c(
+                                                "span",
+                                                { staticClass: "dish-price" },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                                        " +
+                                                      _vm._s(
+                                                        dish.price.toFixed(2)
+                                                      ) +
+                                                      "€\n                                                    "
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "figure",
+                                                {
+                                                  staticClass:
+                                                    "cursor-pointer ml-2",
+                                                  on: {
+                                                    click: function ($event) {
+                                                      return _vm.addToCart(
+                                                        dish,
+                                                        _vm.user
+                                                      )
+                                                    },
+                                                  },
+                                                },
+                                                [
+                                                  _c("img", {
+                                                    attrs: {
+                                                      src: "https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/plus-new.svg",
+                                                      alt: "",
+                                                    },
+                                                  }),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+
                                     ]
                                   ),
                                 ]
                               )
-                            : _vm._e()
-                        }),
-                        0
+
+                            }),
+                            0
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 col-xl-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-12 p-3" },
+                        [_c("CartDropdown")],
+                        1
+
                       ),
                     ]),
                   ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-4 p-3" },
-                    [_c("CartDropdown")],
-                    1
-                  ),
-                ]),
-              ]),
+                ]
+              ),
             ]),
           ]
         : _c("loadingWheel"),
@@ -5861,7 +6022,70 @@ var render = function () {
     2
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "restaurant-header" }, [
+      _c("div", [
+        _c("div", { staticClass: "row" }, [
+          _c("div", {
+            staticClass: "col-12",
+            staticStyle: {
+              background:
+                "url('https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/glovo-white.svg')",
+              height: "150px",
+            },
+          }),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "d-flex align-items-center align-self-center info" },
+      [
+        _c("img", {
+          attrs: {
+            width: "30px",
+            height: "30px",
+            src: "https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/filters/sorting/delivery_fee_light",
+            alt: "",
+          },
+        }),
+        _vm._v(" "),
+        _c("span", [_vm._v("€ 2,50")]),
+        _vm._v(" "),
+        _c("img", {
+          attrs: {
+            width: "30px",
+            height: "30px",
+            src: "https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/store_ratings/rating_regular.png",
+            alt: "",
+          },
+        }),
+        _vm._v(" "),
+        _c("span", [_vm._v("%76")]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("figure", { staticClass: "border-radius" }, [
+      _c("img", {
+        staticStyle: { width: "100px", height: "100px" },
+        attrs: { src: "https://picsum.photos/300/150", alt: "" },
+      }),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -24318,7 +24542,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
