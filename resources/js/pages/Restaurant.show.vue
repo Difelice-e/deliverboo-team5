@@ -1,6 +1,6 @@
 <template>
     <section id="restaurant-page">
-        <template v-if="loading">
+        <template class="position-relative" v-if="loading">
             <div class="restaurant-header">
                 <div>
                     <div class="row">
@@ -18,17 +18,26 @@
             </div>
 
             <div class="restaurant-body">
-                <div class="container position-menu">
+                <div class="container position-relative position-menu">
                     <div class="row align-items-start">
-                        <div class="col-9">
+                        <div class="col-12 col-xl-8">
                             <!-- info del ristorante  -->
-                            <div class="restaurant-info container bg-danger">
-                                <h1>{{ user.business_name }}</h1>
-                                <ul class="restaurant-tipologies d-flex">
+                            <div class="restaurant-info container bg-white border-radius-gv">
+                                <h1 class="title-restaurant">{{ user.business_name }}</h1>
+                                <div class="d-flex align-items-center align-self-center info">
+
+                                    <img width="30px" height="30px" src="https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/filters/sorting/delivery_fee_light" alt="">
+                                    <span>€ 2,50</span>
+
+                                    <img width="30px" height="30px" src="https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/store_ratings/rating_regular.png" alt="">
+                                    <span>%76</span>
+
+                                </div>
+                                <ul class="restaurant-tipologies d-flex p-0 info mt-2">
                                     <li
                                         v-for="tipology in user.tipologies"
                                         :key="tipology.id"
-                                        class="bg-primary border border-secondary rounded-pill px-py-1"
+                                        class="p-1 bg-info text-white border border-info border-secondary rounded-pill"
                                     >
                                         {{ tipology.name }}
                                     </li>
@@ -39,54 +48,61 @@
                                 </p>
                             </div>
                             <!-- menu del ristorante  -->
-                            <div class="col-8 p-3">
+                            <div class="col-12 p-3">
                                 <div class="menu-wrapper">
                                     <div class="row">
                                         <div
                                             v-for="dish in user.dishes"
                                             :key="dish.id"
-                                            class="col-6 mb-3"
+                                            class="col-12 col-xl-6 mb-3"
                                         >
                                             <div
-                                                class="dish-wrapper d-flex justify-content-between p-3"
+                                                class="border-radius-gv dish-wrapper d-flex justify-content-between p-3"
                                             >
-                                                <div class="dish-info">
-                                                    <h4 class="dish-title mb-0">
-                                                        {{ dish.name }}
-                                                    </h4>
-                                                    <p
-                                                        class="dish-ingredients mb-1"
-                                                    >
-                                                        {{ dish.ingredients }}
-                                                    </p>
-                                                    <span class="dish-price"
-                                                        >{{
-                                                            dish.price.toFixed(
-                                                                2
-                                                            )
-                                                        }}€</span
-                                                    >
-                                                    <button
-                                                        @click="
-                                                            addToCart(
-                                                                dish,
-                                                                user
-                                                            )
-                                                        "
-                                                        class="btn btn-outline-success"
-                                                    >
-                                                        Add to Cart
-                                                    </button>
-                                                </div>
+                                                <div class="dish-info col-12 d-felx">
+                                                    <div class="d-flex mb-2">
+                                                        <figure class="border-radius">
+                                                            <img
+                                                                src="https://picsum.photos/300/150"
+                                                                style="
+                                                                    width: 100px;
+                                                                    height: 100px;
+                                                                "
+                                                                alt=""
+                                                            />
+                                                        </figure>
 
-                                                <img
-                                                    src="https://picsum.photos/300/150"
-                                                    style="
-                                                        width: 100px;
-                                                        height: 100px;
-                                                    "
-                                                    alt=""
-                                                />
+                                                        <div class="px-3 flex-grow-1">
+                                                            <h4 class="dish-title mb-0">
+                                                                {{ dish.name }}
+                                                            </h4>
+                                                            <p
+                                                                class="dish-ingredients mb-1"
+                                                            >
+                                                                {{ dish.ingredients }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Pulsante per aggiungere al carrello -->
+                                                    <div class="d-flex col-12 justify-content-between">
+                                                        <span class="dish-price">
+                                                            {{ dish.price.toFixed(2) }}€
+                                                        </span>
+
+                                                        <figure
+                                                            @click="
+                                                                addToCart(
+                                                                    dish,
+                                                                    user
+                                                                )
+                                                            "
+                                                            class="cursor-pointer ml-2"
+                                                        >
+                                                            <img src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/plus-new.svg" alt="">
+                                                        </figure>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -94,9 +110,9 @@
                             </div>
                         </div>
 
-                        <div class="col-3">
+                        <div class="col-12 col-xl-4" >
                             <!-- carrello  -->
-                            <div class="col-4 p-3">
+                            <div class="col-12 p-3">
                                 <CartDropdown />
                             </div>
                         </div>
@@ -177,17 +193,25 @@ export default {
     .restaurant-body {
         background-color: #e8ecec;
         padding: 50px 0;
-        position: relative;
+
         // css del menu del ristorante
-        .position-menu{
-            // position: absolute;
-            // top: 0;
+            .restaurant-info{
+                box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);
+
+                .title-restaurant{
+                    font-size: 50px;
+                }
+                .info {
+                    gap: 10px;
+                    list-style-type:none;
+                }
+            }
 
             .dish-wrapper {
                 min-height: 132px;
                 gap: 8px;
                 background-color: white;
-                box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.27);
+                box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);
 
                 .dish-info {
                     display: flex;
@@ -199,14 +223,13 @@ export default {
                     }
                 }
             }
-        }
 
 
         // css del carrello
         .cart-wrapper {
             background-color: white;
             padding: 20px;
-            box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.27);
+            box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);
         }
     }
 }

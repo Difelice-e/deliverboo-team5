@@ -10962,6 +10962,10 @@ a.text-dark:focus {
   }
 }
 
+.bg-greedgc {
+  background-color: #00a080;
+}
+
 .lds-roller {
   display: inline-block;
   position: relative;
@@ -11190,6 +11194,10 @@ input[type=number] {
   bottom: 100%;
   left: 50%;
   transform: translate(-50%, -90%);
+}
+
+.border-radius-gv {
+  border-radius: 15px;
 }
 
 .cursor-pointer {
