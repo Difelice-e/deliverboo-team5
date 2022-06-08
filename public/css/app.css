@@ -11226,3 +11226,7 @@ footer ul li a:hover {
   text-decoration: none;
 }
 
+.store img {
+  display: block;
+}
+
