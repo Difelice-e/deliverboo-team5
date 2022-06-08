@@ -10,7 +10,13 @@
                     <Restaurant />
                 </div>
 
-                <div>
+                <div class="py-5">
+                    <div class="d-flex justify-content-center">
+                        <img src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/landing/cities.svg" alt="">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <h2 class="title-category">Categorie più richieste</h2>
+                    </div>
                     <ul class="d-flex flex-wrap justify-content-around py-5 px-0 gap-jb" style="list-style-type:none;">
 
                         <!-- pill tipology con props-->
@@ -76,4 +82,11 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+
+.title-category {
+    font-weight: 800;
+    font-size: 40px;
+}
+
+</style>

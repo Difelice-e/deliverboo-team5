@@ -68,6 +68,7 @@ export default {
                 { id: 1, temp: '30', temp1: '15', rec: '94'},
                 { id: 2, temp: '25', temp1: '10', rec: '84'},
                 { id: 3, temp: '20', temp1: '15', rec: '91'},
+                { id: 4, temp: '25', temp1: '15', rec: '93'},
             ],
         };
     },
@@ -91,7 +92,7 @@ export default {
                 });
         },
         random: function () {
-            return Math.floor(Math.random()*3);
+            return Math.floor(Math.random()*4);
         },
     },
     beforeMount() {

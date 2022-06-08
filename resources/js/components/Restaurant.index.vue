@@ -12,7 +12,7 @@
                             @submit.prevent="fetchRestaurant"
                             class="container my-bg-categories"
                         >
-                            <ul class="filter">
+                            <ul class="filter py-3">
                                 <li
                                     v-for="tipology in tipologies"
                                     :key="tipology.id"
@@ -47,7 +47,7 @@
 
                     <ul
                         v-else
-                        class="d-flex flex-wrap justify-content-center list-wrapper"
+                        class="d-flex flex-wrap justify-content-center list-wrapper pt-3"
                     >
                         <router-link
                             tag="li"
@@ -67,9 +67,11 @@
                                     <h5 class="name-business text-center">
                                         {{ user.business_name }}
                                     </h5>
-                                    <p v-for="el in user.tipologies" :key="el.id" class="tipologies-name badge badge-dark">
-                                        {{ el.name }}
-                                    </p>
+                                    <div class="d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center">
+                                        <p v-for="el in user.tipologies" :key="el.id" class="tipologies-name badge badge-dark">
+                                            {{ el.name }}
+                                        </p>
+                                    </div>
                                 </div>
                                 <div class="bg-white card-foot d-flex justify-content-between mt-2 px-2">
                                     <div class="d-flex">
@@ -108,8 +110,9 @@ export default {
             userTipologies: [],
             vote: [
                 { id: 1, temp: '30', temp1: '15', rec: '94'},
-                { id: 2, temp: '25', temp1: '10', rec: '84'},
+                { id: 2, temp: '25', temp1: '10', rec: '85'},
                 { id: 3, temp: '20', temp1: '15', rec: '91'},
+                { id: 4, temp: '25', temp1: '15', rec: '93'},
             ],
         };
     },
@@ -154,7 +157,7 @@ export default {
             console.log(this.tipologyFilter);
         },
         random: function () {
-            return Math.floor(Math.random()*3);
+            return Math.floor(Math.random()*4);
         },
     },
     created() {
@@ -183,6 +186,11 @@ export default {
     display: flex;
     gap: 10px;
     list-style: none;
+}
+
+.tipologies-card {
+    gap: 0 5px;
+    padding: 0 10px 20px 10px;
 }
 
 </style>
