@@ -29,7 +29,7 @@
                                         :value="tipology.id"
                                     />
                                     <label :for="tipology.id">
-                                        {{ tipology.name }}
+                                        {{ tipology.name }} ({{ tipology.users.length }})
                                     </label>
                                 </li>
                             </ul>
