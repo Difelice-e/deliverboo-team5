@@ -47,30 +47,45 @@
 
                     <ul
                         v-else
-                        class="d-flex flex-wrap justify-content-center gap-card"
+                        class="d-flex flex-wrap justify-content-center list-wrapper"
                     >
                         <router-link
                             tag="li"
                             v-for="user in filteredUsers"
                             :key="user.id"
-                            class="cursor-pointer"
+                            class="cursor-pointer list-item col-12 col-md-6 col-lg-4"
                             :to="{
                                 name: 'restaurant.show',
                                 params: { slug: user.slug },
                             }"
                         >
-                            <div class="card">
-                                <img v-if="user.cover" :src="user.cover" class="card-img-top" alt="" />
-                                <img v-else src="https://picsum.photos/300/150" style=" width: 200px; height: 100px;" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title name-business text-left">
+                            <div class="card card-t rounded-mid overflow-hidden">
+                                <div class="overlay">
+                                    <img src="https://picsum.photos/300/150" class="card-img-top img-card" alt="" />
+                                </div>
+                                <div class="card-title d-flex align-items-center justify-content-center flex-column text-white">
+                                    <h5 class="name-business text-center">
                                         {{ user.business_name }}
                                     </h5>
-
-                                    <p class="card-text address-name">
-                                        {{ user.street_address }}
+                                    <p v-for="el in user.tipologies" :key="el.id" class="tipologies-name badge badge-dark">
+                                        {{ el.name }}
                                     </p>
-                                    <a href="#" class="btn bg-gl">Vedi Menù</a>
+                                </div>
+                                <div class="bg-white card-foot d-flex justify-content-between mt-2 px-2">
+                                    <div class="d-flex">
+                                        <img class="favicon pr-2" src="https://img.icons8.com/external-those-icons-lineal-those-icons/344/external-like-touch-gestures-those-icons-lineal-those-icons.png" alt="">
+                                        <p>{{ vote[random()].rec}}%</p>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex mr-2">
+                                            <img class="favicon fav-2" src="https://img.icons8.com/ios/344/scooter.png" alt="">
+                                            <p class="bg-gl font-gl text-uppercase">Gratis</p>
+                                        </div>
+                                        <div class="d-flex temp-cl">
+                                            <p>. {{ vote[random()].temp1}} - </p>
+                                            <p>{{ vote[random()].temp}} min.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </router-link>
@@ -91,6 +106,11 @@ export default {
             tipologies: [],
             filteredUsers: [],
             userTipologies: [],
+            vote: [
+                { id: 1, temp: '30', temp1: '15', rec: '94'},
+                { id: 2, temp: '25', temp1: '10', rec: '84'},
+                { id: 3, temp: '20', temp1: '15', rec: '91'},
+            ],
         };
     },
     methods: {
@@ -133,6 +153,9 @@ export default {
         checkTipologies() {
             console.log(this.tipologyFilter);
         },
+        random: function () {
+            return Math.floor(Math.random()*3);
+        },
     },
     created() {
         this.fetchTipologies();
@@ -155,9 +178,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .filter {
     display: flex;
     gap: 10px;
     list-style: none;
 }
+
 </style>
