@@ -38,6 +38,7 @@
                                         v-for="tipology in user.tipologies"
                                         :key="tipology.id"
                                         class="p-1 bg-info text-white border border-info border-secondary rounded-pill"
+
                                     >
                                         {{ tipology.name }}
                                     </li>

@@ -133,7 +133,11 @@
                             <li><a href="#">Instagram</a></li>
                         </ul>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-3">
+                    <div class="col-12 col-sm-6 col-md-3 d-flex flex-column justify-content-between">
+                        <div class="store cursor-pointer">
+                            <img src="https://res.cloudinary.com/glovoapp/image/fetch//w_105,h_35,c_fit,q_auto/https://glovoapp.com/images/app_store/download-button-new.svg" alt="">
+                            <img class="py-3" src="https://res.cloudinary.com/glovoapp/image/fetch//w_112,h_35,c_fit,q_auto/https://glovoapp.com/images/google_play/download-button-new.svg" alt="">
+                        </div>
                         <ul class="text-uppercase">
                             <li><a href="#">Termini e condizioni</a></li>
                             <li><a href="#">Politica sulla privacy</a></li>

@@ -9,8 +9,8 @@
         
         {{-- nome --}}
         <div class="mb-3">
-          <label for="name" class="form-label">Nome</label>
-          <input type="text" class="form-control @error('name') is-invalid @enderror" value=" {{old('name')?: $dish->name}} " name="name" id="name">
+          <label for="name" class="form-label">Nome*</label>
+          <input required type="text" class="form-control @error('name') is-invalid @enderror" value=" {{old('name')?: $dish->name}} " name="name" id="name">
           @error('name')
               <div class="invalid-feedback"> {{$message}} </div>
           @enderror
@@ -27,8 +27,8 @@
 
         {{-- ingredienti --}}
         <div class="mb-3">
-          <label for="ingredients" class="form-label">Ingredienti</label>
-          <textarea class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" id="ingredients" rows="3"> {{old('ingredients')?: $dish->ingredients}} </textarea>
+          <label for="ingredients" class="form-label">Ingredienti*</label>
+          <textarea required class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" id="ingredients" rows="3"> {{old('ingredients')?: $dish->ingredients}} </textarea>
           @error('ingredients')
               <div class="invalid-feedback"> {{$message}} </div>
           @enderror
@@ -36,8 +36,8 @@
 
         {{-- prezzo --}}
         <div class="mb-3">
-          <label for="price" class="form-label">Prezzo</label>
-          <input type="text" class="form-control @error('price') is-invalid @enderror" value=" {{old('price')?: $dish->price}} " name="price" id="price">
+          <label for="price" class="form-label">Prezzo*</label>
+          <input required type="number" step=".01" min="0.01" max="999.99" class="form-control @error('price') is-invalid @enderror" value=" {{old('price')?: $dish->price}} " name="price" id="price">
           @error('price')
               <div class="invalid-feedback"> {{$message}} </div>
           @enderror

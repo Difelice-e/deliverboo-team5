@@ -42,7 +42,7 @@
                                 <p class="bg-gl font-gl text-uppercase">Gratis</p>
                             </div>
                             <div class="d-flex temp-cl">
-                                <p>. {{ vote[random()].temp1}} - </p>
+                                <p>&middot; {{ vote[random()].temp1}} -&nbsp;</p>
                                 <p>{{ vote[random()].temp}} min.</p>
                             </div>
                         </div>
@@ -68,6 +68,8 @@ export default {
                 { id: 1, temp: '30', temp1: '15', rec: '94'},
                 { id: 2, temp: '25', temp1: '10', rec: '84'},
                 { id: 3, temp: '20', temp1: '15', rec: '91'},
+                { id: 4, temp: '25', temp1: '15', rec: '93'},
+                { id: 5, temp: '20', temp1: '15', rec: '100'},
             ],
         };
     },
@@ -91,7 +93,7 @@ export default {
                 });
         },
         random: function () {
-            return Math.floor(Math.random()*3);
+            return Math.floor(Math.random()*5);
         },
     },
     beforeMount() {
@@ -100,7 +102,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .container ul {
     padding: 0;
@@ -161,15 +163,8 @@ ul {
     border-radius: 5px;
 }
 
-.overlay::after {
-    content: '';
-    display: block;
-    background-color: rgba($color: #000000, $alpha: 0.3);
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 20%;
-    right: 0;
+.img-card-top {
+    opacity: 0.7;
 }
 
 .tipologies-name {
