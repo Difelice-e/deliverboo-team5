@@ -100,7 +100,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .container ul {
     padding: 0;
