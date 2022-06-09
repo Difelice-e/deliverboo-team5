@@ -25,8 +25,8 @@
 
     {{-- ingredienti --}}
     <div class="mb-3">
-        <label required for="ingredients" class="form-label">Ingredienti*</label>
-        <textarea class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" id="ingredients" rows="3">{{old('ingredients')}}</textarea>
+        <label  for="ingredients" class="form-label">Ingredienti*</label>
+        <textarea required class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" id="ingredients" rows="3">{{old('ingredients')}}</textarea>
         @error('ingredients')
             <div class="invalid-feedback"> {{$message}} </div>
         @enderror
