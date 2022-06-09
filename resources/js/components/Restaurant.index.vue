@@ -87,11 +87,11 @@
                         </router-link>
                     </ul>
 
-                    <div class="container py-4">
-                        <ul class="pagination flex justify-center gap-4 items-center">
+                    <div class="container pt-5">
+                        <ul class="pagination flex justify-content-center align-items-center gap-4 items-center">
                             <li @click="fetchFiltered(tipologyFilter, n)" 
-                            :class="currentPage === n ? 'bg-primary' : 'bg-secondary'" 
-                            class="d-flex justify-content-center align-items-center p-1"
+                            :class="currentPage === n ? 'bg-gl1' : 'bg-gl2'" 
+                            class="d-flex justify-content-center align-items-center cursor-pointer rounded-circle pagination-button"
                             v-for="n in lastPage" :key="n">{{n}}</li>
                         </ul>
                     </div>
@@ -215,6 +215,22 @@ export default {
 .title-rest {
     font-weight: 800;
     font-size: 40px;
+}
+
+.pagination {
+    gap: 20px;
+}
+
+.pagination-button {
+    padding: 10px 15px;
+}
+
+.bg-gl1 {
+    background-color: #ffc244;
+}
+
+.bg-gl2 {
+    background-color: #faeac4;
 }
 
 </style>
