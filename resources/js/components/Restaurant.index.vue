@@ -47,7 +47,7 @@
                             tag="li"
                             v-for="user in users"
                             :key="user.id"
-                            class="cursor-pointer list-item col-12 col-md-6 col-lg-4"
+                            :class="currentPage == 4 && users.length < 3?  'cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12' : 'cursor-pointer list-item col-12 col-md-6 col-lg-4' "
                             :to="{
                                 name: 'restaurant.show',
                                 params: { slug: user.slug },
@@ -61,7 +61,7 @@
                                     <h5 class="name-business text-center">
                                         {{ user.business_name }}
                                     </h5>
-                                    <div class="d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center">
+                                    <div class="d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-2">
                                         <p v-for="el in user.tipologies" :key="el.id" class="tipologies-name badge badge-dark">
                                             {{ el.name }}
                                         </p>
@@ -209,7 +209,7 @@ export default {
 
 .tipologies-card {
     gap: 0 5px;
-    padding: 0 10px 20px 10px;
+    padding: 0 10px 30px 10px;
 }
 
 .title-rest {

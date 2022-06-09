@@ -3344,7 +3344,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 20px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}", ""]);
+exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}", ""]);
 
 // exports
 
@@ -3420,7 +3420,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container ul {\n  padding: 0;\n}\nul {\n  list-style: none;\n}\n.title-rest {\n  font-weight: 700;\n  font-size: 35px;\n}\n.list-wrapper {\n  gap: 25px 0;\n}\n.rounded-mid {\n  border-radius: 10px;\n}\n.card-foot {\n  margin-bottom: -2%;\n}\n.favicon {\n  margin-top: 2%;\n  height: 16px;\n}\n.fav-2 {\n  margin-right: 5px;\n}\n.card-title {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.temp-cl {\n  font-weight: 600;\n}\n.font-gl {\n  font-size: 12px;\n  font-weight: 600;\n}\n.bg-gl {\n  background-color: #ffc244;\n  padding: 2px 7px;\n  border-radius: 5px;\n}\n.img-card {\n  filter: contrast(60%);\n}\n.card:hover .img-card {\n  transform: scale(1.05);\n  transition: all 0.1s ease-in-out;\n}\n.tipologies-name {\n  background-color: rgba(0, 0, 0, 0.6);\n  padding: 5px 10px;\n  font-weight: 400;\n}\n.bg-gl {\n  background-color: #ffc244;\n}\n.name-business {\n  font-size: 21px;\n  font-weight: 600;\n  color: white;\n}\n.address-name {\n  font-size: 12px;\n}\n.back-mark {\n  font-size: 18px;\n  background-color: #ffc244;\n  border-radius: 100px;\n  padding: 0 3px;\n}\n.back-gl {\n  font-size: 35px;\n  line-height: 1.2;\n  font-weight: 700;\n}", ""]);
+exports.push([module.i, ".container ul {\n  padding: 0;\n}\nul {\n  list-style: none;\n}\n.title-rest {\n  font-weight: 700;\n  font-size: 35px;\n}\n.list-wrapper {\n  gap: 25px 0;\n}\n.rounded-mid {\n  border-radius: 10px;\n}\n.card-foot {\n  margin-bottom: -2%;\n}\n.favicon {\n  margin-top: 2%;\n  height: 16px;\n}\n.fav-2 {\n  margin-right: 5px;\n}\n.card-title {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.temp-cl {\n  font-weight: 600;\n}\n.font-gl {\n  font-size: 12px;\n  font-weight: 600;\n}\n.bg-gl {\n  background-color: #ffc244;\n  padding: 2px 7px;\n  border-radius: 5px;\n}\n.img-card {\n  filter: contrast(60%);\n}\n.card:hover .img-card {\n  transform: scale(1.05);\n  transition: all 0.1s ease-in-out;\n}\n.tipologies-name {\n  background-color: rgba(0, 0, 0, 0.6);\n  padding: 5px 10px;\n  font-weight: 400;\n  margin-bottom: 7px;\n}\n.bg-gl {\n  background-color: #ffc244;\n}\n.name-business {\n  font-size: 21px;\n  font-weight: 600;\n  color: white;\n}\n.address-name {\n  font-size: 12px;\n}\n.back-mark {\n  font-size: 18px;\n  background-color: #ffc244;\n  border-radius: 100px;\n  padding: 0 3px;\n}\n.back-gl {\n  font-size: 35px;\n  line-height: 1.2;\n  font-weight: 700;\n}", ""]);
 
 // exports
 
@@ -5283,8 +5283,10 @@ var render = function () {
                 "router-link",
                 {
                   key: user.id,
-                  staticClass:
-                    "cursor-pointer list-item col-12 col-md-6 col-lg-4",
+                  class:
+                    _vm.currentPage == 4 && _vm.users.length < 3
+                      ? "cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12"
+                      : "cursor-pointer list-item col-12 col-md-6 col-lg-4",
                   attrs: {
                     tag: "li",
                     to: {
@@ -5331,7 +5333,7 @@ var render = function () {
                             "div",
                             {
                               staticClass:
-                                "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center",
+                                "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-2",
                             },
                             _vm._l(user.tipologies, function (el) {
                               return _c(
