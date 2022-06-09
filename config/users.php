@@ -11,7 +11,7 @@ return [
     "business_name" => "l'osteria di monteverde roma",
     "street_address" => "Via Pietro Cartoni, 163/165",
     "phone_number" => "0653273887",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://media-assets.vanityfair.it/photos/617525114712c6ab67f3d349/16:9/w_320%2Cc_limit/trattoria-citi.jpg",
   ],
   // milanese
   [
@@ -20,7 +20,7 @@ return [
     "business_name" => "osteria dell'oca giuliva",
     "street_address" => "Viale Bligny, 29",
     "phone_number" => "0258312871",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://media-assets.lacucinaitaliana.it/photos/61fa6ca6f9bff304ce3ea5e4/16:9/w_2560%2Cc_limit/osteria-baciafemmine-slide3.jpg",
   ],
   // bolognese
   [
@@ -29,7 +29,7 @@ return [
     "business_name" => "Antica Osteria Le Mura",
     "street_address" => "Vicolo del Falcone, 13/a",
     "phone_number" => "0510015254",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.mangiaebevi.it/wp-content/uploads/2016/09/archi-1.jpg",
   ],
   //napoletana
   [
@@ -39,7 +39,7 @@ return [
     "vat_number" => "",
     "street_address" => "Via Sergente Maggiore, 8",
     "phone_number" => "0812512435",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.trabucchitourguide.com/wp-content/uploads/2020/08/Osteria-del-Sole-Bologna.jpg",
   ],
   // barese
   [
@@ -48,7 +48,7 @@ return [
     "business_name" => "osteria le arpie",
     "street_address" => "Arco del Carmine, 2",
     "phone_number" => "0805217988",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://media-assets.lacucinaitaliana.it/photos/61fabe8151116b1ead93066e/16:9/w_2560%2Cc_limit/Landscape-osterie.jpg",
   ],
   //bar
   [
@@ -57,7 +57,7 @@ return [
     "business_name" => "caffè del kassaro",
     "street_address" => "Via Vittorio Emanuele, 390",
     "phone_number" => "0915070023",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://blog.caffevergnano.com/wp-content/uploads/2019/10/small-87.jpg",
   ],
   [
     "email" => "jofahem925@dakcans.com",
@@ -65,7 +65,7 @@ return [
     "business_name" => "caffè capranica",
     "street_address" => "Piazza Capranica, 75/77",
     "phone_number" => "0669921720",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://caffevergnano-static.kxscdn.com/blog/wp-content/uploads/2020/07/big-97-1024x683.jpg",
   ],
   [
     "email" => "kafova8498@duetube.com",
@@ -73,7 +73,7 @@ return [
     "business_name" => "caffè d'urbano",
     "street_address" => "Piazza D'Urbano, 75/77",
     "phone_number" => "064885617",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.visitrovereto.it/wp-content/uploads/2020/03/la-moja-ristorante-caffetteria-2.jpg",
   ],
   [
     "email" => "mojeno2228@doerma.com",
@@ -81,7 +81,7 @@ return [
     "business_name" => "caffetteria massimo",
     "street_address" => "Via Giovanni Amendola, 6",
     "phone_number" => "064870860",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://media-cdn.tripadvisor.com/media/photo-s/11/8a/c7/60/working.jpg",
   ],
   [
     "email" => "paxine5245@doerma.com",
@@ -89,7 +89,7 @@ return [
     "business_name" => "Cuccuma Caffè",
     "street_address" => "Via San Giovanni Maggiore Pignatelli, 1a",
     "phone_number" => "08119708587",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.coqtailmilano.com/wp-content/uploads/2019/06/Paradiso-cocktail-bar-barcelona-speakeasy-1155x770.jpg",
   ],
   // Burger King
   [
@@ -98,7 +98,7 @@ return [
     "business_name" => "Burger King",
     "street_address" => "Piazzale Luigi Cadorna, 16",
     "phone_number" => "028053860",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.newslavoro.com/wp-content/uploads/2015/10/lavoro-burger-king.jpg",
   ],
   [
     "email" => "BurgerKingEdoardoJenner@cupbest.com",
@@ -106,7 +106,7 @@ return [
     "business_name" => "Burger King Centrale",
     "street_address" => "Viale Edoardo Jenner, 51",
     "phone_number" => "0280011050",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://3.bp.blogspot.com/-269dDVC1THk/WsnARgGx-LI/AAAAAAAAHrI/6qYYb7oUvj8Ky9dFzYdTDwy5UGs1OkhRQCLcBGAs/s1600/Burger-king-3.jpg",
   ],
   // McDonald
   [
@@ -115,7 +115,7 @@ return [
     "business_name" => "McDonald's Milano Duomo",
     "street_address" => "Passaggio Duomo, 2",
     "phone_number" => "0286997265",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.trentotoday.it/~media/horizontal-hi/10225375659971/mcdonalds-3.jpg",
   ],
   [
     "email" => "McDonaldMilanoViaTorino@cupbest.com",
@@ -123,7 +123,7 @@ return [
     "business_name" => "McDonald's Milano Via Torino",
     "street_address" => "Via Torino, 68",
     "phone_number" => "3408484034",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/06/1272_D0BEA7C9669993A4-4.jpg?w=876&h=484&crop=1",
   ],
   //fast food
   [
@@ -132,7 +132,7 @@ return [
     "business_name" => "fast24",
     "street_address" => "Via Sorio, 64/A",
     "phone_number" => "3451737833",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://contractdivision.rmgproject.it/wp-content/uploads/2019/12/arredamento-bar-01.jpg",
   ],
   [
     "email" => "reviloc149@dakcans.com",
@@ -140,7 +140,7 @@ return [
     "business_name" => "polletti san bartolomeo",
     "street_address" => "Viale della Moschea, 206",
     "phone_number" => "068075659",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://ae01.alicdn.com/kf/S0b129a91d89d441cae786f487e0d3e970/Carta-da-parati-murale-personalizzata-3D-lavagna-dipinta-a-mano-ristorante-occidentale-Pizza-Hamburger-Fast-Food.jpg_Q90.jpg_.webp",
   ],
   [
     "email" => "yipabaf690@doerma.com",
@@ -148,7 +148,7 @@ return [
     "business_name" => "SPECIAL hamburger & italian Fast Food",
     "street_address" => "Via Lecco, 4",
     "phone_number" => "0229537233",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.effettofood.com/wp-content/uploads/2019/06/Cult-Burger-and-Things-Nuova-apertura-2019-ristorante-Roma-Prati-hamburgeria.jpg",
   ],
   [
     "email" => "demew11458@doerma.com",
@@ -156,7 +156,7 @@ return [
     "business_name" => "speedy grill",
     "street_address" => "Via Principe di Piemonte, 57/C",
     "phone_number" => "3349408764",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.retailfood.it/wp-content/uploads/2019/08/bastard-burgers_stockholm-arlanda-airport_july-2019_ssp-image_001_hi-res.jpg",
   ],
   [
     "email" => "nerod25859@doerma.com",
@@ -164,7 +164,7 @@ return [
     "business_name" => "Elen Fast Food",
     "street_address" => "corso dei mille, 94/96",
     "phone_number" => "3892467205",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://media-cdn.tripadvisor.com/media/photo-s/12/af/f1/b1/hamholyburger-3-piano.jpg",
   ],
   //pizza
   [
@@ -175,7 +175,7 @@ return [
     "vat_number" => "",
     "street_address" => "Via delle Belle Arti, 14",
     "phone_number" => "051225581",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.scattidigusto.it/wp-content/uploads/2021/04/pizzeria-ristorante-Mattozzi-piazza-Carita-Napoli.jpg",
   ],
   [
     "email" => "jifid10528@cupbest.com",
@@ -185,7 +185,7 @@ return [
     "vat_number" => "",
     "street_address" => "Via della Madonna dei Monti, 110",
     "phone_number" => "0669413112",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.bmitalia.com/Gallery/637356731804262012_arredamenti-bar-ristorante-agriturismo-bmitalia.jpg.ashx?width=750&height=500&crop=auto&scale=upscalecanvas",
   ],
   [
     "email" => "venas77655@doerma.com",
@@ -193,7 +193,7 @@ return [
     "business_name" => "pizzeria speranzella",
     "street_address" => "Via Speranzella, 84",
     "phone_number" => "08118196384",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://lacasadellafarina.it/wp-content/uploads/2018/09/pizzeria-arredamento2.jpg",
   ],
   [
     "email" => "honey38413@dakcans.com",
@@ -201,7 +201,7 @@ return [
     "business_name" => "pizzeria dei pirati",
     "street_address" => "Via Rionero, 38",
     "phone_number" => "0883522901",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.consulenzapizzerie.it/images/2020/08/06/prima-pagina---ok---apertura-locali---pizzeria-min.jpg",
   ],
   [
     "email" => "giheb25464@doerma.com",
@@ -209,7 +209,7 @@ return [
     "business_name" => "pizzeria sansovino",
     "street_address" => "Calle Zaguri, 2628",
     "phone_number" => "0415286141",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.unionemonregalese.it/wp-content/uploads/2020/01/Pizzeria-33-giri-forno.jpg",
   ],
   // cinese
   [
@@ -218,7 +218,7 @@ return [
     "business_name" => "koi sushi",
     "street_address" => "Via Regina Margherita, 310",
     "phone_number" => "3496291775",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://media-assets.vanityfair.it/photos/61f5b059ee85327cdcc1acde/4:3/w_3024,h_2268,c_limit/uno.jpeg",
   ],
   [
     "email" => "sotif39863@duetube.com",
@@ -226,7 +226,7 @@ return [
     "business_name" => "jubin due",
     "street_address" => "Via Padova, 7",
     "phone_number" => "0226141020",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.agrodolce.it/app/uploads/2016/08/ristorante-giapponese.jpg",
   ],
   [
     "email" => "wasawet730@dakcans.com",
@@ -234,7 +234,7 @@ return [
     "business_name" => "bin hai",
     "street_address" => "Via la Spezia, 86",
     "phone_number" => "067012519",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://barefoodinrome.it/wp-content/uploads/2021/07/Maido-street-food-giapponese-roma-2-1.png",
   ],
   [
     "email" => "tebox94225@doerma.com",
@@ -242,7 +242,7 @@ return [
     "business_name" => "hana",
     "street_address" => "Viale della Croce Rossa, 27",
     "phone_number" => "0916788305",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.festa18anni-roma.it/wp-content/uploads/2017/06/tiki-maki-640x426_2.jpg",
   ],
   [
     "email" => "kenixa8009@dakcans.com",
@@ -250,7 +250,7 @@ return [
     "business_name" => "yoma",
     "street_address" => "Via Fossalta, 3",
     "phone_number" => "051226592",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.zengardenciampino.it/wp-content/uploads/2018/11/2_ZenGarden-Ristorante-Cinese-Giapponese-Ciampino_il_locale-1.jpg",
   ],
   [
     "email" => "paxine51455@doerma.com",
@@ -258,7 +258,7 @@ return [
     "business_name" => "l'osteria di sempione roma",
     "street_address" => "Via Pietro Cartonio, 163/165",
     "phone_number" => "0653273884",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://www.hongkongcucciago.it/assets/img-temp/about/ristorante_cinese3.jpg",
   ],
   [
     "email" => "paxine5@doerma.com",
@@ -266,7 +266,7 @@ return [
     "business_name" => "l'angolo del pesce",
     "street_address" => "Via Silvino Olivieri, 163/165",
     "phone_number" => "0653573884",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://media-cdn.tripadvisor.com/media/photo-s/10/21/d7/48/ristorante-cinese-giapponese.jpg",
   ],
   [
     "email" => "asmodolg4@doerma.com",
@@ -274,7 +274,7 @@ return [
     "business_name" => "pizzeria doppiozero",
     "street_address" => "Via Silvio e Beltrando Spaventa, 12",
     "phone_number" => "0333573884",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://media-cdn.tripadvisor.com/media/photo-s/19/40/7c/c9/20190913-192401-largejpg.jpg",
   ],
   [
     "email" => "swindirf@doerma.com",
@@ -282,6 +282,6 @@ return [
     "business_name" => "La Locanda Del Presidente",
     "street_address" => "Via per Cepagatti, 24",
     "phone_number" => "0393573889",
-    "cover" => "https://picsum.photos/200/300",
+    "cover" => "https://cinainitalia.com/wp-content/uploads/2018/11/Kobe-5.jpg",
   ],
 ];
