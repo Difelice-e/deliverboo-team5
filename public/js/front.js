@@ -3344,7 +3344,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 20px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}", ""]);
+exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 20px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}", ""]);
 
 // exports
 
@@ -5426,12 +5426,12 @@ var render = function () {
             1
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "container py-4" }, [
+          _c("div", { staticClass: "container pt-5" }, [
             _c(
               "ul",
               {
                 staticClass:
-                  "pagination flex justify-center gap-4 items-center",
+                  "pagination flex justify-content-center align-items-center gap-4 items-center",
               },
               _vm._l(_vm.lastPage, function (n) {
                 return _c(
@@ -5439,9 +5439,8 @@ var render = function () {
                   {
                     key: n,
                     staticClass:
-                      "d-flex justify-content-center align-items-center p-1",
-                    class:
-                      _vm.currentPage === n ? "bg-primary" : "bg-secondary",
+                      "d-flex justify-content-center align-items-center cursor-pointer rounded-circle pagination-button",
+                    class: _vm.currentPage === n ? "bg-gl1" : "bg-gl2",
                     on: {
                       click: function ($event) {
                         return _vm.fetchFiltered(_vm.tipologyFilter, n)
