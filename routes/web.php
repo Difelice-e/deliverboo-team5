@@ -29,6 +29,10 @@ Route::middleware('auth')
         Route::resource('orders', 'OrderController');
 });
 
+// rotte stripe 
+Route::get('checkout','CheckoutController@checkout');
+Route::post('checkout','CheckoutController@afterpayment')->name('checkout.credit-card');
+
 // rotte di vue
 Route::fallback(function () {
     return view('home');
