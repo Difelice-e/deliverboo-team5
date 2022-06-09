@@ -20,7 +20,7 @@
                 }"
             >
                 <div class="card card-t rounded-mid overflow-hidden">
-                    <div class="overlay">
+                    <div class="overlay overflow-hidden">
                         <img src="https://picsum.photos/300/150" class="card-img-top img-card" alt="" />
                     </div>
                     <div class="card-title d-flex align-items-center justify-content-center flex-column text-white">
@@ -163,8 +163,13 @@ ul {
     border-radius: 5px;
 }
 
-.img-card-top {
-    opacity: 0.7;
+.img-card {
+    filter: contrast(60%);
+}
+
+.card:hover .img-card {
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
 }
 
 .tipologies-name {
