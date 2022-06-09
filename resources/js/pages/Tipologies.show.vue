@@ -176,6 +176,7 @@ ul {
     background-color: rgba($color: #000000, $alpha: 0.6);
     padding: 5px 10px;
     font-weight: 400;
+    margin-bottom: 7px;
 }
 
 .bg-gl {
