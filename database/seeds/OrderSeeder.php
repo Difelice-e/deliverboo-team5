@@ -32,6 +32,7 @@ class OrderSeeder extends Seeder
                 $order->customer_phone = $faker->e164PhoneNumber();
                 $order->total_price = $faker->randomNumber(2,false);
                 $order->delivered = $faker->boolean();
+                $order->payment_state = false;
                 if ($order->delivered) {
                     $order->delivery_time = Carbon::now()->format('Y-m-d H:i:s');
                 } else {

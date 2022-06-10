@@ -16,7 +16,7 @@
 
                         <span class="weight-bold">{{ dish.quantity }}x</span>
                         <span  >{{dish.name}}</span>
-                        <span>€{{ totalPrice }}</span>
+                        <span>€{{ dish.totalPrice.toFixed(2) }}</span>
 
                     </div>
 
@@ -41,7 +41,10 @@
                 </div>
 
                 <div class="col-12">
-                    <a class=" col-12 rounded-pill btn bg-greedgc text-white weight-bold"  style="font-size: 20px;" href="#">Ordinane {{ $store.state.cartCount }} a €{{ totalPrice }}</a>
+                    <router-link :to="{name: 'checkout.page' }">
+                        <a class=" col-12 rounded-pill btn bg-greedgc text-white weight-bold"  style="font-size: 20px;" href="#">Ordinane {{ $store.state.cartCount }} a €{{ $store.state.cartTotal.toFixed(2) }}</a>
+                    </router-link>
+                    
                 </div>
             </div>
                 
@@ -86,7 +89,7 @@ export default {
                 total += dish.totalPrice;
             }
 
-            return total.toFixed(2);
+            this.$store.commit('calcTotal', total)
         },
         deliveryFees() {
             let deliveryFee = 2.50
