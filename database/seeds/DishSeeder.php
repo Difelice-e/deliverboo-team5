@@ -14,22 +14,22 @@ class DishSeeder extends Seeder
      */
     public function run()
     {
-        
+
         $dishes = Config::get('dishes');
-        
+
         foreach ($dishes as $piatto) {
 
             $dish = new Dish();
-                    
+
             $dish->name = $piatto['name'];
             $dish->slug = Str::slug($piatto['name']);
-            $dish->cover = null;
+            $dish->cover = $piatto['cover'];
             $dish->ingredients = $piatto['ingredients'];
             $dish->description = $piatto['description'];
             $dish->price = $piatto['price'];
             $dish->visible = $piatto['visible'];
             $dish->user_id = $piatto['user_id'];
-                
+
             $dish -> save();
         }
     }
