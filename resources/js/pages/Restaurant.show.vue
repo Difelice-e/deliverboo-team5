@@ -66,7 +66,7 @@
                                                     <div class="d-flex mb-2">
                                                         <figure class="border-radius">
                                                             <img
-                                                                src="https://picsum.photos/300/150"
+                                                                :src="dish.cover"
                                                                 style="
                                                                     width: 100px;
                                                                     height: 100px;
