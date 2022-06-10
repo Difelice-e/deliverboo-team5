@@ -3413,7 +3413,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container ul {\n  padding: 0;\n}\nul {\n  list-style: none;\n}\n.title-rest {\n  font-weight: 700;\n  font-size: 35px;\n}\n.list-wrapper {\n  gap: 25px 0;\n}\n.rounded-mid {\n  border-radius: 10px;\n}\n.card-foot {\n  margin-bottom: -2%;\n}\n.favicon {\n  margin-top: 2%;\n  height: 16px;\n}\n.fav-2 {\n  margin-right: 5px;\n}\n.card-title {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.temp-cl {\n  font-weight: 600;\n}\n.font-gl {\n  font-size: 12px;\n  font-weight: 600;\n}\n.bg-gl {\n  background-color: #ffc244;\n  padding: 2px 7px;\n  border-radius: 5px;\n}\n.img-card {\n  filter: contrast(60%);\n}\n.card:hover .img-card {\n  transform: scale(1.05);\n  transition: all 0.1s ease-in-out;\n}\n.tipologies-name {\n  background-color: rgba(0, 0, 0, 0.6);\n  padding: 5px 10px;\n  font-weight: 400;\n  margin-bottom: 7px;\n}\n.bg-gl {\n  background-color: #ffc244;\n}\n.name-business {\n  font-size: 21px;\n  font-weight: 600;\n  color: white;\n}\n.address-name {\n  font-size: 12px;\n}\n.back-mark {\n  font-size: 18px;\n  background-color: #ffc244;\n  border-radius: 100px;\n  padding: 0 3px;\n}\n.back-gl {\n  font-size: 35px;\n  line-height: 1.2;\n  font-weight: 700;\n}", ""]);
+exports.push([module.i, ".container ul {\n  padding: 0;\n}\nul {\n  list-style: none;\n}\n.title-rest {\n  font-weight: 700;\n  font-size: 35px;\n}\n.list-wrapper {\n  gap: 25px 0;\n}\n.rounded-mid {\n  border-radius: 10px;\n}\n.card-foot {\n  margin-bottom: -2%;\n}\n.favicon {\n  margin-top: 2%;\n  height: 16px;\n}\n.fav-2 {\n  margin-right: 5px;\n}\n.card-title {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.temp-cl {\n  font-weight: 600;\n}\n.font-gl {\n  font-size: 12px;\n  font-weight: 600;\n}\n.bg-gl {\n  background-color: #ffc244;\n  padding: 2px 7px;\n  border-radius: 5px;\n}\n.img-card {\n  filter: contrast(60%);\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  height: 180px;\n}\n.card:hover .img-card {\n  transform: scale(1.05);\n  transition: all 0.1s ease-in-out;\n}\n.tipologies-name {\n  background-color: rgba(0, 0, 0, 0.6);\n  padding: 5px 10px;\n  font-weight: 400;\n  margin-bottom: 7px;\n}\n.bg-gl {\n  background-color: #ffc244;\n}\n.name-business {\n  font-size: 21px;\n  font-weight: 600;\n  color: white;\n}\n.address-name {\n  font-size: 12px;\n}\n.back-mark {\n  font-size: 18px;\n  background-color: #ffc244;\n  border-radius: 100px;\n  padding: 0 3px;\n}\n.back-gl {\n  font-size: 35px;\n  line-height: 1.2;\n  font-weight: 700;\n}", ""]);
 
 // exports
 
@@ -24592,7 +24592,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
