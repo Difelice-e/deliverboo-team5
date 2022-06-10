@@ -18,6 +18,9 @@
                                 <h1 class="title-restaurant">{{ user.business_name }}</h1>
                                 <div class="d-flex align-items-center align-self-center info">
 
+                                    <img width="25px" height="25px" src="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/344/external-clock-home-screen-app-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png" alt="">
+                                    <p class="mt-3">{{ vote[random()].temp1}}-{{ vote[random()].temp}}'</p>
+
                                     <img width="30px" height="30px" src="https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/filters/sorting/delivery_fee_light" alt="">
                                     <span class="cancel">2,50 &euro;</span>
                                     <p class="bg-gl font-gl gr-1 text-uppercase mt-3">Gratis</p>
@@ -82,7 +85,7 @@
                                                     </div>
 
                                                     <!-- Pulsante per aggiungere al carrello -->
-                                                    <div class="d-flex col-12 justify-content-between">
+                                                    <div class="d-flex col-12 justify-content-between px-0">
                                                         <span class="dish-price">
                                                             {{ dish.price.toFixed(2) }} €
                                                         </span>
