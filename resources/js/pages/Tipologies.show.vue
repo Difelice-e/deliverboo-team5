@@ -165,6 +165,9 @@ ul {
 
 .img-card {
     filter: contrast(60%);
+    object-fit: cover;
+    object-position: center;
+    height: 180px;
 }
 
 .card:hover .img-card {
