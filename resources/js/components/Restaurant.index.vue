@@ -48,10 +48,10 @@
                         >
                             <div class="card card-t rounded-mid overflow-hidden">
                                 <div class="overlay overflow-hidden">
-                                    <img :src="user.cover" class="card-img-top img-card" alt="" />
+                                    <img width="300px" height="150px" :src="user.cover" class="card-img-top img-card" alt="" />
                                 </div>
                                 <div class="card-title d-flex align-items-center justify-content-center flex-column text-white">
-                                    <h5 class="name-business text-center">
+                                    <h5 class="name-business text-center text-capitalize">
                                         {{ user.business_name }}
                                     </h5>
                                     <div class="d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-2">
@@ -82,8 +82,8 @@
 
                     <div class="container pt-5">
                         <ul class="pagination flex justify-content-center align-items-center gap-4 items-center">
-                            <li @click="fetchFiltered(tipologyFilter, n)" 
-                            :class="currentPage === n ? 'bg-gl1' : 'bg-gl2'" 
+                            <li @click="fetchFiltered(tipologyFilter, n)"
+                            :class="currentPage === n ? 'bg-gl1' : 'bg-gl2'"
                             class="d-flex justify-content-center align-items-center cursor-pointer rounded-circle pagination-button"
                             v-for="n in lastPage" :key="n">{{n}}</li>
                         </ul>
@@ -187,7 +187,7 @@ export default {
         this.fetchRestaurant();
     },
     computed: {
-        
+
     },
 };
 </script>

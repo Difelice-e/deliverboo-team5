@@ -5296,7 +5296,12 @@ var render = function () {
                       _c("div", { staticClass: "overlay overflow-hidden" }, [
                         _c("img", {
                           staticClass: "card-img-top img-card",
-                          attrs: { src: user.cover, alt: "" },
+                          attrs: {
+                            width: "300px",
+                            height: "150px",
+                            src: user.cover,
+                            alt: "",
+                          },
                         }),
                       ]),
                       _vm._v(" "),
@@ -5309,7 +5314,10 @@ var render = function () {
                         [
                           _c(
                             "h5",
-                            { staticClass: "name-business text-center" },
+                            {
+                              staticClass:
+                                "name-business text-center text-capitalize",
+                            },
                             [
                               _vm._v(
                                 "\n                                    " +
@@ -5945,7 +5953,24 @@ var render = function () {
                                             "div",
                                             { staticClass: "d-flex mb-2" },
                                             [
-                                              _vm._m(2, true),
+                                              _c(
+                                                "figure",
+                                                {
+                                                  staticClass: "border-radius",
+                                                },
+                                                [
+                                                  _c("img", {
+                                                    staticStyle: {
+                                                      width: "100px",
+                                                      height: "100px",
+                                                    },
+                                                    attrs: {
+                                                      src: dish.cover,
+                                                      alt: "",
+                                                    },
+                                                  }),
+                                                ]
+                                              ),
                                               _vm._v(" "),
                                               _c(
                                                 "div",
@@ -6120,17 +6145,6 @@ var staticRenderFns = [
         _c("span", [_vm._v("%76")]),
       ]
     )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("figure", { staticClass: "border-radius" }, [
-      _c("img", {
-        staticStyle: { width: "100px", height: "100px" },
-        attrs: { src: "https://picsum.photos/300/150", alt: "" },
-      }),
-    ])
   },
 ]
 render._withStripped = true
@@ -24592,7 +24606,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+
+module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+
 
 
 /***/ })
