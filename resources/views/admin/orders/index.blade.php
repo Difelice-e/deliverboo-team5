@@ -15,6 +15,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Indirizzo</th>
                 <th scope="col">Telefono</th>
+                <th scope="col">Pagato</th>
                 <th scope="col">Consegnato alle</th>
                 <th scope="col">Consegnato</th>
             </tr>
@@ -29,6 +30,17 @@
                     <td>{{ $order->customer_email }}</td>
                     <td>{{ $order->street_address }}</td>
                     <td>{{ $order->customer_phone }}</td>
+
+                    @if ($order->payment_state == 0)
+                        <td>
+                            <span class="rounded-pill bg-warning p-2 text-nowrap">Non Pagato</span>
+                        </td>
+                    @else
+                        <td>
+                            <span class=" rounded-pill bg-success p-2">Pagato</span>
+                        </td>
+                    @endif
+
                     <td>{{ $order->delivery_time }}</td>
                     @if ($order->delivered == 0)
                         <td>

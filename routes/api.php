@@ -31,4 +31,5 @@ Route::namespace('Api')->group(function () {
         'users' => 'user:slug',
         'users' => 'user:user_id'
     ]);
+    Route::resource('orders', 'OrderController');
 });

@@ -16,6 +16,13 @@ class Order extends Model
     // }
 
     protected $fillable = [
+        'customer_name',
+        'street_address',
+        'customer_email',
+        'customer_phone',
+        'payment_state',
+        'user_id', 
+        'total_price',
         'delivered',
         'delivery_time'
     ];

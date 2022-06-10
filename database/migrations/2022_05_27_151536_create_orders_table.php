@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('customer_phone',25);
             $table->string('street_address',150);
             $table->double('total_price', 6,2);
+            $table->boolean('payment_state');
             // $table->string('payment_method', 100);
             $table->dateTime('delivery_time')->nullable();
             $table->boolean('delivered');

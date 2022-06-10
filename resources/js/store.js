@@ -1,10 +1,12 @@
 let cart = window.localStorage.getItem('cart');
 let cartCount = window.localStorage.getItem('cartCount');
+let cartTotal = window.localStorage.getItem('cartTotal')
 
 let store = {
     state: {
         cart: cart ? JSON.parse(cart) : [],
         cartCount: cartCount ? parseInt(cartCount) : 0,
+        cartTotal: cartTotal ? parseInt(cartTotal) : 0,
     },
 
     mutations: {
@@ -31,9 +33,10 @@ let store = {
                 
                 // prodotto nuovo
                 state.cart.push(dish);
+                
 
                 Vue.set(dish, 'quantity', 1);
-                Vue.set(dish, 'totalPrice', dish.price); 
+                Vue.set(dish, 'totalPrice', dish.price);
             } 
 
             state.cartCount++;
@@ -68,9 +71,14 @@ let store = {
             }
             this.commit('saveCart');
         },
+        calcTotal(state, cartTotalPrice) {
+            state.cartTotal = cartTotalPrice
+            window.localStorage.setItem('cartTotal', state.cartTotal);
+        },
         saveCart(state) {
             window.localStorage.setItem('cart', JSON.stringify(state.cart));
             window.localStorage.setItem('cartCount', state.cartCount);
+            window.localStorage.setItem('cartTotal', state.cartTotal);
         }
     }
 };

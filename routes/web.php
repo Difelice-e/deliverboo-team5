@@ -31,7 +31,7 @@ Route::middleware('auth')
 
 // rotte stripe 
 Route::get('checkout','CheckoutController@checkout');
-Route::post('checkout','CheckoutController@afterpayment')->name('checkout.credit-card');
+Route::post('checkout/state','CheckoutController@afterpayment')->name('checkout.credit-card');
 
 // rotte di vue
 Route::fallback(function () {

@@ -7,6 +7,7 @@ import Tipologies from "../pages/Tipologies.index.vue";
 import Tipology from "../pages/Tipologies.show.vue";
 import Restaurants from "../pages/Restaurant.index.vue";
 import Restaurant from "../pages/Restaurant.show.vue";
+import Checkout from "../pages/Checkout.vue";
 import NotFound from "../pages/404.vue";
 
 const routes = [
@@ -38,6 +39,11 @@ const routes = [
         meta: {
             title: "restaurant/:slug - Consegna a domicilio a Milano | Ordina online con Glovo",
         },
+    },
+    {
+        path: "/checkout-page",
+        name: "checkout.page",
+        component: Checkout,
     },
     {
         path: "/*",
