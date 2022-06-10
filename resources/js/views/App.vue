@@ -65,9 +65,11 @@
             id="navbarSupportedContent"
           >
             <!-- Right Side Of Navbar || Pulsanti attenzione -->
+            
             <ul class="navbar-nav  align-items-end align-items-md-center ml-auto">
               <li
-                class="dropdown btn-nav-register nav-item mr-1"
+              
+                class="dropdown dropdow-toggle btn-nav-register nav-item mr-1"
                 type="button"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
@@ -89,7 +91,8 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <CartDropdown />
+
+                  <CartDropdown/>
                 </div>
               </li>
               <!-- Authentication Links -->
@@ -216,6 +219,7 @@ export default {
   components: {
     CartDropdown,
   },
+ 
 };
 </script>
 

@@ -2293,6 +2293,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3398,6 +3417,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3438,7 +3460,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}", ""]);
+exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\nul li[data-v-5edc78cc]::after {\n  display: block;\n  content: \"\";\n  background: lightgrey;\n  width: 100%;\n  height: 1px;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  background: transparent;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n}\ninput[type=checkbox]:checked ~ label .selected[data-v-5edc78cc] {\n  /* background: blue; */\n  padding: 10px 30px;\n  background-color: #fcc244;\n}\n.restaurant-wrapper[data-v-5edc78cc] {\n  overflow: scroll;\n  height: 100vh;\n}", ""]);
 
 // exports
 
@@ -5274,298 +5296,332 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "restaurants-bg py-4" }, [
-      _c("div", { staticClass: "container" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "form",
-          { staticClass: "form-inline w-100 d-flex justify-content-around" },
-          [
-            _c("div", { staticClass: "form-group row" }, [
-              _c("label", {
-                staticClass: "col-form-label",
-                attrs: { for: "category" },
-              }),
-              _vm._v(" "),
-              _c(
-                "form",
-                {
-                  staticClass: "container my-bg-categories",
-                  on: {
-                    submit: function ($event) {
-                      $event.preventDefault()
-                      return _vm.fetchRestaurant.apply(null, arguments)
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c("div", [
+      _c("div", { staticClass: "row flex-md-row flex-column" }, [
+        _c("div", { staticClass: " col-12 col-md-2" }, [
+          _c(
+            "form",
+            { staticClass: "form-inline w-100 d-flex justify-content-around" },
+            [
+              _c("div", { staticClass: "form-group row" }, [
+                _c("label", {
+                  staticClass: "col-form-label",
+                  attrs: { for: "category" },
+                }),
+                _vm._v(" "),
+                _c(
+                  "form",
+                  {
+                    staticClass: "container my-bg-categories",
+                    on: {
+                      submit: function ($event) {
+                        $event.preventDefault()
+                        return _vm.fetchRestaurant.apply(null, arguments)
+                      },
                     },
                   },
-                },
-                [
+                  [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c(
+                      "ul",
+                      {
+                        staticClass:
+                          "filter py-3 d-flex flex-row flex-md-column flex-wrap justify-content-center p-4",
+                      },
+                      _vm._l(_vm.tipologies, function (tipology) {
+                        return _c("li", { key: tipology.id }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.tipologyFilter,
+                                expression: "tipologyFilter",
+                              },
+                            ],
+                            staticClass: "mx-1",
+                            attrs: {
+                              type: "checkbox",
+                              id: tipology.id,
+                              name: tipology.id,
+                            },
+                            domProps: {
+                              value: tipology.id,
+                              checked: Array.isArray(_vm.tipologyFilter)
+                                ? _vm._i(_vm.tipologyFilter, tipology.id) > -1
+                                : _vm.tipologyFilter,
+                            },
+                            on: {
+                              change: [
+                                function ($event) {
+                                  var $$a = _vm.tipologyFilter,
+                                    $$el = $event.target,
+                                    $$c = $$el.checked ? true : false
+                                  if (Array.isArray($$a)) {
+                                    var $$v = tipology.id,
+                                      $$i = _vm._i($$a, $$v)
+                                    if ($$el.checked) {
+                                      $$i < 0 &&
+                                        (_vm.tipologyFilter = $$a.concat([$$v]))
+                                    } else {
+                                      $$i > -1 &&
+                                        (_vm.tipologyFilter = $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1)))
+                                    }
+                                  } else {
+                                    _vm.tipologyFilter = $$c
+                                  }
+                                },
+                                function ($event) {
+                                  return _vm.check($event)
+                                },
+                              ],
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: tipology.id } }, [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "selected text-center text-md-left",
+                              },
+                              [
+                                _vm._v(
+                                  " " +
+                                    _vm._s(tipology.name) +
+                                    "(" +
+                                    _vm._s(tipology.users.length) +
+                                    ") "
+                                ),
+                              ]
+                            ),
+                          ]),
+                        ])
+                      }),
+                      0
+                    ),
+                  ]
+                ),
+              ]),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-12 col-md-10 restaurant-wrapper" }, [
+          _c("div", { staticClass: "restaurants-bg py-4" }, [
+            _c("div", { staticClass: "container" }, [
+              _c("div", [
+                _c(
+                  "ul",
+                  {
+                    staticClass:
+                      "d-flex flex-wrap justify-content-center list-wrapper pt-3",
+                  },
+                  _vm._l(_vm.users, function (user) {
+                    return _c(
+                      "router-link",
+                      {
+                        key: user.id,
+                        class:
+                          _vm.currentPage == 4 && _vm.users.length < 3
+                            ? "cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12"
+                            : "cursor-pointer list-item col-12 col-md-6 col-lg-4",
+                        attrs: {
+                          tag: "li",
+                          to: {
+                            name: "restaurant.show",
+                            params: { slug: user.slug },
+                          },
+                        },
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card card-t rounded-mid overflow-hidden",
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "overlay overflow-hidden" },
+                              [
+                                _c("img", {
+                                  staticClass: "card-img-top img-card",
+                                  attrs: {
+                                    width: "300px",
+                                    height: "150px",
+                                    src: user.cover,
+                                    alt: "",
+                                  },
+                                }),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "card-title d-flex align-items-center justify-content-center flex-column text-white",
+                              },
+                              [
+                                _c(
+                                  "h5",
+                                  {
+                                    staticClass:
+                                      "name-business text-center text-capitalize",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(user.business_name) +
+                                        "\n                                "
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-2",
+                                  },
+                                  _vm._l(user.tipologies, function (el) {
+                                    return _c(
+                                      "p",
+                                      {
+                                        key: el.id,
+                                        staticClass:
+                                          "tipologies-name badge badge-dark",
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                        " +
+                                            _vm._s(el.name) +
+                                            "\n                                    "
+                                        ),
+                                      ]
+                                    )
+                                  }),
+                                  0
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "bg-white card-foot d-flex justify-content-between mt-2 px-2",
+                              },
+                              [
+                                _c("div", { staticClass: "d-flex" }, [
+                                  _c("img", {
+                                    staticClass: "favicon pr-2",
+                                    attrs: {
+                                      src: "https://img.icons8.com/external-those-icons-lineal-those-icons/344/external-like-touch-gestures-those-icons-lineal-those-icons.png",
+                                      alt: "",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", [
+                                    _vm._v(
+                                      _vm._s(_vm.vote[_vm.random()].rec) + "%"
+                                    ),
+                                  ]),
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "d-flex align-items-center" },
+                                  [
+                                    _c("div", { staticClass: "d-flex mr-2" }, [
+                                      _c("img", {
+                                        staticClass: "favicon fav-2",
+                                        attrs: {
+                                          src: "https://img.icons8.com/ios/344/scooter.png",
+                                          alt: "",
+                                        },
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "bg-gl font-gl text-uppercase",
+                                        },
+                                        [_vm._v("Gratis")]
+                                      ),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "d-flex temp-cl" },
+                                      [
+                                        _c("p", [
+                                          _vm._v(
+                                            "· " +
+                                              _vm._s(
+                                                _vm.vote[_vm.random()].temp1
+                                              ) +
+                                              " - "
+                                          ),
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("p", [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.vote[_vm.random()].temp
+                                            ) + " min."
+                                          ),
+                                        ]),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    )
+                  }),
+                  1
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "container pt-5" }, [
                   _c(
                     "ul",
                     {
                       staticClass:
-                        "filter py-3 d-flex flex-wrap justify-content-center",
+                        "pagination flex justify-content-center align-items-center gap-4 items-center",
                     },
-                    _vm._l(_vm.tipologies, function (tipology) {
-                      return _c("li", { key: tipology.id }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.tipologyFilter,
-                              expression: "tipologyFilter",
-                            },
-                          ],
-                          staticClass: "mx-1",
-                          attrs: {
-                            type: "checkbox",
-                            id: tipology.id,
-                            name: tipology.id,
-                          },
-                          domProps: {
-                            value: tipology.id,
-                            checked: Array.isArray(_vm.tipologyFilter)
-                              ? _vm._i(_vm.tipologyFilter, tipology.id) > -1
-                              : _vm.tipologyFilter,
-                          },
+                    _vm._l(_vm.lastPage, function (n) {
+                      return _c(
+                        "li",
+                        {
+                          key: n,
+                          staticClass:
+                            "d-flex justify-content-center align-items-center cursor-pointer rounded-circle pagination-button",
+                          class: _vm.currentPage === n ? "bg-gl1" : "bg-gl2",
                           on: {
-                            change: [
-                              function ($event) {
-                                var $$a = _vm.tipologyFilter,
-                                  $$el = $event.target,
-                                  $$c = $$el.checked ? true : false
-                                if (Array.isArray($$a)) {
-                                  var $$v = tipology.id,
-                                    $$i = _vm._i($$a, $$v)
-                                  if ($$el.checked) {
-                                    $$i < 0 &&
-                                      (_vm.tipologyFilter = $$a.concat([$$v]))
-                                  } else {
-                                    $$i > -1 &&
-                                      (_vm.tipologyFilter = $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1)))
-                                  }
-                                } else {
-                                  _vm.tipologyFilter = $$c
-                                }
-                              },
-                              function ($event) {
-                                return _vm.check($event)
-                              },
-                            ],
+                            click: function ($event) {
+                              return _vm.fetchFiltered(_vm.tipologyFilter, n)
+                            },
                           },
-                        }),
-                        _vm._v(" "),
-                        _c("label", { attrs: { for: tipology.id } }, [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(tipology.name) +
-                              " (" +
-                              _vm._s(tipology.users.length) +
-                              ")\n                                "
-                          ),
-                        ]),
-                      ])
+                        },
+                        [_vm._v(_vm._s(n))]
+                      )
                     }),
                     0
                   ),
-                ]
-              ),
+                ]),
+              ]),
             ]),
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "ul",
-            {
-              staticClass:
-                "d-flex flex-wrap justify-content-center list-wrapper pt-3",
-            },
-            _vm._l(_vm.users, function (user) {
-              return _c(
-                "router-link",
-                {
-                  key: user.id,
-                  class:
-                    _vm.currentPage == 4 && _vm.users.length < 3
-                      ? "cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12"
-                      : "cursor-pointer list-item col-12 col-md-6 col-lg-4",
-                  attrs: {
-                    tag: "li",
-                    to: {
-                      name: "restaurant.show",
-                      params: { slug: user.slug },
-                    },
-                  },
-                },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "card card-t rounded-mid overflow-hidden" },
-                    [
-                      _c("div", { staticClass: "overlay overflow-hidden" }, [
-                        _c("img", {
-                          staticClass: "card-img-top img-card",
-                          attrs: {
-                            width: "300px",
-                            height: "150px",
-                            src: user.cover,
-                            alt: "",
-                          },
-                        }),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "card-title d-flex align-items-center justify-content-center flex-column text-white",
-                        },
-                        [
-                          _c(
-                            "h5",
-                            {
-                              staticClass:
-                                "name-business text-center text-capitalize",
-                            },
-                            [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(user.business_name) +
-                                  "\n                                "
-                              ),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-2",
-                            },
-                            _vm._l(user.tipologies, function (el) {
-                              return _c(
-                                "p",
-                                {
-                                  key: el.id,
-                                  staticClass:
-                                    "tipologies-name badge badge-dark",
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                        " +
-                                      _vm._s(el.name) +
-                                      "\n                                    "
-                                  ),
-                                ]
-                              )
-                            }),
-                            0
-                          ),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "bg-white card-foot d-flex justify-content-between mt-2 px-2",
-                        },
-                        [
-                          _c("div", { staticClass: "d-flex" }, [
-                            _c("img", {
-                              staticClass: "favicon pr-2",
-                              attrs: {
-                                src: "https://img.icons8.com/external-those-icons-lineal-those-icons/344/external-like-touch-gestures-those-icons-lineal-those-icons.png",
-                                alt: "",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("p", [
-                              _vm._v(_vm._s(_vm.vote[_vm.random()].rec) + "%"),
-                            ]),
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "d-flex align-items-center" },
-                            [
-                              _c("div", { staticClass: "d-flex mr-2" }, [
-                                _c("img", {
-                                  staticClass: "favicon fav-2",
-                                  attrs: {
-                                    src: "https://img.icons8.com/ios/344/scooter.png",
-                                    alt: "",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "p",
-                                  {
-                                    staticClass: "bg-gl font-gl text-uppercase",
-                                  },
-                                  [_vm._v("Gratis")]
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "d-flex temp-cl" }, [
-                                _c("p", [
-                                  _vm._v(
-                                    "· " +
-                                      _vm._s(_vm.vote[_vm.random()].temp1) +
-                                      " - "
-                                  ),
-                                ]),
-                                _vm._v(" "),
-                                _c("p", [
-                                  _vm._v(
-                                    _vm._s(_vm.vote[_vm.random()].temp) +
-                                      " min."
-                                  ),
-                                ]),
-                              ]),
-                            ]
-                          ),
-                        ]
-                      ),
-                    ]
-                  ),
-                ]
-              )
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "container pt-5" }, [
-            _c(
-              "ul",
-              {
-                staticClass:
-                  "pagination flex justify-content-center align-items-center gap-4 items-center",
-              },
-              _vm._l(_vm.lastPage, function (n) {
-                return _c(
-                  "li",
-                  {
-                    key: n,
-                    staticClass:
-                      "d-flex justify-content-center align-items-center cursor-pointer rounded-circle pagination-button",
-                    class: _vm.currentPage === n ? "bg-gl1" : "bg-gl2",
-                    on: {
-                      click: function ($event) {
-                        return _vm.fetchFiltered(_vm.tipologyFilter, n)
-                      },
-                    },
-                  },
-                  [_vm._v(_vm._s(n))]
-                )
-              }),
-              0
-            ),
           ]),
         ]),
       ]),
@@ -5577,19 +5633,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "d-flex flex-column justify-content-center text-center" },
-      [
-        _c("h1", { staticClass: "mb-3 title-rest" }, [
-          _vm._v("Ricerca Ristorante"),
-        ]),
-        _vm._v(" "),
-        _c("h5", { staticClass: "subtitle-rest" }, [
-          _vm._v("Seleziona una o più categorie disponibili:"),
-        ]),
-      ]
-    )
+    return _c("p", { staticClass: "text-center text-md-left p-5" }, [
+      _c("strong", [_vm._v("Filtri più usati")]),
+    ])
   },
 ]
 render._withStripped = true
@@ -6486,7 +6532,7 @@ var render = function () {
             [
               _c("JumbotronCategoty"),
               _vm._v(" "),
-              _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "container-fluid p-0 m-0" }, [
                 _c(
                   "div",
                   {
@@ -6812,7 +6858,8 @@ var render = function () {
                     _c(
                       "li",
                       {
-                        staticClass: "dropdown btn-nav-register nav-item mr-1",
+                        staticClass:
+                          "dropdown dropdow-toggle btn-nav-register nav-item mr-1",
                         attrs: {
                           type: "button",
                           id: "dropdownMenuButton",
@@ -24997,7 +25044,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/manuelfreund/Desktop/deliverboo-team5/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
