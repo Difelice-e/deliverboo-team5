@@ -21,7 +21,7 @@
             >
                 <div class="card card-t rounded-mid overflow-hidden">
                     <div class="overlay overflow-hidden">
-                        <img src="https://picsum.photos/300/150" class="card-img-top img-card" alt="" />
+                        <img :src="ristoratore.cover" class="card-img-top img-card" alt="" />
                     </div>
                     <div class="card-title d-flex align-items-center justify-content-center flex-column text-white">
                         <h5 class="name-business text-center">

@@ -29,12 +29,12 @@ class UserSeeder extends Seeder
             $user->business_name = $utente['business_name'];
             $user->street_address = $utente['street_address'];
             $user->phone_number = $utente['phone_number'];
-            $user->cover = null;
+            $user->cover = $utente['cover'];
             // da risolvere p.iv con faker->vat o in array
             $user->vat_number = $faker->randomNumber(9,true);
             $user->slug = Str::slug($utente['business_name']);
 
-            $randomInt = $faker->numberBetween(1,4);
+            $randomInt = $faker->numberBetween(1,3);
             $randomTipologies = $faker->randomElements($tipologiesId,$randomInt);
 
             $user->save();
