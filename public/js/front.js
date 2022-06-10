@@ -2794,6 +2794,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -5928,6 +5931,24 @@ var render = function () {
                             [
                               _c("img", {
                                 attrs: {
+                                  width: "25px",
+                                  height: "25px",
+                                  src: "https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/344/external-clock-home-screen-app-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png",
+                                  alt: "",
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "mt-3" }, [
+                                _vm._v(
+                                  _vm._s(_vm.vote[_vm.random()].temp1) +
+                                    "-" +
+                                    _vm._s(_vm.vote[_vm.random()].temp) +
+                                    "'"
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("img", {
+                                attrs: {
                                   width: "30px",
                                   height: "30px",
                                   src: "https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/filters/sorting/delivery_fee_light",
@@ -6034,8 +6055,6 @@ var render = function () {
                                             "div",
                                             { staticClass: "d-flex mb-2" },
                                             [
-
-                                              _vm._m(0, true),
                                               _c(
                                                 "figure",
                                                 {
@@ -6043,9 +6062,10 @@ var render = function () {
                                                 },
                                                 [
                                                   _c("img", {
+                                                    staticClass: "rounded-lg",
                                                     staticStyle: {
-                                                      width: "100px",
-                                                      height: "100px",
+                                                      width: "80px",
+                                                      height: "80px",
                                                     },
                                                     attrs: {
                                                       src: dish.cover,
@@ -6054,7 +6074,6 @@ var render = function () {
                                                   }),
                                                 ]
                                               ),
-
                                               _vm._v(" "),
                                               _c(
                                                 "div",
@@ -6103,7 +6122,7 @@ var render = function () {
                                             "div",
                                             {
                                               staticClass:
-                                                "d-flex col-12 justify-content-between",
+                                                "d-flex col-12 justify-content-between px-0",
                                             },
                                             [
                                               _c(
@@ -6178,69 +6197,7 @@ var render = function () {
     2
   )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-
-    return _c("figure", { staticClass: "border-radius" }, [
-      _c("img", {
-        staticClass: "rounded-lg",
-        staticStyle: { width: "80px", height: "80px" },
-        attrs: { src: "https://picsum.photos/300/150", alt: "" },
-      }),
-    ])
-  },
-
-    return _c("div", { staticClass: "restaurant-header" }, [
-      _c("div", [
-        _c("div", { staticClass: "row" }, [
-          _c("div", {
-            staticClass: "col-12",
-            staticStyle: {
-              background:
-                "url('https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/glovo-white.svg')",
-              height: "150px",
-            },
-          }),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "d-flex align-items-center align-self-center info" },
-      [
-        _c("img", {
-          attrs: {
-            width: "30px",
-            height: "30px",
-            src: "https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/filters/sorting/delivery_fee_light",
-            alt: "",
-          },
-        }),
-        _vm._v(" "),
-        _c("span", [_vm._v("€ 2,50")]),
-        _vm._v(" "),
-        _c("img", {
-          attrs: {
-            width: "30px",
-            height: "30px",
-            src: "https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/store_ratings/rating_regular.png",
-            alt: "",
-          },
-        }),
-        _vm._v(" "),
-        _c("span", [_vm._v("%76")]),
-      ]
-    )
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -24700,9 +24657,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
-
+module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
