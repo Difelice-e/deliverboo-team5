@@ -8,7 +8,7 @@ return [
   [
     "email" => "paxine5145@doerma.com",
     "password" => "1234",
-    "business_name" => "l'osteria di monteverde roma",
+    "business_name" => "L'Osteria Di Monteverde Roma",
     "street_address" => "Via Pietro Cartoni, 163/165",
     "phone_number" => "0653273887",
     "cover" => "https://media-assets.vanityfair.it/photos/617525114712c6ab67f3d349/16:9/w_320%2Cc_limit/trattoria-citi.jpg",
@@ -17,7 +17,7 @@ return [
   [
     "email" => "paxexo1018@duetube.com",
     "password" => "1234",
-    "business_name" => "osteria dell'oca giuliva",
+    "business_name" => "Osteria Dell'Oca Giuliva",
     "street_address" => "Viale Bligny, 29",
     "phone_number" => "0258312871",
     "cover" => "https://media-assets.lacucinaitaliana.it/photos/61fa6ca6f9bff304ce3ea5e4/16:9/w_2560%2Cc_limit/osteria-baciafemmine-slide3.jpg",
@@ -35,7 +35,7 @@ return [
   [
     "email" => "wigel64467@doerma.com",
     "password" => "1234",
-    "business_name" => "osteria il gobbetto",
+    "business_name" => "Osteria Il Gobbetto",
     "vat_number" => "",
     "street_address" => "Via Sergente Maggiore, 8",
     "phone_number" => "0812512435",
@@ -45,7 +45,7 @@ return [
   [
     "email" => "wigel64468@doerma.com",
     "password" => "1234",
-    "business_name" => "osteria le arpie",
+    "business_name" => "Osteria Le Arpie",
     "street_address" => "Arco del Carmine, 2",
     "phone_number" => "0805217988",
     "cover" => "https://media-assets.lacucinaitaliana.it/photos/61fabe8151116b1ead93066e/16:9/w_2560%2Cc_limit/Landscape-osterie.jpg",
@@ -54,7 +54,7 @@ return [
   [
     "email" => "dobeg66940@cupbest.com",
     "password" => "1234",
-    "business_name" => "caffè del kassaro",
+    "business_name" => "Caffè Del Kassaro",
     "street_address" => "Via Vittorio Emanuele, 390",
     "phone_number" => "0915070023",
     "cover" => "https://blog.caffevergnano.com/wp-content/uploads/2019/10/small-87.jpg",
@@ -62,7 +62,7 @@ return [
   [
     "email" => "jofahem925@dakcans.com",
     "password" => "1234",
-    "business_name" => "caffè capranica",
+    "business_name" => "Caffè Capranica",
     "street_address" => "Piazza Capranica, 75/77",
     "phone_number" => "0669921720",
     "cover" => "https://caffevergnano-static.kxscdn.com/blog/wp-content/uploads/2020/07/big-97-1024x683.jpg",
@@ -70,7 +70,7 @@ return [
   [
     "email" => "kafova8498@duetube.com",
     "password" => "1234",
-    "business_name" => "caffè d'urbano",
+    "business_name" => "Caffè D'urbano",
     "street_address" => "Piazza D'Urbano, 75/77",
     "phone_number" => "064885617",
     "cover" => "https://www.visitrovereto.it/wp-content/uploads/2020/03/la-moja-ristorante-caffetteria-2.jpg",
@@ -78,7 +78,7 @@ return [
   [
     "email" => "mojeno2228@doerma.com",
     "password" => "1234",
-    "business_name" => "caffetteria massimo",
+    "business_name" => "Caffetteria Massimo",
     "street_address" => "Via Giovanni Amendola, 6",
     "phone_number" => "064870860",
     "cover" => "https://media-cdn.tripadvisor.com/media/photo-s/11/8a/c7/60/working.jpg",
@@ -129,7 +129,7 @@ return [
   [
     "email" => "nameyeh418@doerma.com",
     "password" => "1234",
-    "business_name" => "fast24",
+    "business_name" => "Fast24",
     "street_address" => "Via Sorio, 64/A",
     "phone_number" => "3451737833",
     "cover" => "https://contractdivision.rmgproject.it/wp-content/uploads/2019/12/arredamento-bar-01.jpg",
@@ -137,7 +137,7 @@ return [
   [
     "email" => "reviloc149@dakcans.com",
     "password" => "1234",
-    "business_name" => "polletti san bartolomeo",
+    "business_name" => "Polletti San Bartolomeo",
     "street_address" => "Viale della Moschea, 206",
     "phone_number" => "068075659",
     "cover" => "https://ae01.alicdn.com/kf/S0b129a91d89d441cae786f487e0d3e970/Carta-da-parati-murale-personalizzata-3D-lavagna-dipinta-a-mano-ristorante-occidentale-Pizza-Hamburger-Fast-Food.jpg_Q90.jpg_.webp",
@@ -153,7 +153,7 @@ return [
   [
     "email" => "demew11458@doerma.com",
     "password" => "1234",
-    "business_name" => "speedy grill",
+    "business_name" => "Speedy Grill",
     "street_address" => "Via Principe di Piemonte, 57/C",
     "phone_number" => "3349408764",
     "cover" => "https://www.retailfood.it/wp-content/uploads/2019/08/bastard-burgers_stockholm-arlanda-airport_july-2019_ssp-image_001_hi-res.jpg",
@@ -170,7 +170,7 @@ return [
   [
     "email" => "xijajex434@cupbest.com",
     "password" => "1234",
-    "business_name" => "il veliero pizzeria",
+    "business_name" => "Il Veliero Pizzeria",
     "slug" => "",
     "vat_number" => "",
     "street_address" => "Via delle Belle Arti, 14",
@@ -180,7 +180,7 @@ return [
   [
     "email" => "jifid10528@cupbest.com",
     "password" => "1234",
-    "business_name" => "pizza della madonna dei monti",
+    "business_name" => "Pizza Della Madonna Dei Monti",
     "slug" => "",
     "vat_number" => "",
     "street_address" => "Via della Madonna dei Monti, 110",
@@ -190,7 +190,7 @@ return [
   [
     "email" => "venas77655@doerma.com",
     "password" => "1234",
-    "business_name" => "pizzeria speranzella",
+    "business_name" => "Pizzeria Speranzella",
     "street_address" => "Via Speranzella, 84",
     "phone_number" => "08118196384",
     "cover" => "https://lacasadellafarina.it/wp-content/uploads/2018/09/pizzeria-arredamento2.jpg",
@@ -198,7 +198,7 @@ return [
   [
     "email" => "honey38413@dakcans.com",
     "password" => "1234",
-    "business_name" => "pizzeria dei pirati",
+    "business_name" => "Pizzeria Dei Pirati",
     "street_address" => "Via Rionero, 38",
     "phone_number" => "0883522901",
     "cover" => "https://www.consulenzapizzerie.it/images/2020/08/06/prima-pagina---ok---apertura-locali---pizzeria-min.jpg",
@@ -206,7 +206,7 @@ return [
   [
     "email" => "giheb25464@doerma.com",
     "password" => "1234",
-    "business_name" => "pizzeria sansovino",
+    "business_name" => "Pizzeria Sansovino",
     "street_address" => "Calle Zaguri, 2628",
     "phone_number" => "0415286141",
     "cover" => "https://www.unionemonregalese.it/wp-content/uploads/2020/01/Pizzeria-33-giri-forno.jpg",
@@ -215,7 +215,7 @@ return [
   [
     "email" => "lohabim316@cupbest.com",
     "password" => "1234",
-    "business_name" => "koi sushi",
+    "business_name" => "Koi Sushi",
     "street_address" => "Via Regina Margherita, 310",
     "phone_number" => "3496291775",
     "cover" => "https://media-assets.vanityfair.it/photos/61f5b059ee85327cdcc1acde/4:3/w_3024,h_2268,c_limit/uno.jpeg",
@@ -223,7 +223,7 @@ return [
   [
     "email" => "sotif39863@duetube.com",
     "password" => "1234",
-    "business_name" => "jubin due",
+    "business_name" => "Jubin Due",
     "street_address" => "Via Padova, 7",
     "phone_number" => "0226141020",
     "cover" => "https://www.agrodolce.it/app/uploads/2016/08/ristorante-giapponese.jpg",
@@ -231,7 +231,7 @@ return [
   [
     "email" => "wasawet730@dakcans.com",
     "password" => "1234",
-    "business_name" => "bin hai",
+    "business_name" => "Bin Hai",
     "street_address" => "Via la Spezia, 86",
     "phone_number" => "067012519",
     "cover" => "https://barefoodinrome.it/wp-content/uploads/2021/07/Maido-street-food-giapponese-roma-2-1.png",
@@ -239,7 +239,7 @@ return [
   [
     "email" => "tebox94225@doerma.com",
     "password" => "1234",
-    "business_name" => "hana",
+    "business_name" => "Hana",
     "street_address" => "Viale della Croce Rossa, 27",
     "phone_number" => "0916788305",
     "cover" => "https://www.festa18anni-roma.it/wp-content/uploads/2017/06/tiki-maki-640x426_2.jpg",
@@ -247,7 +247,7 @@ return [
   [
     "email" => "kenixa8009@dakcans.com",
     "password" => "1234",
-    "business_name" => "yoma",
+    "business_name" => "Yoma",
     "street_address" => "Via Fossalta, 3",
     "phone_number" => "051226592",
     "cover" => "https://www.zengardenciampino.it/wp-content/uploads/2018/11/2_ZenGarden-Ristorante-Cinese-Giapponese-Ciampino_il_locale-1.jpg",
@@ -255,7 +255,7 @@ return [
   [
     "email" => "paxine51455@doerma.com",
     "password" => "1234",
-    "business_name" => "l'osteria di sempione roma",
+    "business_name" => "L'Osteria Di Sempione Roma",
     "street_address" => "Via Pietro Cartonio, 163/165",
     "phone_number" => "0653273884",
     "cover" => "https://www.hongkongcucciago.it/assets/img-temp/about/ristorante_cinese3.jpg",
@@ -263,7 +263,7 @@ return [
   [
     "email" => "paxine5@doerma.com",
     "password" => "1234",
-    "business_name" => "l'angolo del pesce",
+    "business_name" => "L'Angolo Del Pesce",
     "street_address" => "Via Silvino Olivieri, 163/165",
     "phone_number" => "0653573884",
     "cover" => "https://media-cdn.tripadvisor.com/media/photo-s/10/21/d7/48/ristorante-cinese-giapponese.jpg",
@@ -271,7 +271,7 @@ return [
   [
     "email" => "asmodolg4@doerma.com",
     "password" => "1234",
-    "business_name" => "pizzeria doppiozero",
+    "business_name" => "Pizzeria Doppiozero",
     "street_address" => "Via Silvio e Beltrando Spaventa, 12",
     "phone_number" => "0333573884",
     "cover" => "https://media-cdn.tripadvisor.com/media/photo-s/19/40/7c/c9/20190913-192401-largejpg.jpg",
