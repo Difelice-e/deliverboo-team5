@@ -2290,13 +2290,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5303,10 +5296,7 @@ var render = function () {
                       _c("div", { staticClass: "overlay overflow-hidden" }, [
                         _c("img", {
                           staticClass: "card-img-top img-card",
-                          attrs: {
-                            src: "https://picsum.photos/300/150",
-                            alt: "",
-                          },
+                          attrs: { src: user.cover, alt: "" },
                         }),
                       ]),
                       _vm._v(" "),
@@ -6304,10 +6294,7 @@ var render = function () {
                       _c("div", { staticClass: "overlay overflow-hidden" }, [
                         _c("img", {
                           staticClass: "card-img-top img-card",
-                          attrs: {
-                            src: "https://picsum.photos/300/150",
-                            alt: "",
-                          },
+                          attrs: { src: ristoratore.cover, alt: "" },
                         }),
                       ]),
                       _vm._v(" "),
@@ -24605,7 +24592,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

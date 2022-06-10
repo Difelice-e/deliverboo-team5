@@ -39,15 +39,8 @@
 
                 <div>
 
-                    <ul
-                        
-                        class="d-flex flex-wrap justify-content-center list-wrapper pt-3"
-                    >
-                        <router-link
-                            tag="li"
-                            v-for="user in users"
-                            :key="user.id"
-                            :class="currentPage == 4 && users.length < 3?  'cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12' : 'cursor-pointer list-item col-12 col-md-6 col-lg-4' "
+                    <ul class="d-flex flex-wrap justify-content-center list-wrapper pt-3">
+                        <router-link tag="li" v-for="user in users" :key="user.id" :class="currentPage == 4 && users.length < 3?  'cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12' : 'cursor-pointer list-item col-12 col-md-6 col-lg-4' "
                             :to="{
                                 name: 'restaurant.show',
                                 params: { slug: user.slug },
@@ -55,7 +48,7 @@
                         >
                             <div class="card card-t rounded-mid overflow-hidden">
                                 <div class="overlay overflow-hidden">
-                                    <img src="https://picsum.photos/300/150" class="card-img-top img-card" alt="" />
+                                    <img :src="user.cover" class="card-img-top img-card" alt="" />
                                 </div>
                                 <div class="card-title d-flex align-items-center justify-content-center flex-column text-white">
                                     <h5 class="name-business text-center">
