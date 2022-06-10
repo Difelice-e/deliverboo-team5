@@ -2794,12 +2794,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2811,7 +2805,33 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       user: null,
-      loading: false
+      loading: false,
+      vote: [{
+        id: 1,
+        temp: '30',
+        temp1: '15',
+        rec: '94'
+      }, {
+        id: 2,
+        temp: '25',
+        temp1: '10',
+        rec: '84'
+      }, {
+        id: 3,
+        temp: '20',
+        temp1: '15',
+        rec: '91'
+      }, {
+        id: 4,
+        temp: '25',
+        temp1: '15',
+        rec: '93'
+      }, {
+        id: 5,
+        temp: '20',
+        temp1: '15',
+        rec: '100'
+      }]
     };
   },
   methods: {
@@ -2835,6 +2855,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     addToCart: function addToCart(dish) {
       this.$store.commit("addToCart", dish);
+    },
+    random: function random() {
+      return Math.floor(Math.random() * 5);
     }
   },
   beforeMount: function beforeMount() {
@@ -3375,7 +3398,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#restaurant-page .restaurant-header {\n  background-color: white;\n}\n#restaurant-page .restaurant-header .restaurant-wrapper {\n  background-color: white;\n  padding: 16px 0;\n  gap: 20px;\n}\n#restaurant-page .restaurant-header .restaurant-wrapper .restaurant-tipologies {\n  list-style: none;\n  gap: 10px;\n}\n#restaurant-page .restaurant-body {\n  background-color: #e8ecec;\n  padding: 50px 0;\n}\n#restaurant-page .restaurant-body .restaurant-info {\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);\n}\n#restaurant-page .restaurant-body .restaurant-info .title-restaurant {\n  font-size: 50px;\n}\n#restaurant-page .restaurant-body .restaurant-info .info {\n  gap: 10px;\n  list-style-type: none;\n}\n#restaurant-page .restaurant-body .dish-wrapper {\n  min-height: 132px;\n  gap: 8px;\n  background-color: white;\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);\n}\n#restaurant-page .restaurant-body .dish-wrapper .dish-info {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n#restaurant-page .restaurant-body .dish-wrapper .dish-info .dish-title {\n  font-size: 18px;\n}\n#restaurant-page .restaurant-body .cart-wrapper {\n  background-color: white;\n  padding: 20px;\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);\n}", ""]);
+exports.push([module.i, ".blur-image {\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  filter: brightness(40%);\n}\n#restaurant-page .restaurant-header {\n  background-color: white;\n}\n#restaurant-page .restaurant-header .restaurant-wrapper {\n  background-color: white;\n  padding: 16px 0;\n  gap: 20px;\n}\n#restaurant-page .restaurant-header .restaurant-wrapper .restaurant-tipologies {\n  list-style: none;\n  gap: 10px;\n}\n#restaurant-page .restaurant-body {\n  background-color: #e8ecec;\n  padding: 50px 0;\n  margin-top: -150px;\n}\n#restaurant-page .restaurant-body .restaurant-info {\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);\n  padding: 20px 35px;\n}\n#restaurant-page .restaurant-body .restaurant-info .title-restaurant {\n  font-size: 50px;\n  font-weight: 800;\n}\n#restaurant-page .restaurant-body .restaurant-info .info {\n  gap: 10px;\n  list-style-type: none;\n}\n#restaurant-page .restaurant-body .restaurant-info .cancel {\n  text-decoration: line-through;\n}\n#restaurant-page .restaurant-body .dish-wrapper {\n  min-height: 132px;\n  gap: 8px;\n  background-color: white;\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);\n}\n#restaurant-page .restaurant-body .dish-wrapper .dish-info {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n#restaurant-page .restaurant-body .dish-wrapper .dish-info .dish-ingredients {\n  font-size: 14px;\n  color: #868686;\n}\n#restaurant-page .restaurant-body .dish-wrapper .dish-info .dish-title {\n  font-size: 19px;\n}\n#restaurant-page .restaurant-body .dish-wrapper .dish-info .dish-price {\n  font-size: 15px;\n}\n#restaurant-page .restaurant-body .cart-wrapper {\n  background-color: white;\n  padding: 20px;\n  box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);\n}", ""]);
 
 // exports
 
@@ -5854,7 +5877,21 @@ var render = function () {
     [
       _vm.loading
         ? [
-            _vm._m(0),
+            _c("div", { staticClass: "restaurant-header" }, [
+              _c("div", [
+                _c("div", { staticClass: "row" }, [
+                  _c("img", {
+                    staticClass: "blur-image",
+                    attrs: {
+                      src: _vm.user.cover,
+                      alt: "",
+                      width: "100%",
+                      height: "260",
+                    },
+                  }),
+                ]),
+              ]),
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "restaurant-body" }, [
               _c(
@@ -5874,7 +5911,51 @@ var render = function () {
                             _vm._v(_vm._s(_vm.user.business_name)),
                           ]),
                           _vm._v(" "),
-                          _vm._m(1),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "d-flex align-items-center align-self-center info",
+                            },
+                            [
+                              _c("img", {
+                                attrs: {
+                                  width: "30px",
+                                  height: "30px",
+                                  src: "https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/filters/sorting/delivery_fee_light",
+                                  alt: "",
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "cancel" }, [
+                                _vm._v("2,50 €"),
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                {
+                                  staticClass:
+                                    "bg-gl font-gl gr-1 text-uppercase mt-3",
+                                },
+                                [_vm._v("Gratis")]
+                              ),
+                              _vm._v(" "),
+                              _c("img", {
+                                attrs: {
+                                  width: "30px",
+                                  height: "30px",
+                                  src: "https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/store_ratings/rating_regular.png",
+                                  alt: "",
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(
+                                  _vm._s(_vm.vote[_vm.random()].rec) + "%"
+                                ),
+                              ]),
+                            ]
+                          ),
                           _vm._v(" "),
                           _c(
                             "ul",
@@ -5914,7 +5995,7 @@ var render = function () {
                         ]
                       ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-12 p-3" }, [
+                      _c("div", { staticClass: "col-12 px-0 pt-3" }, [
                         _c("div", { staticClass: "menu-wrapper" }, [
                           _c(
                             "div",
@@ -5938,14 +6019,14 @@ var render = function () {
                                         "div",
                                         {
                                           staticClass:
-                                            "dish-info col-12 d-felx",
+                                            "dish-info col-12 d-flex p-1",
                                         },
                                         [
                                           _c(
                                             "div",
                                             { staticClass: "d-flex mb-2" },
                                             [
-                                              _vm._m(2, true),
+                                              _vm._m(0, true),
                                               _vm._v(" "),
                                               _c(
                                                 "div",
@@ -5958,7 +6039,7 @@ var render = function () {
                                                     "h4",
                                                     {
                                                       staticClass:
-                                                        "dish-title mb-0",
+                                                        "dish-title mb-1",
                                                     },
                                                     [
                                                       _vm._v(
@@ -6006,7 +6087,7 @@ var render = function () {
                                                       _vm._s(
                                                         dish.price.toFixed(2)
                                                       ) +
-                                                      "€\n                                                    "
+                                                      " €\n                                                    "
                                                   ),
                                                 ]
                                               ),
@@ -6054,7 +6135,7 @@ var render = function () {
                     _c("div", { staticClass: "col-12 col-xl-4" }, [
                       _c(
                         "div",
-                        { staticClass: "col-12 p-3" },
+                        { staticClass: "col-12" },
                         [_c("CartDropdown")],
                         1
                       ),
@@ -6074,60 +6155,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "restaurant-header" }, [
-      _c("div", [
-        _c("div", { staticClass: "row" }, [
-          _c("div", {
-            staticClass: "col-12",
-            staticStyle: {
-              background:
-                "url('https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/glovo-white.svg')",
-              height: "150px",
-            },
-          }),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "d-flex align-items-center align-self-center info" },
-      [
-        _c("img", {
-          attrs: {
-            width: "30px",
-            height: "30px",
-            src: "https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/filters/sorting/delivery_fee_light",
-            alt: "",
-          },
-        }),
-        _vm._v(" "),
-        _c("span", [_vm._v("€ 2,50")]),
-        _vm._v(" "),
-        _c("img", {
-          attrs: {
-            width: "30px",
-            height: "30px",
-            src: "https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/store_ratings/rating_regular.png",
-            alt: "",
-          },
-        }),
-        _vm._v(" "),
-        _c("span", [_vm._v("%76")]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("figure", { staticClass: "border-radius" }, [
       _c("img", {
-        staticStyle: { width: "100px", height: "100px" },
+        staticClass: "rounded-lg",
+        staticStyle: { width: "80px", height: "80px" },
         attrs: { src: "https://picsum.photos/300/150", alt: "" },
       }),
     ])
