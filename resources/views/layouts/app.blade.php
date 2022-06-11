@@ -69,6 +69,21 @@
                         @else
                         <li class="nav-item ">
 
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                  Naviga
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="/admin/dashboard">Dashboard</a>
+                                  <a class="dropdown-item" href="/admin/dishes">Menù</a>
+                                  <a class="dropdown-item" href="/admin/orders">Ordini</a>
+                                  <a class="dropdown-item" href="#">Statistiche</a>
+                                </div>
+                              </div>
+
+                        </li>
+                        <li class="nav-item ">
+
                             <a class="dropdown-item text-balck btn-nav-register p-3" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -94,11 +109,11 @@
             </svg> --}}
         </nav>
 
-        <main>
+        <main class="py-5 my-5">
             @yield('content')
         </main>
 
-        <footer class=" bg-darkGrayGv text-white">
+        <footer class=" bg-darkGrayGv text-white py-5">
             <div class="container py-5">
                 <div class="row pb-5">
                     <div class="col-12">
