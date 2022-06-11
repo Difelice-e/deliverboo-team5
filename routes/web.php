@@ -27,6 +27,7 @@ Route::middleware('auth')
         Route::resource('dashboard', 'UserController');
         Route::resource('dishes', 'DishController');
         Route::resource('orders', 'OrderController');
+        Route::get('/charts', 'ChartController@index')->name('charts');
 });
 
 // rotte stripe 

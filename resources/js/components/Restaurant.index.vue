@@ -20,7 +20,9 @@
                             class="container my-bg-categories"
                         >
                             <p class="text-center text-md-left p-5"><strong>Filtri più usati</strong></p>
-                            <ul class="filter py-3 d-flex flex-row flex-md-column flex-wrap justify-content-center p-4">
+
+                            <ul class="filter-list filter py-3 d-flex flex-row flex-md-column flex-wrap justify-content-center p-4">
+                               
 
                                 <li
                                     v-for="tipology in tipologies"
@@ -253,7 +255,7 @@ ul li input[type="checkbox"]{
     display:none;
 
 }
-ul li::after{
+filter-list li::after{
     display: block;
     content: '';
     background: lightgrey;
@@ -277,6 +279,7 @@ ul li::after{
         padding: 10px 30px;
         background-color: #fcc244;
     }
+
 
 .restaurant-wrapper{
     overflow-y: scroll;
@@ -307,6 +310,7 @@ ul li::after{
         background-color: #006d57;
     }
 }
+
 
 
 </style>

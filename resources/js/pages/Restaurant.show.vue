@@ -57,7 +57,7 @@
                                 <div class="menu-wrapper">
                                     <div class="row">
                                         <!-- singolo piatto  -->
-                                        <div v-for="(dish,i) in user.dishes" :key="dish.id" class="col-12 col-xl-6 mb-3">
+                                        <div v-for="(dish) in user.dishes" :key="dish.id" class="col-12 col-xl-6 mb-3">
                                             <div
                                                 class="border-radius-gv dish-wrapper d-flex justify-content-between p-3">
                                                 <div class="dish-info col-12 d-flex p-1">
@@ -85,7 +85,7 @@
                                                         >
                                                             Aggiungi al carrello
                                                         </button>
-                                                        <modalMenu :dish="dish" />
+                                                        <modalMenu :dish="dish" :user="user" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -98,11 +98,22 @@
                         <div class="col-12 col-xl-4">
                             <!-- carrello  -->
                             <div class="col-12">
-                                <CartDropdown />
+                                <CartDropdown :user="user"/>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                           <button class=" btn-home btn  rounded-pill">
+                                 <a href="/">Torna alla Home</a>
+                           </button>
+                        </div>
+
+                    </div>
+                </div>
+            
             </div>
         </template>
 
@@ -243,6 +254,16 @@ export default {
             background-color: white;
             padding: 20px;
             box-shadow: 3px 5px 6px 0px rgba(0, 0, 0, 0.1);
+        }
+    }
+    .btn-home{
+         background-color: #ffc14492;
+            color:rgba(0, 0, 0, 0.536);
+            font-weight: 700;
+      &:hover{
+         background-color: #ffc244 ;
+            color:black;
+
         }
     }
 }

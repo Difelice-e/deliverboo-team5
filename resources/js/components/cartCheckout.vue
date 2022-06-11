@@ -1,4 +1,5 @@
 <template>
+
         <div class="cart">
             <!-- carrello con items  -->
 
@@ -9,9 +10,9 @@
                         <span>Spendi {{minOrder}}€ per evitare le spese di consegna!</span>
                     </div>
                 </div>
-
-                <div class="row mb-3" v-for="dish in $store.state.cart" :key="dish.id" v-if="dish.user_id == user.id">
-
+                
+                <div class="row mb-3" v-for="dish in $store.state.cart" :key="dish.id">
+                    
 
                     <div class="col-12 text-nowrap d-flex justify-content-between" style="gap: 10px;">
 
@@ -31,22 +32,9 @@
                     </div>
                 </div>
 
-                <div v-else>
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <h4 class="font-weight-bold">Attenzione!</h4>
-                            <p>Sei nella pagina di un ristorante diverso da quello dell'ordine presente nel carrello</p>
-                            <p>Procedi al checkout per completare l'ordine o crea un nuovo carrello in questo ristorante</p>
-                            <button @click="emptyCart" class="btn btn-danger mb-3">
-                                svuota carrello
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <span v-if="deliveryFees != 0">spese di consegna: {{ deliveryFees }}€</span>
+                        <span v-if="deliveryFees != 0">spese di consegna: {{ deliveryFees }}€</span> 
                         <span v-else>Stai risparmiando 2.50€ di spedizione!</span>
                         <div class="progress-bar-wrapper">
                             <div class="progress-bar" :style="{width: $store.state.cartTotal*100/this.minOrder + '%'}"></div>
@@ -54,17 +42,17 @@
                     </div>
                 </div>
 
-                <div class="col-12">
+                <div class="col-12" v-if="!isCheckout">
                     <router-link :to="{name: 'checkout.page' }">
                         <a class=" col-12 rounded-pill btn bg-greedgc text-white weight-bold"  style="font-size: 20px;" href="#">Ordinane {{ $store.state.cartCount }} a €{{ $store.state.cartTotal.toFixed(2) }}</a>
                     </router-link>
-
+                    
                 </div>
             </div>
+                
+            
 
-
-
-
+            
 
             <!-- carrello vuoto  -->
             <div v-else class="cart-wrapper text-center border-radius-gv">
@@ -76,6 +64,7 @@
             </div>
 
         </div>
+
 </template>
 
 <script>
@@ -84,11 +73,14 @@ export default {
         user: {
             type: Object,
             require: true,
+        },
+        isCheckout: {
+            type: Boolean,
         }
     },
     data() {
         return {
-            // spesa di ordine minimo
+            // spesa di ordine minimo 
             minOrder: 15,
         }
     },
@@ -114,7 +106,7 @@ export default {
             if (total < this.minOrder) {
                 total = total + 2.50
             }
-
+            
 
             this.$store.commit('calcTotal', total)
             return total

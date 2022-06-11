@@ -27,7 +27,7 @@
                         </button>
                     </div>
                     <!-- descrizione -->
-                    <div class="container mt-4">
+                    <div v-if="this.sameRestaurants || $store.state.cartCount == 0" class="container mt-4">
                         <div class="row">
                             <figure class="col-12 col-md-6">
                                 <img
@@ -53,14 +53,45 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-body">
+                    <div v-else>
+                        <div class="row p-5">
+                            <div class="col-12 col-md-6">
+                                <h3>Stai cercando di ordinare da due ristoranti!</h3>
+                                <p>Puoi effettuare un ordine da un solo ristorante per volta. Vuoi aggiungere questo piatto e creare un nuovo carrello o vuoi tornare indietro?</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div v-if="this.sameRestaurants || $store.state.cartCount == 0" class="modal-body">
                         <!-- bottone ordine -->
                         <button
                             type="button"
                             class="btn btn-success cursor-pointer ml-2 float-right"
+                            data-dismiss="modal"
+                            aria-label="Close"
                             @click="addToCart(dish)"
                         >
                             Aggiungi al carrello
+                        </button>
+                    </div>
+                    <div v-else class="modal-body">
+                        <!-- bottone ordine -->
+                        <button
+                            type="button"
+                            class="btn btn-success cursor-pointer ml-2 float-right"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                            @click="addToCart(dish)"
+                        >
+                            Nuovo carrello
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-danger ml-2 float-right"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
+                            Annulla
                         </button>
                     </div>
                 </div>
@@ -71,20 +102,28 @@
 
 <script>
 export default {
-    // data() {
-    //     //
-    // },
     props: {
         dish: {
             type: Object,
             require: true,
         },
+        user: {
+            type: Object,
+            require: true,
+        }
     },
     methods: {
         addToCart(dish) {
             this.$store.commit("addToCart", dish);
         },
     },
+    computed: {
+        sameRestaurants() {
+            return this.$store.state.cart.find(product => product.user_id == this.dish.user_id)
+            
+        }
+    }
+    
 };
 </script>
 

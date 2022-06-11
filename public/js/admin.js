@@ -105,6 +105,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! /Users/manuelfreund/Desktop/deliverboo-team5/resources/js/admin.js */"./resources/js/admin.js");
 
 
 /***/ })
