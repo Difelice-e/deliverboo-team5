@@ -71,11 +71,14 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password*') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password-confirm"  type="password"
+                                    <input onchange="onChange()" id="password-confirm"  type="password"
                                         class="form-control" name="password_confirmation" required
                                         autocomplete="new-password">
+                                        <div id="allert-password"></div>
                                 </div>
+                               
                             </div>
+                           
 
                             {{-- vat number --}}
                             <div class="form-group row">
@@ -162,7 +165,7 @@
                                 <div class="row">
                                     @foreach ($tipologies as $tipology)
                                     <div class="col-3 text-center">
-                                        <input onchange="checkout()" required type="checkbox" class="form-check-input"
+                                        <input  required type="checkbox" class="form-check-input"
                                             value="{{ $tipology->id }}"
                                             {{ is_array(old('tipologies')) && in_array($tipology->id, old('tipologies')) ? ' checked' : '' }}
                                             oninvalid="this.setCustomValidity('Inserisci almeno una tipologia')"
@@ -185,7 +188,7 @@
                             {{-- submit button --}}
                             <div class="form-group row mb-5 text-center">
                                 <div class="col-12">
-                                    <button onclick="onChange()" type="submit" class="btn btn-primary">
+                                    <button onclick="checkout()" type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
@@ -204,10 +207,17 @@
         function onChange() {
             const password = document.getElementById('password');
             const confirm = document.getElementById('password-confirm');
+            const allertPassword = document.getElementById('allert-password');
+       
+
             if (confirm.value !== password.value) {
                 // creare div errore 
-                alert('le password non corrispondo')
+                allertPassword.innerHTML = `<p class="text-danger"> * Le password non corrispondono </p>`;
                 confirm.value = '';
+            }
+            else if ( (confirm.value == password.value)){
+                allertPassword.innerHTML = `<p class="text-success"> * Le password corrispondono </p>`;
+
             }
         }
 
