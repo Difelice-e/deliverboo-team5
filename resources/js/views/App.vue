@@ -14,7 +14,7 @@
           <!-- {{-- logo  --}} -->
           <a class="navbar-brand" href="/">
             <img
-             
+
               width="150"
               class="d-inline-block align-top"
               alt=""
@@ -64,10 +64,10 @@
             id="navbarSupportedContent"
           >
             <!-- Right Side Of Navbar || Pulsanti attenzione -->
-            
+
             <ul class="navbar-nav  align-items-end align-items-md-center ml-auto">
               <li
-              
+
                 class="dropdown dropdow-toggle btn-nav-register nav-item mr-1"
                 type="button"
                 id="dropdownMenuButton"
@@ -217,7 +217,7 @@ export default {
   components: {
     CartDropdown,
   },
- 
+
 };
 </script>
 

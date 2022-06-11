@@ -3,7 +3,16 @@
         <!-- <img src="logo" alt=""> -->
         <h1>404</h1>
         <p>Pagina non trovata</p>
-        <button class="btn btn-primary"><a href="/">Torna alla Homepage</a></button>
+         <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                           <button class=" btn-home btn  rounded-pill">
+                                 <a href="/">Torna alla Home</a>
+                           </button>
+                        </div>
+
+                    </div>
+                </div>
     </div>
 </template>
 
@@ -11,14 +20,22 @@
 export default {};
 </script>
 
-<style lang="scss">
-a {
-    text-decoration: none;
-    color: currentColor;
+<style lang="scss" scoped>
 
-    &:hover {
-        text-decoration: none;
-        color: currentColor;
+
+   .btn-home{
+         background-color: #ffc14492;
+            color:rgba(0, 0, 0, 0.58);
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 50px;
+      &:hover{
+         background-color: #ffc244 ;
+            color:black;
+        }
+        a{
+            text-decoration: none;
+            color:currentColor;
+        }
     }
-}
 </style>
