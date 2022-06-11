@@ -89,7 +89,7 @@
                   Cart ({{ $store.state.cartCount }})
                 </a>
 
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-menu dropdown-wrapper" aria-labelledby="dropdownMenuButton">
 
                   <CartDropdown/>
                 </div>
@@ -222,4 +222,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.dropdown-wrapper {
+  background-color: transparent;
+  border: none;
+}
 </style>
