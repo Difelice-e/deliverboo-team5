@@ -5,7 +5,7 @@
 <div class="container">
     <div class="d-flex mb-3">
         @if ($user->cover)
-            <img style="width:200px" src="{{asset('storage/' . $user->cover)}}" alt="">
+            <img style="width:400px" src="{{asset($user->cover)}}" alt="">
         @else 
             <img style="width:200px" src="https://i0.wp.com/blog.glovoapp.com/wp-content/uploads/2020/10/Repartidor-Glovo.png?ssl=1" alt="">
         @endif

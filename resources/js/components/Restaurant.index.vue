@@ -1,9 +1,13 @@
 <template>
-    <div class="container">
+
+    <div class="container py-5">
+        
 
             <div class="row flex-md-row flex-column">
 
-
+                <div class="col-12 text-center ">
+                    <h2 class="font-weight-bold">Cerca i migliori ristoranti nella tua città</h2>
+                </div>
 
                 <!-- SELEZIONE CATEGORIE  -->
                 <div class=" col-12 col-md-2">

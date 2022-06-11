@@ -30,7 +30,7 @@
                     <td>{{ $dish->name }}</td>
                     <td>
                         @if ($dish->cover)
-                            <img style="width:100px" src="{{asset('storage/' . $dish->cover)}}" alt="">
+                            <img style="width:100px; height:80px" src="{{asset($dish->cover)}}" alt="">
                         @else 
                             <img style="width:100px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiyxFMYu0x-npJwaXaDUB6gi8DePtyLRxx-w&usqp=CAU" alt="">
                         @endif
