@@ -18,9 +18,7 @@ class ChartController extends Controller
     public function index()
     {
         // Get users grouped by age
-        $groups = DB::table('orders')
-        ->where('user_id', Auth::id())
-        ->pluck('delivery_time');
+        $groups = Order::where('user_id',Auth::id())->groupBy('delivery_time')->sum('total_price');
 
         // $groups = array_unique($groups);
 

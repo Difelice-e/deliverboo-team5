@@ -17,7 +17,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="">
-                    <p>Totale del pagamento: {{ $total }}0€</p>
+                    <p>Totale del pagamento: {{ $total }}€</p>
                 </div>
                 <div class="card">
                     <form action="{{route('checkout.credit-card')}}"  method="post" id="payment-form">
