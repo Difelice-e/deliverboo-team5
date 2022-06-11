@@ -44,11 +44,11 @@
                     </button>
                     <input class="form-control font-size col-12 text-center rounded-pill mr-sm-2 pl-5" type="search" placeholder="Search" aria-label="Search">
                 </form>
+                @endguest
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                @endguest
 
 
                 <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
@@ -70,16 +70,17 @@
                         <li class="nav-item ">
 
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                  Naviga
+                                <!-- dddd -->
+                                <button class="btn dropdown-toggle btn-nav-register my-2 mx-md-1 my-md-0 py-3 px-md-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                    Naviga
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="/admin/dashboard">Dashboard</a>
-                                  <a class="dropdown-item" href="/admin/dishes">Menù</a>
-                                  <a class="dropdown-item" href="/admin/orders">Ordini</a>
-                                  <a class="dropdown-item" href="#">Statistiche</a>
+                                <div class="dropdown-menu btn-nav-menu overflow-hidden" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item btn-nav-item" href="/admin/dashboard">Dashboard</a>
+                                    <a class="dropdown-item btn-nav-item" href="/admin/dishes">Menù</a>
+                                    <a class="dropdown-item btn-nav-item" href="/admin/orders">Ordini</a>
+                                    <a class="dropdown-item btn-nav-item" href="#">Statistiche</a>
                                 </div>
-                              </div>
+                            </div>
 
                         </li>
                         <li class="nav-item ">

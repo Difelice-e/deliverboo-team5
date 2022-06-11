@@ -2319,6 +2319,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3585,7 +3587,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "input[type=text] {\n  background-color: transparent;\n  transition: border-bottom 0.4s ease-in-out;\n  border: none;\n  border-bottom: 2px solid gray;\n}\ninput[type=text]:focus {\n  outline: none;\n  border-bottom: 2px solid #00a080;\n}", ""]);
+exports.push([module.i, "input {\n  background-color: transparent;\n  transition: border-bottom 0.4s ease-in-out;\n  border: none;\n  border-bottom: 2px solid gray;\n}\ninput:focus-visible {\n  outline: none;\n  border-bottom: 2px solid #00a080;\n}", ""]);
 
 // exports
 
@@ -6274,7 +6276,7 @@ var render = function () {
               _c(
                 "label",
                 {
-                  staticClass: "mb-0 p-0 col-12 col-lg-2 ",
+                  staticClass: "mb-0 p-0 col-12 col-lg-2",
                   attrs: { for: "customer_email" },
                 },
                 [_vm._v("Email:")]

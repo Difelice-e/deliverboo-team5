@@ -13,7 +13,7 @@
             </div>
 
             <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row my-3">
-                <label class="mb-0 p-0 col-12 col-lg-2 " for="customer_email">Email:</label>
+                <label class="mb-0 p-0 col-12 col-lg-2" for="customer_email">Email:</label>
                 <input required class=" col-12 col-lg-10 ml-0 ml-lg-2 p-1" placeholder="mariorossi88@gmail.com" v-model="form.customer_email" type="email" id="customer_email" name="customer_email">
             </div>
 
@@ -69,14 +69,14 @@ export default {
 </script>
 
 <style lang="scss">
-input[type=text] {
+input {
     background-color: transparent;
     transition: border-bottom 0.4s ease-in-out;
     border: none;
     border-bottom: 2px solid gray;
 }
 
-input[type=text]:focus {
+input:focus-visible {
     outline: none;
     border-bottom: 2px solid #00a080;
 }
