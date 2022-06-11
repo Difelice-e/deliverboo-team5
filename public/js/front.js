@@ -2319,6 +2319,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3567,9 +3571,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-
-exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\nul li[data-v-5edc78cc]::after {\n  display: block;\n  content: \"\";\n  background: lightgrey;\n  width: 100%;\n  height: 1px;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  background: transparent;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n}\ninput[type=checkbox]:checked ~ label .selected[data-v-5edc78cc] {\n  /* background: blue; */\n  padding: 10px 30px;\n  background-color: #fcc244;\n}\n.restaurant-wrapper[data-v-5edc78cc] {\n  overflow-y: scroll;\n  height: 100vh;\n  /* width */\n  /* Track */\n  /* Handle */\n  /* Handle on hover */\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar {\n  width: 6px;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-track {\n  border-radius: 10px;\n  background-color: transparent;\n  border: transparent;\n  box-shadow: 0px 0px 5px grey inset;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb {\n  background-color: #00a080;\n  border-radius: 10px;\n  border: transparent;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb:hover {\n  background-color: #006d57;\n}", ""]);
-
+exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\nfilter-list li[data-v-5edc78cc]::after {\n  display: block;\n  content: \"\";\n  background: lightgrey;\n  width: 100%;\n  height: 1px;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  background: transparent;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n}\ninput[type=checkbox]:checked ~ label .selected[data-v-5edc78cc] {\n  /* background: blue; */\n  padding: 10px 30px;\n  background-color: #fcc244;\n}\n.restaurant-wrapper[data-v-5edc78cc] {\n  overflow-y: scroll;\n  height: 100vh;\n  /* width */\n  /* Track */\n  /* Handle */\n  /* Handle on hover */\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar {\n  width: 6px;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-track {\n  border-radius: 10px;\n  background-color: transparent;\n  border: transparent;\n  box-shadow: 0px 0px 5px grey inset;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb {\n  background-color: #00a080;\n  border-radius: 10px;\n  border: transparent;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb:hover {\n  background-color: #006d57;\n}", ""]);
 
 // exports
 
@@ -25607,8 +25609,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
-
+module.exports = __webpack_require__(/*! /Users/manuelfreund/Desktop/deliverboo-team5/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
