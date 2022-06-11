@@ -2013,6 +2013,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         _iterator.f();
       }
 
+      if (total < this.minOrder) {
+        total = total + 2.50;
+      }
+
       this.$store.commit('calcTotal', total);
       return total;
     },
@@ -2313,6 +2317,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2410,10 +2416,10 @@ __webpack_require__.r(__webpack_exports__);
         _this3.$router.push("/404");
       });
     },
-    check: function check(event) {
-      if (event.target.checked) {
+    check: function check() {
+      if (this.tipologyFilter !== '') {
         this.fetchFiltered(this.tipologyFilter, 1);
-      } else if (this.tipologyFilter == '') {
+      } else {
         this.fetchRestaurant();
       }
     },
@@ -2687,6 +2693,10 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         res = JSON.parse(res.config.data), console.log(res);
       });
+      this.$store.state.cart = [];
+      this.$store.state.cartCount = 0;
+      this.$store.state.cartTotal = 0;
+      this.$store.commit('saveCart');
     },
     onSubmit: function onSubmit() {
       this.sendForm();
@@ -3557,7 +3567,9 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\nfilter-list li[data-v-5edc78cc]::after {\n  display: block;\n  content: \"\";\n  background: lightgrey;\n  width: 100%;\n  height: 1px;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  background: transparent;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n}\ninput[type=checkbox]:checked ~ label .selected[data-v-5edc78cc] {\n  /* background: blue; */\n  padding: 10px 30px;\n  background-color: #fcc244;\n}", ""]);
+
+exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\nul li[data-v-5edc78cc]::after {\n  display: block;\n  content: \"\";\n  background: lightgrey;\n  width: 100%;\n  height: 1px;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  background: transparent;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n}\ninput[type=checkbox]:checked ~ label .selected[data-v-5edc78cc] {\n  /* background: blue; */\n  padding: 10px 30px;\n  background-color: #fcc244;\n}\n.restaurant-wrapper[data-v-5edc78cc] {\n  overflow-y: scroll;\n  height: 100vh;\n  /* width */\n  /* Track */\n  /* Handle */\n  /* Handle on hover */\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar {\n  width: 6px;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-track {\n  border-radius: 10px;\n  background-color: transparent;\n  border: transparent;\n  box-shadow: 0px 0px 5px grey inset;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb {\n  background-color: #00a080;\n  border-radius: 10px;\n  border: transparent;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb:hover {\n  background-color: #006d57;\n}", ""]);
+
 
 // exports
 
@@ -5493,8 +5505,10 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container py-5" }, [
     _c("div", { staticClass: "row flex-md-row flex-column" }, [
+      _vm._m(0),
+      _vm._v(" "),
       _c("div", { staticClass: " col-12 col-md-2" }, [
         _c(
           "form",
@@ -5518,7 +5532,7 @@ var render = function () {
                   },
                 },
                 [
-                  _vm._m(0),
+                  _vm._m(1),
                   _vm._v(" "),
                   _c(
                     "ul",
@@ -5572,7 +5586,7 @@ var render = function () {
                                 }
                               },
                               function ($event) {
-                                return _vm.check($event)
+                                return _vm.check()
                               },
                             ],
                           },
@@ -5614,7 +5628,7 @@ var render = function () {
                 "ul",
                 {
                   staticClass:
-                    "d-flex flex-wrap justify-content-center list-wrapper pt-3",
+                    "d-flex row flex-wrap justify-content-center ml-2 list-wrapper pt-3",
                 },
                 _vm._l(_vm.users, function (user) {
                   return _c(
@@ -5623,8 +5637,8 @@ var render = function () {
                       key: user.id,
                       class:
                         _vm.currentPage == 4 && _vm.users.length < 3
-                          ? "cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12"
-                          : "cursor-pointer list-item col-12 col-md-6 col-lg-4",
+                          ? "cursor-pointer list-item col-12 col-sm-12 col-md-12 col-lg-6 col-xs-12"
+                          : "cursor-pointer list-item col-12 col-md-12 col-lg-6",
                       attrs: {
                         tag: "li",
                         to: {
@@ -5683,7 +5697,7 @@ var render = function () {
                                 "div",
                                 {
                                   staticClass:
-                                    "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-2",
+                                    "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-4",
                                 },
                                 _vm._l(user.tipologies, function (el) {
                                   return _c(
@@ -5711,10 +5725,10 @@ var render = function () {
                             "div",
                             {
                               staticClass:
-                                "bg-white card-foot d-flex justify-content-between mt-2 px-2",
+                                "bg-white card-foot d-flex justify-content-between align-items-center mt-2 px-2",
                             },
                             [
-                              _c("div", { staticClass: "d-flex" }, [
+                              _c("div", { staticClass: "d-flex flex-wrap" }, [
                                 _c("img", {
                                   staticClass: "favicon pr-2",
                                   attrs: {
@@ -5723,7 +5737,7 @@ var render = function () {
                                   },
                                 }),
                                 _vm._v(" "),
-                                _c("p", [
+                                _c("p", { staticClass: "rec" }, [
                                   _vm._v(
                                     _vm._s(_vm.vote[_vm.random()].rec) + "%"
                                   ),
@@ -5732,7 +5746,10 @@ var render = function () {
                               _vm._v(" "),
                               _c(
                                 "div",
-                                { staticClass: "d-flex align-items-center" },
+                                {
+                                  staticClass:
+                                    "d-flex flex-wrap align-items-center",
+                                },
                                 [
                                   _c("div", { staticClass: "d-flex mr-2" }, [
                                     _c("img", {
@@ -5816,6 +5833,16 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12 text-center " }, [
+      _c("h2", { staticClass: "font-weight-bold" }, [
+        _vm._v("Cerca i migliori ristoranti nella tua città"),
+      ]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -6157,9 +6184,7 @@ var render = function () {
     },
     [
       _c("h1", { staticClass: "text-center" }, [
-        _vm._v(
-          "Aggiungi il tuo nome e la tua Email e un indirizzo di consegna"
-        ),
+        _vm._v("Inserisci i dati necessari per la consegna"),
       ]),
       _vm._v(" "),
       _c(
@@ -6202,6 +6227,7 @@ var render = function () {
                 ],
                 staticClass: "col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "Mario Rossi",
                   type: "text",
                   id: "customer_name",
@@ -6247,6 +6273,7 @@ var render = function () {
                 ],
                 staticClass: " col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "Via Cavour, 12",
                   type: "text",
                   id: "customer_address",
@@ -6292,8 +6319,9 @@ var render = function () {
                 ],
                 staticClass: " col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "mariorossi88@gmail.com",
-                  type: "text",
+                  type: "email",
                   id: "customer_email",
                   name: "customer_email",
                 },
@@ -6337,6 +6365,7 @@ var render = function () {
                 ],
                 staticClass: "col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "3285647385",
                   type: "text",
                   id: "customer_telephone",
@@ -7057,7 +7086,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container my-5" },
+    { staticClass: "container scroll my-5" },
     [
       _c("h2", { staticClass: "pb-4 text-center back-yellow title-rest" }, [
         _vm._v("\n        Ristoranti:\n        "),
@@ -25578,7 +25607,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/manuelfreund/Desktop/deliverboo-team5/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+
 
 
 /***/ })
