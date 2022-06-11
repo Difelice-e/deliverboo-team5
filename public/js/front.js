@@ -6184,6 +6184,7 @@ var render = function () {
                 ],
                 staticClass: "col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "Mario Rossi",
                   type: "text",
                   id: "customer_name",
@@ -6229,6 +6230,7 @@ var render = function () {
                 ],
                 staticClass: " col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "Via Cavour, 12",
                   type: "text",
                   id: "customer_address",
@@ -6274,8 +6276,9 @@ var render = function () {
                 ],
                 staticClass: " col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "mariorossi88@gmail.com",
-                  type: "text",
+                  type: "email",
                   id: "customer_email",
                   name: "customer_email",
                 },
@@ -6319,6 +6322,7 @@ var render = function () {
                 ],
                 staticClass: "col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "3285647385",
                   type: "text",
                   id: "customer_telephone",
