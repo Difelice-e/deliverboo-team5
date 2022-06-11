@@ -53,6 +53,10 @@ export default {
                 res = JSON.parse(res.config.data),
                 console.log(res)
             })
+            this.$store.state.cart = []
+            this.$store.state.cartCount = 0
+            this.$store.state.cartTotal = 0
+            this.$store.commit('saveCart')
         },
         onSubmit() {
             this.sendForm();

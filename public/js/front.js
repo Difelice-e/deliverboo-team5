@@ -2013,6 +2013,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         _iterator.f();
       }
 
+      if (total < this.minOrder) {
+        total = total + 2.50;
+      }
+
       this.$store.commit('calcTotal', total);
       return total;
     },
@@ -2678,6 +2682,10 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         res = JSON.parse(res.config.data), console.log(res);
       });
+      this.$store.state.cart = [];
+      this.$store.state.cartCount = 0;
+      this.$store.state.cartTotal = 0;
+      this.$store.commit('saveCart');
     },
     onSubmit: function onSubmit() {
       this.sendForm();

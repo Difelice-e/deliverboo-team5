@@ -88,6 +88,10 @@ export default {
 
                 total += dish.totalPrice;
             }
+            if (total < this.minOrder) {
+                total = total + 2.50
+            }
+            
 
             this.$store.commit('calcTotal', total)
             return total
