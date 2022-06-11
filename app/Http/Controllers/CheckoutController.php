@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use App\User;
+use App\Mail\SendNewMail;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -28,15 +31,19 @@ class CheckoutController extends Controller
 		]);
 		$intent = $payment_intent->client_secret;
 
-		return view('checkout.credit-card',compact('intent'));
+		return view('checkout.credit-card',compact('intent','total'));
 
     }
 
     public function afterPayment()
     {   
         $order = Order::orderBy('created_at','desc')->first();
+        $ristoratore = User::where('id', $order->user_id)->first();
         $order['payment_state'] = true;
         $order->save();
+        Mail::to($order['customer_email'])->send(new SendNewMail);
+        Mail::to($ristoratore['email'])->send(new SendNewMail);
         echo 'Payment Has been Received';
+
     }
 }
