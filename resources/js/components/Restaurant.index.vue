@@ -26,7 +26,7 @@
                                         class="mx-1"
                                         type="checkbox"
                                         v-model="tipologyFilter"
-                                        @change="check($event)"
+                                        @change="check()"
                                         :id="tipology.id"
                                         :name="tipology.id"
                                         :value="tipology.id"
@@ -191,10 +191,10 @@ export default {
                     this.$router.push("/404");
                 });
         },
-        check(event) {
-            if (event.target.checked){
+        check() {
+            if (this.tipologyFilter !== ''){
                 this.fetchFiltered(this.tipologyFilter, 1)
-            } else if (this.tipologyFilter == ''){
+            } else {
                 this.fetchRestaurant()
             }
         },

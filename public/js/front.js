@@ -2414,10 +2414,10 @@ __webpack_require__.r(__webpack_exports__);
         _this3.$router.push("/404");
       });
     },
-    check: function check(event) {
-      if (event.target.checked) {
+    check: function check() {
+      if (this.tipologyFilter !== '') {
         this.fetchFiltered(this.tipologyFilter, 1);
-      } else if (this.tipologyFilter == '') {
+      } else {
         this.fetchRestaurant();
       }
     },
@@ -5560,7 +5560,7 @@ var render = function () {
                                 }
                               },
                               function ($event) {
-                                return _vm.check($event)
+                                return _vm.check()
                               },
                             ],
                           },
