@@ -37,6 +37,9 @@
                             <h4 class="font-weight-bold">Attenzione!</h4>
                             <p>Sei nella pagina di un ristorante diverso da quello dell'ordine presente nel carrello</p>
                             <p>Procedi al checkout per completare l'ordine o crea un nuovo carrello in questo ristorante</p>
+                            <button @click="emptyCart" class="btn btn-danger mb-3">
+                                svuota carrello
+                             </button>
                         </div>
                     </div>
                 </div>
@@ -96,6 +99,9 @@ export default {
         decreaseQuantity(dish) {
             this.$store.commit('decreaseQuantity', dish);
         },
+        emptyCart() {
+            this.$store.commit('clearCart')
+        }
     },
     computed: {
         totalPrice() {

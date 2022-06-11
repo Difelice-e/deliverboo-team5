@@ -40,6 +40,11 @@ let store = {
             state.cartCount++;
             this.commit('saveCart');
         },
+        clearCart(state) {
+            state.cart = []
+            state.cartCount = 0 
+            this.commit('saveCart');
+        },
         removeFromCart(state, dish) {
             let index = state.cart.indexOf(dish);
         

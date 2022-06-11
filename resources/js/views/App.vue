@@ -91,7 +91,7 @@
 
                 <div class="dropdown-menu dropdown-wrapper" aria-labelledby="dropdownMenuButton">
 
-                  <CartDropdown/>
+                  <CartDropdown :user="user"/>
                 </div>
               </li>
               <!-- Authentication Links -->
