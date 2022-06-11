@@ -1,6 +1,7 @@
 <template>
         <div class="cart">
             <!-- carrello con items  -->
+
             <div v-if="$store.state.cart.length > 0" class="d-flex flex-column p-2 cart-wrapper border-radius-gv">
                 <div class="row">
                     <div class="col-12 text-center mb-5">
@@ -9,7 +10,7 @@
                     </div>
                 </div>
                 
-                <div class="row mb-3" v-for="dish in $store.state.cart" :key="dish.id">
+                <div class="row mb-3" v-for="dish in $store.state.cart" :key="dish.id" v-if="dish.user_id == user.id">
                     
 
                     <div class="col-12 text-nowrap d-flex justify-content-between" style="gap: 10px;">
@@ -27,6 +28,16 @@
                         <figure class="cursor-pointer" @click.prevent="increaseQuantity(dish)">
                             <img width="30px" height="30px" src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/plus.svg" alt="">
                         </figure>
+                    </div>
+                </div>
+
+                <div v-else>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h4 class="font-weight-bold">Attenzione!</h4>
+                            <p>Sei nella pagina di un ristorante diverso da quello dell'ordine presente nel carrello</p>
+                            <p>Procedi al checkout per completare l'ordine o crea un nuovo carrello in questo ristorante</p>
+                        </div>
                     </div>
                 </div>
 
@@ -66,6 +77,12 @@
 
 <script>
 export default {
+    props: {
+        user: {
+            type: Object,
+            require: true,
+        }
+    },
     data() {
         return {
             // spesa di ordine minimo 
