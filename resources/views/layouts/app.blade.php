@@ -77,7 +77,7 @@
                                   <a class="dropdown-item" href="/admin/dashboard">Dashboard</a>
                                   <a class="dropdown-item" href="/admin/dishes">Menù</a>
                                   <a class="dropdown-item" href="/admin/orders">Ordini</a>
-                                  <a class="dropdown-item" href="#">Statistiche</a>
+                                  <a class="dropdown-item" href="/admin/charts">Statistiche</a>
                                 </div>
                               </div>
 

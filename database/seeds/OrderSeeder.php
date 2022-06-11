@@ -31,8 +31,8 @@ class OrderSeeder extends Seeder
                 $order->street_address = $faker->streetAddress();
                 $order->customer_phone = $faker->e164PhoneNumber();
                 $order->total_price = $faker->randomNumber(2,false);
-                $order->delivered = $faker->boolean();
-                $order->payment_state = false;
+                $order->delivered = true;
+                $order->payment_state = true;
                 if ($order->delivered) {
                     $order->delivery_time = Carbon::now()->format('Y-m-d H:i:s');
                 } else {
@@ -47,7 +47,7 @@ class OrderSeeder extends Seeder
                 $dishesId = $dishes->pluck('id')->all();
     
                 // generazione random piatti
-                $randomInt = $faker->numberBetween(1,2);
+                $randomInt = $faker->numberBetween(1,4);
                 $randomDishes = $faker->randomElements($dishesId,$randomInt);
                 
                 // ciclo creazione righe tabella pivot
@@ -57,6 +57,7 @@ class OrderSeeder extends Seeder
                         'order_id' => $order->id,
                         'quantity' => $faker->numberBetween(1,3) 
                     ]);
+
                 }
                 
             }
