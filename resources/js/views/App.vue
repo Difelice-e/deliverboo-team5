@@ -89,10 +89,10 @@
                   Cart ({{ $store.state.cartCount }})
                 </a>
 
-                <div class="dropdown-menu dropdown-wrapper" aria-labelledby="dropdownMenuButton">
-
-                  <CartDropdown :user="user"/>
-                </div>
+                
+              <div class="dropdown-menu dropdown-wrapper" aria-labelledby="dropdownMenuButton">
+                <CartDropdown :isCheckout="false"/>
+              </div>
               </li>
               <!-- Authentication Links -->
 
@@ -212,7 +212,7 @@
 </template>
 
 <script>
-import CartDropdown from "../components/Cart.vue";
+import CartDropdown from "../components/cartCheckout.vue";
 export default {
   components: {
     CartDropdown,
