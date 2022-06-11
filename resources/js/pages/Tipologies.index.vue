@@ -5,7 +5,7 @@
             <!-- jumbotron category -->
             <JumbotronCategoty />
 
-            <div class="container">
+            <div class="container-fluid p-0 m-0">
                 <div class="d-flex flex-wrap justify-content-center my-4">
                     <Restaurant />
                 </div>

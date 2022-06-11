@@ -1,11 +1,12 @@
 <template>
-    <div>
-        <div class="restaurants-bg py-4">
-            <div class="container">
-                <div class="d-flex flex-column justify-content-center text-center">
-                    <h1 class="mb-3 title-rest">Ricerca Ristorante</h1>
-                    <h5 class="subtitle-rest">Seleziona una o più categorie disponibili:</h5>
-                </div>
+    <div class="container-fluid">
+               <div >
+            <div class="row flex-md-row flex-column">
+
+
+
+                <!-- SELEZIONE CATEGORIE  -->
+                <div class=" col-12 col-md-2">
 
                 <form class="form-inline w-100 d-flex justify-content-around">
                     <div class="form-group row">
@@ -14,7 +15,9 @@
                             @submit.prevent="fetchRestaurant"
                             class="container my-bg-categories"
                         >
-                            <ul class="filter py-3 d-flex flex-wrap justify-content-center">
+                            <p class="text-center text-md-left p-5"><strong>Filtri più usati</strong></p>
+                            <ul class="filter py-3 d-flex flex-row flex-md-column flex-wrap justify-content-center p-4">
+                               
                                 <li
                                     v-for="tipology in tipologies"
                                     :key="tipology.id"
@@ -29,15 +32,25 @@
                                         :value="tipology.id"
                                     />
                                     <label :for="tipology.id">
-                                        {{ tipology.name }} ({{ tipology.users.length }})
+                                       <span class="selected text-center text-md-left"> {{ tipology.name }}({{ tipology.users.length }}) </span>
                                     </label>
                                 </li>
                             </ul>
                         </form>
                     </div>
                 </form>
+                </div>
 
-                <div>
+                <!-- LISTA RISTORANTI  -->
+
+
+                <div class="col-12 col-md-10 restaurant-wrapper">
+                    <div class="restaurants-bg py-4">
+                     <div class="container">
+     
+
+
+                    <div>
 
                     <ul class="d-flex flex-wrap justify-content-center list-wrapper pt-3">
                         <router-link tag="li" v-for="user in users" :key="user.id" :class="currentPage == 4 && users.length < 3?  'cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12' : 'cursor-pointer list-item col-12 col-md-6 col-lg-4' "
@@ -92,6 +105,12 @@
             </div>
         </div>
     </div>
+                </div>
+
+            </div>
+
+        </div>
+        
 </template>
 
 <script>
@@ -99,6 +118,7 @@
 export default {
     data() {
         return {
+
             tipologyFilter: [],
             users: [],
             lastPage: 0,
@@ -225,5 +245,41 @@ export default {
 .bg-gl2 {
     background-color: #faeac4;
 }
+ul li input[type="checkbox"]{
+    display:none;
 
+}
+ul li::after{
+    display: block;
+    content: '';
+    background: lightgrey;
+    width: 100%;
+    height: 1px;
+
+}
+.selected{
+        position: relative;
+        display: inline-block;
+        padding: 10px 30px;
+        background: transparent;
+        cursor: pointer;
+        width: 170px;
+        border-radius: 30px;
+
+        
+       
+
+    }
+     
+  input[type="checkbox"]:checked ~ label .selected{
+       /* background: blue; */
+       padding: 10px 30px;
+       background-color: #fcc244;
+       
+
+    }
+.restaurant-wrapper{
+    overflow: scroll;
+    height: 100vh;
+}
 </style>
