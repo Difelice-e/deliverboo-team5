@@ -49,8 +49,20 @@ input[type="number"] {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
+.btn-nav-menu {
+    background-color: #ffd47c;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 27% 43% 38% 19% / 34% 57% 21% 78%;
+
+    .btn-nav-item:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+}
+
 .svg-decoration {
     top: 99%;
     left: 0;
     width: 100%;
 }
+
+

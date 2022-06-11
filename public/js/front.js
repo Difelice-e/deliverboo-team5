@@ -2003,7 +2003,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   },
   data: function data() {
     return {
-      // spesa di ordine minimo 
+      // spesa di ordine minimo
       minOrder: 15
     };
   },
@@ -3826,11 +3826,10 @@ exports.push([module.i, ".cart[data-v-249eed5e] {\n  min-width: 350px;\n}\n.cart
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/404.vue?vue&type=style&index=0&lang=scss&":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/404.vue?vue&type=style&index=0&lang=scss& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************/
-
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/404.vue?vue&type=style&index=0&id=82158542&lang=scss&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/404.vue?vue&type=style&index=0&id=82158542&lang=scss&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3858,7 +3857,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "input[type=text] {\n  background-color: transparent;\n  transition: border-bottom 0.4s ease-in-out;\n  border: none;\n  border-bottom: 2px solid gray;\n}\ninput[type=text]:focus {\n  outline: none;\n  border-bottom: 2px solid #00a080;\n}", ""]);
+exports.push([module.i, "input {\n  background-color: transparent;\n  transition: border-bottom 0.4s ease-in-out;\n  border: none;\n  border-bottom: 2px solid gray;\n}\ninput:focus-visible {\n  outline: none;\n  border-bottom: 2px solid #00a080;\n}", ""]);
 
 // exports
 
@@ -4500,7 +4499,6 @@ if(false) {}
 
 /***/ }),
 
-
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/cartCheckout.vue?vue&type=style&index=0&id=249eed5e&lang=scss&scoped=true&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/cartCheckout.vue?vue&type=style&index=0&id=249eed5e&lang=scss&scoped=true& ***!
@@ -4531,11 +4529,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/404.vue?vue&type=style&index=0&lang=scss&":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/404.vue?vue&type=style&index=0&lang=scss& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/404.vue?vue&type=style&index=0&id=82158542&lang=scss&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/404.vue?vue&type=style&index=0&id=82158542&lang=scss&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5465,7 +5462,7 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                        svuota carrello\n                     "
+                              "\n                        svuota carrello\n                    "
                             ),
                           ]
                         ),
@@ -6909,7 +6906,7 @@ var render = function () {
                   _c(
                     "label",
                     {
-                      staticClass: "mb-0 p-0 col-12 col-lg-2 ",
+                      staticClass: "mb-0 p-0 col-12 col-lg-2",
                       attrs: { for: "customer_email" },
                     },
                     [_vm._v("Email:")]
@@ -26326,7 +26323,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/manuelfreund/Desktop/deliverboo-team5/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

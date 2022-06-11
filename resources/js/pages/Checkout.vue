@@ -14,10 +14,10 @@
                         <input  required class=" col-12 col-lg-10 ml-0 ml-lg-2 p-1" placeholder="Via Cavour, 12" v-model="form.street_address" type="text" id="customer_address" name="customer_address">
                     </div>
 
-                    <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row my-3">
-                        <label class="mb-0 p-0 col-12 col-lg-2 " for="customer_email">Email:</label>
-                        <input required class=" col-12 col-lg-10 ml-0 ml-lg-2 p-1" placeholder="mariorossi88@gmail.com" v-model="form.customer_email" type="email" id="customer_email" name="customer_email">
-                    </div>
+            <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row my-3">
+                <label class="mb-0 p-0 col-12 col-lg-2" for="customer_email">Email:</label>
+                <input required class=" col-12 col-lg-10 ml-0 ml-lg-2 p-1" placeholder="mariorossi88@gmail.com" v-model="form.customer_email" type="email" id="customer_email" name="customer_email">
+            </div>
 
                     <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row my-3">
                         <label class="mb-0 p-0 col-12 col-lg-2" for="customer_telephone">Cellulare:</label>
@@ -28,13 +28,13 @@
                 <button class=" col-4 rounded-pill btn bg-greedgc" style="font-size: 20px;" @click="sendForm()" type="submit">
                     <a class="text-white weight-bold" href="/checkout">Vai al Pagamento</a>
                 </button>
-    
+
             </div>
             <div class="col-4">
                 <Cart :isCheckout="true"/>
             </div>
         </div>
-    </div>  
+    </div>
 </template>
 
 <script>
@@ -82,14 +82,14 @@ export default {
 </script>
 
 <style lang="scss">
-input[type=text] {
+input {
     background-color: transparent;
     transition: border-bottom 0.4s ease-in-out;
     border: none;
     border-bottom: 2px solid gray;
 }
 
-input[type=text]:focus {
+input:focus-visible {
     outline: none;
     border-bottom: 2px solid #00a080;
 }
