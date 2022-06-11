@@ -2013,6 +2013,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         _iterator.f();
       }
 
+      if (total < this.minOrder) {
+        total = total + 2.50;
+      }
+
       this.$store.commit('calcTotal', total);
       return total;
     },
@@ -2410,10 +2414,10 @@ __webpack_require__.r(__webpack_exports__);
         _this3.$router.push("/404");
       });
     },
-    check: function check(event) {
-      if (event.target.checked) {
+    check: function check() {
+      if (this.tipologyFilter !== '') {
         this.fetchFiltered(this.tipologyFilter, 1);
-      } else if (this.tipologyFilter == '') {
+      } else {
         this.fetchRestaurant();
       }
     },
@@ -2678,6 +2682,10 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         res = JSON.parse(res.config.data), console.log(res);
       });
+      this.$store.state.cart = [];
+      this.$store.state.cartCount = 0;
+      this.$store.state.cartTotal = 0;
+      this.$store.commit('saveCart');
     },
     onSubmit: function onSubmit() {
       this.sendForm();
@@ -5552,7 +5560,7 @@ var render = function () {
                                 }
                               },
                               function ($event) {
-                                return _vm.check($event)
+                                return _vm.check()
                               },
                             ],
                           },
@@ -5594,7 +5602,7 @@ var render = function () {
                 "ul",
                 {
                   staticClass:
-                    "d-flex flex-wrap justify-content-center list-wrapper pt-3",
+                    "d-flex row flex-wrap justify-content-center ml-2 list-wrapper pt-3",
                 },
                 _vm._l(_vm.users, function (user) {
                   return _c(
@@ -5603,8 +5611,8 @@ var render = function () {
                       key: user.id,
                       class:
                         _vm.currentPage == 4 && _vm.users.length < 3
-                          ? "cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12"
-                          : "cursor-pointer list-item col-12 col-md-6 col-lg-4",
+                          ? "cursor-pointer list-item col-12 col-sm-12 col-md-12 col-lg-6 col-xs-12"
+                          : "cursor-pointer list-item col-12 col-md-12 col-lg-6",
                       attrs: {
                         tag: "li",
                         to: {
@@ -5663,7 +5671,7 @@ var render = function () {
                                 "div",
                                 {
                                   staticClass:
-                                    "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-2",
+                                    "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-4",
                                 },
                                 _vm._l(user.tipologies, function (el) {
                                   return _c(
@@ -5691,10 +5699,10 @@ var render = function () {
                             "div",
                             {
                               staticClass:
-                                "bg-white card-foot d-flex justify-content-between mt-2 px-2",
+                                "bg-white card-foot d-flex justify-content-between align-items-center mt-2 px-2",
                             },
                             [
-                              _c("div", { staticClass: "d-flex" }, [
+                              _c("div", { staticClass: "d-flex flex-wrap" }, [
                                 _c("img", {
                                   staticClass: "favicon pr-2",
                                   attrs: {
@@ -5703,7 +5711,7 @@ var render = function () {
                                   },
                                 }),
                                 _vm._v(" "),
-                                _c("p", [
+                                _c("p", { staticClass: "rec" }, [
                                   _vm._v(
                                     _vm._s(_vm.vote[_vm.random()].rec) + "%"
                                   ),
@@ -5712,7 +5720,10 @@ var render = function () {
                               _vm._v(" "),
                               _c(
                                 "div",
-                                { staticClass: "d-flex align-items-center" },
+                                {
+                                  staticClass:
+                                    "d-flex flex-wrap align-items-center",
+                                },
                                 [
                                   _c("div", { staticClass: "d-flex mr-2" }, [
                                     _c("img", {
@@ -6131,9 +6142,7 @@ var render = function () {
     },
     [
       _c("h1", { staticClass: "text-center" }, [
-        _vm._v(
-          "Aggiungi il tuo nome e la tua Email e un indirizzo di consegna"
-        ),
+        _vm._v("Inserisci i dati necessari per la consegna"),
       ]),
       _vm._v(" "),
       _c(
@@ -6176,6 +6185,7 @@ var render = function () {
                 ],
                 staticClass: "col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "Mario Rossi",
                   type: "text",
                   id: "customer_name",
@@ -6221,6 +6231,7 @@ var render = function () {
                 ],
                 staticClass: " col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "Via Cavour, 12",
                   type: "text",
                   id: "customer_address",
@@ -6266,8 +6277,9 @@ var render = function () {
                 ],
                 staticClass: " col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "mariorossi88@gmail.com",
-                  type: "text",
+                  type: "email",
                   id: "customer_email",
                   name: "customer_email",
                 },
@@ -6311,6 +6323,7 @@ var render = function () {
                 ],
                 staticClass: "col-12 col-lg-10 ml-0 ml-lg-2 p-1",
                 attrs: {
+                  required: "",
                   placeholder: "3285647385",
                   type: "text",
                   id: "customer_telephone",
