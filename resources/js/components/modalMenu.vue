@@ -1,14 +1,7 @@
 <template>
     <div>
         <!-- Button trigger modal -->
-        <button
-            type="button"
-            class="btn btn-primary"
-            data-toggle="modal"
-            data-target="#exampleModal"
-        >
-            modal
-        </button>
+        
 
         <!-- Modal -->
         <div
@@ -65,7 +58,7 @@
                         <button
                             type="button"
                             class="btn btn-success cursor-pointer ml-2 float-right"
-                            @click="addToCart(dish, user)"
+                            @click="addToCart(dish)"
                         >
                             Aggiungi al carrello
                         </button>
@@ -78,6 +71,9 @@
 
 <script>
 export default {
+    // data() {
+    //     //
+    // },
     props: {
         dish: {
             type: Object,

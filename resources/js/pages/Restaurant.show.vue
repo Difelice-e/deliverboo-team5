@@ -4,13 +4,7 @@
             <div class="restaurant-header">
                 <div>
                     <div class="row">
-                        <img
-                            class="blur-image"
-                            :src="user.cover"
-                            alt=""
-                            width="100%"
-                            height="260"
-                        />
+                        <img class="blur-image" :src="user.cover" alt="" width="100%" height="260" />
                     </div>
                 </div>
             </div>
@@ -20,56 +14,36 @@
                     <div class="row align-items-start">
                         <div class="col-12 col-xl-8">
                             <!-- info del ristorante  -->
-                            <div
-                                class="restaurant-info container bg-white border-radius-gv"
-                            >
+                            <div class="restaurant-info container bg-white border-radius-gv">
                                 <h1 class="title-restaurant">
                                     {{ user.business_name }}
                                 </h1>
-                                <div
-                                    class="d-flex align-items-center align-self-center info"
-                                >
-                                    <img
-                                        width="25px"
-                                        height="25px"
+                                <div class="d-flex align-items-center align-self-center info">
+                                    <img width="25px" height="25px"
                                         src="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/344/external-clock-home-screen-app-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png"
-                                        alt=""
-                                    />
+                                        alt="" />
                                     <p class="mt-3">
                                         {{ vote[random()].temp1 }}-{{
-                                            vote[random()].temp
+                                                vote[random()].temp
                                         }}'
                                     </p>
 
-                                    <img
-                                        width="30px"
-                                        height="30px"
+                                    <img width="30px" height="30px"
                                         src="https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/filters/sorting/delivery_fee_light"
-                                        alt=""
-                                    />
+                                        alt="" />
                                     <span class="cancel">2,50 &euro;</span>
-                                    <p
-                                        class="bg-gl font-gl gr-1 text-uppercase mt-3"
-                                    >
+                                    <p class="bg-gl font-gl gr-1 text-uppercase mt-3">
                                         Gratis
                                     </p>
 
-                                    <img
-                                        width="30px"
-                                        height="30px"
+                                    <img width="30px" height="30px"
                                         src="https://res.cloudinary.com/glovoapp/w_40,h_40,f_auto,q_auto/store_ratings/rating_regular.png"
-                                        alt=""
-                                    />
+                                        alt="" />
                                     <span>{{ vote[random()].rec }}%</span>
                                 </div>
-                                <ul
-                                    class="restaurant-tipologies d-flex p-0 info mt-2"
-                                >
-                                    <li
-                                        v-for="tipology in user.tipologies"
-                                        :key="tipology.id"
-                                        class="p-1 bg-info text-white border border-info border-secondary rounded-pill"
-                                    >
+                                <ul class="restaurant-tipologies d-flex p-0 info mt-2">
+                                    <li v-for="tipology in user.tipologies" :key="tipology.id"
+                                        class="p-1 bg-info text-white border border-info border-secondary rounded-pill">
                                         {{ tipology.name }}
                                     </li>
                                 </ul>
@@ -83,69 +57,35 @@
                                 <div class="menu-wrapper">
                                     <div class="row">
                                         <!-- singolo piatto  -->
-                                        <div
-                                            v-for="dish in user.dishes"
-                                            :key="dish.id"
-                                            class="col-12 col-xl-6 mb-3"
-                                        >
+                                        <div v-for="(dish,i) in user.dishes" :key="dish.id" class="col-12 col-xl-6 mb-3">
                                             <div
-                                                class="border-radius-gv dish-wrapper d-flex justify-content-between p-3"
-                                            >
-                                                <div
-                                                    class="dish-info col-12 d-flex p-1"
-                                                >
+                                                class="border-radius-gv dish-wrapper d-flex justify-content-between p-3">
+                                                <div class="dish-info col-12 d-flex p-1">
                                                     <div class="d-flex mb-2">
-                                                        <figure
-                                                            class="border-radius"
-                                                        >
-                                                            <img
-                                                                :src="
-                                                                    dish.cover
-                                                                "
-                                                                style="
-                                                                    width: 80px;
-                                                                    height: 80px;
-                                                                "
-                                                                class="rounded-lg"
-                                                                alt=""
-                                                            />
+                                                        <figure class="border-radius">
+                                                            <img :src="dish.cover" style="width: 80px; height: 80px;" class="rounded-lg" alt="" />
                                                         </figure>
 
-                                                        <div
-                                                            class="px-3 flex-grow-1"
-                                                        >
-                                                            <h4
-                                                                class="dish-title mb-1"
-                                                            >
-                                                                {{ dish.name }}
-                                                            </h4>
-                                                            <p
-                                                                class="dish-ingredients mb-1"
-                                                            >
-                                                                {{
-                                                                    dish.ingredients
-                                                                }}
-                                                            </p>
+                                                        <div class="px-3 flex-grow-1">
+                                                            <h4 class="dish-title mb-1">{{ dish.name }}</h4>
+                                                            <p class="dish-ingredients mb-1">{{dish.ingredients}}</p>
                                                         </div>
                                                     </div>
 
                                                     <!-- Pulsante per aggiungere al carrello -->
-                                                    <div
-                                                        class="col-12 px-0 d-flex justify-content-between align-items-start"
-                                                    >
-                                                        <span
-                                                            class="dish-price"
-                                                        >
-                                                            {{
-                                                                dish.price.toFixed(
-                                                                    2
-                                                                )
-                                                            }}
-                                                            €
-                                                        </span>
+                                                    <div class="col-12 px-0 d-flex justify-content-between align-items-start">
+                                                        <span class="dish-price">{{dish.price.toFixed(2)}}€</span>
 
                                                         <!-- modal del menu -->
-                                                        <modalMenu :dish="dish"/>
+                                                        <button
+                                                            type="button"
+                                                            class="btn btn-primary"
+                                                            data-toggle="modal"
+                                                            data-target="#exampleModal"
+                                                        >
+                                                            Aggiungi al carrello
+                                                        </button>
+                                                        <modalMenu :dish="dish" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -230,6 +170,7 @@ export default {
 }
 
 #restaurant-page {
+
     // css delle info ristorante
     .restaurant-header {
         background-color: white;
@@ -260,10 +201,12 @@ export default {
                 font-size: 50px;
                 font-weight: 800;
             }
+
             .info {
                 gap: 10px;
                 list-style-type: none;
             }
+
             .cancel {
                 text-decoration: line-through;
             }
@@ -288,6 +231,7 @@ export default {
                 .dish-title {
                     font-size: 19px;
                 }
+
                 .dish-price {
                     font-size: 15px;
                 }

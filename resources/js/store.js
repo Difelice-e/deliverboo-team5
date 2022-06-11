@@ -69,6 +69,7 @@ let store = {
                 
                 
             }
+
             this.commit('saveCart');
         },
         calcTotal(state, cartTotalPrice) {

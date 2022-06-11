@@ -32,10 +32,10 @@
 
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <span v-if="deliveryFees != 0">spese di consegna: {{ deliveryFees}}€</span> 
+                        <span v-if="deliveryFees != 0">spese di consegna: {{ deliveryFees }}€</span> 
                         <span v-else>Stai risparmiando 2.50€ di spedizione!</span>
                         <div class="progress-bar-wrapper">
-                            <div class="progress-bar" :style="{width: this.totalPrice*100/this.minOrder + '%'}"></div>
+                            <div class="progress-bar" :style="{width: $store.state.cartTotal*100/this.minOrder + '%'}"></div>
                         </div>
                     </div>
                 </div>
@@ -90,6 +90,7 @@ export default {
             }
 
             this.$store.commit('calcTotal', total)
+            return total
         },
         deliveryFees() {
             let deliveryFee = 2.50
