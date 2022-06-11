@@ -6,7 +6,7 @@
         <!-- Modal -->
         <div
             class="modal fade"
-            id="exampleModal"
+            :id="'modal'+dish.id"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"

@@ -12,11 +12,10 @@
       >
         <div class="container">
           <!-- {{-- logo  --}} -->
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             <img
-              src="/docs/4.0/assets/brand/bootstrap-solid.svg"
-              width="30"
-              height="30"
+             
+              width="150"
               class="d-inline-block align-top"
               alt=""
             />
@@ -127,9 +126,8 @@
         <div class="row pb-5">
           <div class="col-12">
             <img
-              src="/docs/4.0/assets/brand/bootstrap-solid.svg"
-              width="30"
-              height="30"
+              src="https://imgur.com/gallery/y2F0J6M"
+              width="150"
               class="d-inline-block align-top"
               alt=""
             />

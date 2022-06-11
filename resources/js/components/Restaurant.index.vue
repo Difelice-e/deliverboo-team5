@@ -1,6 +1,6 @@
 <template>
-    <div class="container-fluid">
-               <div >
+    <div class="container">
+        
             <div class="row flex-md-row flex-column">
 
 
@@ -109,7 +109,7 @@
 
             </div>
 
-        </div>
+        
         
 </template>
 
