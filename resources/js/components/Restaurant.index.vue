@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        
+
             <div class="row flex-md-row flex-column">
 
 
@@ -17,7 +17,7 @@
                         >
                             <p class="text-center text-md-left p-5"><strong>Filtri più usati</strong></p>
                             <ul class="filter py-3 d-flex flex-row flex-md-column flex-wrap justify-content-center p-4">
-                               
+
                                 <li
                                     v-for="tipology in tipologies"
                                     :key="tipology.id"
@@ -47,7 +47,7 @@
                 <div class="col-12 col-md-10 restaurant-wrapper">
                     <div class="restaurants-bg py-4">
                      <div class="container">
-     
+
 
 
                     <div>
@@ -109,8 +109,8 @@
 
             </div>
 
-        
-        
+
+
 </template>
 
 <script>
@@ -266,20 +266,43 @@ ul li::after{
         width: 170px;
         border-radius: 30px;
 
-        
-       
-
     }
-     
-  input[type="checkbox"]:checked ~ label .selected{
+
+    input[type="checkbox"]:checked ~ label .selected{
        /* background: blue; */
-       padding: 10px 30px;
-       background-color: #fcc244;
-       
-
+        padding: 10px 30px;
+        background-color: #fcc244;
     }
+
 .restaurant-wrapper{
-    overflow: scroll;
+    overflow-y: scroll;
     height: 100vh;
+
+        /* width */
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+        border: transparent;
+        box-shadow: 0px 0px 5px grey inset;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background-color: #00a080;
+        border-radius: 10px;
+        border: transparent;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #006d57;
+    }
 }
+
+
 </style>

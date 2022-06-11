@@ -1,5 +1,5 @@
 <template>
-    <div class="container my-5">
+    <div class="container scroll my-5">
         <h2 class="pb-4 text-center back-yellow title-rest">
             Ristoranti:
             <span class="back-mark">
