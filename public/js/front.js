@@ -1984,7 +1984,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   data: function data() {
     return {
       // spesa di ordine minimo 
-      minOrder: 10
+      minOrder: 15
     };
   },
   methods: {

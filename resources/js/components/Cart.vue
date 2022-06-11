@@ -69,7 +69,7 @@ export default {
     data() {
         return {
             // spesa di ordine minimo 
-            minOrder: 10,
+            minOrder: 15,
         }
     },
     methods: {
