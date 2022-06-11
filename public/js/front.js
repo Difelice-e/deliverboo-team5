@@ -5602,7 +5602,7 @@ var render = function () {
                 "ul",
                 {
                   staticClass:
-                    "d-flex flex-wrap justify-content-center list-wrapper pt-3",
+                    "d-flex row flex-wrap justify-content-center ml-2 list-wrapper pt-3",
                 },
                 _vm._l(_vm.users, function (user) {
                   return _c(
@@ -5611,8 +5611,8 @@ var render = function () {
                       key: user.id,
                       class:
                         _vm.currentPage == 4 && _vm.users.length < 3
-                          ? "cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12"
-                          : "cursor-pointer list-item col-12 col-md-6 col-lg-4",
+                          ? "cursor-pointer list-item col-12 col-sm-12 col-md-12 col-lg-6 col-xs-12"
+                          : "cursor-pointer list-item col-12 col-md-12 col-lg-6",
                       attrs: {
                         tag: "li",
                         to: {
@@ -5671,7 +5671,7 @@ var render = function () {
                                 "div",
                                 {
                                   staticClass:
-                                    "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-2",
+                                    "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-4",
                                 },
                                 _vm._l(user.tipologies, function (el) {
                                   return _c(
@@ -5699,10 +5699,10 @@ var render = function () {
                             "div",
                             {
                               staticClass:
-                                "bg-white card-foot d-flex justify-content-between mt-2 px-2",
+                                "bg-white card-foot d-flex justify-content-between align-items-center mt-2 px-2",
                             },
                             [
-                              _c("div", { staticClass: "d-flex" }, [
+                              _c("div", { staticClass: "d-flex flex-wrap" }, [
                                 _c("img", {
                                   staticClass: "favicon pr-2",
                                   attrs: {
@@ -5711,7 +5711,7 @@ var render = function () {
                                   },
                                 }),
                                 _vm._v(" "),
-                                _c("p", [
+                                _c("p", { staticClass: "rec" }, [
                                   _vm._v(
                                     _vm._s(_vm.vote[_vm.random()].rec) + "%"
                                   ),
@@ -5720,7 +5720,10 @@ var render = function () {
                               _vm._v(" "),
                               _c(
                                 "div",
-                                { staticClass: "d-flex align-items-center" },
+                                {
+                                  staticClass:
+                                    "d-flex flex-wrap align-items-center",
+                                },
                                 [
                                   _c("div", { staticClass: "d-flex mr-2" }, [
                                     _c("img", {
@@ -25543,7 +25546,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetto finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
