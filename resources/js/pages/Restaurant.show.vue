@@ -85,7 +85,7 @@
                                                         >
                                                             Aggiungi al carrello
                                                         </button>
-                                                        <modalMenu :dish="dish" />
+                                                        <modalMenu :dish="dish" :user="user" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -98,7 +98,7 @@
                         <div class="col-12 col-xl-4">
                             <!-- carrello  -->
                             <div class="col-12">
-                                <CartDropdown />
+                                <CartDropdown :user="user"/>
                             </div>
                         </div>
                     </div>

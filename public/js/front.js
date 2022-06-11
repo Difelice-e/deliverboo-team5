@@ -1980,7 +1980,24 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    user: {
+      type: Object,
+      require: true
+    }
+  },
   data: function data() {
     return {
       // spesa di ordine minimo 
@@ -2545,12 +2562,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // data() {
-  //     //
-  // },
   props: {
     dish: {
+      type: Object,
+      require: true
+    },
+    user: {
       type: Object,
       require: true
     }
@@ -2558,6 +2607,15 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     addToCart: function addToCart(dish) {
       this.$store.commit("addToCart", dish);
+    }
+  },
+  computed: {
+    sameRestaurants: function sameRestaurants() {
+      var _this = this;
+
+      return this.$store.state.cart.find(function (product) {
+        return product.user_id == _this.dish.user_id;
+      });
     }
   }
 });
@@ -5059,79 +5117,81 @@ var render = function () {
             ]),
             _vm._v(" "),
             _vm._l(_vm.$store.state.cart, function (dish) {
-              return _c("div", { key: dish.id, staticClass: "row mb-3" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "col-12 text-nowrap d-flex justify-content-between",
-                    staticStyle: { gap: "10px" },
-                  },
-                  [
-                    _c("span", { staticClass: "weight-bold" }, [
-                      _vm._v(_vm._s(dish.quantity) + "x"),
-                    ]),
-                    _vm._v(" "),
-                    _c("span", [_vm._v(_vm._s(dish.name))]),
-                    _vm._v(" "),
-                    _c("span", [
-                      _vm._v("€" + _vm._s(dish.totalPrice.toFixed(2))),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-12 d-flex justify-content-between" },
-                  [
+              return dish.user_id == _vm.user.id
+                ? _c("div", { key: dish.id, staticClass: "row mb-3" }, [
                     _c(
-                      "figure",
+                      "div",
                       {
-                        staticClass: "cursor-pointer",
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.decreaseQuantity(dish)
-                          },
-                        },
+                        staticClass:
+                          "col-12 text-nowrap d-flex justify-content-between",
+                        staticStyle: { gap: "10px" },
                       },
                       [
-                        _c("img", {
-                          attrs: {
-                            width: "30px",
-                            height: "30px",
-                            src: "https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/minus.svg",
-                            alt: "",
-                          },
-                        }),
+                        _c("span", { staticClass: "weight-bold" }, [
+                          _vm._v(_vm._s(dish.quantity) + "x"),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(dish.name))]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v("€" + _vm._s(dish.totalPrice.toFixed(2))),
+                        ]),
                       ]
                     ),
                     _vm._v(" "),
                     _c(
-                      "figure",
-                      {
-                        staticClass: "cursor-pointer",
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.increaseQuantity(dish)
-                          },
-                        },
-                      },
+                      "div",
+                      { staticClass: "col-12 d-flex justify-content-between" },
                       [
-                        _c("img", {
-                          attrs: {
-                            width: "30px",
-                            height: "30px",
-                            src: "https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/plus.svg",
-                            alt: "",
+                        _c(
+                          "figure",
+                          {
+                            staticClass: "cursor-pointer",
+                            on: {
+                              click: function ($event) {
+                                $event.preventDefault()
+                                return _vm.decreaseQuantity(dish)
+                              },
+                            },
                           },
-                        }),
+                          [
+                            _c("img", {
+                              attrs: {
+                                width: "30px",
+                                height: "30px",
+                                src: "https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/minus.svg",
+                                alt: "",
+                              },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "figure",
+                          {
+                            staticClass: "cursor-pointer",
+                            on: {
+                              click: function ($event) {
+                                $event.preventDefault()
+                                return _vm.increaseQuantity(dish)
+                              },
+                            },
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                width: "30px",
+                                height: "30px",
+                                src: "https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/plus.svg",
+                                alt: "",
+                              },
+                            }),
+                          ]
+                        ),
                       ]
                     ),
-                  ]
-                ),
-              ])
+                  ])
+                : _c("div", [_vm._m(0)])
             }),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
@@ -5198,7 +5258,7 @@ var render = function () {
           [
             _c("h1", [_vm._v("Il tuo glovo")]),
             _vm._v(" "),
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "p",
@@ -5218,6 +5278,28 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 text-center" }, [
+        _c("h4", { staticClass: "font-weight-bold" }, [_vm._v("Attenzione!")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Sei nella pagina di un ristorante diverso da quello dell'ordine presente nel carrello"
+          ),
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Procedi al checkout per completare l'ordine o crea un nuovo carrello in questo ristorante"
+          ),
+        ]),
+      ]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -5940,66 +6022,114 @@ var render = function () {
               _vm._m(0),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "container mt-4" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("figure", { staticClass: "col-12 col-md-6" }, [
-                  _c("img", {
-                    staticStyle: { "border-radius": "30px" },
-                    attrs: {
-                      width: "100%",
-                      height: "100%",
-                      src: _vm.dish.cover,
-                      alt: "",
-                    },
-                  }),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-12 col-md-6" }, [
-                  _c("div", [
-                    _c("h4", [_vm._v("Ingredienti")]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "\n                                    " +
-                          _vm._s(_vm.dish.ingredients) +
-                          "\n                                "
-                      ),
+            this.sameRestaurants || _vm.$store.state.cartCount == 0
+              ? _c("div", { staticClass: "container mt-4" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("figure", { staticClass: "col-12 col-md-6" }, [
+                      _c("img", {
+                        staticStyle: { "border-radius": "30px" },
+                        attrs: {
+                          width: "100%",
+                          height: "100%",
+                          src: _vm.dish.cover,
+                          alt: "",
+                        },
+                      }),
                     ]),
                     _vm._v(" "),
-                    _c("h4", [_vm._v("Descrizione")]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "\n                                    " +
-                          _vm._s(_vm.dish.description) +
-                          "\n                                "
-                      ),
+                    _c("div", { staticClass: "col-12 col-md-6" }, [
+                      _c("div", [
+                        _c("h4", [_vm._v("Ingredienti")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.dish.ingredients) +
+                              "\n                                "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Descrizione")]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.dish.description) +
+                              "\n                                "
+                          ),
+                        ]),
+                      ]),
                     ]),
                   ]),
-                ]),
-              ]),
-            ]),
+                ])
+              : _c("div", [_vm._m(1)]),
             _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "btn btn-success cursor-pointer ml-2 float-right",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function ($event) {
-                      return _vm.addToCart(_vm.dish)
+            this.sameRestaurants || _vm.$store.state.cartCount == 0
+              ? _c("div", { staticClass: "modal-body" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-success cursor-pointer ml-2 float-right",
+                      attrs: {
+                        type: "button",
+                        "data-dismiss": "modal",
+                        "aria-label": "Close",
+                      },
+                      on: {
+                        click: function ($event) {
+                          return _vm.addToCart(_vm.dish)
+                        },
+                      },
                     },
-                  },
-                },
-                [
-                  _vm._v(
-                    "\n                        Aggiungi al carrello\n                    "
+                    [
+                      _vm._v(
+                        "\n                        Aggiungi al carrello\n                    "
+                      ),
+                    ]
                   ),
-                ]
-              ),
-            ]),
+                ])
+              : _c("div", { staticClass: "modal-body" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn btn-success cursor-pointer ml-2 float-right",
+                      attrs: {
+                        type: "button",
+                        "data-dismiss": "modal",
+                        "aria-label": "Close",
+                      },
+                      on: {
+                        click: function ($event) {
+                          return _vm.addToCart(_vm.dish)
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                        Nuovo carrello\n                    "
+                      ),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger ml-2 float-right",
+                      attrs: {
+                        type: "button",
+                        "data-dismiss": "modal",
+                        "aria-label": "Close",
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                        Annulla\n                    "
+                      ),
+                    ]
+                  ),
+                ]),
           ]),
         ]),
       ]
@@ -6023,6 +6153,22 @@ var staticRenderFns = [
       },
       [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
     )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row p-5" }, [
+      _c("div", { staticClass: "col-12 col-md-6" }, [
+        _c("h3", [_vm._v("Stai cercando di ordinare da due ristoranti!")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Puoi effettuare un ordine da un solo ristorante per volta. Vuoi aggiungere questo piatto e creare un nuovo carrello o vuoi tornare indietro?"
+          ),
+        ]),
+      ]),
+    ])
   },
 ]
 render._withStripped = true
@@ -6881,7 +7027,10 @@ var render = function () {
                                               ),
                                               _vm._v(" "),
                                               _c("modalMenu", {
-                                                attrs: { dish: dish },
+                                                attrs: {
+                                                  dish: dish,
+                                                  user: _vm.user,
+                                                },
                                               }),
                                             ],
                                             1
@@ -6903,7 +7052,7 @@ var render = function () {
                       _c(
                         "div",
                         { staticClass: "col-12" },
-                        [_c("CartDropdown")],
+                        [_c("CartDropdown", { attrs: { user: _vm.user } })],
                         1
                       ),
                     ]),
@@ -25403,12 +25552,8 @@ var store = {
         // prodotto di ristorante diverso 
         if (!sameRestaurant) {
           if (state.cartCount > 0) {
-            if (confirm('Attenzione, Stai aggiungendo al carrello un prodotto di un altro ristorante! Continuando perderai il tuo attuale carrello. Procedere?')) {
-              state.cart = [];
-              state.cartCount = 0;
-            } else {
-              return 0;
-            }
+            state.cart = [];
+            state.cartCount = 0;
           }
         } // prodotto nuovo
 
