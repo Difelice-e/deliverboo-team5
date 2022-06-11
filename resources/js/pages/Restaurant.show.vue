@@ -81,7 +81,7 @@
                                                             type="button"
                                                             class="btn btn-primary"
                                                             data-toggle="modal"
-                                                            :data-target="'#modal'+dish.id"
+                                                            :data-target="'#modal' + dish.id"
                                                         >
                                                             Aggiungi al carrello
                                                         </button>

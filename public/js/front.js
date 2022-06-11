@@ -3547,7 +3547,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\nul li[data-v-5edc78cc]::after {\n  display: block;\n  content: \"\";\n  background: lightgrey;\n  width: 100%;\n  height: 1px;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  background: transparent;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n}\ninput[type=checkbox]:checked ~ label .selected[data-v-5edc78cc] {\n  /* background: blue; */\n  padding: 10px 30px;\n  background-color: #fcc244;\n}\n.restaurant-wrapper[data-v-5edc78cc] {\n  overflow: scroll;\n  height: 100vh;\n}", ""]);
+exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\nul li[data-v-5edc78cc]::after {\n  display: block;\n  content: \"\";\n  background: lightgrey;\n  width: 100%;\n  height: 1px;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  background: transparent;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n}\ninput[type=checkbox]:checked ~ label .selected[data-v-5edc78cc] {\n  /* background: blue; */\n  padding: 10px 30px;\n  background-color: #fcc244;\n}\n.restaurant-wrapper[data-v-5edc78cc] {\n  overflow-y: scroll;\n  height: 100vh;\n  /* width */\n  /* Track */\n  /* Handle */\n  /* Handle on hover */\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar {\n  width: 6px;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-track {\n  border-radius: 10px;\n  background-color: transparent;\n  border: transparent;\n  box-shadow: 0px 0px 5px grey inset;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb {\n  background-color: #00a080;\n  border-radius: 10px;\n  border: transparent;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb:hover {\n  background-color: #006d57;\n}", ""]);
 
 // exports
 
@@ -5606,7 +5606,7 @@ var render = function () {
                 "ul",
                 {
                   staticClass:
-                    "d-flex flex-wrap justify-content-center list-wrapper pt-3",
+                    "d-flex row flex-wrap justify-content-center ml-2 list-wrapper pt-3",
                 },
                 _vm._l(_vm.users, function (user) {
                   return _c(
@@ -5615,8 +5615,8 @@ var render = function () {
                       key: user.id,
                       class:
                         _vm.currentPage == 4 && _vm.users.length < 3
-                          ? "cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12"
-                          : "cursor-pointer list-item col-12 col-md-6 col-lg-4",
+                          ? "cursor-pointer list-item col-12 col-sm-12 col-md-12 col-lg-6 col-xs-12"
+                          : "cursor-pointer list-item col-12 col-md-12 col-lg-6",
                       attrs: {
                         tag: "li",
                         to: {
@@ -5675,7 +5675,7 @@ var render = function () {
                                 "div",
                                 {
                                   staticClass:
-                                    "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-2",
+                                    "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-4",
                                 },
                                 _vm._l(user.tipologies, function (el) {
                                   return _c(
@@ -5703,10 +5703,10 @@ var render = function () {
                             "div",
                             {
                               staticClass:
-                                "bg-white card-foot d-flex justify-content-between mt-2 px-2",
+                                "bg-white card-foot d-flex justify-content-between align-items-center mt-2 px-2",
                             },
                             [
-                              _c("div", { staticClass: "d-flex" }, [
+                              _c("div", { staticClass: "d-flex flex-wrap" }, [
                                 _c("img", {
                                   staticClass: "favicon pr-2",
                                   attrs: {
@@ -5715,7 +5715,7 @@ var render = function () {
                                   },
                                 }),
                                 _vm._v(" "),
-                                _c("p", [
+                                _c("p", { staticClass: "rec" }, [
                                   _vm._v(
                                     _vm._s(_vm.vote[_vm.random()].rec) + "%"
                                   ),
@@ -5724,7 +5724,10 @@ var render = function () {
                               _vm._v(" "),
                               _c(
                                 "div",
-                                { staticClass: "d-flex align-items-center" },
+                                {
+                                  staticClass:
+                                    "d-flex flex-wrap align-items-center",
+                                },
                                 [
                                   _c("div", { staticClass: "d-flex mr-2" }, [
                                     _c("img", {
@@ -7038,7 +7041,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container my-5" },
+    { staticClass: "container scroll my-5" },
     [
       _c("h2", { staticClass: "pb-4 text-center back-yellow title-rest" }, [
         _vm._v("\n        Ristoranti:\n        "),
@@ -25559,7 +25562,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

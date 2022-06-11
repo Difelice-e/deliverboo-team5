@@ -1,6 +1,8 @@
 <template>
+
     <div class="container py-5">
         
+
             <div class="row flex-md-row flex-column">
 
                 <div class="col-12 text-center ">
@@ -19,7 +21,7 @@
                         >
                             <p class="text-center text-md-left p-5"><strong>Filtri più usati</strong></p>
                             <ul class="filter py-3 d-flex flex-row flex-md-column flex-wrap justify-content-center p-4">
-                               
+
                                 <li
                                     v-for="tipology in tipologies"
                                     :key="tipology.id"
@@ -49,13 +51,13 @@
                 <div class="col-12 col-md-10 restaurant-wrapper">
                     <div class="restaurants-bg py-4">
                      <div class="container">
-     
+
 
 
                     <div>
 
-                    <ul class="d-flex flex-wrap justify-content-center list-wrapper pt-3">
-                        <router-link tag="li" v-for="user in users" :key="user.id" :class="currentPage == 4 && users.length < 3?  'cursor-pointer list-item col-12 col-sm-12 col-md-6 col-xs-12' : 'cursor-pointer list-item col-12 col-md-6 col-lg-4' "
+                    <ul class="d-flex row flex-wrap justify-content-center ml-2 list-wrapper pt-3">
+                        <router-link tag="li" v-for="user in users" :key="user.id" :class="currentPage == 4 && users.length < 3?  'cursor-pointer list-item col-12 col-sm-12 col-md-12 col-lg-6 col-xs-12' : 'cursor-pointer list-item col-12 col-md-12 col-lg-6' "
                             :to="{
                                 name: 'restaurant.show',
                                 params: { slug: user.slug },
@@ -69,18 +71,18 @@
                                     <h5 class="name-business text-center text-capitalize">
                                         {{ user.business_name }}
                                     </h5>
-                                    <div class="d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-2">
+                                    <div class="d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-4">
                                         <p v-for="el in user.tipologies" :key="el.id" class="tipologies-name badge badge-dark">
                                             {{ el.name }}
                                         </p>
                                     </div>
                                 </div>
-                                <div class="bg-white card-foot d-flex justify-content-between mt-2 px-2">
-                                    <div class="d-flex">
+                                <div class="bg-white card-foot d-flex justify-content-between align-items-center mt-2 px-2">
+                                    <div class="d-flex flex-wrap">
                                         <img class="favicon pr-2" src="https://img.icons8.com/external-those-icons-lineal-those-icons/344/external-like-touch-gestures-those-icons-lineal-those-icons.png" alt="">
-                                        <p>{{ vote[random()].rec}}%</p>
+                                        <p class="rec">{{ vote[random()].rec}}%</p>
                                     </div>
-                                    <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-wrap align-items-center">
                                         <div class="d-flex mr-2">
                                             <img class="favicon fav-2" src="https://img.icons8.com/ios/344/scooter.png" alt="">
                                             <p class="bg-gl font-gl text-uppercase">Gratis</p>
@@ -111,8 +113,8 @@
 
             </div>
 
-        
-        
+
+
 </template>
 
 <script>
@@ -268,20 +270,43 @@ ul li::after{
         width: 170px;
         border-radius: 30px;
 
-        
-       
-
     }
-     
-  input[type="checkbox"]:checked ~ label .selected{
+
+    input[type="checkbox"]:checked ~ label .selected{
        /* background: blue; */
-       padding: 10px 30px;
-       background-color: #fcc244;
-       
-
+        padding: 10px 30px;
+        background-color: #fcc244;
     }
+
 .restaurant-wrapper{
-    overflow: scroll;
+    overflow-y: scroll;
     height: 100vh;
+
+        /* width */
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+        border: transparent;
+        box-shadow: 0px 0px 5px grey inset;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background-color: #00a080;
+        border-radius: 10px;
+        border: transparent;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #006d57;
+    }
 }
+
+
 </style>
