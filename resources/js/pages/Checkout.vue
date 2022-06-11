@@ -1,6 +1,6 @@
 <template>
     <div class="container d-flex justify-content-center align-items-center flex-column py-5">
-        <h1 class="text-center">Aggiungi il tuo nome e la tua Email e un indirizzo di consegna</h1>
+        <h1 class="text-center">Inserisci i dati necessari per la consegna</h1>
         <form @submit.prevent="handleSubmit(sendForm())" method="POST" class="py-5 col-6 rounded ">
             <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row my-3">
                 <label class="mb-0 p-0 col-12 col-lg-2" for="customer_name">Nome e Cognome:</label>

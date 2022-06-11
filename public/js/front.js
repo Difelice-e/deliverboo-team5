@@ -6139,9 +6139,7 @@ var render = function () {
     },
     [
       _c("h1", { staticClass: "text-center" }, [
-        _vm._v(
-          "Aggiungi il tuo nome e la tua Email e un indirizzo di consegna"
-        ),
+        _vm._v("Inserisci i dati necessari per la consegna"),
       ]),
       _vm._v(" "),
       _c(
