@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app overflow-hidden">
     <header>
       <nav
         class="
@@ -220,8 +220,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.app {
-  overflow: hidden;
-}
-
 </style>

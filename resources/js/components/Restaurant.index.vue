@@ -29,7 +29,7 @@
                                         :value="tipology.id"
                                     />
                                     <label :for="tipology.id">
-                                        {{ tipology.name }} ({{ tipology.users.length }})
+                                        <span>{{ tipology.name }} ({{ tipology.users.length }})</span>
                                     </label>
                                 </li>
                             </ul>
@@ -192,7 +192,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .filter {
     display: flex;

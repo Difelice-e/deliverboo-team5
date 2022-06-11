@@ -19,11 +19,11 @@
 export default {
     props: {
     tipology: {
-      type: Object,
-      require: true,
+        type: Object,
+        require: true,
     },
-  },
+},
 };
 </script>
 
-<style></style>
+<style lang="scss"></style>

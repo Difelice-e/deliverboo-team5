@@ -144,74 +144,8 @@
                                                             €
                                                         </span>
 
-                                                        <!-- Button trigger modal -->
-                                                        <button
-                                                            type="button"
-                                                            class="btn btn-primary"
-                                                            data-toggle="modal"
-                                                            data-target="#exampleModal"
-                                                        >
-                                                            modal
-                                                        </button>
-
-                                                        <!-- Modal -->
-                                                        <div
-                                                            class="modal fade"
-                                                            id="exampleModal"
-                                                            tabindex="-1"
-                                                            aria-labelledby="exampleModalLabel"
-                                                            aria-hidden="true"
-                                                        >
-                                                            <div
-                                                                class="modal-dialog"
-                                                            >
-                                                                <div
-                                                                    class="modal-content"
-                                                                >
-                                                                    <div
-                                                                        class="modal-header"
-                                                                    >
-                                                                        <h5
-                                                                            class="modal-title"
-                                                                            id="exampleModalLabel"
-                                                                        >
-                                                                            {{ dish.name }}
-                                                                        </h5>
-                                                                        <button
-                                                                            type="button"
-                                                                            class="close"
-                                                                            data-dismiss="modal"
-                                                                            aria-label="Close"
-                                                                        >
-                                                                            <span
-                                                                                aria-hidden="true"
-                                                                                >&times;</span
-                                                                            >
-                                                                        </button>
-                                                                    </div>
-                                                                    <div
-                                                                        class="modal-body"
-                                                                    >
-                                                                    <!-- bottone ordine -->
-                                                                        <figure
-                                                                            @click="
-                                                                                addToCart(
-                                                                                    dish,
-                                                                                    user
-                                                                                )
-                                                                            "
-                                                                            class="cursor-pointer ml-2"
-                                                                        >
-                                                                            <img
-                                                                                src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/plus-new.svg"
-                                                                                alt=""
-                                                                            />
-                                                                        </figure>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <!-- modal del menu -->
+                                                        <modalMenu :dish="dish"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -241,11 +175,13 @@
 import axios from "axios";
 import CartDropdown from "../components/Cart.vue";
 import loadingWheel from "../components/loadingWheel.vue";
+import modalMenu from "../components/modalMenu.vue";
 
 export default {
     components: {
         CartDropdown,
         loadingWheel,
+        modalMenu,
     },
     data() {
         return {
@@ -265,10 +201,6 @@ export default {
             axios
                 .get(`/api/restaurant/${this.$route.params.slug}`)
                 .then((res) => {
-                    // console.log(
-                    //     "🚀 ~ file: Menu.show.vue ~ line 26 ~ .then ~ res",
-                    //     res.data
-                    // );
                     const { user } = res.data;
                     this.user = user;
                     console.log(this.user);
@@ -279,9 +211,6 @@ export default {
                     console.warn(err);
                     this.$router.push("/404");
                 });
-        },
-        addToCart(dish) {
-            this.$store.commit("addToCart", dish);
         },
         random: function () {
             return Math.floor(Math.random() * 5);
