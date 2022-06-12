@@ -39,7 +39,6 @@
                                 params: { slug: restaurant.slug },
                             }">
                     
-                      
                         <!-- img collezione  -->
                         <figure class="restaurant-logo">
                             <img :src="restaurant.cover" width='90' height='90' class="collection-logo" alt="restaurant-logo">
