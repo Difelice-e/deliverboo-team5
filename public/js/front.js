@@ -3755,11 +3755,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -8009,10 +8004,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+    return _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
       _c("img", {
         staticClass: "d-inline-block align-top",
-        attrs: { width: "150", alt: "" },
+        attrs: { src: "", width: "150", alt: "" },
       }),
     ])
   },
@@ -8080,14 +8075,10 @@ var staticRenderFns = [
     return _c("footer", { staticClass: "bg-darkGrayGv text-white" }, [
       _c("div", { staticClass: "container py-5" }, [
         _c("div", { staticClass: "row pb-5" }, [
-          _c("div", { staticClass: "col-12" }, [
+          _c("a", { attrs: { href: "#" } }, [
             _c("img", {
               staticClass: "d-inline-block align-top",
-              attrs: {
-                src: "https://imgur.com/gallery/y2F0J6M",
-                width: "150",
-                alt: "",
-              },
+              attrs: { width: "150", alt: "" },
             }),
           ]),
         ]),

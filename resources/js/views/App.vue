@@ -11,14 +11,9 @@
         "
       >
         <div class="container">
-          <!-- {{-- logo  --}} -->
-          <a class="navbar-brand" href="/">
-            <img
-
-              width="150"
-              class="d-inline-block align-top"
-              alt=""
-            />
+          <!-- {{-- logo   src="{{ asset('js/front.js') }}"--}} -->
+          <a class="navbar-brand" href="#">
+            <img src="" width="150" class="d-inline-block align-top" alt="">
           </a>
 
           <!-- {{-- searchbar no admin  --}} -->
@@ -89,7 +84,7 @@
                   Cart ({{ $store.state.cartCount }})
                 </a>
 
-                
+
               <div class="dropdown-menu dropdown-wrapper" aria-labelledby="dropdownMenuButton">
                 <CartDropdown :isCheckout="false"/>
               </div>
@@ -124,14 +119,14 @@
     <footer class="bg-darkGrayGv text-white">
       <div class="container py-5">
         <div class="row pb-5">
-          <div class="col-12">
+          <!-- {{-- logo  --}} -->
+          <a href="#">
             <img
-              src="https://imgur.com/gallery/y2F0J6M"
               width="150"
               class="d-inline-block align-top"
               alt=""
             />
-          </div>
+          </a>
         </div>
         <div class="row pb-5">
           <div class="col-12 col-sm-6 col-md-3">
