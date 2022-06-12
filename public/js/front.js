@@ -2433,11 +2433,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2526,7 +2521,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchTipologies: function fetchTipologies() {
       var _this3 = this;
 
-      axios.get("/api/home").then(function (res) {
+      axios.get("/api/tipology").then(function (res) {
         var tipologies = res.data.tipologies;
         _this3.tipologies = tipologies;
       })["catch"](function (err) {
@@ -2658,12 +2653,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   methods: {
     increaseQuantity: function increaseQuantity(dish) {
       this.$store.commit('addToCart', dish);
+      console.log('ciao', this.$store.state.cart);
     },
     decreaseQuantity: function decreaseQuantity(dish) {
       this.$store.commit('decreaseQuantity', dish);
+      console.log(this.$store.state.cart);
     },
     emptyCart: function emptyCart() {
       this.$store.commit('clearCart');
+      console.log(this.$store.state.cart);
     }
   },
   computed: {
@@ -2745,11 +2743,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2993,6 +2986,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3015,7 +3010,7 @@ __webpack_require__.r(__webpack_exports__);
         form: this.form,
         total: localStorage.getItem('cartTotal'),
         userId: this.localCart[0].user_id,
-        cartInfo: this.localCart
+        cartInfo: JSON.parse(localStorage.getItem('cart'))
       }).then(function (res) {
         res = JSON.parse(res.config.data), console.log(res.form.customer_name);
       });
@@ -3162,7 +3157,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchTipologies: function fetchTipologies() {
       var _this2 = this;
 
-      axios.get("/api/home").then(function (res) {
+      axios.get("/api/tipology").then(function (res) {
         var tipologies = res.data.tipologies;
         _this2.tipologies = tipologies;
       })["catch"](function (err) {
@@ -3207,6 +3202,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
 /* harmony import */ var _components_loadingWheel_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/loadingWheel.vue */ "./resources/js/components/loadingWheel.vue");
 /* harmony import */ var _components_modalMenu_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/modalMenu.vue */ "./resources/js/components/modalMenu.vue");
+//
+//
+//
 //
 //
 //
@@ -3477,7 +3475,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchTipologies: function fetchTipologies() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/home").then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/tipology").then(function (res) {
         var tipologies = res.data.tipologies;
         _this.tipologies = tipologies;
         _this.loading = true;
@@ -3508,6 +3506,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_loadingWheel_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/loadingWheel.vue */ "./resources/js/components/loadingWheel.vue");
+//
 //
 //
 //
@@ -3607,7 +3606,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchPost: function fetchPost() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/home/".concat(this.$route.params.slug)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/tipology/".concat(this.$route.params.slug)).then(function (res) {
         var tipology = res.data.tipology;
         _this.tipology = tipology;
         console.log(_this.tipology); // questa funzione serve per il caricamento completo della pagina
@@ -3848,10 +3847,71 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     CartDropdown: _components_cartCheckout_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      users: [],
+      searchbarFilter: ''
+    };
+  },
+  methods: {
+    fetchRestaurant: function fetchRestaurant() {
+      var _this = this;
+
+      axios.get("/api/home").then(function (res) {
+        var users = res.data.users;
+        _this.users = users;
+        console.log(_this.users);
+      })["catch"](function (err) {
+        console.warn(err);
+
+        _this.$router.push("/404");
+      });
+    },
+    closeSearchbar: function closeSearchbar() {
+      this.searchbarFilter = '';
+
+      if (this.$route.path == '/restaurant/:slug') {
+        this.$router.go();
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.fetchRestaurant();
+  },
+  computed: {
+    filteredRestaurant: function filteredRestaurant() {
+      var _this2 = this;
+
+      return this.users.filter(function (el) {
+        if (el.business_name) {
+          return el.business_name.toLowerCase().includes(_this2.searchbarFilter.toLowerCase());
+        }
+      });
+    }
   }
 });
 
@@ -3888,7 +3948,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n}\ninput[type=checkbox]:checked ~ label .selected[data-v-5edc78cc] {\n  padding: 10px 30px;\n  background-color: #fcc244;\n}\n.restaurant-wrapper[data-v-5edc78cc] {\n  overflow-y: scroll;\n  height: 100vh;\n  /* width */\n  /* Track */\n  /* Handle */\n  /* Handle on hover */\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar {\n  width: 6px;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-track {\n  border-radius: 10px;\n  background-color: transparent;\n  border: transparent;\n  box-shadow: 0px 0px 5px grey inset;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb {\n  background-color: #00a080;\n  border-radius: 10px;\n  border: transparent;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb:hover {\n  background-color: #006d57;\n}\n.counter[data-v-5edc78cc] {\n  background-color: #12a199;\n  border-radius: 100%;\n  padding: 10px 10px;\n  height: 26px;\n  width: 26px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n}", ""]);
+exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n  border: 1px solid transparent;\n}\ninput[type=checkbox]:checked ~ label[data-v-5edc78cc] {\n  padding: 10px 30px;\n  background-color: #fcc244;\n  box-shadow: 1px 12px 10px -5px rgba(0, 211, 168, 0.78);\n}\n.counter[data-v-5edc78cc] {\n  background-color: #12a199;\n  border-radius: 100%;\n  padding: 10px 10px;\n  height: 26px;\n  width: 26px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -4040,7 +4100,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".dropdown-wrapper[data-v-91ac6b5c] {\n  background-color: transparent;\n  border: none;\n}", ""]);
+exports.push([module.i, ".dropdown-wrapper[data-v-91ac6b5c] {\n  background-color: transparent;\n  border: none;\n}\na[data-v-91ac6b5c] {\n  text-decoration: none;\n  color: currentColor;\n}\n.filtered-restaurant[data-v-91ac6b5c] {\n  position: absolute;\n  top: 120%;\n  left: 50%;\n  transform: translate(-50%, 0);\n  width: 96%;\n  max-height: 800px;\n  overflow: auto;\n  background-color: lightgrey;\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  display: none;\n  z-index: 999;\n  box-shadow: 5px 5px 9px 1px rgba(0, 0, 0, 0.63);\n}\n.filtered-restaurant.active[data-v-91ac6b5c] {\n  display: block;\n}\n.restaurant-logo[data-v-91ac6b5c] {\n  border: 3px solid #00a080;\n  overflow: hidden;\n  margin: 0;\n  border-radius: 5px;\n  min-width: 90px;\n  min-height: 90px;\n}\n.page-link[data-v-91ac6b5c] {\n  padding: 0;\n  margin: 0;\n}\n.single-collection[data-v-91ac6b5c] {\n  display: flex;\n  gap: 8px;\n  align-items: center;\n  text-align: left;\n  font-size: 1rem;\n  padding: 5px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.collection-name[data-v-91ac6b5c] {\n  display: block;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.single-collection[data-v-91ac6b5c]:nth-child(odd) {\n  background-color: white;\n}\n.single-collection[data-v-91ac6b5c]:nth-child(even) {\n  background-color: #faeac4;\n}\n.single-collection[data-v-91ac6b5c]:hover {\n  background-color: #ffc244;\n}\n.no-result[data-v-91ac6b5c] {\n  min-height: 300px;\n  padding: 0 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: white;\n  font-size: 1.5rem;\n}", ""]);
 
 // exports
 
@@ -6005,7 +6065,10 @@ var render = function () {
                           [
                             _c(
                               "span",
-                              { staticClass: "text-center text-md-left" },
+                              {
+                                staticClass:
+                                  "text-center text-md-left font-weight-bold",
+                              },
                               [
                                 _vm._v(
                                   "\n                    " +
@@ -6070,15 +6133,18 @@ var render = function () {
                             "div",
                             { staticClass: "overlay overflow-hidden" },
                             [
-                              _c("img", {
-                                staticClass: "card-img-top img-card",
-                                attrs: {
-                                  width: "300px",
-                                  height: "150px",
-                                  src: user.cover,
-                                  alt: "",
-                                },
-                              }),
+                              user.cover.includes("storage")
+                                ? _c("img", {
+                                    staticClass: "card-img-top img-card",
+                                    attrs: {
+                                      src: "../../../" + user.cover,
+                                      alt: "",
+                                    },
+                                  })
+                                : _c("img", {
+                                    staticClass: "card-img-top img-card",
+                                    attrs: { src: user.cover, alt: "" },
+                                  }),
                             ]
                           ),
                           _vm._v(" "),
@@ -6264,7 +6330,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "text-center text-md-left p-5" }, [
+    return _c("p", { staticClass: "text-center text-md-left px-5" }, [
       _c("strong", [_vm._v("Filtri più usati")]),
     ])
   },
@@ -6605,15 +6671,28 @@ var render = function () {
               ? _c("div", { staticClass: "container mt-4" }, [
                   _c("div", { staticClass: "row" }, [
                     _c("figure", { staticClass: "col-12 col-md-6" }, [
-                      _c("img", {
-                        staticStyle: { "border-radius": "30px" },
-                        attrs: {
-                          width: "100%",
-                          height: "100%",
-                          src: _vm.dish.cover,
-                          alt: "",
-                        },
-                      }),
+                      _vm.dish.cover.includes("storage")
+                        ? _c("img", {
+                            staticClass: "rounded-lg",
+                            staticStyle: {
+                              width: "100%",
+                              "max-height": "250px",
+                              "border-radius": "30px",
+                            },
+                            attrs: {
+                              src: "../../../" + _vm.dish.cover,
+                              alt: "",
+                            },
+                          })
+                        : _c("img", {
+                            staticClass: "rounded-lg",
+                            staticStyle: {
+                              width: "100%",
+                              "max-height": "100%",
+                              "border-radius": "30px",
+                            },
+                            attrs: { src: _vm.dish.cover, alt: "" },
+                          }),
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-12 col-md-6" }, [
@@ -7100,6 +7179,16 @@ var render = function () {
             ]
           ),
           _vm._v(" "),
+          _c("h4", [
+            _vm._v(
+              "Totale: " +
+                _vm._s(
+                  parseInt(_vm.$store.state.cartTotal.toFixed(2)).toFixed(2)
+                ) +
+                "€"
+            ),
+          ]),
+          _vm._v(" "),
           _c(
             "button",
             {
@@ -7370,15 +7459,25 @@ var render = function () {
             _c("div", { staticClass: "restaurant-header" }, [
               _c("div", [
                 _c("div", { staticClass: "row" }, [
-                  _c("img", {
-                    staticClass: "blur-image",
-                    attrs: {
-                      src: _vm.user.cover,
-                      alt: "",
-                      width: "100%",
-                      height: "260",
-                    },
-                  }),
+                  _vm.user.cover.includes("storage")
+                    ? _c("img", {
+                        staticClass: "blur-image",
+                        attrs: {
+                          src: "../../../" + _vm.user.cover,
+                          alt: "",
+                          width: "100%",
+                          height: "450",
+                        },
+                      })
+                    : _c("img", {
+                        staticClass: "blur-image",
+                        attrs: {
+                          src: _vm.user.cover,
+                          alt: "",
+                          width: "100%",
+                          height: "450",
+                        },
+                      }),
                 ]),
               ]),
             ]),
@@ -7549,17 +7648,33 @@ var render = function () {
                                                   staticClass: "border-radius",
                                                 },
                                                 [
-                                                  _c("img", {
-                                                    staticClass: "rounded-lg",
-                                                    staticStyle: {
-                                                      width: "80px",
-                                                      height: "80px",
-                                                    },
-                                                    attrs: {
-                                                      src: dish.cover,
-                                                      alt: "",
-                                                    },
-                                                  }),
+                                                  dish.cover.includes("storage")
+                                                    ? _c("img", {
+                                                        staticClass:
+                                                          "rounded-lg",
+                                                        staticStyle: {
+                                                          width: "80px",
+                                                          height: "80px",
+                                                        },
+                                                        attrs: {
+                                                          src:
+                                                            "../../../" +
+                                                            dish.cover,
+                                                          alt: "",
+                                                        },
+                                                      })
+                                                    : _c("img", {
+                                                        staticClass:
+                                                          "rounded-lg",
+                                                        staticStyle: {
+                                                          width: "80px",
+                                                          height: "80px",
+                                                        },
+                                                        attrs: {
+                                                          src: dish.cover,
+                                                          alt: "",
+                                                        },
+                                                      }),
                                                 ]
                                               ),
                                               _vm._v(" "),
@@ -7851,10 +7966,18 @@ var render = function () {
                     { staticClass: "card card-t rounded-mid overflow-hidden" },
                     [
                       _c("div", { staticClass: "overlay overflow-hidden" }, [
-                        _c("img", {
-                          staticClass: "card-img-top img-card",
-                          attrs: { src: ristoratore.cover, alt: "" },
-                        }),
+                        ristoratore.cover.includes("storage")
+                          ? _c("img", {
+                              staticClass: "card-img-top img-card",
+                              attrs: {
+                                src: "../../../" + ristoratore.cover,
+                                alt: "",
+                              },
+                            })
+                          : _c("img", {
+                              staticClass: "card-img-top img-card",
+                              attrs: { src: ristoratore.cover, alt: "" },
+                            }),
                       ]),
                       _vm._v(" "),
                       _c(
@@ -7996,140 +8119,227 @@ var render = function () {
             "\n        navbar navbar-expand-md navbar-light\n        bg-goldGv\n        shadow-sm\n        position-relative\n        box-shadow-none\n      ",
         },
         [
-          _c(
-            "div",
-            { staticClass: "container" },
-            [
+          _c("div", { staticClass: "container" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("form", { staticClass: "form-inline col-4 position-relative" }, [
               _c(
-                "router-link",
+                "button",
                 {
-                  staticClass: "navbar-brand",
-                  attrs: { to: { name: "tipologies.index" } },
+                  staticClass: "btn-nav-searchGv my-2 my-sm-0",
+                  attrs: { type: "submit" },
                 },
                 [
-                  _c("img", {
-                    staticClass: "d-inline-block align-top",
-                    attrs: { src: "", width: "150", height: "50", alt: "" },
-                  }),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "form",
-                { staticClass: "form-inline col-4 position-relative" },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn-nav-searchGv my-2 my-sm-0",
-                      attrs: { type: "submit" },
-                    },
-                    [
-                      _c("lord-icon", {
-                        staticStyle: { width: "25px", height: "25px" },
-                        attrs: {
-                          src: "https://cdn.lordicon.com/pvbutfdk.json",
-                          trigger: "loop-on-hover",
-                        },
-                      }),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass:
-                      "\n              form-control\n              font-size\n              col-12\n              text-center\n              rounded-pill\n              mr-sm-2\n              pl-5\n            ",
+                  _c("lord-icon", {
+                    staticStyle: { width: "25px", height: "25px" },
                     attrs: {
-                      type: "search",
-                      placeholder: "Search",
-                      "aria-label": "Search",
+                      src: "https://cdn.lordicon.com/pvbutfdk.json",
+                      trigger: "loop-on-hover",
                     },
                   }),
-                ]
+                ],
+                1
               ),
               _vm._v(" "),
-              _vm._m(0),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.searchbarFilter,
+                    expression: "searchbarFilter",
+                  },
+                ],
+                staticClass:
+                  "form-control  font-size  col-12   text-center  rounded-pill  mr-sm-2  pl-5",
+                attrs: {
+                  type: "search",
+                  placeholder: "Cerca Ristoranti...",
+                  "aria-label": "Search",
+                },
+                domProps: { value: _vm.searchbarFilter },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.searchbarFilter = $event.target.value
+                  },
+                },
+              }),
               _vm._v(" "),
               _c(
                 "div",
                 {
-                  staticClass: "collapse navbar-collapse flex-grow-0",
-                  attrs: { id: "navbarSupportedContent" },
+                  staticClass: "filtered-restaurant p-0 rounded",
+                  class: _vm.searchbarFilter === "" ? "" : "active",
+                  attrs: { id: "result" },
+                  on: {
+                    click: function ($event) {
+                      return _vm.closeSearchbar()
+                    },
+                  },
                 },
                 [
-                  _c(
-                    "ul",
-                    {
-                      staticClass:
-                        "navbar-nav  align-items-end align-items-md-center ml-auto",
-                    },
-                    [
-                      _c(
-                        "li",
-                        {
-                          staticClass:
-                            "dropdown dropdow-toggle btn-nav-register nav-item mr-1",
-                          attrs: {
-                            type: "button",
-                            id: "dropdownMenuButton",
-                            "data-toggle": "dropdown",
-                            "aria-expanded": "false",
-                          },
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "\n                  my-2\n                  nav-link\n                  mx-md-1\n                  px-2\n                  p-md-1\n                  text-center\n                  font-weight-bold\n                  text-balck\n                ",
-                            },
-                            [
-                              _vm._v(
-                                "\n                Cart (" +
-                                  _vm._s(_vm.$store.state.cartCount) +
-                                  ")\n              "
-                              ),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "dropdown-menu dropdown-wrapper",
-                              attrs: {
-                                "aria-labelledby": "dropdownMenuButton",
+                  _vm.filteredRestaurant[0]
+                    ? _vm._l(_vm.filteredRestaurant, function (restaurant, i) {
+                        return i < 15
+                          ? _c(
+                              "router-link",
+                              {
+                                key: restaurant.id,
+                                staticClass: "single-collection",
+                                attrs: {
+                                  to: {
+                                    name: "restaurant.show",
+                                    params: { slug: restaurant.slug },
+                                  },
+                                },
                               },
-                            },
-                            [
-                              _c("CartDropdown", {
-                                attrs: { isCheckout: false },
-                              }),
-                            ],
-                            1
-                          ),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _vm._m(1),
-                      _vm._v(" "),
-                      _vm._m(2),
-                    ]
-                  ),
-                ]
+                              [
+                                _c(
+                                  "figure",
+                                  {
+                                    staticClass:
+                                      "restaurant-logo d-none d-xl-block",
+                                  },
+                                  [
+                                    restaurant.cover.includes("storage")
+                                      ? _c("img", {
+                                          staticClass: "collection-logo",
+                                          attrs: {
+                                            src: "../../../" + restaurant.cover,
+                                            alt: "",
+                                            width: "90",
+                                            height: "90",
+                                          },
+                                        })
+                                      : _c("img", {
+                                          staticClass: "collection-logo",
+                                          attrs: {
+                                            src: restaurant.cover,
+                                            alt: "",
+                                            width: "90",
+                                            height: "90",
+                                          },
+                                        }),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "collection" }, [
+                                  _c(
+                                    "span",
+                                    { staticClass: "collection-name" },
+                                    [_vm._v(_vm._s(restaurant.business_name))]
+                                  ),
+                                ]),
+                              ]
+                            )
+                          : _vm._e()
+                      })
+                    : [_vm._m(1)],
+                ],
+                2
               ),
-            ],
-            1
-          ),
+            ]),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "collapse navbar-collapse flex-grow-0",
+                attrs: { id: "navbarSupportedContent" },
+              },
+              [
+                _c(
+                  "ul",
+                  {
+                    staticClass:
+                      "navbar-nav  align-items-end align-items-md-center ml-auto",
+                  },
+                  [
+                    _c(
+                      "li",
+                      {
+                        staticClass:
+                          "dropdown dropdow-toggle btn-nav-register nav-item mr-1",
+                        attrs: {
+                          type: "button",
+                          id: "dropdownMenuButton",
+                          "data-toggle": "dropdown",
+                          "aria-expanded": "false",
+                        },
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "\n                  my-2\n                  nav-link\n                  mx-md-1\n                  px-2\n                  p-md-1\n                  text-center\n                  font-weight-bold\n                  text-balck\n                ",
+                          },
+                          [
+                            _vm._v(
+                              "\n                Cart (" +
+                                _vm._s(_vm.$store.state.cartCount) +
+                                ")\n              "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "dropdown-menu dropdown-wrapper",
+                            attrs: { "aria-labelledby": "dropdownMenuButton" },
+                          },
+                          [
+                            _c("CartDropdown", {
+                              attrs: { isCheckout: false },
+                            }),
+                          ],
+                          1
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _vm._m(4),
+                  ]
+                ),
+              ]
+            ),
+          ]),
         ]
       ),
     ]),
     _vm._v(" "),
     _c("main", [_c("router-view")], 1),
     _vm._v(" "),
-    _vm._m(3),
+    _vm._m(5),
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+      _c("img", {
+        staticClass: "d-inline-block align-top",
+        attrs: { src: "images/logo-deliverboo.png", width: "150", alt: "" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "no-result" }, [
+      _c("h3", [_vm._v("No result for this name or address")]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -8194,10 +8404,14 @@ var staticRenderFns = [
     return _c("footer", { staticClass: "bg-darkGrayGv text-white" }, [
       _c("div", { staticClass: "container py-5" }, [
         _c("div", { staticClass: "row pb-5" }, [
-          _c("a", { attrs: { href: "#" } }, [
+          _c("a", { attrs: { href: "/" } }, [
             _c("img", {
               staticClass: "d-inline-block align-top",
-              attrs: { width: "150", alt: "" },
+              attrs: {
+                src: "images/logo-deliverboo.png",
+                width: "150",
+                alt: "",
+              },
             }),
           ]),
         ]),
@@ -26433,7 +26647,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/manuelfreund/Desktop/deliverboo-team5/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean\progetto-finale\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
