@@ -10,26 +10,29 @@
                     </div>
                 </div>
 
-                <div class="row mb-3" v-for="dish in $store.state.cart" :key="dish.id" v-if="dish.user_id == user.id">
+                <div v-if="$store.state.cart[0].user_id == user.id">
+                    <div class="row mb-3" v-for="dish in $store.state.cart" :key="dish.id" >
 
 
-                    <div class="col-12 text-nowrap d-flex justify-content-between" style="gap: 10px;">
+                        <div class="col-12 text-nowrap d-flex justify-content-between" style="gap: 10px;">
 
-                        <span class="weight-bold">{{ dish.quantity }}x</span>
-                        <span  >{{dish.name}}</span>
-                        <span>€{{ dish.totalPrice.toFixed(2) }}</span>
+                            <span class="weight-bold">{{ dish.quantity }}x</span>
+                            <span  >{{dish.name}}</span>
+                            <span>€{{ dish.totalPrice.toFixed(2) }}</span>
 
-                    </div>
+                        </div>
 
-                    <div class="col-12 d-flex justify-content-between">
-                        <figure class="cursor-pointer" @click.prevent="decreaseQuantity(dish)">
-                            <img width="30px" height="30px" src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/minus.svg" alt="">
-                        </figure>
-                        <figure class="cursor-pointer" @click.prevent="increaseQuantity(dish)">
-                            <img width="30px" height="30px" src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/plus.svg" alt="">
-                        </figure>
+                        <div class="col-12 d-flex justify-content-between">
+                            <figure class="cursor-pointer" @click.prevent="decreaseQuantity(dish)">
+                                <img width="30px" height="30px" src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/minus.svg" alt="">
+                            </figure>
+                            <figure class="cursor-pointer" @click.prevent="increaseQuantity(dish)">
+                                <img width="30px" height="30px" src="https://res.cloudinary.com/glovoapp/image/fetch//q_auto/https://glovoapp.com/images/svg/plus.svg" alt="">
+                            </figure>
+                        </div>
                     </div>
                 </div>
+                
 
                 <div v-else>
                     <div class="row">
@@ -134,9 +137,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cart {
-    min-width: 350px;
-}
+
 .cart-wrapper {
     background-color: white;
     padding: 20px;

@@ -129,9 +129,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cart {
-    min-width: 350px;
-}
 .cart-wrapper {
     background-color: white;
     padding: 20px;

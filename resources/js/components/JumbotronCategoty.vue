@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="container-fluid d-flex justify-content-center bg-goldGv p-0">
+    <div class="bg-goldGv">
+        <div class="container d-flex justify-content-center  p-0">
             <div class="container-jumbo py-5">
                 <p class="text-center font-size-jb">
                     Consegne in <span class="font-weight-bold">Milano</span>

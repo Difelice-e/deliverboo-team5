@@ -25,7 +25,7 @@
                         <div class="form-group">
                             <div class="card-header">
                                 <label for="card-element">
-                                    Enter your credit card information
+                                    Inserisci le informazioni della tua carta di creadito
                                 </label>
                             </div>
                             <div class="card-body">

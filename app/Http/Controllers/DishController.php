@@ -109,7 +109,7 @@ class DishController extends Controller
         $request->validate([
             'name' => 'required|string|max:100',
             'cover' => 'file|mimes:jpg,jpeg,gif,png,svg|nullable',
-            'description' => 'string',
+            'description' => 'string|nullable',
             'ingredients' => 'string',
             'price' => 'numeric',
             'visible' => 'boolean',

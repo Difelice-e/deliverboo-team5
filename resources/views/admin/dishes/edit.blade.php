@@ -37,7 +37,7 @@
         {{-- prezzo --}}
         <div class="mb-3">
           <label for="price" class="form-label">Prezzo*</label>
-          <input required type="number" step=".01" min="0.01" max="999.99" class="form-control @error('price') is-invalid @enderror" value=" {{old('price')?: $dish->price}} " name="price" id="price">
+          <input required type="number" step=".01" min="0.01" max="999.99" class="form-control @error('price') is-invalid @enderror" value="{{old('price')?: (int)$dish->price}}" name="price" id="price">
           @error('price')
               <div class="invalid-feedback"> {{$message}} </div>
           @enderror
@@ -46,7 +46,7 @@
         {{-- cover --}}
         <div class="mb-3">
           <label class="d-block" for="cover">Cover piatto</label>
-          <input class="d-block my-3 @error('cover') is-invalid @enderror" accept=".jpg, .jpeg, .gif, .png, .svg" type="file" name="cover" id="cover"">
+          <input class="d-block my-3 @error('cover') is-invalid @enderror" accept=".jpg, .jpeg, .gif, .png, .svg" type="file" name="cover" id="cover">
           @error('cover')
               <div class="invalid-feedback"> {{$message}} </div>
           @enderror

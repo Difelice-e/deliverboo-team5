@@ -8,9 +8,9 @@
 
                 <thead>
                     <tr>
-                        <th scope="col">Ordered at</th>
-                        <th scope="col">Delivery Address</th>
-                        <th scope="col">Customer</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Indirizzo</th>
+                        <th scope="col">Cliente</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +30,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">Quantità</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Prezzo</th>
                     </tr>
@@ -46,7 +46,7 @@
                 <tr>
                     <td></td>
                     <td></td>
-                    <th>Total</th>
+                    <th>Totale</th>
                 </tr>
                 <tr>
                     <td></td>
