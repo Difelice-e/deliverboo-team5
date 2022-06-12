@@ -11,10 +11,9 @@
         "
       >
         <div class="container">
-          <!-- {{-- logo   src="{{ asset('js/front.js') }}"--}} -->
-          <router-link :to="{name: 'tipologies.index' }" class="navbar-brand" >
-            <img src="" width="150" height="50" class="d-inline-block align-top" alt="">
-          </router-link>
+          <a class="navbar-brand" href="/">
+            <img src="images/logo-deliverboo.png" width="150" class="d-inline-block align-top" alt="">
+          </a>
 
           <!-- {{-- searchbar no admin  --}} -->
 
@@ -120,8 +119,9 @@
       <div class="container py-5">
         <div class="row pb-5">
           <!-- {{-- logo  --}} -->
-          <a href="#">
+          <a href="/">
             <img
+              src="images/logo-deliverboo.png"
               width="150"
               class="d-inline-block align-top"
               alt=""
