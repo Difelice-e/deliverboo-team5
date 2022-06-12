@@ -32,15 +32,15 @@
             type="search"  placeholder="Cerca Ristoranti..."  aria-label="Search"  v-model="searchbarFilter"/>
             
             <!-- risultati  -->
-            <div id="result" class="filtered-restaurant" :class="searchbarFilter === '' ? '' : 'active'" @click="closeSearchbar()">
+            <div id="result" class="filtered-restaurant p-0 rounded" :class="searchbarFilter === '' ? '' : 'active'" @click="closeSearchbar()">
               <template v-if="filteredRestaurant[0]">
-                  <router-link v-for="(restaurant, i) in filteredRestaurant" v-if="i < 15" class="single-collection" :to="{
+                  <router-link v-for="(restaurant, i) in filteredRestaurant" :key="restaurant.id" v-if="i < 15" class="single-collection" :to="{
                                 name: 'restaurant.show',
                                 params: { slug: restaurant.slug },
                             }">
                     
                         <!-- img collezione  -->
-                        <figure class="restaurant-logo">
+                        <figure class="restaurant-logo d-none d-xl-block">
                             <img v-if="restaurant.cover.includes('storage')" :src="`../../../${restaurant.cover}`" class="collection-logo" alt="" width='90' height='90' />
                             <img v-else :src="restaurant.cover" class="collection-logo" alt="" width='90' height='90'>
                         </figure>
@@ -291,7 +291,8 @@ a {
 .filtered-restaurant {
     position: absolute;
     top: 120%;
-    left: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
     width: 96%;
     max-height: 800px;
     overflow: auto;
@@ -307,10 +308,10 @@ a {
 }
 
 .restaurant-logo {
-  border: 2px solid orange;
-  border-radius: 20px;
+  border: 3px solid #00a080;
   overflow: hidden;
   margin: 0;
+  border-radius: 5px;
   min-width: 90px;
   min-height: 90px;
 }
@@ -327,6 +328,7 @@ a {
     align-items: center;
     text-align: left;
     font-size: 1rem;
+    padding: 5px;
   
     overflow: hidden;
     text-overflow: ellipsis;
@@ -341,15 +343,15 @@ a {
 }
 
 .single-collection:nth-child(odd) {
-    background-color: rgb(152, 152, 152);
+    background-color: white;
 }
 
 .single-collection:nth-child(even) {
-    background-color: rgb(176, 176, 176);
+    background-color: #faeac4;
 }
 
 .single-collection:hover {
-    background-color: orange;
+    background-color: #ffc244;
 }
 
 .no-result {
@@ -358,7 +360,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: lightgrey;
+    background-color: white;
     font-size: 1.5rem;
 }
 </style>

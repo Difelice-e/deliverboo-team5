@@ -357,35 +357,6 @@ input[type="checkbox"]:checked ~ label {
 box-shadow: 1px 12px 10px -5px rgba(0, 211, 168, 0.78);
 }
 
-.restaurant-wrapper {
-  overflow-y: scroll;
-  height: 100vh;
-
-  /* width */
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  /* Track */
-  &::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: transparent;
-    border: transparent;
-    box-shadow: 0px 0px 5px grey inset;
-  }
-
-  /* Handle */
-  &::-webkit-scrollbar-thumb {
-    background-color: #00a080;
-    border-radius: 10px;
-    border: transparent;
-  }
-
-  /* Handle on hover */
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #006d57;
-  }
-}
 .counter {
   background-color: #12a199;
   border-radius: 100%;

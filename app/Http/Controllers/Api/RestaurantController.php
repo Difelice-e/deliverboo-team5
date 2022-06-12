@@ -27,7 +27,7 @@ class RestaurantController extends Controller
             ]);
         } 
 
-        $users = User::with('tipologies')->paginate(9);
+        $users = User::with('tipologies')->paginate(8);
 
         return response()->json([
             'users' => $users,

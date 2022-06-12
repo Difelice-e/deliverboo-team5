@@ -87,12 +87,15 @@ export default {
     methods: {
         increaseQuantity(dish) {
             this.$store.commit('addToCart', dish);
+            console.log('ciao',this.$store.state.cart)
         },
         decreaseQuantity(dish) {
             this.$store.commit('decreaseQuantity', dish);
+            console.log(this.$store.state.cart)
         },
         emptyCart() {
             this.$store.commit('clearCart')
+            console.log(this.$store.state.cart)
         }
     },
     computed: {

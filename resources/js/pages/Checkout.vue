@@ -25,7 +25,7 @@
                     </div>
                 </form>
 
-                <h4>Totale: {{total}}€</h4>
+                <h4>Totale: {{parseInt($store.state.cartTotal.toFixed(2)).toFixed(2)}}€</h4>
 
                 <button class=" col-4 rounded-pill btn bg-greedgc" style="font-size: 20px;" @click="sendForm()" type="submit">
                     <a class="text-white weight-bold" href="/checkout">Vai al Pagamento</a>
@@ -55,7 +55,6 @@ export default {
                 customer_phone: '',
             },
             localCart: JSON.parse(localStorage.getItem('cart')),
-            total: localStorage.getItem('cartTotal'),
         }
     },
     methods: {
@@ -64,7 +63,7 @@ export default {
                 form: this.form,
                 total: localStorage.getItem('cartTotal'),
                 userId: this.localCart[0].user_id,
-                cartInfo: this.localCart,
+                cartInfo: JSON.parse(localStorage.getItem('cart')),
             }, )
             .then( res => {
                 res = JSON.parse(res.config.data),
@@ -81,7 +80,7 @@ export default {
     },
     mounted() {
             console.log(this.localCart)
-    }
+    },
 }
 </script>
 
