@@ -67,7 +67,8 @@
             <span>
                 <img width="20px" height='20px' src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="">
 
-                {{$user->created_at}}
+                {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$user->created_at)->locale('it-IT')->format('d/m/y')}}
+                
             </span>
             </p>
             <div class="d-flex">

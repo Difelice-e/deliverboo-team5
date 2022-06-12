@@ -4,8 +4,8 @@
             <div class="restaurant-header">
                 <div>
                     <div class="row">
-                        <img v-if="user.cover.includes('storage')" :src="`../../../${user.cover}`" class="blur-image" alt="" width="100%" height="450"/>
-                        <img v-else :src="user.cover" class="blur-image" alt="" width="100%" height="450">
+                        <img v-if="user.cover.includes('storage') && user.cover" :src="`../../../${user.cover}`" class="blur-image" alt="IMG non trovata" width="100%" height="450"/>
+                        <img v-else="user.cover" :src="user.cover" class="blur-image" alt="IMG non trovata" width="100%" height="450">
                     </div>
                 </div>
             </div>
@@ -13,7 +13,7 @@
             <div class="restaurant-body">
                 <div class="container position-relative position-menu">
                     <div class="row align-items-start">
-                        <div class="col-12 col-xl-8">
+                        <div class="col-12 col-lg-8">
                             <!-- info del ristorante  -->
                             <div class="restaurant-info container bg-white border-radius-gv">
                                 <h1 class="title-restaurant">
@@ -98,14 +98,15 @@
                             </div>
                         </div>
 
-                        <div class="col-12 col-xl-4">
+                        <div class="col-12 col-lg-4">
                             <!-- carrello  -->
-                            <div class="col-12">
+                            
                                 <CartDropdown :user="user"/>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
+
                 <div class="container">
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center">

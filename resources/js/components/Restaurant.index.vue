@@ -304,6 +304,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a {
+  text-decoration: none;
+  color: currentColor;
+}
 .filter {
   display: flex;
   gap: 12px;

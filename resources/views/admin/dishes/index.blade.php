@@ -36,7 +36,7 @@
                         @endif
                     </td>
                     <td>{{ $dish->ingredients }}</td>
-                    <td>{{ $dish->description }}</td>
+                    <td>{{ $dish->description ? $dish->description : 'Nessuna descrizione disponibile'}}</td>
                     @if ($dish->visible == 0)
                         <td>
                             <span class="rounded-pill bg-warning p-2 text-nowrap">Non Visibile</span>

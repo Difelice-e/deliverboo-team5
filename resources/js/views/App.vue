@@ -18,7 +18,7 @@
           <!-- {{-- searchbar no admin  --}} -->
 
           <form class="form-inline col-4 position-relative">
-            <button class="btn-nav-searchGv my-2 my-sm-0" type="submit">
+            <button class="btn-nav-searchGv my-2 my-sm-0 d-none d-md-block" type="submit">
               <lord-icon
                 src="https://cdn.lordicon.com/pvbutfdk.json"
                 trigger="loop-on-hover"
@@ -28,7 +28,7 @@
             </button>
 
             <!-- searchbar  -->
-            <input  class="form-control  font-size  col-12   text-center  rounded-pill  mr-sm-2  pl-5"  
+            <input  class="form-control  font-size  col-12   text-center  rounded-pill  mr-sm-2  pl-5 d-none d-md-block"  
             type="search"  placeholder="Cerca Ristoranti..."  aria-label="Search"  v-model="searchbarFilter"/>
             
             <!-- risultati  -->
@@ -58,7 +58,7 @@
               
               <template v-else>
                   <div class="no-result">
-                      <h3>No result for this name or address</h3>
+                      <h3>Nessun ristorante trovato</h3>
                   </div>
               </template>
 
@@ -99,7 +99,7 @@
                     text-balck
                   "
                 >
-                  Cart ({{ $store.state.cartCount }})
+                  <img src="https://cdn.icon-icons.com/icons2/1144/PNG/512/shoppingcart_80945.png" width="20" height="15" alt=""> ({{ $store.state.cartCount }})
                 </a>
 
 
@@ -113,7 +113,7 @@
                 <a
                   class="nav-link text-center font-weight-bold text-balck"
                   href="/login"
-                  >Login</a
+                  >Accedi</a
                 >
               </li>
 
@@ -121,7 +121,7 @@
                 <a
                   class="nav-link text-center font-weight-bold text-balck"
                   href="/register"
-                  >Register</a
+                  >Iscriviti</a
                 >
               </li>
             </ul>

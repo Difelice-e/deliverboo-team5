@@ -10,14 +10,14 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome cliente</th>
-                <th scope="col">Ordinato alle</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Data</th>
                 <th scope="col">Email</th>
                 <th scope="col">Indirizzo</th>
                 <th scope="col">Telefono</th>
-                <th scope="col">Pagato</th>
-                <th scope="col">Consegnato alle</th>
-                <th scope="col">Consegnato</th>
+                <th scope="col">Consegna</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -30,40 +30,36 @@
                     <td>{{ $order->customer_email }}</td>
                     <td>{{ $order->street_address }}</td>
                     <td>{{ $order->customer_phone }}</td>
+                    <td>{{ $order->delivery_time ? Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$order->delivery_time)->locale('it-IT')->format('H:i') : '-'}}</td>
 
                     @if ($order->payment_state == 0)
                         <td>
-                            <span class="rounded-pill bg-warning p-2 text-nowrap">Non Pagato</span>
+                            <button class="rounded-pill btn btn-warning text-nowrap">Non Pagato</button>
                         </td>
                     @else
                         <td>
-                            <span class=" rounded-pill bg-success p-2">Pagato</span>
+                            <button class=" rounded-pill btn btn-success">Pagato</button>
                         </td>
                     @endif
 
-                    <td>{{ $order->delivery_time ? Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$order->delivery_time)->locale('it-IT')->format('H:i') : '-'}}</td>
+                    
                     @if ($order->delivered == 0)
+
                         <td>
-                            <span class="rounded-pill bg-warning p-2">Undelivered</span>
+                            <form action="{{route('admin.orders.update',$order)}}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="btn btn-warning rounded-pill text-nowrap" onclick="return confirm('Confermi la consegna dell\'ordine?')">Non Consegnato</button>
+                            </form>
                         </td>
                     @else
                         <td>
-                            <span class=" rounded-pill bg-success p-2">Delivered</span>
+                            <button class=" rounded-pill btn btn-success">Consegnato</button>
                         </td>
                     @endif
                     <td>
                         <a class="btn btn-small btn-secondary" href="{{route('admin.orders.show',$order)}}">Apri</a>
                     </td>
-                    
-                    @if (!$order->delivered)
-                        <td>
-                            <form action="{{route('admin.orders.update',$order)}}" method="POST">
-                                @csrf
-                                @method('PUT')
-                                <button type="submit" class="btn btn-small w-100 btn-primary" onclick="return confirm('Confermi la consegna dell\'ordine?')">Consegnato</button>
-                            </form>
-                        </td>
-                    @endif
 
                 </tr>
             @endforeach

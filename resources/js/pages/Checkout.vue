@@ -1,7 +1,7 @@
 <template>
     <div class="container d-flex justify-content-center align-items-center flex-column py-5">
         <div class="row">
-            <div class="col-8">
+            <div class="col-12 col-lg-8">
                 <h1 class="text-center">Inserisci i dati necessari per la consegna</h1>
                 <form @submit.prevent="handleSubmit(sendForm())" method="POST" class="py-5 rounded ">
                     <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row my-3">
@@ -14,10 +14,10 @@
                         <input  required class=" col-12 col-lg-10 ml-0 ml-lg-2 p-1" placeholder="Via Cavour, 12" v-model="form.street_address" type="text" id="customer_address" name="customer_address">
                     </div>
 
-            <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row my-3">
-                <label class="mb-0 p-0 col-12 col-lg-2" for="customer_email">Email:</label>
-                <input required class=" col-12 col-lg-10 ml-0 ml-lg-2 p-1" placeholder="mariorossi88@gmail.com" v-model="form.customer_email" type="email" id="customer_email" name="customer_email">
-            </div>
+                    <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row my-3">
+                        <label class="mb-0 p-0 col-12 col-lg-2" for="customer_email">Email:</label>
+                        <input required class=" col-12 col-lg-10 ml-0 ml-lg-2 p-1" placeholder="mariorossi88@gmail.com" v-model="form.customer_email" type="email" id="customer_email" name="customer_email">
+                    </div>
 
                     <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row my-3">
                         <label class="mb-0 p-0 col-12 col-lg-2" for="customer_telephone">Cellulare:</label>
@@ -32,7 +32,7 @@
                 </button>
 
             </div>
-            <div class="col-4">
+            <div class="col-12 col-lg-4">
                 <Cart :isCheckout="true"/>
             </div>
         </div>
