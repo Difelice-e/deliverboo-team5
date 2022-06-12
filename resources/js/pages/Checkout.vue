@@ -61,6 +61,7 @@ export default {
                 form: this.form,
                 total: localStorage.getItem('cartTotal'),
                 userId: this.localCart[0].user_id,
+                cartInfo: this.localCart,
             }, )
             .then( res => {
                 res = JSON.parse(res.config.data),
@@ -76,7 +77,7 @@ export default {
         }
     },
     mounted() {
-            console.log(this.form, localStorage.getItem('cartTotal'), this.localCart[0].user_id)
+            console.log(this.localCart)
     }
 }
 </script>

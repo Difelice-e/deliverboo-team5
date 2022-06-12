@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 use App\User;
+use DB;
 use App\Mail\SendNewMail;
 use App\Mail\SendMailRestaurant;
 use Illuminate\Support\Facades\Mail;
@@ -42,6 +43,7 @@ class CheckoutController extends Controller
         $ristoratore = User::where('id', $order->user_id)->first();
         $order['payment_state'] = true;
         $order->save();
+
         Mail::to($order['customer_email'])->send(new SendNewMail);
         Mail::to($ristoratore['email'])->send(new SendMailRestaurant);
         return view('checkout.success', compact('order','ristoratore'));

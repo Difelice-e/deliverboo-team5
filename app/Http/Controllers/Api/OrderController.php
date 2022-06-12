@@ -39,6 +39,7 @@ class OrderController extends Controller
         $data = $request->all();
         $total = $data['total'];
         $userId = $data['userId'];
+        $cartInfo = $data['cartInfo'];
 
         foreach ($data as  $value) {
             $order = new Order();
@@ -50,6 +51,16 @@ class OrderController extends Controller
 
             $order->save();
             return [$value, $total];
+        }
+
+        // ciclo creazione righe tabella pivot
+        foreach ($cartInfo as $dish) {
+            DB::table('dish_order')->insert([
+                'dish_id' => $dish->id,
+                'order_id' => $order->id,
+                'quantity' => $dish->quantity,
+            ]);
+
         }
     }
 
