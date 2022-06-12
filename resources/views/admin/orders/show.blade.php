@@ -51,7 +51,7 @@
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>{{ $total }} €</td>
+                    <td>{{ $dish->total_price }} €</td>
                 </tr>
                 </tbody>
 
