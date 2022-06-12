@@ -30,12 +30,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-goldGv shadow-sm position-relative box-shadow-none">
             <div class="container">
-                {{-- logo  --}}
+                <!-- {{-- logo  --}} -->
                 <a class="navbar-brand" href="#">
-                    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    <img src="{{ asset('images/logo-deliverboo.png') }}" width="150" class="d-inline-block align-top" alt="">
                 </a>
 
-                {{-- searchbar no admin  --}}
+                <!-- {{-- searchbar no admin  --}} -->
                 @guest
                 <form class="form-inline col-4 position-relative">
                     <button class="btn-nav-searchGv my-2 my-sm-0" type="submit">
@@ -118,7 +118,7 @@
             <div class="container py-5">
                 <div class="row pb-5">
                     <div class="col-12">
-                        <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                        <img src="{{ asset('images/logo-deliverboo.png') }}" width="150" class="d-inline-block align-top" alt="">
                     </div>
                 </div>
                 <div class="row pb-5">
