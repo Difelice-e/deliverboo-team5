@@ -25,6 +25,8 @@
                     </div>
                 </form>
 
+                <h4>Totale: {{total}}€</h4>
+
                 <button class=" col-4 rounded-pill btn bg-greedgc" style="font-size: 20px;" @click="sendForm()" type="submit">
                     <a class="text-white weight-bold" href="/checkout">Vai al Pagamento</a>
                 </button>
@@ -53,6 +55,7 @@ export default {
                 customer_phone: '',
             },
             localCart: JSON.parse(localStorage.getItem('cart')),
+            total: localStorage.getItem('cartTotal'),
         }
     },
     methods: {

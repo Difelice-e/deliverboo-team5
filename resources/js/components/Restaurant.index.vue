@@ -252,6 +252,7 @@ export default {
         });
     },
 
+
     fetchFiltered(tipology, page = 1) {
       axios
         .get("/api/restaurant", {
@@ -273,6 +274,7 @@ export default {
           this.$router.push("/404");
         });
     },
+
 
     fetchTipologies() {
       axios

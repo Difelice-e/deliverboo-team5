@@ -79,7 +79,7 @@ export default {
     methods: {
         fetchPost() {
             axios
-                .get(`/api/home/${this.$route.params.slug}`)
+                .get(`/api/tipology/${this.$route.params.slug}`)
                 .then((res) => {
                     const { tipology } = res.data;
                     this.tipology = tipology;

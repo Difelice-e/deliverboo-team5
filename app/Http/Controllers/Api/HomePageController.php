@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Tipology;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,10 +16,10 @@ class HomePageController extends Controller
      */
     public function index()
     {
-        $tipologies = Tipology::with('users')->orderBy('name', 'asc')->get()->all();
+        $users = User::orderBy('business_name', 'asc')->get()->all();
 
         return response()->json([
-            'tipologies' => $tipologies,
+            'users' => $users,
         ]);
     }
 

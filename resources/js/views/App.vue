@@ -26,20 +26,45 @@
               >
               </lord-icon>
             </button>
-            <input
-              class="
-                form-control
-                font-size
-                col-12
-                text-center
-                rounded-pill
-                mr-sm-2
-                pl-5
-              "
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
+
+            <!-- searchbar  -->
+            <input  class="form-control  font-size  col-12   text-center  rounded-pill  mr-sm-2  pl-5"  
+            type="search"  placeholder="Cerca Ristoranti..."  aria-label="Search"  v-model="searchbarFilter"/>
+            
+            <!-- risultati  -->
+            <div id="result" class="filtered-restaurant" :class="searchbarFilter === '' ? '' : 'active'" @click="closeSearchbar()">
+              <template v-if="filteredRestaurant[0]">
+                  <router-link v-for="(restaurant, i) in filteredRestaurant" v-if="i < 15" class="single-collection" :to="{
+                                name: 'restaurant.show',
+                                params: { slug: restaurant.slug },
+                            }">
+                    
+                      
+                        <!-- img collezione  -->
+                        <figure class="restaurant-logo">
+                            <img :src="restaurant.cover" width='90' height='90' class="collection-logo" alt="restaurant-logo">
+                        </figure>
+
+                        <!-- info collezione  -->
+                        <div class="collection">
+                            <span class="collection-name">{{restaurant.business_name}}</span> 
+                        </div>
+                      
+                    
+                        
+                    
+                </router-link>
+              </template>
+              
+              <template v-else>
+                  <div class="no-result">
+                      <h3>No result for this name or address</h3>
+                  </div>
+              </template>
+
+              
+              
+          </div>
           </form>
 
           <button
@@ -60,13 +85,7 @@
             <!-- Right Side Of Navbar || Pulsanti attenzione -->
 
             <ul class="navbar-nav  align-items-end align-items-md-center ml-auto">
-              <li
-
-                class="dropdown dropdow-toggle btn-nav-register nav-item mr-1"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-expanded="false"
+              <li class="dropdown dropdow-toggle btn-nav-register nav-item mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"
               >
                 <a
                   class="
@@ -212,6 +231,48 @@ export default {
   components: {
     CartDropdown,
   },
+  data() {
+    return {
+      users: [],
+      searchbarFilter: '',
+    }
+  },
+  methods: {
+    fetchRestaurant() {
+      axios
+        .get("/api/home")
+        .then((res) => {
+            const { users } = res.data;
+            this.users = users
+            console.log(this.users)
+        })
+        .catch((err) => {
+            console.warn(err);
+            this.$router.push("/404");
+        });
+    },
+    closeSearchbar() {
+      this.searchbarFilter = ''
+      
+      if(this.$route.path == '/restaurant/:slug') {
+        this.$router.go()
+      }
+      
+    }
+  },
+  mounted() {
+    this.fetchRestaurant()
+
+  },
+  computed: {
+    filteredRestaurant: function() {
+      return this.users.filter(el => {
+          if (el.business_name) {
+              return el.business_name.toLowerCase().includes(this.searchbarFilter.toLowerCase())
+          }
+      })
+    }
+},
 
 };
 </script>
@@ -220,5 +281,83 @@ export default {
 .dropdown-wrapper {
   background-color: transparent;
   border: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.filtered-restaurant {
+    position: absolute;
+    top: 120%;
+    left: 10px;
+    width: 96%;
+    max-height: 800px;
+    overflow: auto;
+    background-color:lightgrey;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none;
+    z-index: 999;
+    box-shadow: 5px 5px 9px 1px rgba(0,0,0,0.63);
+}
+
+.filtered-restaurant.active {
+    display: block;
+}
+
+.restaurant-logo {
+  border: 2px solid orange;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.page-link {
+  padding: 0;
+  margin: 0;
+}
+
+
+.single-collection {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    text-align: left;
+    font-size: 1rem;
+    // padding: 5px 5px;
+  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.collection-name {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.single-collection:nth-child(odd) {
+    background-color: rgb(152, 152, 152);
+}
+
+.single-collection:nth-child(even) {
+    background-color: rgb(176, 176, 176);
+}
+
+.single-collection:hover {
+    background-color: orange;
+}
+
+.no-result {
+    min-height: 300px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+    font-size: 1.5rem;
 }
 </style>

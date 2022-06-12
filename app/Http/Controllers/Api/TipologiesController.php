@@ -62,7 +62,7 @@ class TipologiesController extends Controller
         } else {
             // Nel caso non lo troverà il post ci mostrerà la pagina 404 di errore
             return response()->json([
-                'tipology' => 'post non trovato',
+                'message' => 'post non trovato',
                 'success' => false
             ], 404);
         }
