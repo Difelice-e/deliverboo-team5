@@ -2346,6 +2346,98 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2357,29 +2449,29 @@ __webpack_require__.r(__webpack_exports__);
       userTipologies: [],
       vote: [{
         id: 1,
-        temp: '30',
-        temp1: '15',
-        rec: '94'
+        temp: "30",
+        temp1: "15",
+        rec: "94"
       }, {
         id: 2,
-        temp: '25',
-        temp1: '10',
-        rec: '85'
+        temp: "25",
+        temp1: "10",
+        rec: "85"
       }, {
         id: 3,
-        temp: '20',
-        temp1: '15',
-        rec: '91'
+        temp: "20",
+        temp1: "15",
+        rec: "91"
       }, {
         id: 4,
-        temp: '25',
-        temp1: '15',
-        rec: '93'
+        temp: "25",
+        temp1: "15",
+        rec: "93"
       }, {
         id: 5,
-        temp: '20',
-        temp1: '15',
-        rec: '100'
+        temp: "20",
+        temp1: "15",
+        rec: "100"
       }]
     };
   },
@@ -2444,7 +2536,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     check: function check() {
-      if (this.tipologyFilter !== '') {
+      if (this.tipologyFilter !== "") {
         this.fetchFiltered(this.tipologyFilter, 1);
       } else {
         this.fetchRestaurant();
@@ -3796,7 +3888,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\nfilter-list li[data-v-5edc78cc]::after {\n  display: block;\n  content: \"\";\n  background: lightgrey;\n  width: 100%;\n  height: 1px;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  background: transparent;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n}\ninput[type=checkbox]:checked ~ label .selected[data-v-5edc78cc] {\n  /* background: blue; */\n  padding: 10px 30px;\n  background-color: #fcc244;\n}\n.restaurant-wrapper[data-v-5edc78cc] {\n  overflow-y: scroll;\n  height: 100vh;\n  /* width */\n  /* Track */\n  /* Handle */\n  /* Handle on hover */\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar {\n  width: 6px;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-track {\n  border-radius: 10px;\n  background-color: transparent;\n  border: transparent;\n  box-shadow: 0px 0px 5px grey inset;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb {\n  background-color: #00a080;\n  border-radius: 10px;\n  border: transparent;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb:hover {\n  background-color: #006d57;\n}", ""]);
+exports.push([module.i, ".filter[data-v-5edc78cc] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-5edc78cc] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-5edc78cc] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-5edc78cc] {\n  gap: 20px;\n}\n.pagination-button[data-v-5edc78cc] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-5edc78cc] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-5edc78cc] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-5edc78cc] {\n  display: none;\n}\n.selected[data-v-5edc78cc] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n}\ninput[type=checkbox]:checked ~ label .selected[data-v-5edc78cc] {\n  padding: 10px 30px;\n  background-color: #fcc244;\n}\n.restaurant-wrapper[data-v-5edc78cc] {\n  overflow-y: scroll;\n  height: 100vh;\n  /* width */\n  /* Track */\n  /* Handle */\n  /* Handle on hover */\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar {\n  width: 6px;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-track {\n  border-radius: 10px;\n  background-color: transparent;\n  border: transparent;\n  box-shadow: 0px 0px 5px grey inset;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb {\n  background-color: #00a080;\n  border-radius: 10px;\n  border: transparent;\n}\n.restaurant-wrapper[data-v-5edc78cc]::-webkit-scrollbar-thumb:hover {\n  background-color: #006d57;\n}\n.counter[data-v-5edc78cc] {\n  background-color: #12a199;\n  border-radius: 100%;\n  padding: 10px 10px;\n  height: 26px;\n  width: 26px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -5820,7 +5912,7 @@ var render = function () {
     _c("div", { staticClass: "row flex-md-row flex-column" }, [
       _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: " col-12 col-md-2" }, [
+      _c("div", { staticClass: "col-12 col-md-2" }, [
         _c(
           "form",
           { staticClass: "form-inline w-100 d-flex justify-content-around" },
@@ -5849,7 +5941,7 @@ var render = function () {
                     "ul",
                     {
                       staticClass:
-                        "filter-list filter py-3 d-flex flex-row flex-md-column flex-wrap justify-content-center p-4",
+                        "\n                filter-list filter\n                py-3\n                d-flex\n                flex-row flex-md-column flex-wrap\n                justify-content-center\n                p-4\n              ",
                     },
                     _vm._l(_vm.tipologies, function (tipology) {
                       return _c("li", { key: tipology.id }, [
@@ -5903,23 +5995,31 @@ var render = function () {
                           },
                         }),
                         _vm._v(" "),
-                        _c("label", { attrs: { for: tipology.id } }, [
-                          _c(
-                            "span",
-                            {
-                              staticClass: "selected text-center text-md-left",
-                            },
-                            [
-                              _vm._v(
-                                " " +
-                                  _vm._s(tipology.name) +
-                                  "(" +
-                                  _vm._s(tipology.users.length) +
-                                  ") "
-                              ),
-                            ]
-                          ),
-                        ]),
+                        _c(
+                          "label",
+                          {
+                            staticClass:
+                              "\n                    d-flex\n                    justify-content-between\n                    pill-color\n                    rounded-pill\n                    selected\n                  ",
+                            attrs: { for: tipology.id },
+                          },
+                          [
+                            _c(
+                              "span",
+                              { staticClass: "text-center text-md-left" },
+                              [
+                                _vm._v(
+                                  "\n                    " +
+                                    _vm._s(tipology.name) +
+                                    "\n                  "
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "counter" }, [
+                              _vm._v(_vm._s(tipology.users.length)),
+                            ]),
+                          ]
+                        ),
                       ])
                     }),
                     0
@@ -5939,7 +6039,7 @@ var render = function () {
                 "ul",
                 {
                   staticClass:
-                    "d-flex row flex-wrap justify-content-center ml-2 list-wrapper pt-3",
+                    "\n                d-flex\n                row\n                flex-wrap\n                justify-content-center\n                ml-2\n                list-wrapper\n                pt-3\n              ",
                 },
                 _vm._l(_vm.users, function (user) {
                   return _c(
@@ -5986,7 +6086,7 @@ var render = function () {
                             "div",
                             {
                               staticClass:
-                                "card-title d-flex align-items-center justify-content-center flex-column text-white",
+                                "\n                      card-title\n                      d-flex\n                      align-items-center\n                      justify-content-center\n                      flex-column\n                      text-white\n                    ",
                             },
                             [
                               _c(
@@ -5997,9 +6097,9 @@ var render = function () {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                    " +
+                                    "\n                      " +
                                       _vm._s(user.business_name) +
-                                      "\n                                "
+                                      "\n                    "
                                   ),
                                 ]
                               ),
@@ -6008,7 +6108,7 @@ var render = function () {
                                 "div",
                                 {
                                   staticClass:
-                                    "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-4",
+                                    "\n                        d-flex\n                        flex-row\n                        tipologies-card\n                        flex-wrap\n                        justify-content-center\n                        align-items-center\n                        mb-4\n                      ",
                                 },
                                 _vm._l(user.tipologies, function (el) {
                                   return _c(
@@ -6020,9 +6120,9 @@ var render = function () {
                                     },
                                     [
                                       _vm._v(
-                                        "\n                                        " +
+                                        "\n                        " +
                                           _vm._s(el.name) +
-                                          "\n                                    "
+                                          "\n                      "
                                       ),
                                     ]
                                   )
@@ -6036,7 +6136,7 @@ var render = function () {
                             "div",
                             {
                               staticClass:
-                                "bg-white card-foot d-flex justify-content-between align-items-center mt-2 px-2",
+                                "\n                      bg-white\n                      card-foot\n                      d-flex\n                      justify-content-between\n                      align-items-center\n                      mt-2\n                      px-2\n                    ",
                             },
                             [
                               _c("div", { staticClass: "d-flex flex-wrap" }, [
@@ -6114,7 +6214,7 @@ var render = function () {
                   "ul",
                   {
                     staticClass:
-                      "pagination flex justify-content-center align-items-center gap-4 items-center",
+                      "\n                  pagination\n                  flex\n                  justify-content-center\n                  align-items-center\n                  gap-4\n                  items-center\n                ",
                   },
                   _vm._l(_vm.lastPage, function (n) {
                     return _c(
@@ -6122,7 +6222,7 @@ var render = function () {
                       {
                         key: n,
                         staticClass:
-                          "d-flex justify-content-center align-items-center cursor-pointer rounded-circle pagination-button",
+                          "\n                    d-flex\n                    justify-content-center\n                    align-items-center\n                    cursor-pointer\n                    rounded-circle\n                    pagination-button\n                  ",
                         class: _vm.currentPage === n ? "bg-gl1" : "bg-gl2",
                         on: {
                           click: function ($event) {
@@ -6130,7 +6230,13 @@ var render = function () {
                           },
                         },
                       },
-                      [_vm._v(_vm._s(n))]
+                      [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(n) +
+                            "\n                "
+                        ),
+                      ]
                     )
                   }),
                   0
@@ -6148,9 +6254,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 text-center " }, [
+    return _c("div", { staticClass: "col-12 text-center" }, [
       _c("h2", { staticClass: "font-weight-bold" }, [
-        _vm._v("Cerca i migliori ristoranti nella tua città"),
+        _vm._v("\n        Cerca i migliori ristoranti nella tua città\n      "),
       ]),
     ])
   },
@@ -7009,7 +7115,10 @@ var render = function () {
             [
               _c(
                 "a",
-                { staticClass: "text-white weight-bold", attrs: { href: "#" } },
+                {
+                  staticClass: "text-white weight-bold",
+                  attrs: { href: "/checkout" },
+                },
                 [_vm._v("Vai al Pagamento")]
               ),
             ]
@@ -26324,7 +26433,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giuse\Desktop\Boolean\PHP\Maggio 2022\prova\deliverboo-team5\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/manuelfreund/Desktop/deliverboo-team5/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
