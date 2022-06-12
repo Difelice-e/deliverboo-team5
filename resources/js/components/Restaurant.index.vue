@@ -95,13 +95,8 @@
                 >
                   <div class="card card-t rounded-mid overflow-hidden">
                     <div class="overlay overflow-hidden">
-                      <img
-                        width="300px"
-                        height="150px"
-                        :src="user.cover"
-                        class="card-img-top img-card"
-                        alt=""
-                      />
+                      <img v-if="user.cover.includes('storage')" :src="`../../../${user.cover}`" class="card-img-top img-card" alt="" />
+                      <img v-else :src="user.cover" class="card-img-top img-card" alt="">
                     </div>
                     <div
                       class="

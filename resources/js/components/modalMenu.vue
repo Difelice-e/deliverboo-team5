@@ -30,13 +30,8 @@
                     <div v-if="this.sameRestaurants || $store.state.cartCount == 0" class="container mt-4">
                         <div class="row">
                             <figure class="col-12 col-md-6">
-                                <img
-                                    width="100%"
-                                    height="100%"
-                                    :src="dish.cover"
-                                    style="border-radius: 30px"
-                                    alt=""
-                                />
+                                <img v-if="dish.cover.includes('storage')" :src="`../../../${dish.cover}`" style="width: 100%; max-height: 250px; border-radius:30px;" class="rounded-lg" alt="" />
+                                <img v-else :src="dish.cover" style="width: 100%; max-height: 100%; border-radius:30px;" class="rounded-lg" alt="">
                             </figure>
                             <div class="col-12 col-md-6">
                                 <!-- ingerdienti -->
