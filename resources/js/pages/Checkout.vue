@@ -26,7 +26,7 @@
                 </form>
 
                 <button class=" col-4 rounded-pill btn bg-greedgc" style="font-size: 20px;" @click="sendForm()" type="submit">
-                    <a class="text-white weight-bold" href="/checkout">Vai al Pagamento</a>
+                    <a class="text-white weight-bold" href="#">Vai al Pagamento</a>
                 </button>
 
             </div>
@@ -65,7 +65,7 @@ export default {
             }, )
             .then( res => {
                 res = JSON.parse(res.config.data),
-                console.log(res)
+                console.log(res.form.customer_name)
             })
             this.$store.state.cart = []
             this.$store.state.cartCount = 0

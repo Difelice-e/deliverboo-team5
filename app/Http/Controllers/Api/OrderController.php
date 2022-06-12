@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Order;
+use DB;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -40,28 +41,32 @@ class OrderController extends Controller
         $total = $data['total'];
         $userId = $data['userId'];
         $cartInfo = $data['cartInfo'];
+        $userInfo = $data['form'];
+        
+        // creazione nuovo ordine
+        $order = new Order();
+        $order->customer_name = $userInfo['customer_name'];
+        $order->customer_phone = $userInfo['customer_phone'];
+        $order->customer_email = $userInfo['customer_email'];
+        $order->street_address = $userInfo['street_address'];
+        $order->total_price = $total;
+        $order->user_id = $userId;
+        $order->delivered = false;  
+        $order->payment_state = false;
 
-        foreach ($data as  $value) {
-            $order = new Order();
-            $order->fill($value);
-            $order->total_price = $total;
-            $order->user_id = $userId;
-            $order->delivered = false;  
-            $order->payment_state = false;
-
-            $order->save();
-            return [$value, $total];
-        }
-
-        // ciclo creazione righe tabella pivot
-        foreach ($cartInfo as $dish) {
+        $order->save();
+        
+        // creazione dish_order
+        foreach ($cartInfo as $dishInfo) {
             DB::table('dish_order')->insert([
-                'dish_id' => $dish->id,
+                'dish_id' => $dishInfo['id'],
                 'order_id' => $order->id,
-                'quantity' => $dish->quantity,
+                'quantity' => $dishInfo['quantity'],
             ]);
-
         }
+        
+
+        
     }
 
     /**
