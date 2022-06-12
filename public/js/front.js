@@ -7887,128 +7887,140 @@ var render = function () {
             "\n        navbar navbar-expand-md navbar-light\n        bg-goldGv\n        shadow-sm\n        position-relative\n        box-shadow-none\n      ",
         },
         [
-          _c("div", { staticClass: "container" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("form", { staticClass: "form-inline col-4 position-relative" }, [
+          _c(
+            "div",
+            { staticClass: "container" },
+            [
               _c(
-                "button",
+                "router-link",
                 {
-                  staticClass: "btn-nav-searchGv my-2 my-sm-0",
-                  attrs: { type: "submit" },
+                  staticClass: "navbar-brand",
+                  attrs: { to: { name: "tipologies.index" } },
                 },
                 [
-                  _c("lord-icon", {
-                    staticStyle: { width: "25px", height: "25px" },
-                    attrs: {
-                      src: "https://cdn.lordicon.com/pvbutfdk.json",
-                      trigger: "loop-on-hover",
-                    },
+                  _c("img", {
+                    staticClass: "d-inline-block align-top",
+                    attrs: { src: "", width: "150", height: "50", alt: "" },
                   }),
-                ],
-                1
+                ]
               ),
               _vm._v(" "),
-              _c("input", {
-                staticClass:
-                  "\n              form-control\n              font-size\n              col-12\n              text-center\n              rounded-pill\n              mr-sm-2\n              pl-5\n            ",
-                attrs: {
-                  type: "search",
-                  placeholder: "Search",
-                  "aria-label": "Search",
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse flex-grow-0",
-                attrs: { id: "navbarSupportedContent" },
-              },
-              [
-                _c(
-                  "ul",
-                  {
-                    staticClass:
-                      "navbar-nav  align-items-end align-items-md-center ml-auto",
-                  },
-                  [
-                    _c(
-                      "li",
-                      {
-                        staticClass:
-                          "dropdown dropdow-toggle btn-nav-register nav-item mr-1",
+              _c(
+                "form",
+                { staticClass: "form-inline col-4 position-relative" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn-nav-searchGv my-2 my-sm-0",
+                      attrs: { type: "submit" },
+                    },
+                    [
+                      _c("lord-icon", {
+                        staticStyle: { width: "25px", height: "25px" },
                         attrs: {
-                          type: "button",
-                          id: "dropdownMenuButton",
-                          "data-toggle": "dropdown",
-                          "aria-expanded": "false",
+                          src: "https://cdn.lordicon.com/pvbutfdk.json",
+                          trigger: "loop-on-hover",
                         },
-                      },
-                      [
-                        _c(
-                          "a",
-                          {
-                            staticClass:
-                              "\n                  my-2\n                  nav-link\n                  mx-md-1\n                  px-2\n                  p-md-1\n                  text-center\n                  font-weight-bold\n                  text-balck\n                ",
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass:
+                      "\n              form-control\n              font-size\n              col-12\n              text-center\n              rounded-pill\n              mr-sm-2\n              pl-5\n            ",
+                    attrs: {
+                      type: "search",
+                      placeholder: "Search",
+                      "aria-label": "Search",
+                    },
+                  }),
+                ]
+              ),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "collapse navbar-collapse flex-grow-0",
+                  attrs: { id: "navbarSupportedContent" },
+                },
+                [
+                  _c(
+                    "ul",
+                    {
+                      staticClass:
+                        "navbar-nav  align-items-end align-items-md-center ml-auto",
+                    },
+                    [
+                      _c(
+                        "li",
+                        {
+                          staticClass:
+                            "dropdown dropdow-toggle btn-nav-register nav-item mr-1",
+                          attrs: {
+                            type: "button",
+                            id: "dropdownMenuButton",
+                            "data-toggle": "dropdown",
+                            "aria-expanded": "false",
                           },
-                          [
-                            _vm._v(
-                              "\n                Cart (" +
-                                _vm._s(_vm.$store.state.cartCount) +
-                                ")\n              "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "dropdown-menu dropdown-wrapper",
-                            attrs: { "aria-labelledby": "dropdownMenuButton" },
-                          },
-                          [
-                            _c("CartDropdown", {
-                              attrs: { isCheckout: false },
-                            }),
-                          ],
-                          1
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _vm._m(3),
-                  ]
-                ),
-              ]
-            ),
-          ]),
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "\n                  my-2\n                  nav-link\n                  mx-md-1\n                  px-2\n                  p-md-1\n                  text-center\n                  font-weight-bold\n                  text-balck\n                ",
+                            },
+                            [
+                              _vm._v(
+                                "\n                Cart (" +
+                                  _vm._s(_vm.$store.state.cartCount) +
+                                  ")\n              "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown-menu dropdown-wrapper",
+                              attrs: {
+                                "aria-labelledby": "dropdownMenuButton",
+                              },
+                            },
+                            [
+                              _c("CartDropdown", {
+                                attrs: { isCheckout: false },
+                              }),
+                            ],
+                            1
+                          ),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _vm._m(2),
+                    ]
+                  ),
+                ]
+              ),
+            ],
+            1
+          ),
         ]
       ),
     ]),
     _vm._v(" "),
     _c("main", [_c("router-view")], 1),
     _vm._v(" "),
-    _vm._m(4),
+    _vm._m(3),
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-      _c("img", {
-        staticClass: "d-inline-block align-top",
-        attrs: { src: "", width: "150", alt: "" },
-      }),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

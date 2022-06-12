@@ -29,7 +29,7 @@ return [
     "business_name" => "Antica Osteria Le Mura",
     "street_address" => "Vicolo del Falcone, 13/a",
     "phone_number" => "0510015254",
-    "cover" => "https://www.mangiaebevi.it/wp-content/uploads/2016/09/archi-1.jpg",
+    "cover" => "https://media-cdn.tripadvisor.com/media/photo-s/0d/f5/ef/d5/l-arredamento-tipico.jpg",
   ],
   //napoletana
   [
