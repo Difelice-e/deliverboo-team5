@@ -45,7 +45,7 @@
                 Indirizzo
             </h5>
             <span>
-                <img width="20px" height='20px' src="https://cdn-icons.flaticon.com/png/512/2697/premium/2697390.png?token=exp=1654971194~hmac=f4eda86cee0c58808ca039b658f250fa" alt="">
+                <img width="20px" height='20px' src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="">
 
                 {{$user->street_address}}
             </span>
@@ -65,7 +65,7 @@
                 Data Iscrizione
             </h5>
             <span>
-                <img width="20px" height='20px' src="https://cdn-icons.flaticon.com/png/512/2321/premium/2321232.png?token=exp=1654971767~hmac=b280bf65187d5e71f49d652e25b6feb6" alt="">
+                <img width="20px" height='20px' src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="">
 
                 {{$user->created_at}}
             </span>

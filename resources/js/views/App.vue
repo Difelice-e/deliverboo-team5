@@ -12,9 +12,9 @@
       >
         <div class="container">
           <!-- {{-- logo   src="{{ asset('js/front.js') }}"--}} -->
-          <a class="navbar-brand" href="#">
-            <img src="" width="150" class="d-inline-block align-top" alt="">
-          </a>
+          <router-link :to="{name: 'tipologies.index' }" class="navbar-brand" >
+            <img src="" width="150" height="50" class="d-inline-block align-top" alt="">
+          </router-link>
 
           <!-- {{-- searchbar no admin  --}} -->
 
