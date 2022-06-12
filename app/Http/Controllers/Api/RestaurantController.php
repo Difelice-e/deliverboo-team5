@@ -20,7 +20,7 @@ class RestaurantController extends Controller
         if ($params) {
             $users = User::with('tipologies')->whereHas('tipologies', function($q) use ($params) {
                 $q->whereIn('tipology_user.tipology_id', $params);
-            })->paginate(9);
+            })->paginate(8);
             
             return response()->json([
                 'users' => $users,

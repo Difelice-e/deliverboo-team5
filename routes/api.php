@@ -24,6 +24,9 @@ Route::namespace('Api')->group(function () {
     Route::resource('home', 'HomePageController')->only([
         'index', 'show'
     ]);
+    Route::resource('tipology', 'TipologiesController')->only([
+        'index', 'show'
+    ]);
     Route::resource('restaurant', 'RestaurantController')->only([
         'index', 'show'
     ])

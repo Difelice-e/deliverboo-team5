@@ -119,7 +119,7 @@ export default {
 
         fetchTipologies() {
             axios
-                .get("/api/home")
+                .get("/api/tipology")
                 .then((res) => {
                     const { tipologies } = res.data;
 
