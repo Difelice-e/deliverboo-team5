@@ -2922,9 +2922,10 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/api/orders', {
         form: this.form,
         total: localStorage.getItem('cartTotal'),
-        userId: this.localCart[0].user_id
+        userId: this.localCart[0].user_id,
+        cartInfo: this.localCart
       }).then(function (res) {
-        res = JSON.parse(res.config.data), console.log(res);
+        res = JSON.parse(res.config.data), console.log(res.form.customer_name);
       });
       this.$store.state.cart = [];
       this.$store.state.cartCount = 0;
@@ -2936,7 +2937,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    console.log(this.form, localStorage.getItem('cartTotal'), this.localCart[0].user_id);
+    console.log(this.localCart);
   }
 });
 
@@ -7008,10 +7009,7 @@ var render = function () {
             [
               _c(
                 "a",
-                {
-                  staticClass: "text-white weight-bold",
-                  attrs: { href: "/checkout" },
-                },
+                { staticClass: "text-white weight-bold", attrs: { href: "#" } },
                 [_vm._v("Vai al Pagamento")]
               ),
             ]
