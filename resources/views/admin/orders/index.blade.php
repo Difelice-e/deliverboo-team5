@@ -26,7 +26,7 @@
                 <tr>
                     <td>{{ $order->id }}</td>
                     <td>{{ $order->customer_name }}</td>
-                    <td>{{ $order->created_at }}</td>
+                    <td>{{$order->created_at ? Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$order->created_at)->locale('it-IT')->format('d/m/y - H:i') : '-'}}</td>
                     <td>{{ $order->customer_email }}</td>
                     <td>{{ $order->street_address }}</td>
                     <td>{{ $order->customer_phone }}</td>
@@ -41,7 +41,7 @@
                         </td>
                     @endif
 
-                    <td>{{ $order->delivery_time }}</td>
+                    <td>{{ $order->delivery_time ? Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$order->delivery_time)->locale('it-IT')->format('H:i') : '-'}}</td>
                     @if ($order->delivered == 0)
                         <td>
                             <span class="rounded-pill bg-warning p-2">Undelivered</span>

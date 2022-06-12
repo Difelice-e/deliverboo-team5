@@ -16,7 +16,7 @@
                 <tbody>
 
                     <tr>
-                        <td>{{ $order->created_at }}</td>
+                        <td>{{$order->created_at ? Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$order->created_at)->locale('it-IT')->format('d/m/y - H:i') : '-'}}</td>
                         <td>{{ $order->street_address }}</td>
                         <td>{{ $order->customer_name }}</td>
                     </tr>
@@ -40,7 +40,7 @@
                         <tr>
                             <td>{{ $dish->pivot->quantity }}</td>
                             <td>{{ $dish->name }}</td>
-                            <td>€{{ $dish->price }}</td>
+                            <td>€{{ $dish->price*$dish->pivot->quantity }}</td>
                         </tr>
                 @endforeach
                 <tr>
@@ -51,7 +51,7 @@
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>{{ $dish->total_price }} €</td>
+                    <td>{{ $order->total_price }} €</td>
                 </tr>
                 </tbody>
 
