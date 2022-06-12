@@ -16,7 +16,7 @@
               @submit.prevent="fetchRestaurant"
               class="container my-bg-categories"
             >
-              <p class="text-center text-md-left p-5">
+              <p class="text-center text-md-left px-5">
                 <strong>Filtri più usati</strong>
               </p>
 
@@ -50,7 +50,7 @@
                       selected
                     "
                   >
-                    <span class="text-center text-md-left">
+                    <span class="text-center text-md-left font-weight-bold">
                       {{ tipology.name }}
                     </span>
                     <span class="counter">{{ tipology.users.length }}</span>
@@ -349,11 +349,15 @@ ul li input[type="checkbox"] {
   cursor: pointer;
   width: 170px;
   border-radius: 30px;
+  border:1px solid transparent;
 }
 
-input[type="checkbox"]:checked ~ label .selected {
+input[type="checkbox"]:checked ~ label {
   padding: 10px 30px;
   background-color: #fcc244;
+ 
+-webkit-box-shadow: 1px 12px 10px -5px rgba(0, 211, 168, 0.78);
+box-shadow: 1px 12px 10px -5px rgba(0, 211, 168, 0.78);
 }
 
 .restaurant-wrapper {
