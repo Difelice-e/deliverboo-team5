@@ -41,7 +41,8 @@
                     
                         <!-- img collezione  -->
                         <figure class="restaurant-logo">
-                            <img :src="restaurant.cover" width='90' height='90' class="collection-logo" alt="restaurant-logo">
+                            <img v-if="restaurant.cover.includes('storage')" :src="`../../../${restaurant.cover}`" class="collection-logo" alt="" width='90' height='90' />
+                            <img v-else :src="restaurant.cover" class="collection-logo" alt="" width='90' height='90'>
                         </figure>
 
                         <!-- info collezione  -->
@@ -310,6 +311,8 @@ a {
   border-radius: 20px;
   overflow: hidden;
   margin: 0;
+  min-width: 90px;
+  min-height: 90px;
 }
 
 .page-link {
@@ -324,7 +327,6 @@ a {
     align-items: center;
     text-align: left;
     font-size: 1rem;
-    // padding: 5px 5px;
   
     overflow: hidden;
     text-overflow: ellipsis;

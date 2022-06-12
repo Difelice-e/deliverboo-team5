@@ -4,7 +4,8 @@
             <div class="restaurant-header">
                 <div>
                     <div class="row">
-                        <img class="blur-image" :src="user.cover" alt="" width="100%" height="260" />
+                        <img v-if="user.cover.includes('storage')" :src="`../../../${user.cover}`" class="blur-image" alt="" width="100%" height="450"/>
+                        <img v-else :src="user.cover" class="blur-image" alt="" width="100%" height="450">
                     </div>
                 </div>
             </div>
@@ -62,8 +63,10 @@
                                                 class="border-radius-gv dish-wrapper d-flex justify-content-between p-3">
                                                 <div class="dish-info col-12 d-flex p-1">
                                                     <div class="d-flex mb-2">
+                                                        
                                                         <figure class="border-radius">
-                                                            <img :src="dish.cover" style="width: 80px; height: 80px;" class="rounded-lg" alt="" />
+                                                            <img v-if="dish.cover.includes('storage')" :src="`../../../${dish.cover}`" style="width: 80px; height: 80px;" class="rounded-lg" alt="" />
+                                                            <img v-else :src="dish.cover" style="width: 80px; height: 80px;" class="rounded-lg" alt="">
                                                         </figure>
 
                                                         <div class="px-3 flex-grow-1">

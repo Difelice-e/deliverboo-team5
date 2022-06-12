@@ -58,7 +58,7 @@ class DishController extends Controller
 
         if(array_key_exists('cover', $data)) {
             $cover_path = Storage::put('uploads', $data['cover']);
-            $data['cover'] = $cover_path;
+            $data['cover'] = str_replace('uploads/', 'storage/uploads/', $cover_path);
         };
 
         $slug = Dish::getUniqueSlug($data['name']);
@@ -67,7 +67,7 @@ class DishController extends Controller
         $dish->fill($data);
         $dish->slug = $slug;
         $dish->user_id = Auth::id();
-        dd($dish);
+        
 
         $dish->save();
 

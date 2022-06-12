@@ -92,7 +92,7 @@ class RegisterController extends Controller
         // recupero path immagine
         if(array_key_exists('cover', $data)) {
             $cover_path = Storage::put('uploads', $data['cover']);
-            $data['cover'] = $cover_path;
+            $data['cover'] = str_replace('uploads/', 'storage/uploads/', $cover_path);
         };
 
         $user_data = [
