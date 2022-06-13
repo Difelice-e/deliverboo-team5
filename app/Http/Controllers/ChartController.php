@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Chart;
 use Illuminate\Http\Request;
 use App\Order;
+use App\Dish;
 use Illuminate\Support\Facades\Auth;
 use DB;
 
@@ -21,17 +22,22 @@ class ChartController extends Controller
         $groups = Order::where('user_id',Auth::id())->groupBy('delivery_time')->sum('total_price');
 
         // $groups = array_unique($groups);
+        $dishes = Dish::where('user_id',Auth::id())->get()->all();
 
-        dd($groups);
+        $dishesChart = Dish::where('user_id',Auth::id())->pluck('name');
+
+        foreach ($dishes as $dish) {
+            $quantity[] = DB::table('dish_order')->where('dish_id', $dish->id)->sum('quantity');
+        }
         
         // Generate random colours for the groups
-        for ($i=0; $i<=count($groups); $i++) {
+        for ($i=0; $i<=count($dishes); $i++) {
         $colours[] = '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
         }
         // Prepare the data for returning with the view
         $chart = new Chart;
-        $chart->labels = (array_keys($groups));
-        $chart->dataset = (array_values($groups));
+        $chart->labels = ($dishesChart);
+        $chart->dataset = ($quantity);
         $chart->colours = $colours;
         return view('admin.charts.index', compact('chart'));
     }

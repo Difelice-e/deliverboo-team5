@@ -73,7 +73,8 @@
             </p>
             <div class="d-flex">
                 <a href={{route('admin.dishes.index')}} class="btn bg-greedgc text-white mr-3">Menù</a>
-                <a href={{route('admin.orders.index')}} class="btn bg-greedgc text-white">Ordini</a>
+                <a href={{route('admin.orders.index')}} class="btn bg-greedgc text-white mr-3">Ordini</a>
+                <a href="/admin/charts" class="btn bg-greedgc text-white">Statistiche</a>
             </div>
         </div>
     </div>

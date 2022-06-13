@@ -66,7 +66,7 @@
                                     <a class="dropdown-item btn-nav-item" href="/admin/dashboard">Dashboard</a>
                                     <a class="dropdown-item btn-nav-item" href="/admin/dishes">Menù</a>
                                     <a class="dropdown-item btn-nav-item" href="/admin/orders">Ordini</a>
-                                    {{-- <a class="dropdown-item btn-nav-item" href="#">Statistiche</a> --}}
+                                    <a class="dropdown-item btn-nav-item" href="/admin/charts">Statistiche</a>
                                 </div>
                             </div>
 
