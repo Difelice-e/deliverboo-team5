@@ -3,10 +3,16 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col-12 text-center">
+            <h2>I piatti preferiti dai tuoi utenti</h2>
+            <button class="btn btn-success"><a class="text-reset" href="/admin/dashboard">Torna alla dashboard</a></button>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading my-2">Chart Demo</div>
-                  <div class="col-lg-8">
+                  <div class="col-12">
                     <canvas id="userChart" class="rounded shadow"></canvas>
                   </div>
                 </div>
@@ -29,7 +35,7 @@
           labels:  {!!json_encode($chart->labels)!!} ,
           datasets: [
               {
-                  label: 'Count of ages',
+                  label: 'Quantità',
                   backgroundColor: {!! json_encode($chart->colours)!!} ,
                   data:  {!! json_encode($chart->dataset)!!} ,
               },
@@ -68,5 +74,6 @@
           }
       }
   });
+  console.log(chart.data)
 </script>
 @endsection
